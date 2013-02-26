@@ -1,56 +1,45 @@
 
-var spawn = require('child_process').spawn;
-
 module.exports = function( grunt ) {
 
-  //
+  // from `bower list --sources`
+  var bowerJSSources = [
+    "components/classie/classie.js",
+    "components/eventEmitter/EventEmitter.js",
+    "components/eventie/eventie.js",
+    "components/doc-listener/doc-listener.js",
+    "components/get-style-property/get-style-property.js",
+    "components/get-size/get-size.js",
+    "components/draggabilly/draggabilly.js",
+    "components/jquery/jquery.js",
+    "components/matches-selector/matches-selector.js",
+    "components/packery/js/rect.js",
+    "components/packery/js/packer.js",
+    "components/packery/js/item.js",
+    "components/packery/js/packery.js"
+  ];
 
   grunt.initConfig({
-
+    // from `bower list --sources`
+    bowerJSSources: bowerJSSources,
+    // 
+    siteJS: 'js/*.js',
 
     concat: {
       options: {
         // stripBanners: true,
-        // banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-        //   '<%= grunt.template.today("yyyy-mm-dd") %> */'
+        banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       dist: {
-        src: [ 'src/project.js' ],
-        dest: 'dist/built.js'
+        src: bowerJSSources,
+        dest: 'dist/packery.dist.js'
       }
     }
 
 
   });
 
-  // var bower = require('bower');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
-  grunt.loadTasks('tasks');
-
-  grunt.registerTask( 'doit', function() {
-
-    // var done = this.async();
-
-    // console.log( !!bower );
-
-  });
-
-  grunt.registerTask( 'default', function() {
-    var done = this.async();
-    var childProc = spawn('bower', 'list --sources'.split(' ') );
-
-    var sourcesSrc = '';
-
-    childProc.stdout.setEncoding('utf8');
-    childProc.stdout.on('data',  function (data) {
-      sourcesSrc += data;
-    });
-
-    childProc.on('close', function() {
-      var sources = JSON.parse( sourcesSrc );
-      console.log( sources );
-      done();
-    });
-  });
+  grunt.registerTask( 'default', 'concat'.split(' ') );
 
 };
