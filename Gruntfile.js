@@ -1,9 +1,10 @@
 
 var path = require('path');
+var spawn = require('child_process').spawn;
 
 // -------------------------- bower list helpers -------------------------- //
 
-function getDependencySrcs(list) {
+function getDependencySrcs( list ) {
   var srcs = [];
   var dependency, main;
   for ( var name in list ) {
@@ -70,7 +71,7 @@ module.exports = function( grunt ) {
   grunt.initConfig({
     // from `bower list --sources`
     bowerJSSources: bowerJSSources,
-    // 
+    //
     siteJS: 'js/*.js',
 
     concat: {
@@ -93,9 +94,48 @@ module.exports = function( grunt ) {
     }
   });
 
+
+  // re-used vars
+  var bowerMap, packerySources;
+
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask( 'default', 'concat uglify'.split(' ') );
+
+  grunt.registerTask( 'bower-fun', 'bower-map packery-sources'.split(' ') );
+
+
+  grunt.registerTask( 'bower-map', function() {
+    var done = this.async();
+    var childProc = spawn('bower', 'list --map'.split(' ') );
+
+    var mapSrc = '';
+
+    childProc.stdout.setEncoding('utf8');
+    childProc.stdout.on('data',  function( data ) {
+      mapSrc += data;
+    });
+
+    childProc.on('close', function() {
+      bowerMap = JSON.parse( mapSrc );
+      // grunt.config.set( 'bower-map', map );
+      // var sources = organizeSources( bowerMap.packery );
+      console.log( bowerMap );
+      done();
+    });
+
+  });
+
+  grunt.registerTask( 'packery-sources', function() {
+    // copy over just the packery obj
+    var packeryMap = {
+      packery: bowerMap.packery
+    }
+
+    packerySources = organizeSources( packeryMap );
+    console.log( packerySources );
+  });
+
 
 };
