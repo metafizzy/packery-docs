@@ -2,6 +2,9 @@
 # list all script files
 is_dev: true
 
+exclude: [ component.json ]
+
+# JS files from Bower
 component_js:
   - components/classie/classie.js
   - components/eventEmitter/EventEmitter.js
