@@ -51,23 +51,6 @@ function organizeSources( tree ) {
 
 module.exports = function( grunt ) {
 
-  // from `bower list --sources`
-  var bowerJSSources = [
-    "components/classie/classie.js",
-    "components/eventEmitter/EventEmitter.js",
-    "components/eventie/eventie.js",
-    "components/doc-listener/doc-listener.js",
-    "components/get-style-property/get-style-property.js",
-    "components/get-size/get-size.js",
-    "components/draggabilly/draggabilly.js",
-    "components/jquery/jquery.js",
-    "components/matches-selector/matches-selector.js",
-    "components/packery/js/rect.js",
-    "components/packery/js/packer.js",
-    "components/packery/js/item.js",
-    "components/packery/js/packery.js"
-  ];
-
   grunt.initConfig({
     // from `bower list --sources`
     bowerJSSources: bowerJSSources,
@@ -80,7 +63,6 @@ module.exports = function( grunt ) {
         banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       dist: {
-        src: bowerJSSources,
         dest: 'dist/packery.dist.js'
       }
     },
@@ -101,7 +83,9 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask( 'default', 'concat uglify'.split(' ') );
+  grunt.registerTask( 'default', 'bower-map packery-sources concat uglify'.split(' ') );
+  // grunt.registerTask( 'default', function() {
+  // });
 
   grunt.registerTask( 'bower-fun', 'bower-map packery-sources'.split(' ') );
 
@@ -121,7 +105,7 @@ module.exports = function( grunt ) {
       bowerMap = JSON.parse( mapSrc );
       // grunt.config.set( 'bower-map', map );
       // var sources = organizeSources( bowerMap.packery );
-      console.log( bowerMap );
+      // console.log( bowerMap );
       done();
     });
 
@@ -134,8 +118,8 @@ module.exports = function( grunt ) {
     }
 
     packerySources = organizeSources( packeryMap );
-    console.log( packerySources );
+    // console.log( packerySources );
+    grunt.config.set( 'concat.dist.src', packerySources['.js'] )
   });
-
 
 };
