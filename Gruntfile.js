@@ -52,8 +52,6 @@ function organizeSources( tree ) {
 module.exports = function( grunt ) {
 
   grunt.initConfig({
-    // from `bower list --sources`
-    bowerJSSources: bowerJSSources,
     //
     siteJS: 'js/*.js',
 
@@ -62,15 +60,23 @@ module.exports = function( grunt ) {
         // stripBanners: true,
         banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      dist: {
-        dest: 'dist/packery.dist.js'
+      site: {
+        dest: 'dist/packery-site.js'
+      },
+      pkgd: {
+        dest: 'dist/packery.pkgd.js'
       }
     },
 
     uglify: {
-      dist: {
+      pkgd: {
         files: {
-          'dist/packery.dist.min.js': [ 'dist/packery.dist.js' ]
+          'dist/packery.pkgd.min.js': [ 'dist/packery.pkgd.js' ]
+        }
+      },
+      site: {
+        files: {
+          // 'dist/packery-site.min.js' will be set
         }
       }
     }
@@ -103,9 +109,19 @@ module.exports = function( grunt ) {
 
     childProc.on('close', function() {
       bowerMap = JSON.parse( mapSrc );
-      // grunt.config.set( 'bower-map', map );
-      // var sources = organizeSources( bowerMap.packery );
-      // console.log( bowerMap );
+      // delete bowerMap.jquery;
+      var sources = organizeSources( bowerMap );
+      // remove jQuery, EventEmitter.min.js
+      var jsSources = sources['.js'].filter( function( src ) {
+        return src.indexOf('/jquery.js') === -1 &&
+          src.indexOf('.min.js') === -1;
+      });
+      grunt.config.set( 'concat.site.src', jsSources );
+
+      grunt.config.set( 'uglify.site.files', {
+        'dist/packery-site.min.js': jsSources
+      });
+
       done();
     });
 
@@ -115,11 +131,16 @@ module.exports = function( grunt ) {
     // copy over just the packery obj
     var packeryMap = {
       packery: bowerMap.packery
-    }
+    };
 
     packerySources = organizeSources( packeryMap );
     // console.log( packerySources );
-    grunt.config.set( 'concat.dist.src', packerySources['.js'] )
+    var srcs = packerySources['.js'];
+    // filter out minified files, like EventEmitter.min.js
+    srcs = srcs.filter( function( src ) {
+      return src.indexOf('.min.js') === -1;
+    });
+    grunt.config.set( 'concat.pkgd.src', srcs );
   });
 
 };

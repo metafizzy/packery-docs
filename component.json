@@ -4,8 +4,10 @@
   "author": "David DeSandro / Metafizzy",
   "dependencies": {
     "draggabilly": "desandro/draggabilly#>=0.0.3",
-    "jquery": "~1",
     "jquery-ui-draggable": "git://gist.github.com/4985610.git",
     "packery": "../packery"
+  },
+  "devDependencies": {
+    "jquery": "~1"
   }
 }
