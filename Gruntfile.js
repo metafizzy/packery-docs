@@ -88,11 +88,11 @@ module.exports = function( grunt ) {
           'build/': 'content/*'
         },
         options: {
-          templates: 'templates/*.mustache'
+          templates: 'templates/*.mustache',
+          defaultTemplate: 'page'
         }
       }
     }
-
 
   });
 

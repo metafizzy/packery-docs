@@ -6,8 +6,20 @@ module.exports = function( grunt ) {
   grunt.registerMultiTask( 'hbarz', 'Process Handlebars templates', function() {
     // console.log( this.files );
     // var
+
+    var opts = this.options();
+    // console.log( opts );
+    console.log(  );
+    var templateFiles = grunt.file.expand( opts.templates );
+    // hash of Handlebar templates
+    var templates = {};
+    templateFiles.forEach( function( filepath ) {
+      var name = path.basename( filepath, path.extname( filepath ) );
+      var src = grunt.file.read( filepath );
+      templates[ name ] = handlebars.compile( src );
+    });
+
     this.files.forEach( function( file ) {
-      // console.log( file.src );
       file.src.forEach( function( filepath ) {
         var src = grunt.file.read( filepath );
         // var basename = path.basename( filepath );
@@ -17,7 +29,11 @@ module.exports = function( grunt ) {
           splitPath.splice( 0, 1 );
         }
         var dest = file.dest + '/' + splitPath.join( path.sep );
-        grunt.file.write( dest, src );
+        // process source by template
+        var templated = templates[ opts.defaultTemplate ]({
+          content: src
+        });
+        grunt.file.write( dest, templated );
       });
     });
   });
