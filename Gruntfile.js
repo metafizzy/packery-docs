@@ -79,7 +79,21 @@ module.exports = function( grunt ) {
           // 'dist/packery-site.min.js' will be set
         }
       }
+    },
+
+    // ----- handlebars templating ----- //
+    hbarz: {
+      docs: {
+        files: {
+          'build/': 'content/*'
+        },
+        options: {
+          templates: 'templates/*.mustache'
+        }
+      }
     }
+
+
   });
 
 
@@ -88,6 +102,8 @@ module.exports = function( grunt ) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  grunt.loadTasks('tasks/');
 
   grunt.registerTask( 'default', 'bower-map packery-sources concat uglify'.split(' ') );
   // grunt.registerTask( 'default', function() {
