@@ -4,12 +4,8 @@ var handlebars = require('handlebars');
 module.exports = function( grunt ) {
 
   grunt.registerMultiTask( 'hbarz', 'Process Handlebars templates', function() {
-    // console.log( this.files );
-    // var
-
     var opts = this.options();
-    // console.log( opts );
-    console.log(  );
+
     var templateFiles = grunt.file.expand( opts.templates );
     // hash of Handlebar templates
     var templates = {};

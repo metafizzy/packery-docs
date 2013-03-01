@@ -92,6 +92,13 @@ module.exports = function( grunt ) {
           defaultTemplate: 'page'
         }
       }
+    },
+
+    watch: {
+      content: {
+        files: [ 'content/*' ],
+        tasks: [ 'hbarz' ]
+      }
     }
 
   });
@@ -102,6 +109,7 @@ module.exports = function( grunt ) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.loadTasks('tasks/');
 
