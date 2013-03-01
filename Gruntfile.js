@@ -96,7 +96,7 @@ module.exports = function( grunt ) {
 
     watch: {
       content: {
-        files: [ 'content/*' ],
+        files: [ 'content/*', 'templates/*.mustache' ],
         tasks: [ 'hbarz' ]
       }
     }
