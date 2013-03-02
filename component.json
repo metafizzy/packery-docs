@@ -5,6 +5,7 @@
   "dependencies": {
     "draggabilly": "desandro/draggabilly#>=0.0.3",
     "jquery-ui-draggable": "git://gist.github.com/4985610.git",
+    "normalize-css": "~2",
     "packery": "../packery"
   },
   "devDependencies": {

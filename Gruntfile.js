@@ -58,13 +58,17 @@ module.exports = function( grunt ) {
     concat: {
       options: {
         // stripBanners: true,
-        banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        // banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       site: {
         dest: 'dist/packery-site.js'
       },
       pkgd: {
         dest: 'dist/packery.pkgd.js'
+      },
+      css: {
+        src: [ 'components/normalize-css/normalize.css', 'css/*.css' ],
+        dest: 'build/css/packery-site.css'
       }
     },
 
@@ -113,7 +117,7 @@ module.exports = function( grunt ) {
 
   grunt.loadTasks('tasks/');
 
-  grunt.registerTask( 'default', 'bower-map packery-sources concat uglify'.split(' ') );
+  grunt.registerTask( 'default', 'bower-map packery-sources concat uglify hbarz'.split(' ') );
   // grunt.registerTask( 'default', function() {
   // });
 
@@ -141,16 +145,24 @@ module.exports = function( grunt ) {
           src.indexOf('.min.js') === -1;
       });
       grunt.config.set( 'concat.site.src', jsSources );
-
       grunt.config.set( 'uglify.site.files', {
         'dist/packery-site.min.js': jsSources
       });
+
+      // add CSS sources from Bower
+      if ( sources['.css'] && sources['.css'].length ) {
+        var cssSrcs = grunt.config.get( 'concat.css.src' );
+        cssSrcs.push.apply( cssSrcs, sources['.css'] );
+        console.log( sources['.css'], cssSrcs );
+        grunt.config.set( 'concat.css.src', cssSrcs );
+      }
 
       done();
     });
 
   });
 
+  // create packery.pkgd.js
   grunt.registerTask( 'packery-sources', function() {
     // copy over just the packery obj
     var packeryMap = {

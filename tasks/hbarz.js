@@ -15,6 +15,10 @@ module.exports = function( grunt ) {
       templates[ name ] = handlebars.compile( src );
     });
 
+    // properties made available for templating
+    var site = {};
+    site.css = grunt.file.expand( grunt.config.get('concat.css.src') );
+
     this.files.forEach( function( file ) {
       file.src.forEach( function( filepath ) {
         var src = grunt.file.read( filepath );
@@ -27,7 +31,8 @@ module.exports = function( grunt ) {
         var dest = file.dest + '/' + splitPath.join( path.sep );
         // process source by template
         var templated = templates[ opts.defaultTemplate ]({
-          content: src
+          content: src,
+          site: site
         });
         grunt.file.write( dest, templated );
       });
