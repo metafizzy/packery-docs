@@ -1,0 +1,38 @@
+/* Code
+------------------------- */
+
+pre, code {
+  font-family: Consolas, Menlo, monospace;
+  background: black;
+  color: white;
+}
+
+pre {
+  padding: 0.5em;
+}
+
+code { padding: 0.1em 0.3em; }
+pre code { padding: 0; }
+
+code .string,
+code .tag .value { color: #78BD55; }
+code .number, /* integer */
+code .cp, /* doctype */
+code .kc { color: #5298D4; } /*boolean*/
+code .keyword { color: #E39B79; } /* keyword */
+code .kd, /* storage */
+code .attribute { color: #A9D866; } /* markup attribute */
+code .p  { color: #EDB; } /* punctuation */
+code .o  { color: #F63; }   /* operator */
+code .nb { color: #AA97AC;} /* support */
+
+/* comment */
+code .comment { color: #666; font-style: italic; }
+
+code .tag { color: #A0C8FC; } /* Markup open tag */
+
+code .nf { color: #9EA8B8; } /* css id */
+code .class { color: #A78352; }  /* CSS class */
+code .rules { color: #FED; }
+code .m  { color: #DE8E50; } /* CSS value */
+code .nd { color: #9FAD7E; } /* CSS pseudo selector */
