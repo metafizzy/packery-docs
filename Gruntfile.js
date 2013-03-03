@@ -61,7 +61,7 @@ module.exports = function( grunt ) {
         // banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       js: {
-        src: [ 'js/*.js' ],
+        src: [ 'js/controller.js', 'js/pages/*.js' ],
         dest: 'build/js/packery-site.js'
       },
       pkgd: {

@@ -63,7 +63,6 @@ module.exports = function( grunt ) {
     this.files.forEach( function( file ) {
       file.src.forEach( function( filepath ) {
         var src = grunt.file.read( filepath );
-        // var basename = path.basename( filepath );
         var splitPath = filepath.split( path.sep );
         // remove leading directory
         if ( splitPath.length > 1 ) {
@@ -74,7 +73,8 @@ module.exports = function( grunt ) {
         src = highlight( src );
         var templated = templates[ opts.defaultTemplate ]({
           content: src,
-          site: site
+          site: site,
+          basename: path.basename( filepath, path.extname( filepath ) )
         });
         grunt.file.write( dest, templated );
       });

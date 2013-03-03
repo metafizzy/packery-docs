@@ -16,6 +16,43 @@
 
 <p>Add and lay out newly appended item elements.</p>
 
+<div class="example">
+  <div class="example-code">
+``` js
+var demo = document.querySelector('#appended-demo');
+var container = demo.querySelector('.packery');
+var button = demo.querySelector('button');
+var pckry = new Packery( container );
+
+eventie.bind( button, 'click', function() {
+  // create new item elements
+  var elems = [];
+  var fragment = document.createDocumentFragment();
+  for ( var i = 0; i < 3; i++ ) {
+    var elem = document.createElement('div');
+    elem.className = '.item';
+    fragment.appendChild( elem );
+    elems.push( elem );
+  }
+  // append elements to container
+  container.appendChild( fragment );
+  // add and lay out newly appended elements
+  pckry.appended( elems );
+});
+```
+  </div>
+  <div id="appended-demo" class="demo">
+    <button class="button">Append</button>
+    <div class="packery">
+      <div class="item w4"></div>
+      <div class="item h4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+    </div>
+  </div>
+</div>
+
 <h2 id="binddraggabillyevents">bindDraggabillyEvents</h2>
 
 ``` js
@@ -23,6 +60,40 @@
 ```
 
 <p>Bind Draggabilly events, so that the Packery instance will layout around the dragged element.</p>
+
+<div class="example">
+  <div class="example-code">
+``` js
+var container = document.querySelector('#bind-draggabilly-demo');
+var itemElems = container.querySelectorAll('.item');
+var pckry = new Packery( container );
+// for each item element
+for ( var i=0, len = itemElems.length; i < len; i++ ) {
+  var elem = itemElems[i];
+  // make element draggable with Draggabilly
+  var draggie = new Draggabilly( elem );
+  // bind Draggabilly events to Packery
+  pckry.bindDraggabillyEvents( draggie );
+}
+```
+  </div>
+  <div id="bind-draggabilly-demo" class="demo packery">
+    <div class="item w4 h2"></div>
+    <div class="item w2 h2"></div>
+    <div class="item w2 h2"></div>
+    <div class="item w2 h4"></div>
+    <div class="item w4 h4"></div>
+    <div class="item w2 h2"></div>
+    <div class="item w2 h4"></div>
+    <div class="item w4 h2"></div>
+    <div class="item w2 h2"></div>
+    <div class="item w2 h2"></div>
+    <div class="item w2 h4"></div>
+    <div class="item w4 h2"></div>
+    <div class="item w4 h4"></div>
+    <div class="item w2 h2"></div>
+  </div>
+</div>
 
 <h2 id="binduidraggableevents">bindUIDraggableEvents</h2>
 

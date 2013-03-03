@@ -16,6 +16,22 @@
   -webkit-flex: 1;
 }
 
+.packery {
+  background: #FCC;
+}
+
+/* clearfix */
+.packery:before,
+.packery:after {
+  content: " ";
+  display: table;
+}
+
+.packery:after {
+  clear: both;
+}
+
+
 .demo .item {
   float: left;
   width:  40px;
@@ -28,6 +44,7 @@
 .demo .item.h2 { height: 80px; }
 
 .demo .item.w4 { width:  160px; }
+.demo .item.h4 { height: 160px; }
 
 /* ---- measurement demos ---- */
 
