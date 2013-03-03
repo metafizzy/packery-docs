@@ -27,6 +27,24 @@
 .demo .item.w2 { width:  80px; }
 .demo .item.h2 { height: 80px; }
 
+.demo .item.w4 { width:  160px; }
+
+/* ---- measurement demos ---- */
+
+#column-width-demo2 .grid-sizer {
+  width: 20%;
+}
+
+#row-height-demo2 .grid-sizer {
+  height: 60px;
+}
+
+#gutter-demo2 .gutter-sizer {
+  width: 3%;
+}
+
+/* ---- place elements ---- */
+
 #placed-elements-demo {
   position: relative;
 }

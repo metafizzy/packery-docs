@@ -24,8 +24,6 @@
 
 <p>The width of a column of a horizontal grid. When set, Packery will align item elements horizontally to this grid.</p>
 
-<p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
-
 <div class="example">
   <div class="example-code">
 ``` js
@@ -38,7 +36,47 @@
     <div class="item"></div>
     <div class="item h2"></div>
     <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
     <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</div>
+
+<p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
+
+<div class="example">
+  <div class="example-code">
+``` html
+<div id="column-width-demo2">
+  <div class="grid-sizer"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  ...
+</div>
+```
+``` css
+#column-width-demo2 .grid-sizer { width: 20%; }
+```
+``` js
+{ "columnWidth": ".grid-sizer",
+  "itemSelector": ".item" }
+```
+  </div>
+  <div id="column-width-demo2" class="demo js-packery" data-packery-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
+    <div class="grid-sizer"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
     <div class="item h2"></div>
     <div class="item"></div>
     <div class="item h2"></div>
@@ -62,8 +100,6 @@
 
 <p>The space between item elements, both vertically and horizontally.</p>
 
-<p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
-
 <div class="example">
   <div class="example-code">
 ``` js
@@ -71,6 +107,46 @@
 ```
   </div>
   <div class="demo js-packery" data-packery-options='{ "gutter": 10 }'>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</div>
+
+<p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
+
+<div class="example">
+  <div class="example-code">
+``` html
+<div id="gutter-demo2">
+  <div class="grid-sizer"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  ...
+</div>
+```
+``` css
+#gutter-demo2 .gutter-sizer { width: 3%; }
+```
+``` js
+{ "columnWidth": ".gutter-sizer",
+  "itemSelector": ".item" }
+```
+  </div>
+  <div id="gutter-demo2" class="demo js-packery" data-packery-options='{ "gutter": ".gutter-sizer", "itemSelector": ".item" }'>
+    <div class="gutter-sizer"></div>
     <div class="item"></div>
     <div class="item w2"></div>
     <div class="item"></div>
@@ -198,7 +274,69 @@
 
 <p>Height of a row of a vertical grid. When set, Packery will align item elements vertically to this grid.</p>
 
+<div class="example">
+  <div class="example-code">
+``` js
+{ "rowHeight": 60 }
+```
+  </div>
+  <div class="demo js-packery" data-packery-options='{ "rowHeight": 60 }'>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item w4"></div>
+    <div class="item"></div>
+    <div class="item w4"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+  </div>
+</div>
+
 <p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the height of that element. See <a href="#element-sizing">Element sizing</a>.</p>
+
+<div class="example">
+  <div class="example-code">
+``` html
+<div id="row-height-demo2">
+  <div class="grid-sizer"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  ...
+</div>
+```
+``` css
+#row-height-demo2 .grid-sizer { height: 60px; }
+```
+``` js
+{ "columnWidth": ".grid-sizer",
+  "itemSelector": ".item" }
+```
+  </div>
+  <div id="row-height-demo2" class="demo js-packery" data-packery-options='{ "rowHeight": ".grid-sizer", "itemSelector": ".item" }'>
+    <div class="grid-sizer"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item w4"></div>
+    <div class="item"></div>
+    <div class="item w4"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+  </div>
+</div>
+
 
 <h2 id="transitionduration">transitionDuration</h2>
 
@@ -240,7 +378,6 @@ columnWidth: '.column-width-sizer'
 ``` css
 .column-width-sizer {
   width: 20%;
-  visibility: hidden;
 }
 ```
 
