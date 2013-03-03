@@ -11,8 +11,12 @@ body {
   background: #F8F8F8;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5,
+.tagline {
   font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
   color: #222;
 }
 
@@ -41,4 +45,10 @@ a:hover {
 
 h3 {
   font-size: 1.4em;
+}
+
+
+.tagline {
+  font-size: 2.0em;
+  line-height: 1.2;
 }
