@@ -7,7 +7,7 @@
   </li>
   <li class="default">
     <span class="key">Default:</span>
-    <span class="value"><code>{ position: "relative" }</code></span>
+    <span class="value"><code>{ position: <span class="string">'relative'</span> }</code></span>
   </li>
 </ul>
 
@@ -48,7 +48,7 @@
   </li>
   <li class="default">
     <span class="key">Default:</span>
-    <span class="value"><code>true</code></span>
+    <span class="value"><code><span class="literal">true</span></code></span>
   </li>
 </ul>
 
@@ -100,7 +100,7 @@
   </li>
   <li class="default">
     <span class="key">Default:</span>
-    <span class="value"><code>"0.4s"</code></span>
+    <span class="value"><code><span class="string">"0.4s"</span></code></span>
   </li>
 </ul>
 
@@ -115,6 +115,7 @@
 ``` js
 var container = document.querySelector('#container');
 var pckry = new Packery( container, {
+  itemSelector: '.item',
   columnWidth: container.querySelector('.column-width-sizer')
 });
 ```

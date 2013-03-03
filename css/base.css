@@ -12,7 +12,8 @@ body {
 }
 
 h1, h2, h3, h4, h5,
-.tagline {
+.tagline,
+.option-properties .key {
   font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
 }
 
@@ -51,4 +52,23 @@ h3 {
 .tagline {
   font-size: 2.0em;
   line-height: 1.2;
+}
+
+/* ---- properties ---- */
+
+.option-properties {
+  padding: 0;
+  list-style: none;
+}
+
+.option-properties li {
+  padding: 0.5em 1.0em;
+  background: #DDD;
+  background: hsla(0, 0%, 0%, 0.1);
+  display: inline;
+  display: inline-block;
+}
+
+.option-properties .value {
+  color: #46A;
 }

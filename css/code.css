@@ -11,14 +11,20 @@ pre {
   padding: 0.5em;
 }
 
-code { padding: 0.1em 0.3em; }
-pre code { padding: 0; }
+code {
+  padding: 0.1em 0.3em;
+  line-height: 1.2;
+}
+pre code {
+  padding: 0;
+  line-height: 1.5;
+}
 
 code .string,
 code .tag .value { color: #78BD55; }
 code .number, /* integer */
 code .cp, /* doctype */
-code .kc { color: #5298D4; } /*boolean*/
+code .literal { color: #5298D4; } /*boolean*/
 code .keyword { color: #E39B79; } /* keyword */
 code .kd, /* storage */
 code .attribute { color: #A9D866; } /* markup attribute */
