@@ -1,10 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  color: #333;
+  color: #555;
+  padding: 10px 20px;
+  background: #F8F8F8;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+  color: #222;
+}
+
+a {
+  color: #D11;
+  text-decoration: none;
+  background: hsla(0, 100%, 50%, 0.02);
+}
+
+a:hover {
+  color: #159;
+}
+
+/* ---- #content ---- */
+
+#content {
+  padding-left: 220px;
+}
+
+#content h2 {
+  border-top: 5px solid #DDD;
+  padding-top: 1.0em;
+  margin-top: 2.0em;
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.4em;
 }

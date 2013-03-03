@@ -153,7 +153,7 @@ module.exports = function( grunt ) {
       if ( sources['.css'] && sources['.css'].length ) {
         var cssSrcs = grunt.config.get( 'concat.css.src' );
         cssSrcs.push.apply( cssSrcs, sources['.css'] );
-        console.log( sources['.css'], cssSrcs );
+        // console.log( sources['.css'], cssSrcs );
         grunt.config.set( 'concat.css.src', cssSrcs );
       }
 

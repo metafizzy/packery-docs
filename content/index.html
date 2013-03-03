@@ -9,7 +9,7 @@
 
 <h2 id="install">Install</h2>
 
-<p>If you're not familiar with the command line, just grab the packaged source files:</p>
+<p>If you're not familiar with the command line, grab a packaged source file:</p>
 
 <ul>
   <li>
@@ -30,7 +30,7 @@ bower install packery
 
 <h2 id="commercial-licensing">Commercial licensing</h2>
 
-<p>Commercial use of Packery is permitted with the purchase of a commercial license. If you are paid to do your job, and part of your job is implementing Packery, a commercial license is required to use Isotope in your projects.</p>
+<p>Packery may be used in commercial projects with the one-time purchase of a commercial license.  The license is priced per developer or organization. What is "commercial use" you ask? If you are paid to do your job, and part of your job is implementing Packery, a commercial license is required.</p>
 
 <p>Use in non-commercial and personal applications is free.</p>
 
@@ -65,14 +65,9 @@ bower install packery
 }
 ```
 
-<h3 id="javascript">JavaScript</h3>
+<h3 id="javascript">Initialize with JavaScript</h3>
 
-<p>Initialize a Packery instance with <code>new Packery( element, options )</code>. The Packery constructor accepts two arguments.</p>
-
-<ol>
-  <li>The container element</li>
-  <li>An options object</li>
-</ol>
+<p>Initialize a Packery instance with <code>new Packery( element, options )</code>. The Packery constructor accepts two arguments: the container element and an options object.</p>
 
 ``` js
 var container = document.querySelector('#container');
@@ -80,6 +75,15 @@ var pckry = new Packery( container, {
   // options
   itemSelector: '.item'
 });
+```
+
+<h3 id="init-with-html">Initialize in HTML</h3>
+
+<p>You can initialize Packery just with HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. Options can be set with a <code>data-packery-options</code> attribute. Options must be valid JSON. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
+
+``` html
+<div id="container" class="js-packery"
+  data-packery-options='{ "itemSelector": ".item", "columnWidth": 200 }'>
 ```
 
 <p>That's it! Now let's do some fun stuff with options and methods.</p>
