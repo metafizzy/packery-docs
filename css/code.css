@@ -42,4 +42,5 @@ code .class { color: #A78352; }  /* CSS class */
 code .rules { color: #FED; }
 code .m  { color: #DE8E50; } /* CSS value */
 code .nd { color: #9FAD7E; } /* CSS pseudo selector */
-code .hexcolor { color: #F63;}
+code .hexcolor { color: #F63; }
+code .at_rule { color: #5FF; }

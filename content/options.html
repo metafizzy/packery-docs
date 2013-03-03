@@ -376,8 +376,12 @@ columnWidth: '.column-width-sizer'
 <p>This allows you to control the size of the Packery layout just with your CSS. This is useful for responsive layouts, keeping control within CSS so you can rely on media queries.</p>
 
 ``` css
-.column-width-sizer {
-  width: 20%;
+/* 5 columns by default */
+.column-width-sizer { width: 20%; }
+
+@media screen and (min-width: 720px) {
+  /* 10 columns for larger screens */
+  .column-width-sizer { width: 10%; }
 }
 ```
 
