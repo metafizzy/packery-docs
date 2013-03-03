@@ -60,11 +60,13 @@ module.exports = function( grunt ) {
         // stripBanners: true,
         // banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      site: {
-        dest: 'dist/packery-site.js'
+      js: {
+        src: [ 'js/*.js' ],
+        dest: 'build/js/packery-site.js'
       },
       pkgd: {
-        dest: 'dist/packery.pkgd.js'
+        // src will be set in bower-map task
+        dest: 'build/packery.pkgd.js'
       },
       css: {
         src: [ 'components/normalize-css/normalize.css', 'css/*.css' ],
@@ -75,12 +77,12 @@ module.exports = function( grunt ) {
     uglify: {
       pkgd: {
         files: {
-          'dist/packery.pkgd.min.js': [ 'dist/packery.pkgd.js' ]
+          'build/packery.pkgd.min.js': [ 'build/packery.pkgd.js' ]
         }
       },
-      site: {
+      js: {
         files: {
-          // 'dist/packery-site.min.js' will be set
+          // 'build/js/packery-site.min.js' will be set
         }
       }
     },
@@ -138,21 +140,24 @@ module.exports = function( grunt ) {
     childProc.on('close', function() {
       bowerMap = JSON.parse( mapSrc );
       // delete bowerMap.jquery;
-      var sources = organizeSources( bowerMap );
+      var bowerSources = organizeSources( bowerMap );
       // remove jQuery, EventEmitter.min.js
-      var jsSources = sources['.js'].filter( function( src ) {
+      var bowerJsSources = bowerSources['.js'].filter( function( src ) {
         return src.indexOf('/jquery.js') === -1 &&
           src.indexOf('.min.js') === -1;
       });
-      grunt.config.set( 'concat.site.src', jsSources );
-      grunt.config.set( 'uglify.site.files', {
-        'dist/packery-site.min.js': jsSources
+      // add bower JS to JS collection
+      var jsSrcs = grunt.config.get('concat.js.src');
+      jsSrcs = bowerJsSources.concat( jsSrcs );
+      grunt.config.set( 'concat.js.src', jsSrcs );
+      grunt.config.set( 'uglify.js.files', {
+        'build/js/packery-site.min.js': jsSrcs
       });
 
       // add CSS sources from Bower
-      if ( sources['.css'] && sources['.css'].length ) {
+      if ( bowerSources['.css'] && bowerSources['.css'].length ) {
         var cssSrcs = grunt.config.get( 'concat.css.src' );
-        cssSrcs.push.apply( cssSrcs, sources['.css'] );
+        cssSrcs.push.apply( cssSrcs, bowerSources['.css'] );
         // console.log( sources['.css'], cssSrcs );
         grunt.config.set( 'concat.css.src', cssSrcs );
       }

@@ -1,0 +1,14 @@
+/* ---- demos ---- */
+
+.demo {
+  background: #DDD;
+}
+
+.demo .item {
+  float: left;
+  width: 30px;
+  height: 30px;
+  background: #AAA;
+  border: 4px solid #444;
+}
+

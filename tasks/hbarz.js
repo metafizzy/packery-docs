@@ -58,6 +58,7 @@ module.exports = function( grunt ) {
     // properties made available for templating
     var site = {};
     site.css = grunt.file.expand( grunt.config.get('concat.css.src') );
+    site.js = grunt.file.expand( grunt.config.get('concat.js.src') );
 
     this.files.forEach( function( file ) {
       file.src.forEach( function( filepath ) {
