@@ -37,8 +37,9 @@ code .comment { color: #666; font-style: italic; }
 
 code .tag { color: #A0C8FC; } /* Markup open tag */
 
-code .nf { color: #9EA8B8; } /* css id */
+code .id { color: #9EA8B8; } /* css id */
 code .class { color: #A78352; }  /* CSS class */
 code .rules { color: #FED; }
 code .m  { color: #DE8E50; } /* CSS value */
 code .nd { color: #9FAD7E; } /* CSS pseudo selector */
+code .hexcolor { color: #F63;}

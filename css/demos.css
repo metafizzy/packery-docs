@@ -1,14 +1,51 @@
 /* ---- demos ---- */
 
+.example {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.example-code {
+  -webkit-flex: 1;
+  margin-right: 20px;
+}
+
+
 .demo {
-  background: #DDD;
+  background: #FDD;
+  -webkit-flex: 1;
 }
 
 .demo .item {
   float: left;
-  width: 30px;
-  height: 30px;
-  background: #AAA;
-  border: 4px solid #444;
+  width:  40px;
+  height: 40px;
+  background: #A08;
+  border: 4px solid #604;
+}
+
+.demo .item.w2 { width:  80px; }
+.demo .item.h2 { height: 80px; }
+
+#placed-elements-demo {
+  position: relative;
+}
+
+#placed-elements-demo .placed {
+  position: absolute;
+  width: 30%;
+  height: 60px;
+  background: red;
+  border: 4px solid #C00;
+}
+
+#placed-elements-demo .placed1 {
+  left: 20%;
+  top: 0;
+}
+
+#placed-elements-demo .placed2 {
+  right: 10%;
+  top: 80px;
 }
 

@@ -29,18 +29,23 @@
 <div class="example">
   <div class="example-code">
 ``` js
-{ "columnWidth": 20 }
+{ "columnWidth": 60 }
 ```
   </div>
-  <div class="demo js-packery" data-packery-options='{ "columnWidth": 20 }'>
+  <div class="demo js-packery" data-packery-options='{ "columnWidth": 60 }'>
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+    <div class="item h2"></div>
     <div class="item"></div>
     <div class="item"></div>
   </div>
@@ -58,6 +63,31 @@
 <p>The space between item elements, both vertically and horizontally.</p>
 
 <p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
+
+<div class="example">
+  <div class="example-code">
+``` js
+{ "gutter": 10 }
+```
+  </div>
+  <div class="demo js-packery" data-packery-options='{ "gutter": 10 }'>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</div>
 
 <h2 id="isresizable">isResizable</h2>
 
@@ -97,6 +127,65 @@
 <p>Specifies which elements are <a href="methods.html#place">placed</a> within the layout. These are special layout elements which will not be laid out by Packery. Rather, Packery will layout item elements <em>around</em> placed elements.</p>
 
 <p><code>placedElements</code> places elements only when the Packery instance is first initialized. You can place additional elements afterwards with the <a href="methods.html#place"><code>place</code> method</a>.</p>
+
+<div class="example">
+  <div class="example-code">
+``` html
+<div id="placed-elements-demo">
+  <div class="placed placed1"></div>
+  <div class="placed placed2"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  ....
+</div>
+```
+``` js
+{ "itemSelector": ".item",
+  "placedElements": ".placed" }
+```
+``` css
+/* position placed elements with CSS */
+#placed-elements-demo {
+  position: relative;
+}
+#placed-elements-demo .placed {
+  position: absolute;
+  width: 30%;
+  height: 60px;
+  background: red;
+  border: 4px solid #C00;
+}
+#placed-elements-demo .placed1 {
+  left: 20%;
+  top: 0;
+}
+#placed-elements-demo .placed2 {
+  right: 10%;
+  top: 80px;
+}
+```
+  </div>
+  <div id="placed-elements-demo" class="demo js-packery" data-packery-options='{ "itemSelector": ".item", "placedElements": ".placed" }'>
+    <div class="placed placed1"></div>
+    <div class="placed placed2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</div>
+
 
 <h2 id="rowheight">rowHeight</h2>
 
