@@ -24,6 +24,8 @@
 
 <p>The width of a column of a horizontal grid. When set, Packery will align item elements horizontally to this grid.</p>
 
+<p>If <code>columnWidth</code> is set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
+
 <h2 id="gutter">gutter</h2>
 
 <ul class="option-properties">
@@ -34,6 +36,8 @@
 </ul>
 
 <p>The space between item elements, both vertically and horizontally.</p>
+
+<p>If <code>gutter</code> is set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
 
 <h2 id="isresizable">isResizable</h2>
 
@@ -83,7 +87,9 @@
   </li>
 </ul>
 
-Height of a row of a vertical grid. When set, Packery will align item elements vertically to this grid.
+<p>Height of a row of a vertical grid. When set, Packery will align item elements vertically to this grid.</p>
+
+<p>If <code>rowHeight</code> is set to an <i>Element</i> or Selector <i>String</i>, Packery will use the height of that element. See <a href="#element-sizing">Element sizing</a>.</p>
 
 <h2 id="transitionduration">transitionDuration</h2>
 
@@ -98,6 +104,34 @@ Height of a row of a vertical grid. When set, Packery will align item elements v
   </li>
 </ul>
 
-The time duration of transitions for item elements.
+<p>The time duration of transitions for item elements.</p>
 
 <h2 id="element-sizing">Element sizing</h2>
+
+<p>For the sizing options <a href="#columnwidth"><code>columnWidth</code></a>, <a href="#rowheight"><code>rowHeight</code></a>, and <a href="#gutter"><code>gutter</code></a>, you may set these options to an <i>Element</i> or <i>String</i>, in addition to a <i>Number</i>.</p>
+
+<p>With an <i>Element</i>, Packery will use its width or height to set the value of the related property.</p>
+
+``` js
+var container = document.querySelector('#container');
+var pckry = new Packery( container, {
+  columnWidth: container.querySelector('.column-width-sizer')
+});
+```
+
+<p>With a <i>String</i>, Packery will use the string as a selector to get the first matching element within the container element. The size of that element is then used.</p>
+
+``` js
+columnWidth: '.column-width-sizer'
+```
+
+<p>This allows you to control the size of the Packery layout just with your CSS. This is useful for responsive layouts, keeping control within CSS so you can rely on media queries.</p>
+
+``` css
+.column-width-sizer {
+  width: 20%;
+  visibility: hidden;
+}
+```
+
+<p>If you are using element sizing, be sure to set <a href="#itemselector"><code>itemSelector</code></a> as well, so the sizing element does not get used in the layout.</p>
