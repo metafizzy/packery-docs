@@ -53,6 +53,8 @@ module.exports = function( grunt ) {
       var name = path.basename( filepath, path.extname( filepath ) );
       var src = grunt.file.read( filepath );
       templates[ name ] = handlebars.compile( src );
+      // register all as partials
+      handlebars.registerPartial( name, src );
     });
 
     // properties made available for templating
@@ -63,6 +65,7 @@ module.exports = function( grunt ) {
     this.files.forEach( function( file ) {
       file.src.forEach( function( filepath ) {
         var src = grunt.file.read( filepath );
+        src = handlebars.compile( src )();
         var splitPath = filepath.split( path.sep );
         // remove leading directory
         if ( splitPath.length > 1 ) {

@@ -135,26 +135,7 @@ eventie.bind( button, 'click', function() {
   <div id="destroy-demo" class="demo">
     <button class="button">Toggle Packery</button>
     <div class="packery">
-      <div class="item"></div>
-      <div class="item h4"></div>
-      <div class="item w2"></div>
-      <div class="item"></div>
-      <div class="item h2"></div>
-      <div class="item w2 h2"></div>
-      <div class="item"></div>
-      <div class="item w4"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item h4"></div>
-      <div class="item w2"></div>
-      <div class="item"></div>
-      <div class="item h2"></div>
-      <div class="item w2 h2"></div>
-      <div class="item"></div>
-      <div class="item w4"></div>
-      <div class="item"></div>
-      <div class="item"></div>
+      {{>demo-items}}
     </div>
   </div>
 </div>
@@ -203,27 +184,8 @@ eventie.bind( container, 'click', function( event ) {
   </div>
   <div id="layout-demo" class="demo">
     <p>Click item to toggle size</p>
-    <div class="packery">
-      <div class="item"></div>
-      <div class="item h4"></div>
-      <div class="item w2"></div>
-      <div class="item"></div>
-      <div class="item h2"></div>
-      <div class="item w2 h2"></div>
-      <div class="item"></div>
-      <div class="item w4"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item h4"></div>
-      <div class="item w2"></div>
-      <div class="item"></div>
-      <div class="item h2"></div>
-      <div class="item w2 h2"></div>
-      <div class="item"></div>
-      <div class="item w4"></div>
-      <div class="item"></div>
-      <div class="item"></div>
+    <div class="packery clickable">
+      {{>demo-items}}
     </div>
   </div>
 </div>
