@@ -94,6 +94,30 @@ PS.methods = function() {
     });
   })();
 
+  // ----- placed demo ----- //
+
+  ( function() {
+    var demo = document.querySelector('#place-demo');
+    var placedElem = demo.querySelector('.placed');
+    var button = demo.querySelector('button');
+    var pckry = new Packery( demo.querySelector('.packery'), {
+      itemSelector: '.item'
+    });
+    var isPlaced = false;
+
+    eventie.bind( button, 'click', function() {
+      // place or unplace element
+      if ( isPlaced ) {
+        pckry.unplace( placedElem );
+      } else {
+        pckry.place( placedElem );
+      }
+      // trigger layout
+      pckry.layout();
+      isPlaced = !isPlaced;
+    });
+  })();
+
 };
 
 })( window );

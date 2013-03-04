@@ -108,7 +108,7 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 <h2 id="destroy">destroy</h2>
 
 ``` js
-.destory()
+.destroy()
 ```
 
 <p>Removes the Packery functionality completely. This will return the element back to its pre-initialized state.</p>
@@ -222,7 +222,6 @@ var pckry = Packery.data( container );
 pckry.layout();
 ```
 
-
 <h2 id="place">place</h2>
 
 ``` js
@@ -230,6 +229,39 @@ pckry.layout();
 ```
 
 <p>Place the elements. Packery will lay out item elements <em>around</em> placed elements.</p>
+
+<div class="example">
+  <div class="example-code">
+``` js
+var demo = document.querySelector('#place-demo');
+var placedElem = demo.querySelector('.placed');
+var button = demo.querySelector('button');
+var pckry = new Packery( demo.querySelector('.packery'), {
+  itemSelector: '.item'
+});
+var isPlaced = false;
+
+eventie.bind( button, 'click', function() {
+  // place or unplace element
+  if ( isPlaced ) {
+    pckry.unplace( placedElem );
+  } else {
+    pckry.place( placedElem );
+  }
+  // trigger layout
+  pckry.layout();
+  isPlaced = !isPlaced;
+});
+```
+  </div>
+  <div id="place-demo" class="demo">
+    <button class="button">Toggle placed</button>
+    <div class="packery has-placed">
+      <div class="placed"></div>
+      {{>demo-items}}
+    </div>
+  </div>
+</div>
 
 <h2 id="reloaditems">reloadItems</h2>
 

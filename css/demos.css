@@ -71,13 +71,13 @@
   width: 3%;
 }
 
-/* ---- place elements ---- */
+/* ---- placed ---- */
 
-#placed-elements-demo {
+.has-placed {
   position: relative;
 }
 
-#placed-elements-demo .placed {
+.demo .placed {
   position: absolute;
   width: 30%;
   height: 60px;
@@ -95,6 +95,14 @@
   top: 80px;
 }
 
+#place-demo .placed {
+  left: 20%;
+  top: 50px;
+  width: 50%;
+  height: 100px;
+}
+
+#place-demo .item { opacity: 0.8; }
 
 /* ---- bind draggabilly ---- */
 
@@ -116,7 +124,7 @@
 
 /* ---- layout ---- */
 
-#layout-demo .item:hover {
+.clickable .item:hover {
   border-color: white;
   cursor: pointer;
 }

@@ -3,6 +3,7 @@
   "undef": true,
   "unused": true,
   "predef": {
+    "classie": false,
     "docListener": false,
     "Packery": false,
     "eventie": false,
