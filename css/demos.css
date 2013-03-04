@@ -47,6 +47,12 @@
 .demo .item.h4 { height: 160px; background: #A80; }
 .demo .item.w4 { width:  160px; background: #80A; }
 
+.demo .item.gigante {
+  width: 120px;
+  height: 160px;
+  z-index: 10; /* keep it above other items */
+}
+
 .demo .button {
   margin: 0.5em;
 }
@@ -106,4 +112,11 @@
   background: #09F;
   z-index: 10;
   box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+}
+
+/* ---- layout ---- */
+
+#layout-demo .item:hover {
+  border-color: white;
+  cursor: pointer;
 }

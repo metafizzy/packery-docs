@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "author": "David DeSandro / Metafizzy",
   "dependencies": {
+    "classie": "desandro/classie#>=0.0.4",
     "draggabilly": "desandro/draggabilly#>=0.0.3",
+    "eventie": "desandro/eventie",
     "jquery-ui-draggable": "git://gist.github.com/4985610.git",
     "normalize-css": "~2",
     "packery": "../packery"

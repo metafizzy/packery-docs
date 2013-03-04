@@ -13,7 +13,9 @@ function getItemElement() {
 }
 
 PS.methods = function() {
+
   // ----- appended ----- //
+
   ( function() {
     var demo = document.querySelector('#appended-demo');
     var container = demo.querySelector('.packery');
@@ -37,6 +39,7 @@ PS.methods = function() {
   })();
 
   // ----- bind Draggabilly ----- //
+
   ( function() {
     var container = document.querySelector('#bind-draggabilly-demo');
     var itemElems = container.querySelectorAll('.item');
@@ -55,6 +58,7 @@ PS.methods = function() {
   })();
 
   // ----- destroy demo ----- //
+
   ( function() {
     var demo = document.querySelector('#destroy-demo');
     var container = demo.querySelector('.packery');
@@ -72,6 +76,23 @@ PS.methods = function() {
     });
   })();
 
+  // ----- layout demo ----- //
+
+  ( function() {
+    var container = document.querySelector('#layout-demo .packery');
+    var pckry = new Packery( container );
+
+    eventie.bind( container, 'click', function( event ) {
+      // don't proceed if item was not clicked on
+      if ( !classie.has( event.target, 'item' ) ) {
+        return;
+      }
+      // change size of item via class
+      classie.toggle( event.target, 'gigante' );
+      // trigger layout
+      pckry.layout();
+    });
+  })();
 
 };
 

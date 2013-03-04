@@ -42,7 +42,7 @@ eventie.bind( button, 'click', function() {
 ```
   </div>
   <div id="appended-demo" class="demo">
-    <button class="button">Append</button>
+    <button class="button">Append items</button>
     <div class="packery">
       <div class="item w4"></div>
       <div class="item h4"></div>
@@ -83,17 +83,16 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
   <div id="bind-draggabilly-demo" class="demo packery">
     <div class="item w4 h2"></div>
     <div class="item w2 h2"></div>
+    <div class="item w2 h4"></div>
+    <div class="item w2 h2"></div>
+    <div class="item w4 h4"></div>
     <div class="item w2 h2"></div>
     <div class="item w2 h4"></div>
     <div class="item w4 h4"></div>
     <div class="item w2 h2"></div>
-    <div class="item w2 h4"></div>
-    <div class="item w4 h2"></div>
-    <div class="item w2 h2"></div>
     <div class="item w2 h2"></div>
     <div class="item w2 h4"></div>
     <div class="item w4 h2"></div>
-    <div class="item w4 h4"></div>
     <div class="item w2 h2"></div>
   </div>
 </div>
@@ -184,6 +183,51 @@ eventie.bind( button, 'click', function() {
 
 <p>Lay out all item elements.</p>
 
+<div class="example">
+  <div class="example-code">
+``` js
+var container = document.querySelector('#layout-demo  .packery');
+var pckry = new Packery( container );
+
+eventie.bind( container, 'click', function( event ) {
+  // don't proceed if item was not clicked on
+  if ( !classie.has( event.target, 'item' ) ) {
+    return;
+  }
+  // change size of item via class
+  classie.toggle( event.target, 'gigante' );
+  // trigger layout
+  pckry.layout();
+});
+```
+  </div>
+  <div id="layout-demo" class="demo">
+    <p>Click item to toggle size</p>
+    <div class="packery">
+      <div class="item"></div>
+      <div class="item h4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2 h2"></div>
+      <div class="item"></div>
+      <div class="item w4"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2 h2"></div>
+      <div class="item"></div>
+      <div class="item w4"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+</div>
+
 <h2 id="layoutitems">layoutItems</h2>
 
 ``` js
@@ -199,6 +243,23 @@ Packery.data( element )
 ```
 
 <p>Get the Packery instance from an element. Note this method is of <code>Packery</code>, rather than of a Packery instance.</p>
+
+<p>This method is useful to access the Packery instance after it was initialized via HTML.</p>
+
+``` html
+<div id="container" class="js-packery" data-packery-options='{...}'>
+  <div class="item"></div>
+  <div class="item"></div>
+  ...
+</div>
+```
+``` js
+var container = document.querySelector('#container');
+var pckry = Packery.data( container );
+// do stuff with Packery instance
+pckry.layout();
+```
+
 
 <h2 id="place">place</h2>
 
