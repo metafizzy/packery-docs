@@ -13,8 +13,17 @@ body {
   background: #FAF3F5;
 }
 
+h1, h2, h3, h4, h5, h6,
+p,
+ol, ul,
+pre {
+  margin-top: 0;
+  margin-bottom: 1.0em;
+}
+
 /* Montserrat */
 h1, h2, h3, h4, h5,
+#site-nav,
 .tagline,
 .option-properties .key,
 .button {
@@ -32,8 +41,6 @@ a code {
   background: hsla(0, 100%, 50%, 0.02);
 }
 
-
-
 a:hover,
 a:hover code {
   color: #159;
@@ -42,7 +49,7 @@ a:hover code {
 /* ---- #content ---- */
 
 #content {
-  padding-left: 220px;
+  padding-left: 200px;
 }
 
 #content h2 {
@@ -82,7 +89,6 @@ h3 {
   background: #B0D;
   box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.6);
 }
-
 
 /* ---- properties ---- */
 

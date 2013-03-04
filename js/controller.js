@@ -24,6 +24,21 @@ docListener.on( 'ready', function() {
   if ( typeof PS[ pageAttr ] === 'function' ) {
     PS[ pageAttr ]();
   }
+
+  var navContainer = document.querySelector('#site-nav .packery');
+  var navPckry = new Packery( navContainer, {
+    columnWidth: 20,
+    rowHeight: 20,
+    gutter: 4
+  });
+  var itemElems = navPckry.getItemElements();
+  for ( var i=0, len = itemElems.length; i < len; i++ ) {
+    var elem = itemElems[i];
+    var draggie = new Draggabilly( elem );
+    navPckry.bindDraggabillyEvents( draggie );
+  }
+
+
 });
 
 // -------------------------- helpers -------------------------- //

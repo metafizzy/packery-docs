@@ -1,0 +1,50 @@
+/* ---- site nav ---- */
+
+#site-nav {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  width: 160px;
+}
+
+#site-nav h1 {
+  font-size: 2.4em;
+  margin-bottom: 0.5em;
+}
+
+#site-nav a {
+  background: none;
+}
+
+#site-nav ol {
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+}
+
+#site-nav li {
+  margin-bottom: 0.2em;
+}
+
+#site-nav ol a {
+  color: #C2C;
+}
+
+#site-nav .packery {
+  background: none;
+  margin-bottom: 1.5em;
+  width: 92px;
+}
+
+#site-nav .item {
+  width: 20px;
+  height: 20px;
+  float: left;
+  background: #A08;
+  border: 4px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.3);
+}
+
+#site-nav .item.w2 { width: 44px; background: #8A0; }
+#site-nav .item.h2 { height: 44px; background: #0A8; }
+#site-nav .item.w2.h2 { background: #80A; }
