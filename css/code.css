@@ -3,8 +3,9 @@
 
 pre, code {
   font-family: Consolas, Menlo, monospace;
-  background: #222;
-  color: white;
+  background: #EEE;
+  background: hsla(0, 0%, 0%, 0.05);
+  color: #333;
 }
 
 pre {
@@ -18,29 +19,30 @@ code {
 pre code {
   padding: 0;
   line-height: 1.5;
+  background: none;
 }
 
 code .string,
-code .tag .value { color: #78BD55; }
+code .tag .value { color: #292; }
 code .number, /* integer */
 code .cp, /* doctype */
-code .literal { color: #5298D4; } /*boolean*/
-code .keyword { color: #E39B79; } /* keyword */
+code .literal { color: #07D; } /*boolean*/
+code .keyword { color: #C31; } /* keyword */
 code .kd, /* storage */
-code .attribute { color: #A9D866; } /* markup attribute */
+code .attribute { color: #A61; } /* markup attribute */
 code .p  { color: #EDB; } /* punctuation */
 code .o  { color: #F63; }   /* operator */
 code .nb { color: #AA97AC;} /* support */
 
 /* comment */
-code .comment { color: #666; font-style: italic; }
+code .comment { color: #999; font-style: italic; }
 
-code .tag { color: #A0C8FC; } /* Markup open tag */
+code .tag { color: #37B; } /* Markup open tag */
 
-code .id { color: #9EA8B8; } /* css id */
-code .class { color: #A78352; }  /* CSS class */
-code .rules { color: #FED; }
+code .id { color: #567; } /* css id */
+code .class { color: #A63; }  /* CSS class */
+code .rules { color: #431; }
 code .m  { color: #DE8E50; } /* CSS value */
 code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 code .hexcolor { color: #F63; }
-code .at_rule { color: #5FF; }
+code .at_rule { color: #088; }

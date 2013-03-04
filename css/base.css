@@ -25,13 +25,17 @@ h1, h2, h3, h4, h5 {
   color: #222;
 }
 
-a {
+a,
+a code {
   color: #D11;
   text-decoration: none;
   background: hsla(0, 100%, 50%, 0.02);
 }
 
-a:hover {
+
+
+a:hover,
+a:hover code {
   color: #159;
 }
 
@@ -88,11 +92,12 @@ h3 {
 }
 
 .option-properties li {
-  padding: 0.5em 1.0em;
+  padding: 0.3em 0.8em;
   background: #DDD;
-  background: hsla(0, 0%, 0%, 0.1);
+  background: hsla(0, 0%, 0%, 0.02);
   display: inline;
   display: inline-block;
+  border: 4px solid hsla(0, 0%, 0%, 0.1);
 }
 
 .option-properties .value {
