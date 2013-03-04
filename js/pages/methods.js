@@ -6,8 +6,8 @@ function getItemElement() {
   var elem = document.createElement('div');
   var wRand = Math.random();
   var hRand = Math.random();
-  var widthClass = wRand > 0.85 ? 'w4' : wRand > 0.4 ? 'w2' : '';
-  var heightClass = hRand > 0.85 ? 'h4' : hRand > 0.4 ? 'h2' : '';
+  var widthClass = wRand > 0.85 ? 'w4' : wRand > 0.7 ? 'w2' : '';
+  var heightClass = hRand > 0.85 ? 'h4' : hRand > 0.7 ? 'h2' : '';
   elem.className = 'item ' + widthClass + ' ' + heightClass;
   return elem;
 }
