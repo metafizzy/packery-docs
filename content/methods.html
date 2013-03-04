@@ -66,7 +66,10 @@ eventie.bind( button, 'click', function() {
 ``` js
 var container = document.querySelector('#bind-draggabilly-demo');
 var itemElems = container.querySelectorAll('.item');
-var pckry = new Packery( container );
+var pckry = new Packery( container, {
+  columnWidth: 80,
+  rowHeight: 80
+});
 // for each item element
 for ( var i=0, len = itemElems.length; i < len; i++ ) {
   var elem = itemElems[i];
@@ -106,10 +109,56 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 <h2 id="destroy">destroy</h2>
 
 ``` js
-.bindUIDraggableEvents( $elements )
+.destory()
 ```
 
 <p>Removes the Packery functionality completely. This will return the element back to its pre-initialized state.</p>
+
+<div class="example">
+  <div class="example-code">
+``` js
+var demo = document.querySelector('#destroy-demo');
+var container = demo.querySelector('.packery');
+var button = demo.querySelector('button');
+var pckry = new Packery( container );
+var isActive = true;
+
+eventie.bind( button, 'click', function() {
+  if ( isActive ) {
+    pckry.destroy();
+  } else {
+    pckry = new Packery( container );
+  }
+  isActive = !isActive;
+});
+```
+  </div>
+  <div id="destroy-demo" class="demo">
+    <button class="button">Toggle Packery</button>
+    <div class="packery">
+      <div class="item"></div>
+      <div class="item h4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2 h2"></div>
+      <div class="item"></div>
+      <div class="item w4"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2 h2"></div>
+      <div class="item"></div>
+      <div class="item w4"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+</div>
 
 <h2 id="getitemelements">getItemElements</h2>
 

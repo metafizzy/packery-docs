@@ -13,10 +13,12 @@ body {
   background: #FAF3F5;
 }
 
+/* Montserrat */
 h1, h2, h3, h4, h5,
 .tagline,
-.option-properties .key {
-  font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+.option-properties .key,
+.button {
+  font-family: 'Montserrat', Gotham, 'Proxima Nova', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
@@ -55,6 +57,28 @@ h3 {
   font-size: 2.0em;
   line-height: 1.2;
 }
+
+/* ---- button ---- */
+
+.button {
+  background: #C0E;
+  border: none;
+  padding: 0.8em 1.0em;
+  color: white;
+  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.3);
+  box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.4);
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #D3F;
+}
+
+.button:active {
+  background: #B0D;
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.6);
+}
+
 
 /* ---- properties ---- */
 

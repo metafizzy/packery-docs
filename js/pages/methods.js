@@ -40,7 +40,10 @@ PS.methods = function() {
   ( function() {
     var container = document.querySelector('#bind-draggabilly-demo');
     var itemElems = container.querySelectorAll('.item');
-    var pckry = new Packery( container );
+    var pckry = new Packery( container, {
+      columnWidth: 80,
+      rowHeight: 80
+    });
     // for each item element
     for ( var i=0, len = itemElems.length; i < len; i++ ) {
       var elem = itemElems[i];
@@ -50,7 +53,25 @@ PS.methods = function() {
       pckry.bindDraggabillyEvents( draggie );
     }
   })();
-  
+
+  // ----- destroy demo ----- //
+  ( function() {
+    var demo = document.querySelector('#destroy-demo');
+    var container = demo.querySelector('.packery');
+    var button = demo.querySelector('button');
+    var pckry = new Packery( container );
+    var isActive = true;
+
+    eventie.bind( button, 'click', function() {
+      if ( isActive ) {
+        pckry.destroy();
+      } else {
+        pckry = new Packery( container );
+      }
+      isActive = !isActive;
+    });
+  })();
+
 
 };
 

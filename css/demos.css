@@ -46,6 +46,10 @@
 .demo .item.w4 { width:  160px; }
 .demo .item.h4 { height: 160px; }
 
+.demo .button {
+  margin: 0.5em;
+}
+
 /* ---- measurement demos ---- */
 
 #column-width-demo2 .grid-sizer {
@@ -84,3 +88,19 @@
   top: 80px;
 }
 
+/* ---- bind draggabilly ---- */
+
+#bind-draggabilly-demo .item {
+  cursor: move;
+}
+
+#bind-draggabilly-demo .item:hover {
+  border-color: white;
+}
+
+.demo .item.is-dragging,
+.demo .item.is-positioning-post-drag {
+  border-color: white;
+  background: #09F;
+  z-index: 10;
+}
