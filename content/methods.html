@@ -167,7 +167,7 @@ eventie.bind( button, 'click', function() {
 <div class="example">
   <div class="example-code">
 ``` js
-var container = document.querySelector('#layout-demo  .packery');
+var container = document.querySelector('#layout-demo .packery');
 var pckry = new Packery( container );
 
 eventie.bind( container, 'click', function( event ) {
@@ -228,7 +228,7 @@ pckry.layout();
 .place( elements )
 ```
 
-<p>Place the elements. Packery will lay out item elements <em>around</em> placed elements.</p>
+<p>Place the elements in the layout. Packery will lay out item elements <em>around</em> placed elements.</p>
 
 <div class="example">
   <div class="example-code">
@@ -279,10 +279,36 @@ eventie.bind( button, 'click', function() {
 
 <p>Remove elements from the Packery instance, then from the DOM.</p>
 
+<div class="example">
+  <div class="example-code">
+``` js
+var container = document.querySelector('#remove-demo .packery');
+var pckry = new Packery( container );
+
+eventie.bind( container, 'click', function() {
+  // don't proceed if item was not clicked on
+  if ( !classie.has( event.target, 'item' ) ) {
+    return;
+  }
+  // remove clicked element
+  pckry.remove( event.target );
+  // layout remaining item elements
+  pckry.layout();
+});
+```
+  </div>
+  <div id="remove-demo" class="demo">
+    <p>Click items to remove them</p>
+    <div class="packery clickable">
+      {{>demo-items}}
+    </div>
+  </div>
+</div>
+
 <h2 id="unplace">unplace</h2>
 
 ``` js
 .unplace( elements )
 ```
 
-<p>Un-place the elements, so that Packery will no longer layout item elements around them.</p>
+<p>Un-<a href="#place">place</a> the elements, so that Packery will no longer layout item elements around them.</p>

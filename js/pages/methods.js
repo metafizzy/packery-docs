@@ -118,6 +118,24 @@ PS.methods = function() {
     });
   })();
 
+  // ----- remove demo ----- //
+
+  ( function() {
+    var container = document.querySelector('#remove-demo .packery');
+    var pckry = new Packery( container );
+
+    eventie.bind( container, 'click', function() {
+      // don't proceed if item was not clicked on
+      if ( !classie.has( event.target, 'item' ) ) {
+        return;
+      }
+      // remove clicked element
+      pckry.remove( event.target );
+      // layout remaining item elements
+      pckry.layout();
+    });
+  })();
+
 };
 
 })( window );
