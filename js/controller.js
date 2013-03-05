@@ -27,15 +27,14 @@ docListener.on( 'ready', function() {
 
   // ----- side bar lil packery ----- //
 
-  var isRando = true;Math.random() > 0.5;
+  var isRando = Math.random() > 0.5;
   var navContainer = document.querySelector('#site-nav .packery');
   var navPckry = new Packery( navContainer, {
+    itemSelector: '.item',
     columnWidth: isRando ? 0 : 20,
     rowHeight: isRando ? 0 : 20,
     gutter: 4,
-    isResizable: false,
-    containerStyle: {},
-    placedElements: '.placed'
+    isResizable: false
   });
   var itemCount = 0;
   var maxY = isRando ? 115 : 125;
@@ -59,7 +58,7 @@ docListener.on( 'ready', function() {
     navPckry.appended( item );
     itemCount++;
     // add another item
-    if ( navPckry.maxY < 185 ) {
+    if ( navPckry.maxY < maxY && itemCount < maxCount ) {
       setTimeout( addItem, 40 );
     }
   }
