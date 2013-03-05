@@ -22,8 +22,8 @@ function getItem( isRando ) {
   item.className = 'item ' + widthClass + ' ' + heightClass;
   // random sizing
   if ( isRando ) {
-    item.style.width =  Math.round( Math.random() * Math.random() * 110 + 25 ) + 'px';
-    item.style.height = Math.round( Math.random() * Math.random() * 110 + 25 ) + 'px';
+    item.style.width =  Math.round( Math.random() * Math.random() * 130 + 35 ) + 'px';
+    item.style.height = Math.round( Math.random() * Math.random() * 130 + 35 ) + 'px';
   }
   return item;
 }
@@ -34,7 +34,7 @@ function getItem( isRando ) {
  */
 function addItems( pckry, isRando ) {
   // stop after packery reaches height
-  if ( pckry.maxY > 350 ) {
+  if ( pckry.maxY > 260 ) {
     return;
   }
   var fragment = document.createDocumentFragment();
@@ -60,8 +60,8 @@ PS.index = function() {
 
   var gridElem = document.querySelector('#grid-packery');
   var gridPckry = new Packery( gridElem, {
-    columnWidth: 40,
-    rowHeight: 40,
+    columnWidth: 50,
+    rowHeight: 50,
     gutter: 4
   });
 

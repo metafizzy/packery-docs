@@ -1,14 +1,37 @@
+#hero-demos {
+  margin-bottom: 2.0em;
+}
+
 #hero-demos .cell {
-  min-height: 400px;
+  min-height: 300px;
+}
+
+#hero-demos .packery {
+  padding: 4px;
 }
 
 #grid-packery .item {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
-#grid-packery .item.w2 { width:  84px; }
-#grid-packery .item.h2 { height: 84px; }
+#grid-packery .item.w2 { width:  104px; }
+#grid-packery .item.h2 { height: 104px; }
 
-#grid-packery .item.w4 { width:  172px; }
-#grid-packery .item.h4 { height: 172px; }
+#grid-packery .item.w4 { width:  212px; }
+#grid-packery .item.h4 { height: 212px; }
+
+
+/* ---- big ol buttons ---- */
+
+.big-ol-buttons {
+  list-style: none;
+  padding: 0;
+}
+
+.big-ol-buttons .button {
+  display: block;
+  font-size: 1.6em;
+  line-height: 1.2em;
+  padding-left: 80px;
+}
