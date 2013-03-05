@@ -25,39 +25,45 @@ docListener.on( 'ready', function() {
     PS[ pageAttr ]();
   }
 
+  // ----- side bar lil packery ----- //
+
+  var isRando = true;Math.random() > 0.5;
   var navContainer = document.querySelector('#site-nav .packery');
   var navPckry = new Packery( navContainer, {
-    columnWidth: 20,
-    rowHeight: 20,
-    gutter: 4
+    columnWidth: isRando ? 0 : 20,
+    rowHeight: isRando ? 0 : 20,
+    gutter: 4,
+    isResizable: false,
+    containerStyle: {},
+    placedElements: '.placed'
   });
   var itemCount = 0;
+  var maxY = isRando ? 115 : 125;
+  var maxCount = isRando ? 1000 : 16;
   function addItem() {
     var item = document.createElement('div');
     var wRand = Math.random();
     var widthClass = wRand > 0.9 ? 'w4' :
       wRand > 0.7 ? 'w2' : '';
     var hRand = Math.random();
-    var heightClass = hRand > 0.9 ? 'h4' :
-      hRand > 0.7 ? 'h2' : '';
+    var heightClass = hRand > 0.7 ? 'h2' : '';
     item.className = 'item ' + widthClass + ' ' + heightClass;
+    // random sizing
+    if ( isRando ) {
+      item.style.width = Math.random() * Math.random() * 60 + 16 + 'px';
+      item.style.height = Math.random() * Math.random() * 60 + 16 + 'px';
+    }
     navContainer.appendChild( item );
     var draggie = new Draggabilly( item );
     navPckry.bindDraggabillyEvents( draggie );
     navPckry.appended( item );
     itemCount++;
-    if ( itemCount < 20 ) {
-      setTimeout( addItem, 100 );
+    // add another item
+    if ( navPckry.maxY < 185 ) {
+      setTimeout( addItem, 40 );
     }
   }
   addItem();
-  // var itemElems = navPckry.getItemElements();
-  // for ( var i=0, len = itemElems.length; i < len; i++ ) {
-  //   var elem = itemElems[i];
-  //   var draggie = new Draggabilly( elem );
-  //   navPckry.bindDraggabillyEvents( draggie );
-  // }
-
 
 });
 
