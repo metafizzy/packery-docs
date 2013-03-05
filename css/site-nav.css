@@ -10,7 +10,6 @@
 #site-nav h1 {
   font-size: 2.65em;
   margin-bottom: 0.2em;
-  position: relative;
 }
 
 #site-nav a {
@@ -21,7 +20,6 @@
   padding: 0;
   list-style: none;
   font-size: 18px;
-    position: relative;
 }
 
 #site-nav li {
@@ -39,11 +37,8 @@
 }
 
 #site-nav .packery {
-  position: absolute;
-  width: 100%;
   background: none;
   margin-bottom: 1.5em;
-  opacity: 0.1;
 }
 
 #site-nav .item {

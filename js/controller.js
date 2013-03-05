@@ -34,16 +34,12 @@ docListener.on( 'ready', function() {
     columnWidth: isRando ? 0 : 20,
     rowHeight: isRando ? 0 : 20,
     gutter: 4,
-    isResizable: false,
-    containerStyle: {}
+    isResizable: false
   });
   var itemCount = 0;
   var maxY = isRando ? 115 : 125;
   var maxCount = isRando ? 1000 : 16;
-  var windowHeight = window.innerHeight;
-
-  function getItem() {
-    itemCount++;
+  function addItem() {
     var item = document.createElement('div');
     var wRand = Math.random();
     var widthClass = wRand > 0.9 ? 'w4' :
@@ -56,26 +52,17 @@ docListener.on( 'ready', function() {
       item.style.width = Math.random() * Math.random() * 60 + 16 + 'px';
       item.style.height = Math.random() * Math.random() * 60 + 16 + 'px';
     }
+    navContainer.appendChild( item );
     var draggie = new Draggabilly( item );
     navPckry.bindDraggabillyEvents( draggie );
-    return item;
-  }
-
-  function addItems() {
-    var fragment = document.createDocumentFragment();
-    var items = [ getItem(), getItem(), getItem() ];
-    for ( var i=0, len = items.length; i < len; i++ ) {
-      var item = items[i];
-      fragment.appendChild( item );
-    }
-    navContainer.appendChild( fragment );
-    navPckry.appended( items );
+    navPckry.appended( item );
+    itemCount++;
     // add another item
-    if ( navPckry.maxY < windowHeight * 0.8 ) {
-      setTimeout( addItems, 40 );
+    if ( navPckry.maxY < maxY && itemCount < maxCount ) {
+      setTimeout( addItem, 40 );
     }
   }
-  addItems();
+  addItem();
 
 });
 
