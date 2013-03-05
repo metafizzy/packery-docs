@@ -109,3 +109,52 @@ h3 {
 .option-properties .value {
   color: #46A;
 }
+
+/* ---- packery ---- */
+
+/* clearfix */
+.packery:before,
+.packery:after {
+  content: " ";
+  display: table;
+}
+
+.packery:after {
+  clear: both;
+}
+
+/* ---- packery items ---- */
+
+.packery .item {
+  float: left;
+  background: #A08;
+  border: 4px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.packery .item.w2 { background: #8A0; }
+.packery .item.h2 { background: #0A8; }
+.packery .item.h4 { background: #A80; }
+.packery .item.w4 { background: #80A; }
+
+
+/* ---- two up ---- */
+
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.row .cell {
+  -webkit-flex: 1;
+  margin-right: 5%;
+}
+
+.row .cell:last-child {
+  margin-right: 0;
+}
+
+.two-up {
+  background: #FDD;
+  -webkit-flex: 1;
+}

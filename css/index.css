@@ -1,0 +1,14 @@
+#hero-demos .cell {
+  height: 400px;
+}
+
+#grid-packery .item {
+  width: 40px;
+  height: 40px;
+}
+
+#grid-packery .item.w2 { width:  84px; }
+#grid-packery .item.h2 { height: 84px; }
+
+#grid-packery .item.w4 { width:  172px; }
+#grid-packery .item.h4 { height: 172px; }

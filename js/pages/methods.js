@@ -1,4 +1,10 @@
-( function() {
+/**
+ * methods page
+ */
+
+( function( window ) {
+
+'use strict';
 
 var PS = window.PS;
 
