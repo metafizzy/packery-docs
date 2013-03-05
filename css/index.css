@@ -1,5 +1,5 @@
 #hero-demos .cell {
-  height: 400px;
+  min-height: 400px;
 }
 
 #grid-packery .item {
