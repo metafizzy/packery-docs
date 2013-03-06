@@ -22,8 +22,8 @@ function getItem( isRando ) {
   item.className = 'item ' + widthClass + ' ' + heightClass;
   // random sizing
   if ( isRando ) {
-    item.style.width =  Math.round( Math.random() * Math.random() * 130 + 35 ) + 'px';
-    item.style.height = Math.round( Math.random() * Math.random() * 130 + 35 ) + 'px';
+    item.style.width =  Math.round( Math.random() * Math.random() * 80 + 20 ) + 'px';
+    item.style.height = Math.round( Math.random() * Math.random() * 80 + 20 ) + 'px';
   }
   return item;
 }
@@ -32,26 +32,27 @@ function getItem( isRando ) {
  * add items to a Packery
  * keep doing it until it's full
  */
-function addItems( pckry, isRando ) {
+function addItems( pckry, maxY, isRando ) {
   // stop after packery reaches height
-  if ( pckry.maxY > 260 ) {
+  // console.log(pckry.maxY);
+  if ( pckry.maxY > maxY ) {
     return;
   }
   var fragment = document.createDocumentFragment();
   var items = [];
-  for ( var i=0; i < 1; i++ ) {
+  for ( var i=0; i < 4; i++ ) {
     var item = getItem( isRando );
     items.push( item );
     fragment.appendChild( item );
-    var draggie = new Draggabilly( item );
-    pckry.bindDraggabillyEvents( draggie );
+    // var draggie = new Draggabilly( item );
+    // pckry.bindDraggabillyEvents( draggie );
   }
 
   pckry.element.appendChild( fragment );
   pckry.appended( items );
   // do it again
   setTimeout( function() {
-    addItems( pckry, isRando );
+    addItems( pckry, maxY, isRando );
   }, 40 );
 
 }
@@ -74,10 +75,16 @@ PS.index = function() {
 
   // addItems( randoPckry, true );
 
-  var heroElem = document.querySelector('#hero .packery');
-  var heroPckry = new Packery( heroElem );
+  var hero = document.querySelector('#hero');
+  var heroPackryElem = hero.querySelector('#hero .packery');
+  var heroPckry = new Packery( heroPackryElem, {
+    itemSelector: '.item',
+    placedElements: '.placed',
+    gutter: 4,
+    containerStyle: {}
+  });
 
-  addItems( heroPckry, true );
+  addItems( heroPckry, hero.offsetHeight + 40, true );
 
 };
 

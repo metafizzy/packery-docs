@@ -3,6 +3,7 @@
   color: #FAF3F5;
   padding: 20px 20px 20px 200px;
   position: relative;
+  overflow: hidden;
 }
 
 /* keep above packery demo */
@@ -15,12 +16,13 @@
   font-size: 140px;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin-bottom: 0.25em;
+  margin-bottom: 30px;
+  padding-top: 20px;
 }
 
 #hero .tagline {
   font-size: 32px;
-  margin-bottom: 2.0em;
+  margin-bottom: 30px;
 }
 
 
@@ -30,7 +32,54 @@
   height: 100%;
   left: 0;
   top: 0;
-  padding-left: 200px;
+  padding: 4px 4px 0 200px;
   border: none;
 }
 
+#hero .item {
+  background: #80A;
+}
+
+
+#hero .placed {
+  position: absolute;
+/*  background: hsla(0, 0%, 100%, 0.4); */
+  z-index: 2;
+}
+
+#hero .placed-packery {
+  width: 570px;
+  height: 90px;
+  left: 200px;
+  top: 92px;
+}
+
+#hero .placed-p {
+  width: 95px;
+  height: 90px;
+  left: 200px;
+  top: 70px;
+}
+
+#hero .placed-k {
+  width: 34px;
+  height: 90px;
+  left: 459px;
+  top: 65px;
+}
+
+#hero .placed-y {
+  width: 70px;
+  height: 88px;
+  left: 675px;
+  top: 120px;
+}
+
+
+
+#hero .placed-tagline {
+  width: 494px;
+  height: 40px;
+  left: 200px;
+  top: 239px;
+}
