@@ -25,45 +25,6 @@ docListener.on( 'ready', function() {
     PS[ pageAttr ]();
   }
 
-  // ----- side bar lil packery ----- //
-
-  var isRando = Math.random() > 0.5;
-  var navContainer = document.querySelector('#site-nav .packery');
-  var navPckry = new Packery( navContainer, {
-    itemSelector: '.item',
-    columnWidth: isRando ? 0 : 20,
-    rowHeight: isRando ? 0 : 20,
-    gutter: 4,
-    isResizable: false
-  });
-  var itemCount = 0;
-  var maxY = isRando ? 115 : 125;
-  var maxCount = isRando ? 1000 : 16;
-  function addItem() {
-    var item = document.createElement('div');
-    var wRand = Math.random();
-    var widthClass = wRand > 0.9 ? 'w4' :
-      wRand > 0.7 ? 'w2' : '';
-    var hRand = Math.random();
-    var heightClass = hRand > 0.7 ? 'h2' : '';
-    item.className = 'item ' + widthClass + ' ' + heightClass;
-    // random sizing
-    if ( isRando ) {
-      item.style.width = Math.random() * Math.random() * 60 + 16 + 'px';
-      item.style.height = Math.random() * Math.random() * 60 + 16 + 'px';
-    }
-    navContainer.appendChild( item );
-    var draggie = new Draggabilly( item );
-    navPckry.bindDraggabillyEvents( draggie );
-    navPckry.appended( item );
-    itemCount++;
-    // add another item
-    if ( navPckry.maxY < maxY && itemCount < maxCount ) {
-      setTimeout( addItem, 40 );
-    }
-  }
-  addItem();
-
 });
 
 

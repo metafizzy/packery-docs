@@ -1,0 +1,16 @@
+#hero {
+  background: #80A;
+  color: #FAF3F5;
+  padding: 20px 20px 20px 200px;
+}
+
+#hero h1 {
+  font-size: 140px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+#hero .tagline {
+  font-size: 36px;
+}
