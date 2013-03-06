@@ -27,24 +27,10 @@
     </ol>
   </div>
 
-  <div id="hero">
-    <h1>Packery</h1>
-    <p class="tagline">The bin-packing layout library</p>
-    <p class="catch-phrase">Make meticulous layouts and ridiculous layouts</p>
-
-    <ul class="big-ol-buttons row">
-      <li class="cell download-js">
-        <a class="button" href="#">Download packery.pkgd.min.js</a>
-      </li>
-      <li class="cell download-docs">
-        <a class="button" href="#">Download these docs</a>
-      </li>
-      <li class="cell github">
-        <a class="button" href="#">Packery on GitHub</a>
-      </li>
-    </ul>
-
-  </div>
+  {{! display hero only on index page }}
+  {{#if_equal basename "index" }}
+    {{>hero}}
+  {{/if_equal}}
 
   <div id="content">
     {{{ content }}}

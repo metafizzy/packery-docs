@@ -65,14 +65,19 @@ PS.index = function() {
     gutter: 4
   });
 
-  addItems( gridPckry, false );
+  // addItems( gridPckry, false );
 
   var randoElem = document.querySelector('#rando-packery');
   var randoPckry = new Packery( randoElem, {
     gutter: 4
   });
 
-  addItems( randoPckry, true );
+  // addItems( randoPckry, true );
+
+  var heroElem = document.querySelector('#hero .packery');
+  var heroPckry = new Packery( heroElem );
+
+  addItems( heroPckry, true );
 
 };
 

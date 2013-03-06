@@ -6,6 +6,17 @@ var highlightjs = require('highlight.js');
 highlightjs.LANGUAGES.html = highlightjs.LANGUAGES.xml;
 highlightjs.LANGUAGES.js = highlightjs.LANGUAGES.javascript;
 
+// -------------------------- Handlebar Helpers -------------------------- //
+
+// https://gist.github.com/meddulla/2571518
+handlebars.registerHelper( 'if_equal', function( a, b, options ) {
+  if ( a == b ) {
+    return options.fn( this );
+  }
+});
+
+// --------------------------  -------------------------- //
+
 // parses content for ``` code blocks
 // use highlight.js tfor syntax highlighting
 // var reFenceBlock = /```((.|\n)+[^(```)])```/gi;
