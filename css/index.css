@@ -3,12 +3,53 @@
 }
 
 #hero-demos .cell {
-  min-height: 300px;
+}
+
+#hero-demos .item {
+  width: 40px;
+  height: 40px;
 }
 
 #hero-demos .packery {
   padding: 4px;
+  margin-bottom: 0.5em;
 }
+
+/* ---- basically ---- */
+
+#hero-demos .basically .item1 { width: 30%; }
+#hero-demos .basically .item2 { width: 40%; }
+#hero-demos .basically .item3 { width: 12%; }
+
+#hero-demos .basically .item4 { width: 20%; }
+#hero-demos .basically .item5 { width: 60%; }
+
+#hero-demos .basically .item6 { width: 40%; }
+#hero-demos .basically .item7 { width: 15%; }
+#hero-demos .basically .item8 { width: 12%; }
+#hero-demos .basically .item9 { width: 20%; }
+
+#hero-demos .basically .item10 { width: 60%; }
+
+/* ---- masonry ---- */
+
+#hero-demos .masonry .packery {
+  padding: 2px 1%;
+}
+
+#hero-demos .masonry .item {
+  width: 30.5%;
+  margin: 2px 1%;
+}
+
+#hero-demos .masonry .item1 { height: 40px; }
+#hero-demos .masonry .item2 { height: 80px; }
+#hero-demos .masonry .item3 { height: 25px; }
+#hero-demos .masonry .item4 { height: 80px; }
+#hero-demos .masonry .item5 { height: 50px; }
+#hero-demos .masonry .item6 { height: 55px; }
+#hero-demos .masonry .item7 { height: 55px; }
+#hero-demos .masonry .item8 { height: 45px; }
 
 #grid-packery .item {
   width: 50px;

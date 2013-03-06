@@ -22,8 +22,8 @@ function getItem( isRando ) {
   item.className = 'item ' + widthClass + ' ' + heightClass;
   // random sizing
   if ( isRando ) {
-    item.style.width =  Math.round( Math.random() * Math.random() * 80 + 20 ) + 'px';
-    item.style.height = Math.round( Math.random() * Math.random() * 80 + 20 ) + 'px';
+    item.style.width =  Math.round( Math.random() * Math.random() * 110 + 20 ) + 'px';
+    item.style.height = Math.round( Math.random() * Math.random() * 90 + 20 ) + 'px';
   }
   return item;
 }
@@ -59,22 +59,6 @@ function addItems( pckry, maxY, isRando ) {
 
 PS.index = function() {
 
-  var gridElem = document.querySelector('#grid-packery');
-  var gridPckry = new Packery( gridElem, {
-    columnWidth: 50,
-    rowHeight: 50,
-    gutter: 4
-  });
-
-  // addItems( gridPckry, false );
-
-  var randoElem = document.querySelector('#rando-packery');
-  var randoPckry = new Packery( randoElem, {
-    gutter: 4
-  });
-
-  // addItems( randoPckry, true );
-
   var hero = document.querySelector('#hero');
   var heroPackryElem = hero.querySelector('#hero .packery');
   var heroPckry = new Packery( heroPackryElem, {
@@ -85,6 +69,18 @@ PS.index = function() {
   });
 
   addItems( heroPckry, hero.offsetHeight + 40, true );
+
+  var ridicPackeryElem = document.querySelector('.ridiculous .packery');
+  var fragment = document.createDocumentFragment();
+  for ( var i=0; i < 15; i++ ) {
+    var item = getItem( true );
+    fragment.appendChild( item );
+  }
+  ridicPackeryElem.appendChild( fragment );
+  var ridicPckry = new Packery( ridicPackeryElem, {
+    gutter: 4
+  });
+
 
 };
 
