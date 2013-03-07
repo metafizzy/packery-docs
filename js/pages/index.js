@@ -88,11 +88,6 @@ PS.index = function() {
   // ----- ridiculous ----- //
 
   var meticPackeryElem = document.querySelector('.meticulous .packery');
-  // for ( var i=0; i < 15; i++ ) {
-  //   var item = getItem();
-  //   fragment.appendChild( item );
-  // }
-  // meticPackeryElem.appendChild( fragment );
   var meticPckry = new Packery( meticPackeryElem, {
     itemSelector: '.item',
     columnWidth: '.grid-sizer',
