@@ -59,6 +59,8 @@ function addItems( pckry, maxY, isRando ) {
 
 PS.index = function() {
 
+  // ----- hero ----- //
+
   var hero = document.querySelector('#hero');
   var heroPackryElem = hero.querySelector('#hero .packery');
   var heroPckry = new Packery( heroPackryElem, {
@@ -70,9 +72,11 @@ PS.index = function() {
 
   addItems( heroPckry, hero.offsetHeight + 40, true );
 
+  // ----- ridiculous ----- //
+
   var ridicPackeryElem = document.querySelector('.ridiculous .packery');
   var fragment = document.createDocumentFragment();
-  for ( var i=0; i < 15; i++ ) {
+  for ( var i=0; i < 12; i++ ) {
     var item = getItem( true );
     fragment.appendChild( item );
   }
@@ -81,6 +85,19 @@ PS.index = function() {
     gutter: 4
   });
 
+  // ----- ridiculous ----- //
+
+  var meticPackeryElem = document.querySelector('.meticulous .packery');
+  // for ( var i=0; i < 15; i++ ) {
+  //   var item = getItem();
+  //   fragment.appendChild( item );
+  // }
+  // meticPackeryElem.appendChild( fragment );
+  var meticPckry = new Packery( meticPackeryElem, {
+    itemSelector: '.item',
+    columnWidth: '.grid-sizer',
+    rowHeight: 44
+  });
 
 };
 

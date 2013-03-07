@@ -51,6 +51,23 @@
 #hero-demos .masonry .item7 { height: 55px; }
 #hero-demos .masonry .item8 { height: 45px; }
 
+#hero-demos .meticulous .packery {
+  padding: 2px 0;
+}
+
+#hero-demos .meticulous .grid-sizer { width: 20%; }
+
+#hero-demos .meticulous .item {
+  width: 18%;
+  margin: 2px 1%;
+}
+
+#hero-demos .meticulous .item.w2 { width: 38%; }
+#hero-demos .meticulous .item.h2 { height: 84px; }
+#hero-demos .meticulous .item.w4 { width: 78%; }
+#hero-demos .meticulous .item.h4 { height: 172px; }
+
+
 #grid-packery .item {
   width: 50px;
   height: 50px;
@@ -61,6 +78,8 @@
 
 #grid-packery .item.w4 { width:  212px; }
 #grid-packery .item.h4 { height: 212px; }
+
+
 
 
 /* ---- big ol buttons ---- */
