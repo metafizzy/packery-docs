@@ -1,0 +1,106 @@
+/**
+ * events page
+ */
+
+( function( window ) {
+
+'use strict';
+
+var PS = window.PS;
+
+// -------------------------- notify -------------------------- //
+
+var transitionProp = getStyleProperty('transition');
+
+function timeStamp() {
+  var now = new Date();
+  var min = now.getMinutes();
+  min = min < 10 ? '0' + min : min;
+  var seconds = now.getSeconds();
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+  return [ now.getHours(), min, seconds ].join(':');
+}
+
+var notifElem;
+var notifyTimeout;
+var hideTime = transitionProp ? 1000 : 1500;
+
+function notify( message ) {
+  message += ' at ' + timeStamp();
+  notifElem.innerText = message;
+  if ( transitionProp ) {
+    notifElem.style[ transitionProp ] = 'none';
+  }
+  notifElem.style.display = 'block';
+  notifElem.style.opacity = '1';
+
+  if ( notifyTimeout ) {
+    clearTimeout( notifyTimeout );
+  }
+
+  notifyTimeout = setTimeout( hideNotify, hideTime );
+}
+
+function hideNotify() {
+  if ( transitionProp ) {
+    notifElem.style[ transitionProp ] = 'opacity 1.0s';
+    notifElem.style.opacity = '0';
+  } else {
+    notifElem.style.display = 'none';
+  }
+}
+
+PS.events = function() {
+
+  notifElem = document.querySelector('#notification');
+
+  // ----- dragItemPositioned ----- //
+
+  ( function() {
+    var container = document.querySelector('#drag-item-positioned-demo');
+    var itemElems = container.querySelectorAll('.item');
+    var pckry = new Packery( container, {
+      columnWidth: 80,
+      rowHeight: 80
+    });
+    // for each item element
+    for ( var i=0, len = itemElems.length; i < len; i++ ) {
+      var elem = itemElems[i];
+      // make element draggable with Draggabilly
+      var draggie = new Draggabilly( elem );
+      // bind Draggabilly events to Packery
+      pckry.bindDraggabillyEvents( draggie );
+    }
+
+    pckry.on( 'dragItemPositioned', function( pckryInstance, item ) {
+      notify( 'Packery #' + pckryInstance.element.id +
+        ' positioned ' + item.element.nodeName );
+    });
+
+  })();
+
+  // ----- layout demo ----- //
+
+  ( function() {
+    var container = document.querySelector('#layout-complete-demo .packery');
+    var pckry = new Packery( container );
+    pckry.on( 'layoutComplete', function( pckryInstance ) {
+      var classes = '.' + pckryInstance.element.className.split(' ').join('.');
+      notify( 'Packery ' + classes + ' layout completed');
+    });
+
+    eventie.bind( container, 'click', function( event ) {
+      // don't proceed if item was not clicked on
+      if ( !classie.has( event.target, 'item' ) ) {
+        return;
+      }
+      // change size of item via class
+      classie.toggle( event.target, 'gigante' );
+      // trigger layout
+      pckry.layout();
+    });
+  })();
+
+};
+
+})( window );

@@ -1,13 +1,15 @@
 {
   "browser": true,
+  "devel": true,
   "strict": true,
   "undef": true,
   "unused": true,
   "predef": {
     "classie": false,
     "docListener": false,
-    "Packery": false,
+    "Draggabilly": false,
     "eventie": false,
-    "Draggabilly": false
+    "getStyleProperty": false,
+    "Packery": false
   }
 }
