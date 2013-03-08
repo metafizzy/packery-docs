@@ -50,6 +50,13 @@ function hideNotify() {
   }
 }
 
+// -----  ----- //
+
+function getClassString( elem ) {
+  return '.' + elem.className.split(' ').join('.');
+}
+
+
 PS.events = function() {
 
   notifElem = document.querySelector('#notification');
@@ -72,21 +79,21 @@ PS.events = function() {
       pckry.bindDraggabillyEvents( draggie );
     }
 
-    pckry.on( 'dragItemPositioned', function( pckryInstance, item ) {
+    pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
       notify( 'Packery #' + pckryInstance.element.id +
-        ' positioned ' + item.element.nodeName );
+        ' positioned ' + draggedItem.element.nodeName );
     });
 
   })();
 
-  // ----- layout demo ----- //
+  // ----- layoutComplete demo ----- //
 
   ( function() {
     var container = document.querySelector('#layout-complete-demo .packery');
     var pckry = new Packery( container );
-    pckry.on( 'layoutComplete', function( pckryInstance ) {
-      var classes = '.' + pckryInstance.element.className.split(' ').join('.');
-      notify( 'Packery ' + classes + ' layout completed');
+    pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
+      var classes = getClassString( pckryInstance.element );
+      notify( 'Packery ' + classes + ' layout completed on ' + laidOutItems.length + ' items' );
     });
 
     eventie.bind( container, 'click', function( event ) {
@@ -98,6 +105,27 @@ PS.events = function() {
       classie.toggle( event.target, 'gigante' );
       // trigger layout
       pckry.layout();
+    });
+  })();
+
+  // ----- removeComplete demo ----- //
+
+  ( function() {
+    var container = document.querySelector('#remove-complete-demo .packery');
+    var pckry = new Packery( container );
+
+    pckry.on( 'removeComplete', function( pckryInstance, items ) {
+      var classes = getClassString( pckryInstance.element );
+      notify( 'Removed ' + items.length + ' items from ' + classes );
+    });
+
+    eventie.bind( container, 'click', function() {
+      // don't proceed if item was not clicked on
+      if ( !classie.has( event.target, 'item' ) ) {
+        return;
+      }
+      // remove clicked element
+      pckry.remove( event.target );
     });
   })();
 
