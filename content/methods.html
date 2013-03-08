@@ -8,6 +8,20 @@
 
 <p>Add item elements to the Packery instance.</p>
 
+<ul class="params">
+  <li>
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
+
 <h2 id="appended">appended</h2>
 
 ``` js
@@ -15,6 +29,20 @@
 ```
 
 <p>Add and lay out newly appended item elements.</p>
+
+<ul class="params">
+  <li>
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
 
 <div class="example">
   <div class="example-code">
@@ -61,6 +89,15 @@ eventie.bind( button, 'click', function() {
 
 <p>Bind Draggabilly events, so that the Packery instance will layout around the dragged element.</p>
 
+<ul class="params">
+  <li>
+    <h5 class="param-name param-bit"><code>Draggabilly</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Draggabilly</i></span>
+    </p>
+  </li>
+</ul>
+
 <div class="example">
   <div class="example-code">
 ``` js
@@ -105,6 +142,15 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 
 <p>Bind jQuery UI Draggable events, so that the Packery instance will layout around the dragged element.</p>
 
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>$element</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>jQuery</i></span>
+    </p>
+  </li>
+</ul>
+
 <h2 id="destroy">destroy</h2>
 
 ``` js
@@ -148,6 +194,15 @@ eventie.bind( button, 'click', function() {
 
 <p>Get an array of elements used as the Packery instance's items.</p>
 
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit">returns</h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Array</i></span>
+    </p>
+  </li>
+</ul>
+
 <h2 id="getitemfromelement">getItemFromElement</h2>
 
 ``` js
@@ -155,6 +210,21 @@ eventie.bind( button, 'click', function() {
 ```
 
 <p>Get a <i>Packery.Item</i> from an element.</p>
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>element</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Element</i></span>
+    </p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit">returns</h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
+    </p>
+  </li>
+</ul>
 
 <h2 id="layout">layout</h2>
 
@@ -198,6 +268,22 @@ eventie.bind( container, 'click', function( event ) {
 
 <p>Lay out specified items.</p>
 
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>Packery.Items</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value">Packery.Item</span>
+    </p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit"><code>isStill</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Boolean</i>
+    </p>
+    <p class="description param-bit">Disables transitions</p>
+  </li>
+</ul>
+
 <h2 id="packery-data">Packery.data</h2>
 
 ``` js
@@ -205,6 +291,21 @@ Packery.data( element )
 ```
 
 <p>Get the Packery instance from an element. Note this method is of <code>Packery</code>, rather than of a Packery instance.</p>
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Element</i></span>
+    </p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit">returns</h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
+    </p>
+  </li>
+</ul>
 
 <p>This method is useful to access the Packery instance after it was initialized via HTML.</p>
 
@@ -229,6 +330,20 @@ pckry.layout();
 ```
 
 <p>Place the elements in the layout. Packery will lay out item elements <em>around</em> placed elements.</p>
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
 
 <div class="example">
   <div class="example-code">
@@ -279,6 +394,20 @@ eventie.bind( button, 'click', function() {
 
 <p>Remove elements from the Packery instance, then from the DOM.</p>
 
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
+
 <div class="example">
   <div class="example-code">
 ``` js
@@ -312,3 +441,17 @@ eventie.bind( container, 'click', function() {
 ```
 
 <p>Un-<a href="#place">place</a> the elements, so that Packery will no longer layout item elements around them.</p>
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
