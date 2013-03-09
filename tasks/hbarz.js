@@ -104,26 +104,28 @@ module.exports = function( grunt ) {
 
     this.files.forEach( function( file ) {
       file.src.forEach( function( filepath ) {
+        // first process page source
         var src = grunt.file.read( filepath );
         var parsed = parseJSONFrontMatter( src );
         src = parsed.src;
-        var pageJson = parsed.json;
-        src = handlebars.compile( src )();
+        var pageJson = parsed.json || {};
+        var context = {
+          site: site,
+          basename: path.basename( filepath, path.extname( filepath ) ),
+          page: pageJson
+        };
+        src = handlebars.compile( src )( context );
+
+        // process source into page template
         var splitPath = filepath.split( path.sep );
         // remove leading directory
         if ( splitPath.length > 1 ) {
           splitPath.splice( 0, 1 );
         }
-        var dest = file.dest + splitPath.join( path.sep );
-        console.log( dest, pageJson );
-        // process source by template
         src = highlight( src );
-        var templated = templates[ opts.defaultTemplate ]({
-          content: src,
-          site: site,
-          basename: path.basename( filepath, path.extname( filepath ) ),
-          page: pageJson
-        });
+        context.content = src;
+        var templated = templates[ opts.defaultTemplate ]( context );
+        var dest = file.dest + splitPath.join( path.sep );
         grunt.file.write( dest, templated );
       });
     });

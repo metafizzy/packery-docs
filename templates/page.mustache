@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Packery Docs</title>
+  <title>{{#unless page.is_homepage}}{{page.title}} &middot; {{/unless}}Packery</title>
 
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
   <!-- <link rel="stylesheet" href="css/packery-site.css"> -->
@@ -28,13 +28,21 @@
   </div>
 
   {{! display hero only on index page }}
-  {{#if_equal basename "index" }}
+  {{#if page.is_homepage}}
     {{>hero}}
-  {{/if_equal}}
+  {{/if}}
 
   <div id="content">
+    {{#unless page.is_homepage}}
+      <h1>{{page.title}}</h1>
+    {{/unless}}
     {{{ content }}}
   </div>
+
+<!-- Packery does NOT require jQuery.
+     jQuery is only used for jQuery UI Draggable -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
 {{#each site.js}}
   <script src="../{{this}}"></script>
