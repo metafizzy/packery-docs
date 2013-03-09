@@ -15,12 +15,14 @@
 
 #site-nav h1 a {
   display: block;
-  background: #8A0;
+  background: #A80;
   color: white;
 }
 
 /* hide text on index */
-.index-page #site-nav h1 a { color: #8A0; }
+.index-page #site-nav h1 a {
+  color: #A80;
+}
 
 #site-nav a {
   background: none;
@@ -52,30 +54,14 @@
 }
 
 #site-nav ol a:hover {
-  background: #D80;
+  background: #A80;
 }
 
-#site-nav .packery-frame {
-  height: 160px;
-/*  position: relative;*/
-/*  background: #EEE;*/
+/* selected */
+.options-page #site-nav .nav-options a,
+.methods-page #site-nav .nav-methods a,
+.events-page #site-nav .nav-events a {
+  background: #80A;
 }
 
-#site-nav .packery {
-  background: none;
-  margin-bottom: 1.5em;
-  border: none;
-}
 
-#site-nav .item {
-  width: 20px;
-  height: 20px;
-}
-
-#site-nav .item.w2 { width:  44px; }
-#site-nav .item.h2 { height: 44px; }
-
-#site-nav .item.h4 { height: 92px; }
-#site-nav .item.w4 { width:  92px; }
-
-/*#site-nav .item.w2.h2 { background: #80A; }*/
