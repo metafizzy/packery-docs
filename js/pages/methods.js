@@ -63,6 +63,22 @@ PS.methods = function() {
     }
   })();
 
+  // ----- bind UI Draggable ----- //
+
+  ( function() {
+    var $container = $('#bind-ui-draggable-demo .packery');
+    var $itemElems = $container.find('.item');
+    var pckry = new Packery( $container[0], {
+      columnWidth: 80,
+      rowHeight: 80
+    });
+
+    // make item elements draggable
+    $itemElems.draggable();
+    // bind Draggable events to Packery
+    pckry.bindUIDraggableEvents( $itemElems );
+  })();
+
   // ----- destroy demo ----- //
 
   ( function() {

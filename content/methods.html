@@ -151,6 +151,27 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
   </li>
 </ul>
 
+<div class="example">
+  <div class="example-code">
+``` js
+var $container = $('#bind-ui-draggable-demo .packery');
+var $itemElems = $container.find('.item');
+var pckry = new Packery( $container[0], {
+  columnWidth: 80,
+  rowHeight: 80
+});
+
+// make item elements draggable
+$itemElems.draggable();
+// bind Draggable events to Packery
+pckry.bindUIDraggableEvents( $itemElems );
+```
+  </div>
+  <div id="bind-ui-draggable-demo" class="demo">
+    {{>draggable-packery}}
+  </div>
+</div>
+
 <h2 id="destroy">destroy</h2>
 
 ``` js
