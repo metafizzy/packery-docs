@@ -101,7 +101,7 @@ eventie.bind( button, 'click', function() {
 <div class="example">
   <div class="example-code">
 ``` js
-var container = document.querySelector('#bind-draggabilly-demo');
+var container = document.querySelector('#bind-draggabilly-demo .packery');
 var itemElems = container.querySelectorAll('.item');
 var pckry = new Packery( container, {
   columnWidth: 80,
@@ -117,17 +117,8 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 }
 ```
   </div>
-  <div id="bind-draggabilly-demo" class="demo packery">
-    <div class="item w4 h2"></div>
-    <div class="item w2 h2"></div>
-    <div class="item w2 h4"></div>
-    <div class="item w2 h2"></div>
-    <div class="item w4 h4"></div>
-    <div class="item w2 h2"></div>
-    <div class="item w2 h4"></div>
-    <div class="item w4 h4"></div>
-    <div class="item w2 h2"></div>
-    <div class="item w2 h2"></div>
+  <div id="bind-draggabilly-demo" class="demo">
+    {{>draggable-packery}}
   </div>
 </div>
 

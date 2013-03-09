@@ -47,7 +47,7 @@ PS.methods = function() {
   // ----- bind Draggabilly ----- //
 
   ( function() {
-    var container = document.querySelector('#bind-draggabilly-demo');
+    var container = document.querySelector('#bind-draggabilly-demo .packery');
     var itemElems = container.querySelectorAll('.item');
     var pckry = new Packery( container, {
       columnWidth: 80,

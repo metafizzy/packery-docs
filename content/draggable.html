@@ -1,0 +1,43 @@
+---
+{
+  "needsJQuery": true
+}
+---
+
+<h1>Draggable</h1>
+
+<p>Packery has easy hooks for draggable interactions.</p>
+
+<p>If your layout has a strict grid, set <a href="options.html#columnwidth"><code>columnWidth</code></a>, <a href="options.html#rowheight"><code>rowHeight</code></a>, or both. Packery will align the item to the grid after they are released.</p>
+
+<p>Use the <a href="events.html#dragitempositioned"><code>dragItemPositioned</code> event</a> to detect when Packery positions a released item.</p>
+
+<h2 id="draggabilly">Draggabilly</h2>
+
+<p>Draggabilly is a separate library that makes elements draggable. It&rsquo;s pretty great because it supports multi-touch. After you initialize a new Draggabilly instance, bind its events to a Packery instance with <a href="methods.html#binddraggabillyevents"><code>bindDraggabillyEvents</code></a>.</p>
+
+<div class="example">
+  <div class="example-code">
+``` js
+var container = document.querySelector('#draggabilly-demo .packery');
+var itemElems = container.querySelectorAll('.item');
+var pckry = new Packery( container, {
+  columnWidth: 80,
+  rowHeight: 80
+});
+// for each item element
+for ( var i=0, len = itemElems.length; i < len; i++ ) {
+  var elem = itemElems[i];
+  // make element draggable with Draggabilly
+  var draggie = new Draggabilly( elem );
+  // bind Draggabilly events to Packery
+  pckry.bindDraggabillyEvents( draggie );
+}
+```
+  </div>
+  <div id="draggabilly-demo" class="demo">
+    {{>draggable-packery}}
+  </div>
+</div>
+
+<h2 id="jquery-ui-draggable">jQuery UI Draggable</h2>
