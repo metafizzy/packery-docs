@@ -39,14 +39,14 @@ h1, h2, h3, h4 {
 
 a,
 a code {
-  color: #D11;
+  color: #A80;
   text-decoration: none;
-  background: hsla(0, 100%, 50%, 0.02);
+  background: hsla(30, 90%, 50%, 0.03);
 }
 
 a:hover,
 a:hover code {
-  color: #159;
+  color: #80A;
 }
 
 /* ---- #content ---- */
@@ -60,6 +60,14 @@ a:hover code {
   padding-top: 0.8em;
   margin-top: 2.0em;
   font-size: 1.7em;
+}
+
+#content h2:target {
+  padding-left: 0.5em;
+  background: #A08;
+  color: white;
+  border-top-color: #A80;
+
 }
 
 h1 {
