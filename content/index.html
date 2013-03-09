@@ -121,13 +121,14 @@ bower install packery
 var container = document.querySelector('#container');
 var pckry = new Packery( container, {
   // options
-  itemSelector: '.item'
+  itemSelector: '.item',
+  columnWidth: 200
 });
 ```
 
 <h3 id="init-with-html">Initialize in HTML</h3>
 
-<p>You can initialize Packery just with HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. Options can be set with a <code>data-packery-options</code> attribute. Options must be valid JSON. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
+<p>You can initialize Packery just with HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. Options can be set with a <code>data-packery-options</code> attribute. Options must be valid JSON. Keys need to be quoted. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
 
 ``` html
 <div id="container" class="js-packery"
