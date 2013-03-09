@@ -60,7 +60,8 @@
 /* selected */
 .options-page #site-nav .nav-options a,
 .methods-page #site-nav .nav-methods a,
-.events-page #site-nav .nav-events a {
+.events-page #site-nav .nav-events a,
+.draggable-page #site-nav .nav-draggable a {
   background: #80A;
 }
 
