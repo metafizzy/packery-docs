@@ -64,7 +64,7 @@ PS.events = function() {
   // ----- dragItemPositioned ----- //
 
   ( function() {
-    var container = document.querySelector('#drag-item-positioned-demo');
+    var container = document.querySelector('#drag-item-positioned-demo .packery');
     var itemElems = container.querySelectorAll('.item');
     var pckry = new Packery( container, {
       columnWidth: 80,
@@ -80,8 +80,9 @@ PS.events = function() {
     }
 
     pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
-      notify( 'Packery #' + pckryInstance.element.id +
-        ' positioned ' + draggedItem.element.nodeName );
+      var classes = getClassString( pckryInstance.element );
+      notify( 'Packery ' + classes +
+        ' positioned dragged ' + draggedItem.element.nodeName );
     });
 
   })();

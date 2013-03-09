@@ -7,8 +7,11 @@
 'use strict';
 
 var PS = window.PS;
+var $ = window.jQuery;
 
 PS.draggable = function() {
+
+  // ----- draggabilly ----- //
 
   ( function() {
     var container = document.querySelector('#draggabilly-demo .packery');
@@ -25,6 +28,22 @@ PS.draggable = function() {
       // bind Draggabilly events to Packery
       pckry.bindDraggabillyEvents( draggie );
     }
+  })();
+
+  // ----- jquery ui draggable ----- //
+
+  ( function() {
+    var $container = $('#ui-draggable-demo .packery');
+    var $itemElems = $container.find('.item');
+    var pckry = new Packery( $container[0], {
+      columnWidth: 80,
+      rowHeight: 80
+    });
+
+    // make item elements draggable
+    $itemElems.draggable();
+    // bind Draggable events to Packery
+    pckry.bindUIDraggableEvents( $itemElems );
   })();
 
 };

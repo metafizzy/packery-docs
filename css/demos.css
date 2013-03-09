@@ -97,7 +97,8 @@
 }
 
 .draggable .item.is-dragging,
-.draggable .item.is-positioning-post-drag {
+.draggable .item.is-positioning-post-drag,
+.draggable .item.ui-draggable-dragging {
   border-color: white;
   background: #09F;
   z-index: 10;
