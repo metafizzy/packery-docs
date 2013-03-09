@@ -91,6 +91,7 @@ h3 {
   width: 200px;
   text-align: left;
   padding: 20px;
+  z-index: 2; /* above packeries */
 }
 
 #page-nav li {

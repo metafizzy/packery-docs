@@ -14,7 +14,7 @@ handlebars.registerHelper( 'if_equal', function( a, b, options ) {
 });
 
 handlebars.registerHelper( 'slug', function( str ) {
-  return str.replace( /[\.,]+/gi, '-' ).toLowerCase();
+  return str.replace( /[\., ]+/gi, '-' ).toLowerCase();
 });
 
 // --------------------------  -------------------------- //

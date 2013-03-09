@@ -1,6 +1,11 @@
 ---
 {
-  "title": "Events"
+  "title": "Events",
+  "nav": [
+    "dragItemPositioned",
+    "layoutComplete",
+    "removeComplete"
+  ]
 }
 ---
 
@@ -25,7 +30,7 @@ pckry.on( 'layoutComplete', function() {
 });
 ```
 
-<h2>dragItemPositioned</h2>
+<h2 id="dragitempositioned">dragItemPositioned</h2>
 
 <p>Triggered after a drag end, only when an item is positioned, either into a row or column, or into its container element. This event is triggered after the positioning transition has ended.</p>
 
@@ -65,7 +70,7 @@ pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
   </div>
 </div>
 
-<h2>layoutComplete</h2>
+<h2 id="layoutcomplete">layoutComplete</h2>
 
 ``` js
 .on( 'layoutComplete', function( pckryInstance, laidOutItems ) { //...
@@ -106,7 +111,7 @@ pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
   </div>
 </div>
 
-<h2>removeComplete</h2>
+<h2 id="removecomplete">removeComplete</h2>
 
 ``` js
 .on( 'removeComplete', function( pckryInstance, removedItems ) { //...
