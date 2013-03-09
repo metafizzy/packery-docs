@@ -23,6 +23,7 @@ pre {
 /* Montserrat */
 h1, h2, h3, h4, h5,
 #site-nav,
+#page-nav,
 .tagline,
 .catch-phrase,
 .option-properties .key,
@@ -78,7 +79,23 @@ h3 {
 }
 
 
+/* ---- #page-nav ---- */
 
+#page-nav {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  list-style: none;
+  padding: 0;
+  font-size: 13px;
+  width: 200px;
+  text-align: left;
+  padding: 20px;
+}
+
+#page-nav li {
+  margin-bottom: 4px;
+}
 
 /* ---- button ---- */
 

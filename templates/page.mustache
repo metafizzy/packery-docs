@@ -32,6 +32,15 @@
     {{>hero}}
   {{/if}}
 
+  {{! page nav }}
+  {{#if page.nav}}
+    <ul id="page-nav">
+      {{#each page.nav}}
+        <li><a href="#{{slug this}}">{{this}}</a></li>
+      {{/each}}
+    </ul>
+  {{/if}}
+
   <div id="content">
     {{#unless page.is_homepage}}
       <h1>{{page.title}}</h1>

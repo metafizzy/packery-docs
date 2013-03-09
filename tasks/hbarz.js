@@ -2,6 +2,7 @@ var path = require('path');
 var handlebars = require('handlebars');
 
 var highlight = require('./utils/highlight');
+var parseJSONFrontMatter = require('./utils/parse-json-front-matter');
 
 // -------------------------- Handlebar Helpers -------------------------- //
 
@@ -12,32 +13,9 @@ handlebars.registerHelper( 'if_equal', function( a, b, options ) {
   }
 });
 
-// -------------------------- parseJSONFrontMatter -------------------------- //
-
-function parseJSONFrontMatter( src ) {
-  // file must begin with ---
-  var parsed = {
-    src: src
-  };
-  if ( src.indexOf('---\n') !== 0 ) {
-    return parsed;
-  }
-  var split = src.split('---\n');
-  var json;
-  try {
-    json = JSON.parse( split[1] );
-  } catch ( err ) {}
-
-  if ( !json ) {
-    return parsed;
-  }
-
-  // remove first parts
-  split.splice( 0, 2 );
-  parsed.json = json;
-  parsed.src = split.join('---\n');
-  return parsed;
-}
+handlebars.registerHelper( 'slug', function( str ) {
+  return str.replace( /[\.,]+/gi, '-' ).toLowerCase();
+});
 
 // --------------------------  -------------------------- //
 
