@@ -52,6 +52,35 @@ function highlight( content ) {
   return splitContent.join('\n');
 }
 
+// -------------------------- parseJSONFrontMatter -------------------------- //
+
+function parseJSONFrontMatter( src ) {
+  // file must begin with ---
+  var parsed = {
+    src: src
+  };
+  if ( src.indexOf('---\n') !== 0 ) {
+    return parsed;
+  }
+  var split = src.split('---\n');
+  var json;
+  try {
+    json = JSON.parse( split[1] );
+  } catch ( err ) {}
+
+  if ( !json ) {
+    return parsed;
+  }
+
+  // remove first parts
+  split.splice( 0, 2 );
+  parsed.json = json;
+  parsed.src = split.join('---\n');
+  return parsed;
+}
+
+// --------------------------  -------------------------- //
+
 module.exports = function( grunt ) {
 
   grunt.registerMultiTask( 'hbarz', 'Process Handlebars templates', function() {
@@ -76,19 +105,24 @@ module.exports = function( grunt ) {
     this.files.forEach( function( file ) {
       file.src.forEach( function( filepath ) {
         var src = grunt.file.read( filepath );
+        var parsed = parseJSONFrontMatter( src );
+        src = parsed.src;
+        var pageJson = parsed.json;
         src = handlebars.compile( src )();
         var splitPath = filepath.split( path.sep );
         // remove leading directory
         if ( splitPath.length > 1 ) {
           splitPath.splice( 0, 1 );
         }
-        var dest = file.dest + '/' + splitPath.join( path.sep );
+        var dest = file.dest + splitPath.join( path.sep );
+        console.log( dest, pageJson );
         // process source by template
         src = highlight( src );
         var templated = templates[ opts.defaultTemplate ]({
           content: src,
           site: site,
-          basename: path.basename( filepath, path.extname( filepath ) )
+          basename: path.basename( filepath, path.extname( filepath ) ),
+          page: pageJson
         });
         grunt.file.write( dest, templated );
       });
