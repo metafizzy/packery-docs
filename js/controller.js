@@ -11,17 +11,13 @@ var PS = window.PS = {};
 // hash of page controllers
 PS.pages = {};
 
-// ----- dependencies ----- //
-
-var docListener = window.docListener;
-
 // -------------------------- page controller -------------------------- //
 
-docListener.on( 'ready', function() {
+docReady( function() {
   // get name of page
   var pageAttr = document.body.getAttribute('data-page');
   // trigger controller if there
-  if ( typeof PS[ pageAttr ] === 'function' ) {
+  if ( pageAttr && typeof PS[ pageAttr ] === 'function' ) {
     PS[ pageAttr ]();
   }
 
