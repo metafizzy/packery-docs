@@ -1,5 +1,5 @@
 {
-  "name": "packery-site",
+  "name": "packery-docs",
   "version": "0.0.1",
   "dependencies": {
     "grunt": "~0.4.0",

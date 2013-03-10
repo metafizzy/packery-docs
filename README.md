@@ -14,6 +14,8 @@ bower install
 grunt
 ```
 
+This will build the docs in `build/`.
+
 Watch for updates to rebuild docs on the fly.
 
 ``` bash
