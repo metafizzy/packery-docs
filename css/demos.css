@@ -1,19 +1,9 @@
 /* ---- demos ---- */
 
-.demo .packery {
+.demo .packery,
+.demo.packery {
   background: #FDD;
 }
-
-.demo .item {
-  width:  40px;
-  height: 40px;
-}
-
-.demo .item.w2 { width:  80px; }
-.demo .item.h2 { height: 80px; }
-
-.demo .item.h4 { height: 160px; }
-.demo .item.w4 { width:  160px; }
 
 .demo .item.gigante {
   width: 120px;
