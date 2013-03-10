@@ -10,18 +10,22 @@
   width: 200px;
   text-align: center;
   font-size: 2.0em;
-
+  background: #A80;
 }
 
 #site-nav h1 a {
   display: block;
-  background: #A80;
   color: white;
+}
+
+#site-nav h1 a:hover {
+  background: #80A;
 }
 
 /* hide text on index */
 .index-page #site-nav h1 a {
-  color: #A80;
+  width: 0;
+  overflow: hidden;
 }
 
 #site-nav a {
@@ -65,5 +69,3 @@
 .license-page #site-nav .nav-license a {
   background: #80A;
 }
-
-
