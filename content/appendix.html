@@ -1,0 +1,56 @@
+---
+{
+  "title": "Appendix"
+}
+---
+
+<h2>imagesLoaded</h2>
+
+<p>Unloaded images can throw off Packery layouts. <a href="https://github.com/Darsain/imagesLoaded">imagesLoaded by @Darsain</a> resolves this issue. imagesLoaded is &ldquo;a small library that triggers a callback after all the selected/child images have been loaded.&rdquo;</p>
+
+``` js
+var container = document.querySelector('#container');
+var pckry;
+// initialize Packery after all images have loaded
+imagesLoaded( container, function() {
+  pckry = new Packery( container );
+});
+```
+
+<p>Or initialize Packery first, then trigger <a href="methods.html#layout"><code>layout</code></a> after images have loaded.</p>
+
+``` js
+// initialize Packery
+var pckry = new Packery( container );
+// layout Packery after all images have loaded
+imagesLoaded( container, function() {
+  pckry.layout();
+});
+```
+
+<h2>docReady</h2>
+
+<p><a href="https://github.com/desandro/doc-ready">docReady</a> is a small component library, included with Packery, used to trigger initialization logic when the document is ready, just like jQuery's <code>$(document).ready()</code>.</p>
+
+``` js
+docReady( function() {
+  // document is ready, let's do some fun stuff!
+  var container = document.querySelector('#container');
+  var pckry = new Packery( container );
+});
+```
+
+<h2>Web fonts</h2>
+
+<p>Like images, unloaded web fonts can throw off Packery. To resolve this, trigger <a href="methods.html#layout"><code>layout</code></a> after fonts have been loaded. Both Typekit and Google WebFont Loader provide font events to control scripts based on how fonts are loaded.</p>
+
+<ul>
+  <li><a href="http://blog.typekit.com/2010/10/18/more-control-with-typekits-font-events/">Typekit font events</a></li>
+  <li><a href="https://developers.google.com/webfonts/docs/webfont_loader#Events">Google WebFont Loader: Events</a></li>
+</ul>
+
+<h2>Reporting bugs and issues</h2>
+
+<p>Please read my <a href="https://github.com/desandro/issues-agreement/#readme">Issues Agreement</a> and then report bugs and issues on GitHub.</p>
+
+<!-- <h2>Additional resources</h2> -->

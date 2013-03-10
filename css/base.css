@@ -49,6 +49,10 @@ a:hover code {
   color: #80A;
 }
 
+ul, ol {
+  padding-left: 1.8em;
+}
+
 /* ---- #content ---- */
 
 #content {

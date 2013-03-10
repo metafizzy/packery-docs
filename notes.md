@@ -8,6 +8,3 @@ move bower tasks to separate file
 
 ## Appendix
 
-imagesLoaded
-
-docReady
