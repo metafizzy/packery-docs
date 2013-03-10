@@ -29,8 +29,7 @@
 
 /* ---- parameters ---- */
 
-.params,
-.option-properties {
+.params {
   padding: 0;
   list-style: none;
 }
@@ -39,8 +38,7 @@
   margin-bottom: 4px;
 }
 
-.param-bit,
-.option-properties li {
+.param-bit {
   padding: 0.3em 0.8em;
   background: #DDD;
   background: hsla(0, 0%, 0%, 0.02);
@@ -61,8 +59,7 @@
   font-weight: normal;
 }
 
-.param-bit.type .value,
-.option-properties .value {
+.param-bit.type .value {
   color: #46A;
 }
 
@@ -113,11 +110,6 @@
 
 .row .cell:last-child {
   margin-right: 0;
-}
-
-.two-up {
-  background: #FDD;
-  -webkit-flex: 1;
 }
 
 /* ---- notification ---- */

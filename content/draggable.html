@@ -17,8 +17,8 @@
 
 <p>Draggabilly is a separate library that makes elements draggable. It&rsquo;s pretty great because it supports multi-touch. After you initialize a new Draggabilly instance, bind its events to a Packery instance with <a href="methods.html#binddraggabillyevents"><code>bindDraggabillyEvents</code></a>.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var container = document.querySelector('#draggabilly-demo .packery');
 var itemElems = container.querySelectorAll('.item');
@@ -36,7 +36,7 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 }
 ```
   </div>
-  <div id="draggabilly-demo" class="demo">
+  <div id="draggabilly-demo" class="cell demo">
     {{>draggable-packery}}
   </div>
 </div>
@@ -45,8 +45,8 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 
 <p>Packery works with <a href="http://jqueryui.com/draggable/">jQuery UI Draggable</a>. Bind Draggable events to Packery with <a href="methods.html#binduidraggableevents"><code>bindUIDraggableEvents</code></a>.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var $container = $('#ui-draggable-demo .packery');
 var $itemElems = $container.find('.item');
@@ -61,7 +61,7 @@ $itemElems.draggable();
 pckry.bindUIDraggableEvents( $itemElems );
 ```
   </div>
-  <div id="ui-draggable-demo" class="demo">
+  <div id="ui-draggable-demo" class="cell demo">
     {{>draggable-packery}}
   </div>
 </div>
@@ -70,8 +70,8 @@ pckry.bindUIDraggableEvents( $itemElems );
 
 <p>By default, dragged items can be positioned anywhere inside the bounds of the container element.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var container = document.querySelector('#draggabilly-demo .packery');
 var itemElems = container.querySelectorAll('.item');
@@ -86,15 +86,15 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 }
 ```
   </div>
-  <div id="non-grid-demo" class="demo">
+  <div id="non-grid-demo" class="cell demo">
     {{>draggable-packery}}
   </div>
 </div>
 
 <p>By setting <a href="options.html#columnwidth"><code>columnWidth</code></a>, <a href="options.html#rowheight"><code>rowHeight</code></a>, or both, Packery will align the item to the grid when released.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var container = document.querySelector('#grid-demo .packery');
 var itemElems = container.querySelectorAll('.item');
@@ -113,7 +113,7 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 }
 ```
   </div>
-  <div id="grid-demo" class="demo">
+  <div id="grid-demo" class="cell demo">
     {{>draggable-packery}}
   </div>
 </div>

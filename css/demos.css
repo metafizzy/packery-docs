@@ -1,21 +1,7 @@
 /* ---- demos ---- */
 
-.example {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.example-code {
-  -webkit-flex: 1;
-  margin-right: 20px;
-}
-
-.demo {
+.demo .packery {
   background: #FDD;
-  -webkit-flex: 1;
-}
-
-.packery {
 }
 
 .demo .item {
@@ -36,7 +22,7 @@
 }
 
 .demo .button {
-  margin: 0.5em;
+  margin-bottom: 0.8em;
 }
 
 /* ---- measurement demos ---- */
@@ -96,9 +82,9 @@
   border-color: white;
 }
 
-.draggable .item.is-dragging,
-.draggable .item.is-positioning-post-drag,
-.draggable .item.ui-draggable-dragging {
+.packery.draggable .item.is-dragging,
+.packery.draggable .item.is-positioning-post-drag,
+.packery.draggable .item.ui-draggable-dragging {
   border-color: white;
   background: #09F;
   z-index: 10;

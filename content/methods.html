@@ -66,8 +66,8 @@
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var demo = document.querySelector('#appended-demo');
 var container = demo.querySelector('.packery');
@@ -91,7 +91,7 @@ eventie.bind( button, 'click', function() {
 });
 ```
   </div>
-  <div id="appended-demo" class="demo">
+  <div id="appended-demo" class="cell demo">
     <button class="button">Append items</button>
     <div class="packery">
       <div class="item w4"></div>
@@ -120,8 +120,8 @@ eventie.bind( button, 'click', function() {
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var container = document.querySelector('#bind-draggabilly-demo .packery');
 var itemElems = container.querySelectorAll('.item');
@@ -139,7 +139,7 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 }
 ```
   </div>
-  <div id="bind-draggabilly-demo" class="demo">
+  <div id="bind-draggabilly-demo" class="cell demo">
     {{>draggable-packery}}
   </div>
 </div>
@@ -169,8 +169,8 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var $container = $('#bind-ui-draggable-demo .packery');
 var $itemElems = $container.find('.item');
@@ -185,7 +185,7 @@ $itemElems.draggable();
 pckry.bindUIDraggableEvents( $itemElems );
 ```
   </div>
-  <div id="bind-ui-draggable-demo" class="demo">
+  <div id="bind-ui-draggable-demo" class="cell demo">
     {{>draggable-packery}}
   </div>
 </div>
@@ -198,8 +198,8 @@ pckry.bindUIDraggableEvents( $itemElems );
 
 <p>Removes the Packery functionality completely. This will return the element back to its pre-initialized state.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var demo = document.querySelector('#destroy-demo');
 var container = demo.querySelector('.packery');
@@ -217,7 +217,7 @@ eventie.bind( button, 'click', function() {
 });
 ```
   </div>
-  <div id="destroy-demo" class="demo">
+  <div id="destroy-demo" class="cell demo">
     <button class="button">Toggle Packery</button>
     <div class="packery">
       {{>demo-items}}
@@ -273,8 +273,8 @@ eventie.bind( button, 'click', function() {
 
 <p>Lay out all item elements.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var container = document.querySelector('#layout-demo .packery');
 var pckry = new Packery( container );
@@ -291,7 +291,7 @@ eventie.bind( container, 'click', function( event ) {
 });
 ```
   </div>
-  <div id="layout-demo" class="demo">
+  <div id="layout-demo" class="cell demo">
     <p>Click item to toggle size</p>
     <div class="packery clickable">
       {{>demo-items}}
@@ -384,8 +384,8 @@ pckry.layout();
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var demo = document.querySelector('#place-demo');
 var placedElem = demo.querySelector('.placed');
@@ -408,7 +408,7 @@ eventie.bind( button, 'click', function() {
 });
 ```
   </div>
-  <div id="place-demo" class="demo">
+  <div id="place-demo" class="cell demo">
     <button class="button">Toggle placed</button>
     <div class="packery has-placed">
       <div class="placed"></div>
@@ -447,8 +447,8 @@ eventie.bind( button, 'click', function() {
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 var container = document.querySelector('#remove-demo .packery');
 var pckry = new Packery( container );
@@ -465,7 +465,7 @@ eventie.bind( container, 'click', function() {
 });
 ```
   </div>
-  <div id="remove-demo" class="demo">
+  <div id="remove-demo" class="cell demo">
     <p>Click items to remove them</p>
     <div class="packery clickable">
       {{>demo-items}}

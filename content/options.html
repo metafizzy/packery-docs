@@ -17,37 +17,37 @@
 
 <h2 id="containerstyle">containerStyle</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value"><i>Object</i></span>
   </li>
-  <li class="default">
+  <li class="param-bit default">
     <span class="key">Default:</span>
     <span class="value"><code>{ position: <span class="string">'relative'</span> }</code></span>
   </li>
-</ul>
+</p>
 
 <p>CSS styles that are applied to the container element.</p>
 
 <h2 id="columnwidth">columnWidth</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value"><i>Number</i>, <i>Element</i>, or Selector <i>String</i></span>
   </li>
-</ul>
+</p>
 
 <p>The width of a column of a horizontal grid. When set, Packery will align item elements horizontally to this grid.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 "columnWidth": 60
 ```
   </div>
-  <div class="demo packery js-packery" data-packery-options='{ "columnWidth": 60 }'>
+  <div class="cell demo packery js-packery" data-packery-options='{ "columnWidth": 60 }'>
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -68,8 +68,8 @@
 
 <p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` html
 <div id="column-width-demo2">
   <div class="grid-sizer"></div>
@@ -86,7 +86,7 @@
 "itemSelector": ".item"
 ```
   </div>
-  <div id="column-width-demo2" class="demo packery js-packery" data-packery-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
+  <div id="column-width-demo2" class="cell demo packery js-packery" data-packery-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
     <div class="grid-sizer"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -108,22 +108,22 @@
 
 <h2 id="gutter">gutter</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value"><i>Number</i>, <i>Element</i>, or Selector <i>String</i></span>
   </li>
-</ul>
+</p>
 
 <p>The space between item elements, both vertically and horizontally.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 "gutter": 10
 ```
   </div>
-  <div class="demo packery js-packery" data-packery-options='{ "gutter": 10 }'>
+  <div class="cell demo packery js-packery" data-packery-options='{ "gutter": 10 }'>
     <div class="item"></div>
     <div class="item w2"></div>
     <div class="item"></div>
@@ -144,8 +144,8 @@
 
 <p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the width of that element. See <a href="#element-sizing">Element sizing</a>.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` html
 <div id="gutter-demo2">
   <div class="grid-sizer"></div>
@@ -162,7 +162,7 @@
 "itemSelector": ".item"
 ```
   </div>
-  <div id="gutter-demo2" class="demo packery js-packery" data-packery-options='{ "gutter": ".gutter-sizer", "itemSelector": ".item" }'>
+  <div id="gutter-demo2" class="cell demo packery js-packery" data-packery-options='{ "gutter": ".gutter-sizer", "itemSelector": ".item" }'>
     <div class="gutter-sizer"></div>
     <div class="item"></div>
     <div class="item w2"></div>
@@ -184,16 +184,16 @@
 
 <h2 id="isresizebound">isResizeBound</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value"><i>Boolean</i></span>
   </li>
-  <li class="default">
+  <li class="param-bit default">
     <span class="key">Default:</span>
     <span class="value"><code><span class="literal">true</span></code></span>
   </li>
-</ul>
+</p>
 
 <p>Binds layout to window resizing.</p>
 
@@ -201,12 +201,12 @@
 
 <h2 id="itemselector">itemSelector</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value">Selector <i>String</i></span>
   </li>
-</ul>
+</p>
 
 <p>Specifies which child elements to be used as item elements. Setting <code>itemSelector</code> is always recommended. <code>itemSelector</code> is useful to exclude <a href="#element-sizing">sizing elements</a>.</p>
 
@@ -216,19 +216,19 @@
 
 <h2 id="placedelements">placedElements</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value"><i>Element</i>, <i>NodeList</i>, <i>Array</i> of Elements, or Selector <i>String</i></span>
   </li>
-</ul>
+</p>
 
 <p>Specifies which elements are <a href="methods.html#place">placed</a> within the layout. These are special layout elements which will not be laid out by Packery. Rather, Packery will layout item elements <em>around</em> placed elements.</p>
 
 <p><code>placedElements</code> places elements only when the Packery instance is first initialized. You can place additional elements afterwards with the <a href="methods.html#place"><code>place</code> method</a>.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` html
 <div id="placed-elements-demo">
   <div class="placed placed1"></div>
@@ -264,7 +264,7 @@
 }
 ```
   </div>
-  <div id="placed-elements-demo" class="demo packery has-placed js-packery" data-packery-options='{ "itemSelector": ".item", "placedElements": ".placed" }'>
+  <div id="placed-elements-demo" class="cell demo packery has-placed js-packery" data-packery-options='{ "itemSelector": ".item", "placedElements": ".placed" }'>
     <div class="placed placed1"></div>
     <div class="placed placed2"></div>
     <div class="item"></div>
@@ -292,22 +292,22 @@
 
 <h2 id="rowheight">rowHeight</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value"><i>Number</i>, <i>Element</i>, or Selector <i>String</i></span>
   </li>
-</ul>
+</p>
 
 <p>Height of a row of a vertical grid. When set, Packery will align item elements vertically to this grid.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 "rowHeight": 60
 ```
   </div>
-  <div class="demo packery js-packery" data-packery-options='{ "rowHeight": 60 }'>
+  <div class="cell demo packery js-packery" data-packery-options='{ "rowHeight": 60 }'>
     <div class="item"></div>
     <div class="item"></div>
     <div class="item h2"></div>
@@ -327,8 +327,8 @@
 
 <p>If set to an <i>Element</i> or Selector <i>String</i>, Packery will use the height of that element. See <a href="#element-sizing">Element sizing</a>.</p>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` html
 <div id="row-height-demo2">
   <div class="grid-sizer"></div>
@@ -345,7 +345,7 @@
 "itemSelector": ".item"
 ```
   </div>
-  <div id="row-height-demo2" class="demo packery js-packery" data-packery-options='{ "rowHeight": ".grid-sizer", "itemSelector": ".item" }'>
+  <div id="row-height-demo2" class="cell demo packery js-packery" data-packery-options='{ "rowHeight": ".grid-sizer", "itemSelector": ".item" }'>
     <div class="grid-sizer"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -367,16 +367,16 @@
 
 <h2 id="transitionduration">transitionDuration</h2>
 
-<ul class="option-properties">
-  <li class="type">
+<p class="param">
+  <li class="param-bit type">
     <span class="key">Type:</span>
     <span class="value"><i>String</i></span>
   </li>
-  <li class="default">
+  <li class="param-bit default">
     <span class="key">Default:</span>
     <span class="value"><code><span class="string">"0.4s"</span></code></span>
   </li>
-</ul>
+</p>
 
 <p>The time duration of transitions for item elements.</p>
 

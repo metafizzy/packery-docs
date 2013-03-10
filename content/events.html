@@ -55,8 +55,8 @@ pckry.on( 'layoutComplete', function() {
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 // set up Packery and Draggabillies
 // like the bindDraggabillyEvents demo, then...
@@ -65,7 +65,7 @@ pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
 });
 ```
   </div>
-  <div id="drag-item-positioned-demo" class="demo">
+  <div id="drag-item-positioned-demo" class="cell demo">
     {{>draggable-packery}}
   </div>
 </div>
@@ -95,15 +95,15 @@ pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
   console.log('Packery layout completed on ' + laidOutItems.length + ' items');
 });
 ```
   </div>
-  <div id="layout-complete-demo" class="demo">
+  <div id="layout-complete-demo" class="cell demo">
     <p>Click item to toggle size</p>
     <div class="packery clickable">
       {{>demo-items}}
@@ -134,15 +134,15 @@ pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
   </li>
 </ul>
 
-<div class="example">
-  <div class="example-code">
+<div class="row example">
+  <div class="cell example-code">
 ``` js
 pckry.on( 'removeComplete', function( pckryInstance, removedItems ) {
   console.log( 'Removed ' + removedItems.length + ' items' );
 });
 ```
   </div>
-  <div id="remove-complete-demo" class="demo">
+  <div id="remove-complete-demo" class="cell demo">
     <p>Click items to remove them</p>
     <div class="packery clickable">
       {{>demo-items}}
