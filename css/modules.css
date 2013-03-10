@@ -103,6 +103,7 @@
 .row {
   display: -webkit-flex;
   display: flex;
+  margin-bottom: 0.8em;
 }
 
 .row .cell {

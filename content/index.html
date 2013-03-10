@@ -81,11 +81,16 @@
 
 <h3 id="bower">Bower</h3>
 
-<p>If you are cool with CLI, Packery can be installed with <a href="http://twitter.github.com/bower">Bower</a>. Packery is built on dependencies. Bower takes care of these.</p>
-
+<div class="row">
+  <div class="cell">
+    <p>If you are cool with CLI, Packery can be installed with <a href="http://twitter.github.com/bower">Bower</a>. Packery is built on dependencies. Bower takes care of these.</p>
+  </div>
+  <div class="cell">
 ```
 bower install packery
 ```
+  </div>
+</div>
 
 <h2 id="commercial-licensing">Commercial licensing</h2>
 
@@ -106,37 +111,57 @@ bower install packery
 
 <h3 id="html">HTML</h3>
 
-<p>Packery works on a container element with a group of similar child items.</p>
-
+<div class="row">
+  <div class="cell">
+    <p>Packery works on a container element with a group of similar child items.</p>
+  </div>
+  <div class="cell">
 ``` html
 <div id="container">
   <div class="item">...</div>
-  <div class="item">...</div>
+  <div class="item w2">...</div>
   <div class="item">...</div>
   ...
 </div>
 ```
+  </div>
+</div>
 
-<p>Be sure to add the script(s) for Packery to your site. For the packaged (non Bower) version:</p>
-
+<div class="row">
+  <div class="cell">
+    <p>Be sure to include the script(s) for Packery to your site. For the packaged (non Bower) version:</p>
+  </div>
+  <div class="cell">
 ``` html
 <script src="/path/to/packery.pkgd.min.js"></script>
 ```
+  </div>
+</div>
+
+
+
 
 <h3 id="css">CSS</h3>
 
-<p>All sizing of items is handled by your CSS.</p>
-
+<div class="row">
+  <div class="cell">
+    <p>All sizing of items is handled by your CSS.</p>
+  </div>
+  <div class="cell">
 ``` css
-.item {
-  width: 25%;
-}
+.item { width: 25%; }
+.item.w2 { width: 50%; }
 ```
+  </div>
+</div>
 
 <h3 id="javascript">Initialize with JavaScript</h3>
 
-<p>Initialize a Packery instance with <code>new Packery( element, options )</code>. The Packery constructor accepts two arguments: the container element and an options object.</p>
-
+<div class="row">
+  <div class="cell">
+    <p>Initialize a Packery instance with <code><span class="keyword">new</span> Packery( element, options )</code>. The Packery constructor accepts two arguments: the container element and an <a href="options.html">options</a> object.</p>
+  </div>
+  <div class="cell">
 ``` js
 var container = document.querySelector('#container');
 var pckry = new Packery( container, {
@@ -145,14 +170,23 @@ var pckry = new Packery( container, {
   columnWidth: 200
 });
 ```
+  </div>
+</div>
 
 <h3 id="init-with-html">Initialize in HTML</h3>
 
-<p>You can initialize Packery just with HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. Options can be set with a <code>data-packery-options</code> attribute. Options must be valid JSON. Keys need to be quoted. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
-
+<div class="row">
+  <div class="cell">
+    <p>You can initialize Packery just with HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. <a href="options.html">Options</a> can be set with a <code>data-packery-options</code> attribute.</p>
+  </div>
+  <div class="cell">
 ``` html
 <div id="container" class="js-packery"
   data-packery-options='{ "itemSelector": ".item", "columnWidth": 200 }'>
 ```
+  </div>
+</div>
 
-<p>That's it! Now let's do some fun stuff with options and methods.</p>
+<p><strong>Options set in HTML must be valid JSON.</strong> Keys need to be quoted, for example <code><span class="string">"itemSelector"</span>:</code>. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
+
+<p>That&rsquo;s it! Now let&rsquo;s do some fun stuff with <a href="options.html">options</a> and <a href="methods.html">methods</a>.</p>

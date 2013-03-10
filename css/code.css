@@ -23,7 +23,7 @@ pre code {
 }
 
 code .string,
-code .tag .value { color: #292; }
+code .tag .value { color: #072; }
 code .number, /* integer */
 code .cp, /* doctype */
 code .literal { color: #07D; } /*boolean*/
