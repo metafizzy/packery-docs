@@ -1,0 +1,38 @@
+/* ---- #content ---- */
+
+#content {
+  padding: 20px 20px 20px 200px;
+}
+
+#content h2 {
+  border-top: 4px solid #FAC;
+  padding-top: 0.8em;
+  margin-top: 2.0em;
+  font-size: 1.7em;
+}
+
+#content h2:target {
+  padding-left: 0.5em;
+  background: #A08;
+  color: white;
+  border-top-color: #A80;
+}
+
+/* ---- #page-nav ---- */
+
+#page-nav {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  list-style: none;
+  padding: 0;
+  font-size: 13px;
+  width: 200px;
+  text-align: left;
+  padding: 20px;
+  z-index: 2; /* above packeries */
+}
+
+#page-nav li {
+  margin-bottom: 4px;
+}
