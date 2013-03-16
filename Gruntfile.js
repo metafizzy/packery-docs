@@ -73,6 +73,12 @@ module.exports = function( grunt ) {
             dest: 'build/css/'
           }
         ]
+      },
+      bowerSources: {
+        // additional sources will be set in bower-list-map
+        // friggin Nicolas, not using main the right way :P
+        src: [ 'components/normalize-css/normalize.css' ],
+        dest: 'build/'
       }
     },
 
