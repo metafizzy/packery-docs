@@ -17,7 +17,7 @@
 
   <div id="site-nav">
     <h1><a href=".">Packery</a></h1>
-    <ol>
+    <ol class="primary-content">
       <li class="nav-options"><a href="options.html">Options</a></li>
       <li class="nav-methods"><a href="methods.html">Methods</a></li>
       <li class="nav-events"><a href="events.html">Events</a></li>
@@ -42,10 +42,19 @@
   {{/if}}
 
   <div id="content">
-    {{#unless page.is_homepage}}
-      <h1>{{page.title}}</h1>
-    {{/unless}}
-    {{{ content }}}
+    <div class="primary-content">
+      {{#unless page.is_homepage}}
+        <h1>{{page.title}}</h1>
+      {{/unless}}
+      {{{ content }}}
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="footer-content">
+      <a class="metafizzy-logo" href="http://metafizzy.co">M<span class="etafizzy">etafizzy</span></a>
+      <span class="copyright">metafizzy-</span>
+    </div>
   </div>
 
 <!-- Packery does NOT require jQuery.

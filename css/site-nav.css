@@ -7,6 +7,9 @@
 }
 
 #site-nav h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 200px;
   text-align: center;
   font-size: 2.0em;
@@ -33,12 +36,8 @@
 }
 
 #site-nav ol {
-  padding: 0;
   list-style: none;
   font-size: 17px;
-  position: absolute;
-  left: 200px;
-  top: 0;
 }
 
 #site-nav ol:after {
