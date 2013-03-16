@@ -66,6 +66,7 @@
 .methods-page #site-nav .nav-methods a,
 .events-page #site-nav .nav-events a,
 .draggable-page #site-nav .nav-draggable a,
-.license-page #site-nav .nav-license a {
+.license-page #site-nav .nav-license a,
+.appendix-page #site-nav .nav-appendix a {
   background: #80A;
 }
