@@ -5,12 +5,6 @@
   background: #FDD;
 }
 
-.demo .item.gigante {
-  width: 120px;
-  height: 160px;
-  z-index: 10; /* keep it above other items */
-}
-
 .demo .button {
   margin-bottom: 0.8em;
 }

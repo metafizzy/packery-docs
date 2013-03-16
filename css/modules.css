@@ -96,6 +96,12 @@
 .packery .item.h4 { height: 160px; background: #A80; }
 .packery .item.w4 { width:  160px; background: #80A; }
 
+.packery .item.gigante {
+  width: 120px;
+  height: 160px;
+  z-index: 10; /* keep it above other items */
+}
+
 /* ---- row ---- */
 
 .row {
