@@ -54,9 +54,25 @@ module.exports = function( grunt ) {
 
     // ----- copy ----- //
     copy: {
-      'public': {
-        src: 'public/**',
-        dest: 'build/'
+      public: {
+        files: [
+          {
+            expand: true, // enable dynamic options
+            cwd: 'public/', // set cwd, excludes it in build path
+            src: [ '**' ],
+            dest: 'build/'
+          }
+        ]
+      },
+      css: {
+        files: [
+          {
+            expand: true, // enable dynamic options
+            cwd: 'css/', // set cwd, excludes it in build path
+            src: [ '*' ],
+            dest: 'build/css/'
+          }
+        ]
       }
     },
 
@@ -64,6 +80,14 @@ module.exports = function( grunt ) {
       content: {
         files: [ 'content/*', 'templates/*.mustache' ],
         tasks: [ 'bower-list-map', 'hbarz' ]
+      },
+      public: {
+        files: [ 'public/**' ],
+        tasks: [ 'copy:public' ]
+      },
+      css: {
+        files: [ 'css/*' ],
+        tasks: [ 'copy:css' ]
       }
     }
 
@@ -76,6 +100,13 @@ module.exports = function( grunt ) {
   // load all tasks in tasks/
   grunt.loadTasks('tasks/');
 
-  grunt.registerTask( 'default', 'bower-list-map package-sources concat uglify hbarz'.split(' ') );
+  grunt.registerTask( 'default', [
+    'bower-list-map',
+    'package-sources',
+    'concat',
+    'uglify',
+    'hbarz',
+    'copy',
+  ]);
 
 };
