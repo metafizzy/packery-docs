@@ -52,6 +52,14 @@ module.exports = function( grunt ) {
       }
     },
 
+    // ----- copy ----- //
+    copy: {
+      'public': {
+        src: 'public/**',
+        dest: 'build/'
+      }
+    },
+
     watch: {
       content: {
         files: [ 'content/*', 'templates/*.mustache' ],
@@ -61,8 +69,8 @@ module.exports = function( grunt ) {
 
   });
 
-
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   // load all tasks in tasks/
