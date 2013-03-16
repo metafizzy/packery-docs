@@ -43,7 +43,8 @@ h1, h2, h3, h4, h5,
 .option-properties .key,
 .param-bit b,
 .button,
-#notification {
+#notification,
+#footer .copyright {
   font-family: 'Montserrat', Gotham, 'Proxima Nova', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
 }
 
