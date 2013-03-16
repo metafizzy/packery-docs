@@ -74,6 +74,16 @@ module.exports = function( grunt ) {
           }
         ]
       },
+      js: {
+        files: [
+          {
+            expand: true, // enable dynamic options
+            cwd: 'js/', // set cwd, excludes it in build path
+            src: [ '**' ],
+            dest: 'build/js/'
+          }
+        ]
+      },
       bowerSources: {
         // additional sources will be set in bower-list-map
         // friggin Nicolas, not using main the right way :P
@@ -94,6 +104,10 @@ module.exports = function( grunt ) {
       css: {
         files: [ 'css/*' ],
         tasks: [ 'copy:css' ]
+      },
+      js: {
+        files: [ 'js/**' ],
+        tasks: [ 'copy:js' ]
       }
     }
 
