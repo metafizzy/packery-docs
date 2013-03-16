@@ -1,15 +1,19 @@
 #hero {
   background: #80A;
   color: #FAF3F5;
-  padding: 20px 20px 20px 200px;
   position: relative;
   overflow: hidden;
 }
 
 /* keep above packery demo */
-#hero > * {
+#hero .primary-content > * {
   position: relative;
   z-index: 2; 
+}
+
+#hero .primary-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #hero h1 {
@@ -48,18 +52,25 @@
   z-index: 2;
 }
 
-#hero .placed-packery {
-  width: 570px;
+#hero .placed-ackery {
+  width: 476px;
   height: 90px;
-  left: 200px;
+  left: 294px;
   top: 92px;
 }
 
-#hero .placed-p {
+#hero .placed-p-top {
   width: 95px;
-  height: 90px;
+  height: 82px;
   left: 200px;
   top: 70px;
+}
+
+#hero .placed-p-bottom {
+  width: 40px;
+  height: 90px;
+  left: 200px;
+  top: 92px;
 }
 
 #hero .placed-k {
@@ -75,8 +86,6 @@
   left: 675px;
   top: 120px;
 }
-
-
 
 #hero .placed-tagline {
   width: 494px;
