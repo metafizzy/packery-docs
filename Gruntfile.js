@@ -3,22 +3,27 @@
 
 module.exports = function( grunt ) {
 
+  // get banner comment from draggabilly.js
+  var banner = ( function() {
+    var src = grunt.file.read('components/packery/js/packery.js');
+    var re = new RegExp('^\\s*(?:\\/\\*[\\s\\S]*?\\*\\/)\\s*');
+    var matches = src.match( re );
+    return matches[0].replace( 'Packery', 'Packery PACKAGED' );
+  })();
+
   grunt.initConfig({
-    //
-    siteJS: 'js/*.js',
 
     concat: {
-      options: {
-        // stripBanners: true,
-        // banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
       js: {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
         dest: 'build/js/packery-site.js'
       },
       pkgd: {
         // src will be set in package-sources task
-        dest: 'build/packery.pkgd.js'
+        dest: 'build/packery.pkgd.js',
+        options: {
+          banner: banner
+        }
       },
       css: {
         src: [ 'components/normalize-css/normalize.css', 'css/*.css' ],
@@ -30,6 +35,9 @@ module.exports = function( grunt ) {
       pkgd: {
         files: {
           'build/packery.pkgd.min.js': [ 'build/packery.pkgd.js' ]
+        },
+        options: {
+          banner: banner
         }
       },
       js: {
