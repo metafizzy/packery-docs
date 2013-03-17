@@ -1,7 +1,7 @@
 /* ---- site nav ---- */
 
 #site-nav {
-  background: #A08;
+  background: #C09;
   height: 60px;
   line-height: 60px;
 }
@@ -13,7 +13,7 @@
   width: 200px;
   text-align: center;
   font-size: 2.0em;
-  background: #A80;
+  background: #C90;
 }
 
 #site-nav h1 a {
@@ -22,7 +22,7 @@
 }
 
 #site-nav h1 a:hover {
-  background: #80A;
+  background: #90C;
 }
 
 /* hide text on index */
@@ -57,7 +57,7 @@
 }
 
 #site-nav ol a:hover {
-  background: #A80;
+  background: #C90;
 }
 
 /* selected */
@@ -67,5 +67,5 @@
 .draggable-page #site-nav .nav-draggable a,
 .license-page #site-nav .nav-license a,
 .appendix-page #site-nav .nav-appendix a {
-  background: #80A;
+  background: #90C;
 }

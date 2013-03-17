@@ -59,14 +59,14 @@ a code {
 
 a:hover,
 a:hover code {
-  color: #80A;
+  color: #90C;
 }
 
 
 /* ---- headers ---- */
 
 h1, h2, h3, h4 {
-  color: #A08;
+  color: #C09;
 }
 
 h1 {
