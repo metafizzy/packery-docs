@@ -9,16 +9,18 @@
 
 /* ---- #content ---- */
 
-#content {
+#content .primary-content {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-#content h2 {
+#content h2,
+#content .horiz-rule {
+  font-size: 1.7em;
   border-top: 4px solid #FAC;
   padding-top: 0.8em;
   margin-top: 2.0em;
-  font-size: 1.7em;
+
 }
 
 #content h2:target {
