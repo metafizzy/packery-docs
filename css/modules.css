@@ -165,7 +165,10 @@
 
 #footer .metafizzy-logo {
   display: block;
-  font-size: 100px;
-  line-height: 1.1;
+  font-size: 110px;
+  line-height: 1.0;
   background: none;
+  opacity: 0.25;
 }
+
+#footer .metafizzy-logo:hover { opacity: 1; }
