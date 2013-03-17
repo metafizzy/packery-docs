@@ -14,6 +14,16 @@
   padding-bottom: 20px;
 }
 
+#content .primary-content > * {
+  max-width: 700px;
+}
+
+#content .primary-content .row,
+#content #notification,
+#content #hero-demos {
+  max-width: none;
+}
+
 #content h2,
 #content .horiz-rule {
   font-size: 1.7em;
