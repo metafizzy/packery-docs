@@ -1,28 +1,12 @@
 /* ---- primary-content ---- */
 
 /* stuff that isn't in the gutter */
-
 .primary-content {
-  padding-left: 200px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* ---- #content ---- */
-
-#content .primary-content {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-#content .primary-content > * {
-  max-width: 700px;
-}
-
-#content .primary-content .row,
-#content #notification,
-#content #hero-demos {
-  max-width: none;
-}
 
 #content h2,
 #content .horiz-rule {
@@ -30,7 +14,6 @@
   border-top: 4px solid #FAC;
   padding-top: 0.8em;
   margin-top: 2.0em;
-
 }
 
 #content h2:target {
@@ -43,18 +26,41 @@
 /* ---- #page-nav ---- */
 
 #page-nav {
-  position: fixed;
-  left: 0;
-  top: 60px;
   list-style: none;
   padding: 0;
   font-size: 13px;
-  width: 200px;
-  text-align: left;
-  padding: 20px;
   z-index: 2; /* above packeries */
 }
 
-#page-nav li {
-  margin-bottom: 4px;
+@media screen and ( min-width: 720px ) {
+
+  .primary-content {
+    padding-left: 200px;
+    padding-right: 20px;
+  }
+
+  #content .primary-content > * {
+    max-width: 700px;
+  }
+
+  #content .primary-content .row,
+  #content #notification,
+  #content #hero-demos {
+    max-width: none;
+  }
+
+  #page-nav {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    padding: 20px;
+  }
+
+  #page-nav li {
+    margin-bottom: 4px;
+  }
+
 }

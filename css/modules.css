@@ -104,7 +104,7 @@
 
 /* ---- row ---- */
 
-.row {
+.row .cell {
   margin-bottom: 0.8em;
 }
 
@@ -115,27 +115,10 @@
   clear: both;
 }
 
-/* two column by default*/
-.row .cell {
-  float: left;
-  width: 48.75%;
-  margin-right: 2.5%;
-}
-/* IE8 doesn't support :last-child */
-.lt-ie9 .row .cell { margin-right: 1.5%; }
-
-/* three column */
-.row3 .cell {
-  width: 31.6%;
-}
-
-/* four column */
 .row4 .cell {
-  width: 23.1%;
-}
-
-.row .cell:last-child {
-  margin-right: 0;
+  float: left;
+  width: 48%;
+  margin-right: 2%;
 }
 
 /* ---- notification ---- */
@@ -191,3 +174,35 @@
 }
 
 #footer .metafizzy-logo:hover { opacity: 1; }
+
+
+@media screen and ( min-width: 720px ) {
+  .row {
+    margin-bottom: 0.8em;
+  }
+
+  /* two column by default*/
+  .row .cell {
+    float: left;
+    width: 48.75%;
+    margin-right: 2.5%;
+    margin-bottom: 0;
+  }
+  /* IE8 doesn't support :last-child */
+  .lt-ie9 .row .cell { margin-right: 1.5%; }
+
+  /* three column */
+  .row3 .cell {
+    width: 31.6%;
+  }
+
+  /* four column */
+  .row4 .cell {
+    width: 23.1%;
+  }
+
+  .row .cell:last-child {
+    margin-right: 0;
+  }
+
+}

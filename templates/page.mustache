@@ -32,20 +32,22 @@
     {{>hero}}
   {{/if}}
 
-  {{! page nav }}
-  {{#if page.nav}}
-    <ul id="page-nav">
-      {{#each page.nav}}
-        <li><a href="#{{slug this}}">{{this}}</a></li>
-      {{/each}}
-    </ul>
-  {{/if}}
-
   <div id="content">
     <div class="primary-content">
+
       {{#unless page.is_homepage}}
         <h1>{{page.title}}</h1>
       {{/unless}}
+
+      {{! page nav }}
+      {{#if page.nav}}
+        <ul id="page-nav">
+          {{#each page.nav}}
+            <li><a href="#{{slug this}}">{{this}}</a></li>
+          {{/each}}
+        </ul>
+      {{/if}}
+
       {{{ content }}}
 
       <div class="horiz-rule"></div>
