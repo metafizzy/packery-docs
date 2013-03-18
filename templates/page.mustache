@@ -4,13 +4,20 @@
 <head>
   <meta charset="utf-8">
 
-  <title>{{#unless page.is_homepage}}{{page.title}} &middot; {{/unless}}Packery</title>
+  <title>Packery{{#unless page.is_homepage}} {{page.title}}{{/unless}}</title>
 
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
   <!-- <link rel="stylesheet" href="css/packery-site.css"> -->
   {{#each site.css}}
     <link rel="stylesheet" href="{{this}}">
   {{/each}}
+
+  {{! Twitter Cards }}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@metafizzyco" />
+  <meta name="twitter:url" content="http://packery.metafizzy.co/{{basename}}.html" />
+  <meta name="twitter:title" content="Packery{{#unless page.is_homepage}} {{page.title}}{{/unless}}" />
+  <meta name="twitter:description" content="The bin-packing layout library. Packery makes your crazy and clever layout a real thing. Be clever. Get crazy." />
 
 </head>
 <body class="{{basename}}-page" data-page="{{basename}}">
