@@ -157,3 +157,16 @@ var pckry = new Packery( container, {
 <p><strong>Options set in HTML must be valid JSON.</strong> Keys need to be quoted, for example <code><span class="string">"itemSelector"</span>:</code>. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
 
 <p>That&rsquo;s it! Now let&rsquo;s do some fun stuff with <a href="options.html">options</a> and <a href="methods.html">methods</a>.</p>
+
+<h2 id="jquery">jQuery</h2>
+
+<p>Packery works as a jQuery plugin. jQuery is <strong>not</strong> required to use Packery. If you enjoy jQuery, Packery works with it.</p>
+
+``` js
+var $container = $('#container');
+// initialize
+$container.packery({
+  itemSelector: '.item',
+  columnWidth: 200
+});
+```

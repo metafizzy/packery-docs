@@ -22,6 +22,26 @@
 }
 ---
 
+<p>Methods are actions taken on Packery instances.</p>
+
+``` js
+var container = document.querySelector('#container');
+var pckry = new Packery( container );
+container.appendChild( elem );
+pckry.appended( elem );
+pckry.layout();
+```
+
+<p>If you are using jQuery, methods follow jQuery UI pattern.</p>
+
+``` js
+$('#container').packery()
+  .append( elem )
+  .packery( 'appended', elem );
+  // no method is same as layout -> .packery('layout')
+  .packery();
+```
+
 <h2 id="additems">addItems</h2>
 
 ``` js
@@ -109,7 +129,7 @@ eventie.bind( button, 'click', function() {
 .bindDraggabillyEvents( Draggabilly )
 ```
 
-<p>Bind Draggabilly events, so that the Packery instance will layout around the dragged element.</p>
+<p>Bind <a href="http://draggabilly.desandro.com">Draggabilly</a> events, so that the Packery instance will layout around the dragged element.</p>
 
 <ul class="params">
   <li>
@@ -158,7 +178,7 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 .bindUIDraggableEvents( $elements )
 ```
 
-<p>Bind jQuery UI Draggable events, so that the Packery instance will layout around the dragged element.</p>
+<p>Bind <a href="http://jqueryui.com/draggable/">jQuery UI Draggable</a> events, so that the Packery instance will layout around the dragged element.</p>
 
 <ul class="params">
   <li class="param">
