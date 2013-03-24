@@ -121,6 +121,14 @@
   margin-right: 2%;
 }
 
+/* ---- instruction ---- */
+
+.instruction {
+  font-size: 18px;
+  margin-bottom: 0.2em;
+  color: #AAA;
+}
+
 /* ---- notification ---- */
 
 #notification {
