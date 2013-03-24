@@ -95,7 +95,7 @@ module.exports = function( grunt ) {
       bowerSources: {
         // additional sources will be set in bower-list-map
         // friggin Nicolas, not using main the right way :P
-        src: [ 'components/normalize-css/normalize.css' ],
+        src: [ 'components/normalize-css/normalize.css', 'components/jquery/jquery.min.js' ],
         dest: 'build/'
       }
     },
