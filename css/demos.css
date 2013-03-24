@@ -75,6 +75,19 @@
   box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
 }
 
+/* ---- fit ---- */
+
+#fit-demo .item {
+  width: 25%;
+  height: 60px;
+}
+
+#fit-demo .item.gigante {
+  width: 100%;
+  background: #C90;
+  height: 90px;
+}
+
 /* ---- layout ---- */
 
 .clickable .item:hover {

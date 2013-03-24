@@ -7,6 +7,7 @@
 'use strict';
 
 var PS = window.PS;
+var $ = window.jQuery;
 
 function getItemElement() {
   var elem = document.createElement('div');
@@ -95,6 +96,50 @@ PS.methods = function() {
         pckry = new Packery( container );
       }
       isActive = !isActive;
+    });
+  })();
+
+  // ----- fit demo ----- //
+
+  ( function() {
+    var container = document.querySelector('#fit-demo .packery');
+    var pckry = new Packery( container );
+
+    eventie.bind( container, 'click', function( event ) {
+      // don't proceed if item was not clicked on
+      var target = event.target;
+      if ( !classie.has( target, 'item' ) ) {
+        return;
+      }
+
+      var isGigante = classie.has( target, 'gigante' );
+      classie.toggleClass( target, 'gigante' );
+
+      if ( isGigante ) {
+        // if shrinking, just layout
+        pckry.layout();
+      } else {
+        // if expanding, fit it
+        pckry.fit( target );
+      }
+    });
+  })();
+
+
+  // ----- fit position ----- //
+
+  ( function() {
+    var container = document.querySelector('#fit-position-demo .packery');
+    var pckry = new Packery( container );
+
+    eventie.bind( container, 'click', function( event ) {
+      // don't proceed if item was not clicked on
+      var target = event.target;
+      if ( !classie.has( target, 'item' ) ) {
+        return;
+      }
+
+      pckry.fit( target, 40, 40 );
     });
   })();
 
