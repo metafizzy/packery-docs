@@ -16,7 +16,7 @@ module.exports = function( grunt ) {
     concat: {
       js: {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
-        dest: 'build/js/packery-site.js'
+        dest: 'build/js/packery-docs.js'
       },
       pkgd: {
         // src will be set in package-sources task
@@ -27,7 +27,7 @@ module.exports = function( grunt ) {
       },
       css: {
         src: [ 'components/normalize-css/normalize.css', 'css/*.css' ],
-        dest: 'build/css/packery-site.css'
+        dest: 'build/css/packery-docs.css'
       }
     },
 
