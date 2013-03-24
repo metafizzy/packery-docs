@@ -8,6 +8,15 @@
 
 var PS = window.PS;
 
+// ----- text helper ----- //
+
+var docElem = document.documentElement;
+var textSetter = docElem.textContent !== undefined ? 'textContent' : 'innerText';
+
+function setText( elem, value ) {
+  elem[ textSetter ] = value;
+}
+
 // -------------------------- notify -------------------------- //
 
 var transitionProp = getStyleProperty('transition');
@@ -27,7 +36,8 @@ var hideTime = transitionProp ? 1000 : 1500;
 
 function notify( message ) {
   message += ' at ' + timeStamp();
-  notifElem.innerText = message;
+  setText( notifElem, message );
+
   if ( transitionProp ) {
     notifElem.style[ transitionProp ] = 'none';
   }

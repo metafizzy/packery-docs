@@ -7,7 +7,6 @@
 'use strict';
 
 var PS = window.PS;
-var $ = window.jQuery;
 
 function getItemElement() {
   var elem = document.createElement('div');
