@@ -87,6 +87,28 @@ PS.events = function() {
 
   })();
 
+  // ----- fitComplete demo ----- //
+
+  ( function() {
+    var container = document.querySelector('#fit-complete-demo .packery');
+    var pckry = new Packery( container );
+
+    pckry.on( 'fitComplete', function( pckryInstance, item ) {
+      var classes = getClassString( item.element );
+      notify( 'Fit ' + classes );
+    });
+
+    eventie.bind( container, 'click', function( event ) {
+      // don't proceed if item was not clicked on
+      var target = event.target;
+      if ( !classie.has( target, 'item' ) ) {
+        return;
+      }
+
+      pckry.fit( target, 40, 40 );
+    });
+  })();
+
   // ----- layoutComplete demo ----- //
 
   ( function() {

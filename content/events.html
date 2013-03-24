@@ -3,6 +3,7 @@
   "title": "Events",
   "nav": [
     "dragItemPositioned",
+    "fitComplete",
     "layoutComplete",
     "removeComplete"
   ]
@@ -67,6 +68,47 @@ pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
   </div>
   <div id="drag-item-positioned-demo" class="cell demo">
     {{>draggable-packery}}
+  </div>
+</div>
+
+<h2 id="fitcomplete">fitComplete</h2>
+
+``` js
+.on( 'fitComplete', function( pckryInstance, item ) { //...
+```
+
+<p>Triggered after an item element is <a href="methods.html#fit">fit</a>.</p>
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>pckryInstance</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
+    </p>
+    <p class="description param-bit">the Packery instance</p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit"><code>item</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
+    </p>
+    <p class="description param-bit">items that was fit</p>
+  </li>
+</ul>
+
+<div class="row example">
+  <div class="cell example-code">
+``` js
+pckry.on( 'fitComplete', function( pckryInstance, item ) {
+  notify( 'fit ' + item.element.className );
+});
+```
+  </div>
+  <div id="fit-complete-demo" class="cell demo">
+    <p class="instruction">Click item to fit it at 40, 40</p>
+    <div class="packery clickable">
+      {{>demo-items}}
+    </div>
   </div>
 </div>
 
