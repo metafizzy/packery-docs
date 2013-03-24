@@ -156,7 +156,7 @@ PS.methods = function() {
     var container = document.querySelector('#remove-demo .packery');
     var pckry = new Packery( container );
 
-    eventie.bind( container, 'click', function() {
+    eventie.bind( container, 'click', function( event ) {
       // don't proceed if item was not clicked on
       if ( !classie.has( event.target, 'item' ) ) {
         return;

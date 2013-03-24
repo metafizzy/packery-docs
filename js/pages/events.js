@@ -142,7 +142,7 @@ PS.events = function() {
       notify( 'Removed ' + items.length + ' items from ' + classes );
     });
 
-    eventie.bind( container, 'click', function() {
+    eventie.bind( container, 'click', function( event ) {
       // don't proceed if item was not clicked on
       if ( !classie.has( event.target, 'item' ) ) {
         return;
