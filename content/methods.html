@@ -132,6 +132,8 @@ eventie.bind( button, 'click', function() {
 
 <p>Bind <a href="http://draggabilly.desandro.com">Draggabilly</a> events, so that the Packery instance will layout around the dragged element.</p>
 
+<p>See <a href="draggable.html#draggabilly">Draggable: Draggabilly</a> for more.</p>
+
 <ul class="params">
   <li>
     <h5 class="param-name param-bit"><code>Draggabilly</code></h5>
@@ -140,30 +142,6 @@ eventie.bind( button, 'click', function() {
     </p>
   </li>
 </ul>
-
-<div class="row example">
-  <div class="cell example-code">
-``` js
-var container = document.querySelector('#bind-draggabilly-demo .packery');
-var itemElems = container.querySelectorAll('.item');
-var pckry = new Packery( container, {
-  columnWidth: 80,
-  rowHeight: 80
-});
-// for each item element
-for ( var i=0, len = itemElems.length; i < len; i++ ) {
-  var elem = itemElems[i];
-  // make element draggable with Draggabilly
-  var draggie = new Draggabilly( elem );
-  // bind Draggabilly events to Packery
-  pckry.bindDraggabillyEvents( draggie );
-}
-```
-  </div>
-  <div id="bind-draggabilly-demo" class="cell demo">
-    {{>draggable-packery}}
-  </div>
-</div>
 
 <h2 id="bindresize">bindResize</h2>
 
@@ -181,6 +159,8 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 
 <p>Bind <a href="http://jqueryui.com/draggable/">jQuery UI Draggable</a> events, so that the Packery instance will layout around the dragged element.</p>
 
+<p>See <a href="draggable.html#jquery-ui-draggable">Draggable: jQuery UI Draggable</a> for more.</p>
+
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>$element</code></h5>
@@ -189,27 +169,6 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
     </p>
   </li>
 </ul>
-
-<div class="row example">
-  <div class="cell example-code">
-``` js
-var $container = $('#bind-ui-draggable-demo .packery');
-var $itemElems = $container.find('.item');
-var pckry = new Packery( $container[0], {
-  columnWidth: 80,
-  rowHeight: 80
-});
-
-// make item elements draggable
-$itemElems.draggable();
-// bind Draggable events to Packery
-pckry.bindUIDraggableEvents( $itemElems );
-```
-  </div>
-  <div id="bind-ui-draggable-demo" class="cell demo">
-    {{>draggable-packery}}
-  </div>
-</div>
 
 <h2 id="destroy">destroy</h2>
 

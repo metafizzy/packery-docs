@@ -45,41 +45,6 @@ PS.methods = function() {
     });
   })();
 
-  // ----- bind Draggabilly ----- //
-
-  ( function() {
-    var container = document.querySelector('#bind-draggabilly-demo .packery');
-    var itemElems = container.querySelectorAll('.item');
-    var pckry = new Packery( container, {
-      columnWidth: 80,
-      rowHeight: 80
-    });
-    // for each item element
-    for ( var i=0, len = itemElems.length; i < len; i++ ) {
-      var elem = itemElems[i];
-      // make element draggable with Draggabilly
-      var draggie = new Draggabilly( elem );
-      // bind Draggabilly events to Packery
-      pckry.bindDraggabillyEvents( draggie );
-    }
-  })();
-
-  // ----- bind UI Draggable ----- //
-
-  ( function() {
-    var $container = $('#bind-ui-draggable-demo .packery');
-    var $itemElems = $container.find('.item');
-    var pckry = new Packery( $container[0], {
-      columnWidth: 80,
-      rowHeight: 80
-    });
-
-    // make item elements draggable
-    $itemElems.draggable();
-    // bind Draggable events to Packery
-    pckry.bindUIDraggableEvents( $itemElems );
-  })();
-
   // ----- destroy demo ----- //
 
   ( function() {

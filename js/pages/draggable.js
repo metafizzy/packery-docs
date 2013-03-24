@@ -15,12 +15,13 @@ PS.draggable = function() {
 
   ( function() {
     var container = document.querySelector('#draggabilly-demo .packery');
-    var itemElems = container.querySelectorAll('.item');
     var pckry = new Packery( container, {
       columnWidth: 80,
       rowHeight: 80
     });
-    // for each item element
+
+    var itemElems = pckry.getItemElements();
+    // for each item...
     for ( var i=0, len = itemElems.length; i < len; i++ ) {
       var elem = itemElems[i];
       // make element draggable with Draggabilly
@@ -34,25 +35,25 @@ PS.draggable = function() {
 
   ( function() {
     var $container = $('#ui-draggable-demo .packery');
-    var $itemElems = $container.find('.item');
-    var pckry = new Packery( $container[0], {
+    $container.packery({
       columnWidth: 80,
       rowHeight: 80
     });
 
+    var $itemElems = $( $container.packery('getItemElements') );
     // make item elements draggable
     $itemElems.draggable();
     // bind Draggable events to Packery
-    pckry.bindUIDraggableEvents( $itemElems );
+    $container.packery( 'bindUIDraggableEvents', $itemElems );
   })();
 
   // ----- non-grid ----- //
 
   ( function() {
     var container = document.querySelector('#non-grid-demo .packery');
-    var itemElems = container.querySelectorAll('.item');
     var pckry = new Packery( container );
-    // for each item element
+
+    var itemElems = pckry.getItemElements();
     for ( var i=0, len = itemElems.length; i < len; i++ ) {
       var elem = itemElems[i];
       // make element draggable with Draggabilly
@@ -66,12 +67,12 @@ PS.draggable = function() {
 
   ( function() {
     var container = document.querySelector('#grid-demo .packery');
-    var itemElems = container.querySelectorAll('.item');
     var pckry = new Packery( container, {
       columnWidth: 80,
       rowHeight: 80
     });
-    // for each item element
+
+    var itemElems = pckry.getItemElements();
     for ( var i=0, len = itemElems.length; i < len; i++ ) {
       var elem = itemElems[i];
       // make element draggable with Draggabilly

@@ -15,18 +15,19 @@
 
 <h2 id="draggabilly">Draggabilly</h2>
 
-<p>Draggabilly is a separate library that makes elements draggable. It&rsquo;s pretty great because it supports multi-touch. After you initialize a new Draggabilly instance, bind its events to a Packery instance with <a href="methods.html#binddraggabillyevents"><code>bindDraggabillyEvents</code></a>.</p>
+<p><a href="http://draggabilly.desandro.com">Draggabilly</a> is a separate library that makes elements draggable. It&rsquo;s pretty great because it supports multi-touch. After you initialize a new Draggabilly instance, bind its events to a Packery instance with <a href="methods.html#binddraggabillyevents"><code>bindDraggabillyEvents</code></a>.</p>
 
 <div class="row example">
   <div class="cell example-code">
 ``` js
 var container = document.querySelector('#draggabilly-demo .packery');
-var itemElems = container.querySelectorAll('.item');
 var pckry = new Packery( container, {
   columnWidth: 80,
   rowHeight: 80
 });
-// for each item element
+
+var itemElems = pckry.getItemElements();
+// for each item...
 for ( var i=0, len = itemElems.length; i < len; i++ ) {
   var elem = itemElems[i];
   // make element draggable with Draggabilly
@@ -49,16 +50,16 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
   <div class="cell example-code">
 ``` js
 var $container = $('#ui-draggable-demo .packery');
-var $itemElems = $container.find('.item');
-var pckry = new Packery( $container[0], {
+$container.packery({
   columnWidth: 80,
   rowHeight: 80
 });
-
+// get item elements, jQuery-ify them
+var $itemElems = $( $container.packery('getItemElements') );
 // make item elements draggable
 $itemElems.draggable();
 // bind Draggable events to Packery
-pckry.bindUIDraggableEvents( $itemElems );
+$container.packery( 'bindUIDraggableEvents', $itemElems );
 ```
   </div>
   <div id="ui-draggable-demo" class="cell demo">
@@ -73,17 +74,7 @@ pckry.bindUIDraggableEvents( $itemElems );
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var container = document.querySelector('#draggabilly-demo .packery');
-var itemElems = container.querySelectorAll('.item');
 var pckry = new Packery( container );
-// for each item element
-for ( var i=0, len = itemElems.length; i < len; i++ ) {
-  var elem = itemElems[i];
-  // make element draggable with Draggabilly
-  var draggie = new Draggabilly( elem );
-  // bind Draggabilly events to Packery
-  pckry.bindDraggabillyEvents( draggie );
-}
 ```
   </div>
   <div id="non-grid-demo" class="cell demo">
@@ -96,21 +87,10 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var container = document.querySelector('#grid-demo .packery');
-var itemElems = container.querySelectorAll('.item');
-// apply grid
 var pckry = new Packery( container, {
   columnWidth: 80,
   rowHeight: 80
 });
-// for each item element
-for ( var i=0, len = itemElems.length; i < len; i++ ) {
-  var elem = itemElems[i];
-  // make element draggable with Draggabilly
-  var draggie = new Draggabilly( elem );
-  // bind Draggabilly events to Packery
-  pckry.bindDraggabillyEvents( draggie );
-}
 ```
   </div>
   <div id="grid-demo" class="cell demo">
