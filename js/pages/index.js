@@ -66,8 +66,8 @@ PS.index = function() {
   var heroPckry = new Packery( heroPackryElem, {
     itemSelector: '.item',
     placedElements: '.placed',
-    gutter: 4,
-    containerStyle: {}
+    gutter: 2,
+    containerStyle: null
   });
 
   addItems( heroPckry, hero.offsetHeight + 40, true );
