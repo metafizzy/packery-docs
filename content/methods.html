@@ -46,7 +46,9 @@ $('#container').packery()
 <h2 id="additems">addItems</h2>
 
 ``` js
-.addItems( elements )
+pckry.addItems( elements )
+// or with jQuery
+$container.packery( 'addItems', elements )
 ```
 
 <p>Add item elements to the Packery instance.</p>
@@ -68,7 +70,9 @@ $('#container').packery()
 <h2 id="appended">appended</h2>
 
 ``` js
-.appended( elements )
+pckry.appended( elements )
+// or with jQuery
+$container.packery( 'appended', elements )
 ```
 
 <p>Add and lay out newly appended item elements.</p>
@@ -127,7 +131,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="binddraggabillyevents">bindDraggabillyEvents</h2>
 
 ``` js
-.bindDraggabillyEvents( Draggabilly )
+pckry.bindDraggabillyEvents( draggie )
+// or with jQuery
+$container.packery( 'bindDraggabillyEvents', draggie )
 ```
 
 <p>Bind <a href="http://draggabilly.desandro.com">Draggabilly</a> events, so that the Packery instance will layout around the dragged element.</p>
@@ -136,7 +142,7 @@ eventie.bind( button, 'click', function() {
 
 <ul class="params">
   <li>
-    <h5 class="param-name param-bit"><code>Draggabilly</code></h5>
+    <h5 class="param-name param-bit"><code>draggie</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Draggabilly</i></span>
     </p>
@@ -146,7 +152,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="bindresize">bindResize</h2>
 
 ``` js
-.bindResize()
+pckry.bindResize()
+// or with jQuery
+$container.packery('bindResize')
 ```
 
 <p>Binds event listener to window <code>resize</code>, so layout is triggered when the browser window is resized.</p>
@@ -154,7 +162,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="binduidraggableevents">bindUIDraggableEvents</h2>
 
 ``` js
-.bindUIDraggableEvents( $elements )
+pckry.bindUIDraggableEvents( $elements )
+// or with jQuery
+$container.packery( 'bindDraggabillyEvents', $elements )
 ```
 
 <p>Bind <a href="http://jqueryui.com/draggable/">jQuery UI Draggable</a> events, so that the Packery instance will layout around the dragged element.</p>
@@ -173,7 +183,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="destroy">destroy</h2>
 
 ``` js
-.destroy()
+pckry.destroy()
+// or with jQuery
+$container.packery('destroy')
 ```
 
 <p>Removes the Packery functionality completely. This will return the element back to its pre-initialized state.</p>
@@ -208,7 +220,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="fit">fit</h2>
 
 ``` js
-.fit( element, x, y )
+pckry.fit( element, x, y )
+// or with jQuery
+$container.packery( 'fit', element, x, y )
 ```
 
 <ul class="params">
@@ -310,7 +324,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="getitemelements">getItemElements</h2>
 
 ``` js
-.getItemElements()
+pckry.getItemElements()
+// or with jQuery
+$container.packery('getItemElements')
 ```
 
 <p>Get an array of elements used as the Packery instance's items.</p>
@@ -327,7 +343,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="getitemfromelement">getItemFromElement</h2>
 
 ``` js
-.getItemFromElement( element )
+pckry.getItemFromElement( element )
+// or with jQuery
+$container.packery( 'getItemFromElement', element )
 ```
 
 <p>Get a <i>Packery.Item</i> from an element.</p>
@@ -350,7 +368,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="layout">layout</h2>
 
 ``` js
-.layout()
+pckry.layout()
+// or with jQuery
+$container.packery()
 ```
 
 <p>Lay out all item elements.</p>
@@ -384,16 +404,18 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="layoutitems">layoutItems</h2>
 
 ``` js
-.layoutItems( Packery.Items, isStill )
+pckry.layoutItems( items, isStill )
+// or with jQuery
+$container.packery( 'layoutItems', items, isStill )
 ```
 
 <p>Lay out specified items.</p>
 
 <ul class="params">
   <li class="param">
-    <h5 class="param-name param-bit"><code>Packery.Items</code></h5>
+    <h5 class="param-name param-bit"><code>items</code></h5>
     <p class="type param-bit">
-      <b>Type:</b> <span class="value">Packery.Item</span>
+      <b>Type:</b> <span class="value"><i>Array</i> of <i>Packery.Item</i>s</span>
     </p>
   </li>
   <li class="param">
@@ -447,7 +469,9 @@ pckry.layout();
 <h2 id="place">place</h2>
 
 ``` js
-.place( elements )
+pckry.place( elements )
+// or with jQuery
+$container.packery( 'place', elements )
 ```
 
 <p>Place the elements in the layout. Packery will lay out item elements <em>around</em> placed elements.</p>
@@ -502,7 +526,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="reloaditems">reloadItems</h2>
 
 ``` js
-.reloadItems()
+pckry.reloadItems()
+// or with jQuery
+$container.packery('reloadItems')
 ```
 
 <p>Recollect all item elements.</p>
@@ -510,7 +536,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="remove">remove</h2>
 
 ``` js
-.remove( elements )
+pckry.remove( elements )
+// or with jQuery
+$container.packery( 'remove', elements )
 ```
 
 <p>Remove elements from the Packery instance, then from the DOM.</p>
@@ -558,7 +586,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="unbindresize">unbindResize</h2>
 
 ``` js
-.unbindResize()
+pckry.unbindResize()
+// or with jQuery
+$container.packery('unbindResize')
 ```
 
 <p>Un-bind layout to window <code>resize</code> event.</p>
@@ -566,7 +596,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="unplace">unplace</h2>
 
 ``` js
-.unplace( elements )
+pckry.unplace( elements )
+// or with jQuery
+$container.packery( 'unplace', elements )
 ```
 
 <p>Un-<a href="#place">place</a> the elements, so that Packery will no longer layout item elements around them.</p>
