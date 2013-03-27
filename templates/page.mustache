@@ -8,9 +8,8 @@
 
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
 
-
   {{#if isDev}}
-    <!-- DEV MODE - including each .js -->
+    <!-- DEV MODE - including each .css file -->
     {{#each site.css}}
       <link rel="stylesheet" href="{{this}}" />
     {{/each}}
@@ -82,7 +81,7 @@
 <script>window.jQuery || document.write('<script src="components/jquery/jquery.min.js"><\/script>')</script>
 
 {{#if isDev}}
-  <!-- DEV MODE - including each .js -->
+  <!-- DEV MODE - including each .js file -->
   {{#each site.js}}
     <script src="{{this}}"></script>
   {{/each}}

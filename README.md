@@ -21,3 +21,9 @@ Watch for updates to rebuild docs on the fly.
 ``` bash
 grunt && grunt watch
 ```
+
+Pass `--dev` to build the site with JS and CSS files included separately, un-concatenated, and un-minified.
+
+``` bash
+grunt --dev
+```
