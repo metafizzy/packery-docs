@@ -50,7 +50,8 @@ module.exports = function( grunt ) {
         var context = {
           site: site,
           basename: path.basename( filepath, path.extname( filepath ) ),
-          page: pageJson
+          page: pageJson,
+          isDev: grunt.option('dev')
         };
         src = handlebars.compile( src )( context );
 
