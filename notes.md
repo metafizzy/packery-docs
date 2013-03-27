@@ -1,7 +1,5 @@
 add jsFiddles example links
 
-analytics
-
 media queries
   - footer
   - header
