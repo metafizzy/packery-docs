@@ -13,6 +13,8 @@
     "getItemFromElement",
     "layout",
     "layoutItems",
+    "off",
+    "on",
     "Packery.data",
     "place",
     "reloadItems",
@@ -426,6 +428,81 @@ $container.packery( 'layoutItems', items, isStill )
     <p class="description param-bit">Disables transitions</p>
   </li>
 </ul>
+
+<h2 id="off">off</h2>
+
+``` js
+pckry.off( eventName, listener )
+// or with jQuery
+$container.packery( 'off', eventName, listener )
+```
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>eventName</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>String</i></span>
+    </p>
+    <p class="description param-bit">name of a <a href="events.html">Packery event</a></p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit"><code>listener</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Function</i>
+    </p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit">returns</h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+    </p>
+  </li>
+</ul>
+
+<p>Remove an event listener. See <a href="events.html">Events</a>.</p>
+
+<h2 id="off">on</h2>
+
+``` js
+pckry.on( eventName, listener )
+// or with jQuery
+$container.packery( 'on', eventName, listener )
+```
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>eventName</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>String</i></span>
+    </p>
+    <p class="description param-bit">name of a <a href="events.html">Packery event</a></p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit"><code>listener</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Function</i>
+    </p>
+  </li>
+  <li class="param">
+    <h5 class="param-name param-bit">returns</h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+    </p>
+  </li>
+</ul>
+
+<p>Add an event listener for <a href="events.html">certain events</a>.</p>
+
+<p>Unlike jQuery's <code>on</code>, Packery's <code>on</code> only works with the specified events. <code>pckry.on( 'click', function() {...})</code> will not work.</p>
+
+<p>To listen for an event just once, <code>return <span class="literal">true</span></code> in the event listener.</p>
+
+``` js
+pckry.on( 'layoutComplete', function() {
+  console.log('layout is complete, just once');
+  return true;
+});
+```
 
 <h2 id="packery-data">Packery.data</h2>
 

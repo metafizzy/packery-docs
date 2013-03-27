@@ -1,6 +1,6 @@
-jQuery stuff
-
 add jsFiddles example links
+
+analytics
 
 media queries
   - footer
