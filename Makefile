@@ -7,3 +7,11 @@ zip:
 
 deploy:
 	rsync -avz build/ ${BERNA}:~/subdomains/packery.metafizzy.co/
+
+grunt:
+	grunt
+
+grunt-dev:
+	grunt --dev
+
+prod: grunt-dev zip grunt deploy
