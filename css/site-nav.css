@@ -79,20 +79,16 @@
 
   /* hide text on index */
   .index-page #site-nav h1 a {
-    width: 0;
-    overflow: hidden;
+    display: none;
   }
-
 
   #site-nav {
     line-height: 60px;
   }
 
   #site-nav h1 {
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 200px;
+    height: 60px;
     font-size: 2.0em;
   }
 

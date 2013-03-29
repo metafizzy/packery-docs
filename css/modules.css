@@ -183,8 +183,12 @@
 
 #footer .metafizzy-logo:hover { opacity: 1; }
 
+/* tablet-ish */
+@media screen and ( min-width: 960px ) {
+}
 
-@media screen and ( min-width: 720px ) {
+/* desktop */
+@media screen and ( min-width: 960px ) {
   .row {
     margin-bottom: 0.8em;
   }
