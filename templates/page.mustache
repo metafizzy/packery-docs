@@ -64,6 +64,7 @@
         </ul>
       {{/if}}
 
+      {{! all page content goes here }}
       {{{ content }}}
 
       <div class="horiz-rule"></div>
@@ -79,8 +80,9 @@
   </div>
 
 <!-- Packery does NOT require jQuery.
-     jQuery is only used for jQuery UI Draggable -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     jQuery is only used for jQuery UI Draggable
+     and to demonstrate Packery as a jQuery plugin -->
 <script>window.jQuery || document.write('<script src="components/jquery/jquery.min.js"><\/script>')</script>
 
 {{#if isDev}}
