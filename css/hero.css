@@ -8,7 +8,7 @@
 /* keep above packery demo */
 #hero .primary-content > * {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
 }
 
 #hero .primary-content {
@@ -46,6 +46,18 @@
   background: #90C;
 }
 
+/* ---- big ol buttons ---- */
+
+.big-ol-buttons {
+  list-style: none;
+  padding: 0;
+}
+
+.big-ol-buttons .button {
+  display: block;
+  font-size: 1.3em;
+  line-height: 1.2em;
+}
 
 /* desktop */
 @media screen and ( min-width: 960px ) {
@@ -110,6 +122,13 @@
     height: 40px;
     left: 200px;
     top: 239px;
+  }
+
+  /* buttons */
+
+  .big-ol-buttons .button {
+    font-size: 1.6em;
+    padding-left: 80px;
   }
 
 }
