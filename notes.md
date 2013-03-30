@@ -1,10 +1,4 @@
-jQuery stuff
-
 add jsFiddles example links
-
-media queries
-  - footer
-  - header
 
 icons on homepage
 

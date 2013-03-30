@@ -8,7 +8,7 @@
 /* keep above packery demo */
 #hero .primary-content > * {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
 }
 
 #hero .primary-content {
@@ -17,17 +17,18 @@
 }
 
 #hero h1 {
-  font-size: 140px;
+  font-size: 70px;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin-bottom: 30px;
-  padding-top: 20px;
+  margin-bottom: 0.6em;
+  padding-top: 0.6em;
   color: white;
 }
 
 #hero .tagline {
-  font-size: 32px;
-  margin-bottom: 30px;
+  font-size: 24px;
+  margin-bottom: 0.8em;
+  line-height: 1.2;
 }
 
 
@@ -37,7 +38,7 @@
   height: 100%;
   left: 0;
   top: 0;
-  padding: 4px 4px 0 200px;
+  padding: 4px 4px 0 4px;
   border: none;
 }
 
@@ -45,51 +46,89 @@
   background: #90C;
 }
 
+/* ---- big ol buttons ---- */
 
-#hero .placed {
-  position: absolute;
-/*  background: hsla(0, 0%, 100%, 0.4); */
-  z-index: 2;
+.big-ol-buttons {
+  list-style: none;
+  padding: 0;
 }
 
-#hero .placed-ackery {
-  width: 476px;
-  height: 90px;
-  left: 294px;
-  top: 92px;
+.big-ol-buttons .button {
+  display: block;
+  font-size: 1.3em;
+  line-height: 1.2em;
 }
 
-#hero .placed-p-top {
-  width: 95px;
-  height: 82px;
-  left: 200px;
-  top: 70px;
-}
+/* desktop */
+@media screen and ( min-width: 960px ) {
+  #hero .packery {
+    padding-left: 200px;
+  }
 
-#hero .placed-p-bottom {
-  width: 40px;
-  height: 90px;
-  left: 200px;
-  top: 92px;
-}
+  #hero h1 {
+    font-size: 140px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
 
-#hero .placed-k {
-  width: 34px;
-  height: 90px;
-  left: 459px;
-  top: 65px;
-}
+  #hero .tagline {
+    font-size: 32px;
+  }
 
-#hero .placed-y {
-  width: 70px;
-  height: 88px;
-  left: 675px;
-  top: 120px;
-}
+  /* place elements, shape around titles */
+  #hero .placed {
+    position: absolute;
+  /*  background: hsla(0, 0%, 100%, 0.4); */
+    z-index: 2;
+  }
 
-#hero .placed-tagline {
-  width: 494px;
-  height: 40px;
-  left: 200px;
-  top: 239px;
+  #hero .placed-ackery {
+    width: 476px;
+    height: 90px;
+    left: 294px;
+    top: 92px;
+  }
+
+  #hero .placed-p-top {
+    width: 95px;
+    height: 82px;
+    left: 200px;
+    top: 70px;
+  }
+
+  #hero .placed-p-bottom {
+    width: 40px;
+    height: 90px;
+    left: 200px;
+    top: 92px;
+  }
+
+  #hero .placed-k {
+    width: 34px;
+    height: 90px;
+    left: 459px;
+    top: 65px;
+  }
+
+  #hero .placed-y {
+    width: 70px;
+    height: 88px;
+    left: 675px;
+    top: 120px;
+  }
+
+  #hero .placed-tagline {
+    width: 494px;
+    height: 40px;
+    left: 200px;
+    top: 239px;
+  }
+
+  /* buttons */
+
+  .big-ol-buttons .button {
+    font-size: 1.6em;
+    padding-left: 80px;
+  }
+
 }

@@ -1,5 +1,5 @@
 .tagline {
-  font-size: 1.8em;
+  font-size: 1.5em;
   line-height: 1.35;
   margin-bottom: 0.4em;
 }
@@ -146,45 +146,16 @@
   pointer-events: none;
 }
 
-/* ---- Metafizzy logo ---- */
-
-/* use custom font for logo */
-.metafizzy-logo {
-  font-family: 'Metafizzy Logo', sans-serif;
+/* tablet-ish */
+@media screen and ( min-width: 960px ) {
 }
 
-.metafizzy-logo .etafizzy {
-  display: none;
-}
+/* desktop */
+@media screen and ( min-width: 960px ) {
+  .tagline {
+    font-size: 1.8em;
+  }
 
-/* ---- footer ---- */
-
-#footer {
-  position: relative;
-  height: 50px;
-}
-
-.footer-content {
-  position: absolute;
-  left: 0;
-  bottom: 20px;
-  width: 200px;
-  text-align: center;
-  font-size: 12px;
-}
-
-#footer .metafizzy-logo {
-  display: block;
-  font-size: 110px;
-  line-height: 1.0;
-  background: none;
-  opacity: 0.25;
-}
-
-#footer .metafizzy-logo:hover { opacity: 1; }
-
-
-@media screen and ( min-width: 720px ) {
   .row {
     margin-bottom: 0.8em;
   }

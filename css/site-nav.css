@@ -2,20 +2,26 @@
 
 #site-nav {
   background: #C09;
-  line-height: 60px;
+  line-height: 44px;
+}
+
+/* clear fix */
+#site-nav:after {
+  content: ' ';
+  display: table;
+  clear: both;
 }
 
 #site-nav h1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200px;
+  float: left;
   text-align: center;
-  font-size: 2.0em;
+  font-size: 1.5em;
   background: #C90;
+  margin: 0;
 }
 
 #site-nav h1 a {
+  padding: 0 0.8em;
   display: block;
   color: white;
 }
@@ -24,19 +30,17 @@
   background: #90C;
 }
 
-/* hide text on index */
-.index-page #site-nav h1 a {
-  width: 0;
-  overflow: hidden;
-}
-
 #site-nav a {
   background: none;
 }
 
+#site-nav .primary-content {
+  padding: 0;
+}
+
 #site-nav ol {
   list-style: none;
-  font-size: 17px;
+  font-size: 15px;
   margin-bottom: 0;
 }
 
@@ -68,4 +72,28 @@
 .license-page #site-nav .nav-license a,
 .appendix-page #site-nav .nav-appendix a {
   background: #90C;
+}
+
+
+@media screen and ( min-width: 960px ) {
+
+  /* hide text on index */
+  .index-page #site-nav h1 a {
+    display: none;
+  }
+
+  #site-nav {
+    line-height: 60px;
+  }
+
+  #site-nav h1 {
+    width: 200px;
+    height: 60px;
+    font-size: 2.0em;
+  }
+
+  #site-nav ol {
+    font-size: 17px;
+  }
+
 }

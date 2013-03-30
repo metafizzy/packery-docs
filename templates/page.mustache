@@ -2,17 +2,24 @@
 <!--[if lte IE 8]>     <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class=""> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content="The bin-packing layout library. Packery makes your crazy and clever layout a real thing. Be clever. Get crazy." />
 
   <title>Packery{{#unless page.is_homepage}} {{page.title}}{{/unless}}</title>
 
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
 
-  <!--   {{#each site.css}}
-    <link rel="stylesheet" href="{{this}}">
-  {{/each}} -->
-
-  <link rel="stylesheet" href="css/packery-docs.css">
+  {{#if isDev}}
+    <!-- DEV MODE - including each .css file -->
+    {{#each site.css}}
+      <link rel="stylesheet" href="{{this}}" />
+    {{/each}}
+  {{else}}
+    {{! in production, just include concat CSS }}
+    <link rel="stylesheet" href="css/packery-docs.css" />
+  {{/if}}
 
   {{! Twitter Cards }}
   <meta name="twitter:card" content="summary" />
@@ -57,6 +64,7 @@
         </ul>
       {{/if}}
 
+      {{! all page content goes here }}
       {{{ content }}}
 
       <div class="horiz-rule"></div>
@@ -72,15 +80,22 @@
   </div>
 
 <!-- Packery does NOT require jQuery.
-     jQuery is only used for jQuery UI Draggable -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     jQuery is only used for jQuery UI Draggable
+     and to demonstrate Packery as a jQuery plugin -->
 <script>window.jQuery || document.write('<script src="components/jquery/jquery.min.js"><\/script>')</script>
 
-<!-- {{#each site.js}}
-  <script src="{{this}}"></script>
-{{/each}} -->
+{{#if isDev}}
+  <!-- DEV MODE - including each .js file -->
+  {{#each site.js}}
+    <script src="{{this}}"></script>
+  {{/each}}
+{{else}}
+  {{! in production, just include concat/minified js }}
+  <script src="js/packery-docs.min.js"></script>
+{{/if}}
 
-<script src="js/packery-docs.min.js"></script>
+
 
 </body>
 </html>

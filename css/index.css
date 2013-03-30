@@ -79,19 +79,3 @@
 #grid-packery .item.w4 { width:  212px; }
 #grid-packery .item.h4 { height: 212px; }
 
-
-
-
-/* ---- big ol buttons ---- */
-
-.big-ol-buttons {
-  list-style: none;
-  padding: 0;
-}
-
-.big-ol-buttons .button {
-  display: block;
-  font-size: 1.6em;
-  line-height: 1.2em;
-  padding-left: 80px;
-}
