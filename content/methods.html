@@ -261,7 +261,7 @@ $container.packery( 'fit', element, x, y )
 var container = document.querySelector('#fit-demo .packery');
 var pckry = new Packery( container );
 
-eventie.bind( container, 'click', function() {
+eventie.bind( container, 'click', function( event ) {
   // don't proceed if item was not clicked on
   var target = event.target;
   if ( !classie.has( target, 'item' ) ) {
@@ -578,7 +578,7 @@ var pckry = new Packery( demo.querySelector('.packery'), {
 });
 var isPlaced = false;
 
-eventie.bind( button, 'click', function() {
+eventie.bind( button, 'click', function( event ) {
   // place or unplace element
   if ( isPlaced ) {
     pckry.unplace( placedElem );
