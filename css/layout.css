@@ -6,6 +6,15 @@
   padding-right: 10px;
 }
 
+#content .primary-content > * {
+  max-width: 700px;
+}
+
+#content #notification,
+#content #hero-demos {
+  max-width: none;
+}
+
 /* ---- #content ---- */
 
 #content h2,
@@ -58,13 +67,7 @@
     padding-bottom: 20px;
   }
 
-  #content .primary-content > * {
-    max-width: 700px;
-  }
-
-  #content .primary-content .row,
-  #content #notification,
-  #content #hero-demos {
+  #content .primary-content .row {
     max-width: none;
   }
 
