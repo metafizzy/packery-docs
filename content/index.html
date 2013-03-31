@@ -142,7 +142,7 @@ var container = document.querySelector('#container');
 var pckry = new Packery( container, {
   // options
   itemSelector: '.item',
-  columnWidth: 200
+  gutter: 10
 });
 ```
 
@@ -152,7 +152,7 @@ var pckry = new Packery( container, {
 
 ``` html
 <div id="container" class="js-packery"
-  data-packery-options='{ "itemSelector": ".item", "columnWidth": 200 }'>
+  data-packery-options='{ "itemSelector": ".item", "gutter": 10 }'>
 ```
 
 <p><strong>Options set in HTML must be valid JSON.</strong> Keys need to be quoted, for example <code><span class="string">"itemSelector"</span>:</code>. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
@@ -168,6 +168,6 @@ var $container = $('#container');
 // initialize
 $container.packery({
   itemSelector: '.item',
-  columnWidth: 200
+  gutter: 10
 });
 ```
