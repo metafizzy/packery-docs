@@ -45,6 +45,16 @@ $('#container').packery()
   .packery();
 ```
 
+<p><strong>Heads up:</strong> Methods that return values (<a href="#getitemelements">getItemElements</a>, <a href="#getitemfromelement">getItemFromElement</a>, <a href="#on">on</a>, and <a href="#off">off</a>) will break jQuery chain-ability.</p>
+
+``` js
+// 'appended' method is chainable
+$container.packery( 'appended', elem ).addClass('done');
+// 'on' method is NOT chainable
+$container.packery( 'on', 'layoutComplete', function() {...});
+$container.addClass('ready');
+```
+
 <h2 id="additems">addItems</h2>
 
 ``` js
@@ -326,9 +336,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="getitemelements">getItemElements</h2>
 
 ``` js
-pckry.getItemElements()
+var itemElems = pckry.getItemElements()
 // or with jQuery
-$container.packery('getItemElements')
+var itemElems = $container.packery('getItemElements')
 ```
 
 <p>Get an array of elements used as the Packery instance's items.</p>
@@ -336,6 +346,7 @@ $container.packery('getItemElements')
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <h5 class="param-name param-bit"><code>itemElems</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Array</i></span>
     </p>
@@ -345,9 +356,9 @@ $container.packery('getItemElements')
 <h2 id="getitemfromelement">getItemFromElement</h2>
 
 ``` js
-pckry.getItemFromElement( element )
+var item = pckry.getItemFromElement( element )
 // or with jQuery
-$container.packery( 'getItemFromElement', element )
+var item = $container.packery( 'getItemFromElement', element )
 ```
 
 <p>Get a <i>Packery.Item</i> from an element.</p>
@@ -361,6 +372,7 @@ $container.packery( 'getItemFromElement', element )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <h5 class="param-name param-bit"><code>item</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
     </p>
@@ -434,7 +446,7 @@ $container.packery( 'layoutItems', items, isStill )
 ``` js
 pckry.off( eventName, listener )
 // or with jQuery
-$container.packery( 'off', eventName, listener )
+var pckry = $container.packery( 'off', eventName, listener )
 ```
 
 <ul class="params">
@@ -453,8 +465,9 @@ $container.packery( 'off', eventName, listener )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
   </li>
 </ul>
@@ -466,7 +479,7 @@ $container.packery( 'off', eventName, listener )
 ``` js
 pckry.on( eventName, listener )
 // or with jQuery
-$container.packery( 'on', eventName, listener )
+var pckry = $container.packery( 'on', eventName, listener )
 ```
 
 <ul class="params">
@@ -485,8 +498,9 @@ $container.packery( 'on', eventName, listener )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
   </li>
 </ul>
@@ -507,7 +521,7 @@ pckry.on( 'layoutComplete', function() {
 <h2 id="packery-data">Packery.data</h2>
 
 ``` js
-Packery.data( element )
+var pckry = Packery.data( element )
 ```
 
 <p>Get the Packery instance from an element. Note this method is of <code>Packery</code>, rather than of a Packery instance.</p>
@@ -521,6 +535,7 @@ Packery.data( element )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
