@@ -1,5 +1,5 @@
 #hero {
-  background: #90C;
+  background: #C09;
   color: #FAF3F5;
   position: relative;
   overflow: hidden;
@@ -43,7 +43,8 @@
 }
 
 #hero .item {
-  background: #90C;
+  border: none;
+  background-color: hsla(0, 0%, 0%, 0.3)
 }
 
 /* ---- big ol buttons ---- */
