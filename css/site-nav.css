@@ -16,7 +16,7 @@
   float: left;
   text-align: center;
   font-size: 1.5em;
-  background: #C90;
+  background: #F90;
   margin: 0;
 }
 
@@ -61,7 +61,7 @@
 }
 
 #site-nav ol a:hover {
-  background: #C90;
+  background: #F90;
 }
 
 /* selected */

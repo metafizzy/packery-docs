@@ -38,8 +38,8 @@
   height: 100%;
   left: 0;
   top: 0;
-  padding: 4px 4px 0 4px;
-  border: none;
+  padding: 0px 4px;
+  background: none;
 }
 
 #hero .item {
