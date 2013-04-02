@@ -8,11 +8,13 @@
 #hero-demos .item {
   width: 40px;
   height: 40px;
+  border: none;
+  background: #C09;
 }
 
 #hero-demos .packery {
-  padding: 4px;
   margin-bottom: 0.5em;
+  background: none;
 }
 
 /* ---- basically ---- */
@@ -78,4 +80,3 @@
 
 #grid-packery .item.w4 { width:  212px; }
 #grid-packery .item.h4 { height: 212px; }
-
