@@ -45,14 +45,12 @@
 }
 
 .param-bit {
-  padding: 0.3em 0.8em;
-  background: #DDD;
-  background: hsla(0, 0%, 0%, 0.02);
+  padding: 0.4em 0.9em;
+  background: #0C9;
+  background: hsla(165, 100%, 40%, 0.3);
   display: inline;
   display: inline-block;
-  border: 4px solid hsla(0, 0%, 0%, 0.1);
   margin-bottom: 0;
-  line-height: 20px;
 }
 
 .param-name {
@@ -72,7 +70,6 @@
 /* ---- packery ---- */
 
 .packery {
-  border: 4px solid #FCC;
 }
 
 /* clearfix */
@@ -107,6 +104,18 @@
   height: 160px;
   z-index: 10; /* keep it above other items */
 }
+
+/* ---- examples ---- */
+
+/*
+.example pre {
+  margin-bottom: 0;
+}
+
+.example pre:nth-child(2n) {
+  background: hsla(0, 0%, 0%, 0.12);
+}
+*/
 
 /* ---- row ---- */
 
@@ -177,10 +186,10 @@
   .lt-ie9 .row .cell { margin-right: 1.5%; }
 
   /* no margin */
-  .example.row .cell {
+/*  .example.row .cell {
     width: 50%;
     margin-right: 0;
-  }
+  }*/
 
   /* three column */
   .row3 .cell {
