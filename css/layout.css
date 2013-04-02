@@ -11,9 +11,7 @@
 #content h2,
 #content .horiz-rule {
   font-size: 1.7em;
-  border-top: 4px solid #FAC;
-  padding-top: 0.8em;
-  margin-top: 2.0em;
+  padding-top: 0.4em;
 }
 
 #content h2:target {
