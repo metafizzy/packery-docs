@@ -29,8 +29,8 @@
 
 /* ----  ---- */
 
-#content > .primary-content:nth-child(2n) {
-  background: hsla(0, 50%, 50%, 0.1);
+#content > .primary-content:nth-child(2n+1) {
+  background: hsla(0, 60%, 50%, 0.1);
 }
 
 /* ---- parameters ---- */
@@ -175,6 +175,12 @@
   }
   /* IE8 doesn't support :last-child */
   .lt-ie9 .row .cell { margin-right: 1.5%; }
+
+  /* no margin */
+  .example.row .cell {
+    width: 50%;
+    margin-right: 0;
+  }
 
   /* three column */
   .row3 .cell {
