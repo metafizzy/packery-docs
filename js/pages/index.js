@@ -92,14 +92,33 @@ PS.index = function() {
       gutter: 4
     });
     var itemElems = pckry.getItemElements();
+
+    var onDragEnd = function( event, pointer, dragger ) {
+
+      var p1 = dragger.position;
+      var p2 = dragger.startPosition;
+      if ( p1.x === p2.x && p1.y === p2.y ) {
+        // dragger didn't move
+        var isExpanded = classie.has( dragger.element, 'expanded' );
+        classie.toggle( dragger.element, 'expanded' );
+        if ( !isExpanded ) {
+          console.log('fitting');
+          pckry.fit( dragger.element );
+        } else {
+          pckry.layout();
+        }
+      }
+    };
+
     for ( var j=0, len = itemElems.length; j < len; j++ ) {
       var itemElem = itemElems[j];
       var draggie = new Draggabilly( itemElem );
       pckry.bindDraggabillyEvents( draggie );
+      draggie.on( 'dragEnd', onDragEnd );
     }
   })();
 
-  // ----- ridiculous ----- //
+  // ----- meticulous ----- //
 
   ( function() {
     var container = document.querySelector('.meticulous .packery');
@@ -109,10 +128,27 @@ PS.index = function() {
       rowHeight: 44
     });
     var itemElems = pckry.getItemElements();
+    var onDragEnd = function( event, pointer, dragger ) {
+
+      var p1 = dragger.position;
+      var p2 = dragger.startPosition;
+      if ( p1.x === p2.x && p1.y === p2.y ) {
+        // dragger didn't move
+        var isExpanded = classie.has( dragger.element, 'expanded' );
+        classie.toggle( dragger.element, 'expanded' );
+        if ( !isExpanded ) {
+          console.log('fitting');
+          pckry.fit( dragger.element );
+        } else {
+          pckry.layout();
+        }
+      }
+    };
     for ( var j=0, len = itemElems.length; j < len; j++ ) {
       var itemElem = itemElems[j];
       var draggie = new Draggabilly( itemElem );
       pckry.bindDraggabillyEvents( draggie );
+      draggie.on( 'dragEnd', onDragEnd );
     }
   })();
 

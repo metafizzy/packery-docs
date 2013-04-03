@@ -120,6 +120,10 @@
   margin-bottom: 0.5em;
 }
 
+#hero-demos .item.expanded {
+  width: 100% !important;
+}
+
 /* ---- basically ---- */
 
 #hero-demos .basically .item1 { width: 30%; }
