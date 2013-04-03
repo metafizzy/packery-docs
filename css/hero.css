@@ -63,7 +63,6 @@
 /* ---- big tagline ---- */
 
 #big-tagline {
-  font-size: 24px;
   background: #0C9;
   color: white;
   padding: 20px 0;
@@ -72,17 +71,41 @@
 #big-tagline .tagline {
   line-height: 1.2;
   margin-bottom: 0;
+  font-size: 36px;
+}
+
+#big-tagline strong {
+  color: #333;
+  color: hsla(0, 0%, 0%, 0.6);
 }
 
 /* ---- hero demo ---- */
 
 #hero-demos {
   background: #90C;
-  color: hsla(0, 0%, 0%, 0.4);
-  padding: 1.0em 0;
+  color: hsla(0, 0%, 0%, 0.45);
+  padding: 2.0em 0;
 }
 
-#hero-demos .cell {
+#hero-demos .big-tagline {
+  font-size: 36px;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 0.8em;
+}
+
+#hero-demos .big-tagline strong {
+  color: hsla(0, 0%, 0%, 0.6);
+
+}
+
+#hero-demos .row {
+  margin-bottom: 0;
+}
+
+#hero-demos .cell.tagline {
+  font-size: 1.2em;
+  text-align: center;
 }
 
 #hero-demos .item {
