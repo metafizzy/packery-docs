@@ -1,0 +1,13 @@
+#features {
+  background: #0C9;
+}
+
+#features,
+#features h2 {
+  color: white;
+}
+
+
+#features p {
+  font-size: 1.2em;
+}
