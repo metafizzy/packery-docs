@@ -12,6 +12,8 @@
 
 <div id="notification"></div>
 
+<div class="primary-content">
+
 <p>Packery is an Event Emitter. You can bind listeners to events with the <a href="methods.html#on">on</a> and <a href="methods.html#off">off</a> methods.</p>
 
 ```js
@@ -30,6 +32,8 @@ pckry.on( 'layoutComplete', function() {
   return true;
 });
 ```
+
+</div><div class="primary-content">
 
 <h2 id="dragitempositioned">dragItemPositioned</h2>
 
@@ -70,6 +74,8 @@ pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
     {{>draggable-packery}}
   </div>
 </div>
+
+</div><div class="primary-content">
 
 <h2 id="fitcomplete">fitComplete</h2>
 
@@ -112,6 +118,8 @@ pckry.on( 'fitComplete', function( pckryInstance, item ) {
   </div>
 </div>
 
+</div><div class="primary-content">
+
 <h2 id="layoutcomplete">layoutComplete</h2>
 
 ``` js
@@ -146,12 +154,14 @@ pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
 ```
   </div>
   <div id="layout-complete-demo" class="cell demo">
-    <p class="instruction">Click item to toggle size</p>
+    <p class="instruction">Resize browser or click item to toggle size</p>
     <div class="packery clickable">
       {{>demo-items}}
     </div>
   </div>
 </div>
+
+</div><div class="primary-content">
 
 <h2 id="removecomplete">removeComplete</h2>
 
@@ -190,4 +200,6 @@ pckry.on( 'removeComplete', function( pckryInstance, removedItems ) {
       {{>demo-items}}
     </div>
   </div>
+</div>
+
 </div>
