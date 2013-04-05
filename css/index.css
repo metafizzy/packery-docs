@@ -1,5 +1,7 @@
+/* ---- features ---- */
+
 #features {
-  background: #0C9;
+  background: #C90;
 }
 
 #features,
@@ -7,7 +9,18 @@
   color: white;
 }
 
-
 #features p {
-  font-size: 1.2em;
+  font-size: 1.15em;
+}
+
+#features a { color: #90C; }
+
+#features a:hover { color: #333; }
+
+@media screen and ( min-width: 960px ) {
+
+  .index-page #content > .primary-content:first-child {
+    padding: 0;
+  }
+
 }

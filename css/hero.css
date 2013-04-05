@@ -176,9 +176,8 @@
 #hero-demos .meticulous .item.w4 { width: 78%; }
 #hero-demos .meticulous .item.h4 { height: 172px; }
 
+/* ---- desktop ---- */
 
-
-/* desktop */
 @media screen and ( min-width: 960px ) {
   #hero .packery {
     padding-left: 200px;
