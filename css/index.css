@@ -1,21 +1,21 @@
 /* ---- features ---- */
 
-#features {
-  background: #C90;
+#what {
+  background: #0C9;
 }
 
-#features,
-#features h2 {
+#what,
+#what h2 {
   color: white;
 }
 
-#features p {
+#what p {
   font-size: 1.15em;
 }
 
-#features a { color: #90C; }
+#what a { color: #90C; }
 
-#features a:hover { color: #333; }
+#what a:hover { color: #333; }
 
 @media screen and ( min-width: 960px ) {
 
