@@ -193,49 +193,49 @@
     font-size: 32px;
   }
 
-  /* place elements, shape around titles */
-  #hero .placed {
+  /* stamp elements, shape around titles */
+  #hero .stamp {
     position: absolute;
   /*  background: hsla(0, 0%, 100%, 0.4); */
     z-index: 2;
   }
 
-  #hero .placed-ackery {
+  #hero .stamp-ackery {
     width: 476px;
     height: 90px;
     left: 294px;
     top: 92px;
   }
 
-  #hero .placed-p-top {
+  #hero .stamp-p-top {
     width: 95px;
     height: 82px;
     left: 200px;
     top: 70px;
   }
 
-  #hero .placed-p-bottom {
+  #hero .stamp-p-bottom {
     width: 40px;
     height: 90px;
     left: 200px;
     top: 92px;
   }
 
-  #hero .placed-k {
+  #hero .stamp-k {
     width: 34px;
     height: 90px;
     left: 459px;
     top: 65px;
   }
 
-  #hero .placed-y {
+  #hero .stamp-y {
     width: 70px;
     height: 88px;
     left: 675px;
     top: 120px;
   }
 
-  #hero .placed-tagline {
+  #hero .stamp-tagline {
     width: 494px;
     height: 40px;
     left: 200px;

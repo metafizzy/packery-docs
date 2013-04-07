@@ -16,11 +16,11 @@
     "off",
     "on",
     "Packery.data",
-    "place",
     "reloadItems",
     "remove",
+    "stamp",
     "unbindResize",
-    "unplace"
+    "unstamp"
   ]
 }
 ---
@@ -37,7 +37,7 @@ pckry.appended( elem );
 pckry.layout();
 ```
 
-<p>If you are using jQuery, methods follow jQuery UI pattern.</p>
+<p>If you are using jQuery, methods follow the jQuery UI pattern.</p>
 
 ``` js
 $('#container').packery()
@@ -47,7 +47,19 @@ $('#container').packery()
   .packery();
 ```
 
-<p>Methods that return values will break jQuery chainability.</p>
+<p>jQuery chaining is broken by methods that return values (i.e. 
+  <a href="#getitemelements"><code>getItemElements</code></a>,
+  <a href="#getitem"><code>getItem</code></a>,
+  <a href="#on"><code>on</code></a>, and
+  <a href="#off"><code>off</code></a>).</p>
+
+``` js
+// chaining works with 'fit' method
+$container.packery( 'fit', elem ).fadeIn();
+// 'on' method breaks jQuery chaining
+$container.packery( 'on', 'layoutComplete', function() {...} );
+$container.fadeIn();
+```
 
 </div><div class="primary-content">
 
@@ -346,9 +358,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="getitemelements">getItemElements</h2>
 
 ``` js
-pckry.getItemElements()
+var elems = pckry.getItemElements()
 // or with jQuery
-$container.packery('getItemElements')
+var elems = $container.packery('getItemElements')
 ```
 
 <p>Get an array of elements used as the Packery instance's items.</p>
@@ -364,12 +376,12 @@ $container.packery('getItemElements')
 
 </div><div class="primary-content">
 
-<h2 id="getItem">getItem</h2>
+<h2 id="getitem">getItem</h2>
 
 ``` js
-pckry.getItem( element )
+var item = pckry.getItem( element )
 // or with jQuery
-$container.packery( 'getItem', element )
+var item = $container.packery( 'getItem', element )
 ```
 
 <p>Get a <i>Packery.Item</i> from an element.</p>
@@ -491,7 +503,7 @@ $container.packery( 'off', eventName, listener )
 
 </div><div class="primary-content">
 
-<h2 id="off">on</h2>
+<h2 id="on">on</h2>
 
 ``` js
 pckry.on( eventName, listener )
@@ -577,15 +589,15 @@ pckry.layout();
 
 </div><div class="primary-content">
 
-<h2 id="place">place</h2>
+<h2 id="stamp">stamp</h2>
 
 ``` js
-pckry.place( elements )
+pckry.stamp( elements )
 // or with jQuery
-$container.packery( 'place', elements )
+$container.packery( 'stamp', elements )
 ```
 
-<p>Place the elements in the layout. Packery will lay out item elements <em>around</em> placed elements.</p>
+<p>Stamp the elements in the layout. Packery will lay out item elements <em>around</em> stamped elements.</p>
 
 <ul class="params">
   <li class="param">
@@ -604,31 +616,31 @@ $container.packery( 'place', elements )
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var demo = document.querySelector('#place-demo');
-var placedElem = demo.querySelector('.placed');
+var demo = document.querySelector('#stamp-demo');
+var stampElem = demo.querySelector('.stamp');
 var button = demo.querySelector('button');
 var pckry = new Packery( demo.querySelector('.packery'), {
   itemSelector: '.item'
 });
-var isPlaced = false;
+var isStamped = false;
 
 eventie.bind( button, 'click', function() {
-  // place or unplace element
-  if ( isPlaced ) {
-    pckry.unplace( placedElem );
+  // stamp or unstamp element
+  if ( isStamped ) {
+    pckry.unstamp( stampElem );
   } else {
-    pckry.place( placedElem );
+    pckry.stamp( stampElem );
   }
   // trigger layout
   pckry.layout();
-  isPlaced = !isPlaced;
+  isStamped = !isStamped;
 });
 ```
   </div>
-  <div id="place-demo" class="cell demo">
-    <button class="button">Toggle placed</button>
-    <div class="packery has-placed">
-      <div class="placed"></div>
+  <div id="stamp-demo" class="cell demo">
+    <button class="button">Toggle stamped</button>
+    <div class="packery has-stamp">
+      <div class="stamp"></div>
       {{>demo-items}}
     </div>
   </div>
@@ -712,15 +724,15 @@ $container.packery('unbindResize')
 
 </div><div class="primary-content">
 
-<h2 id="unplace">unplace</h2>
+<h2 id="unstamp">unstamp</h2>
 
 ``` js
-pckry.unplace( elements )
+pckry.unstamp( elements )
 // or with jQuery
-$container.packery( 'unplace', elements )
+$container.packery( 'unstamp', elements )
 ```
 
-<p>Un-<a href="#place">place</a> the elements, so that Packery will no longer layout item elements around them.</p>
+<p>Un-<a href="#stamp">stamp</a> the elements, so that Packery will no longer layout item elements around them.</p>
 
 <ul class="params">
   <li class="param">

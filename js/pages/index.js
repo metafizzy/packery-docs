@@ -70,7 +70,7 @@ PS.index = function() {
     var container = hero.querySelector('.packery');
     var pckry = new Packery( container, {
       itemSelector: '.item',
-      placedElements: '.placed',
+      stamped: '.stamp',
       gutter: 2,
       containerStyle: null
     });

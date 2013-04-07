@@ -7,7 +7,7 @@
     "gutter",
     "isResizeBound",
     "itemSelector",
-    "placedElements",
+    "stamped",
     "rowHeight",
     "transitionDuration",
     "Element sizing"
@@ -205,7 +205,7 @@
 
 <p>Binds layout to window resizing.</p>
 
-<p><code>isResizeBound</code> binds layout only when the Packery instance is first initialized. You can bind and unbind resize layout afterwards with the place additional elements afterwards with the <a href="methods.html#bindresize"><code>bindResize</code></a> and <a href="methods.html#unbindresize"><code>unbindResize</code></a> methods.</p>
+<p><code>isResizeBound</code> binds layout only when the Packery instance is first initialized. You can bind and unbind resize layout afterwards with the <a href="methods.html#bindresize"><code>bindResize</code></a> and <a href="methods.html#unbindresize"><code>unbindResize</code></a> methods.</p>
 
 </div><div class="primary-content">
 
@@ -223,83 +223,6 @@
 ``` js
 "itemSelector": ".item"
 ```
-
-</div><div class="primary-content">
-
-<h2 id="placedelements">placedElements</h2>
-
-<p class="param">
-  <li class="param-bit type">
-    <span class="key">Type:</span>
-    <span class="value"><i>Element</i>, <i>NodeList</i>, <i>Array</i> of Elements, or Selector <i>String</i></span>
-  </li>
-</p>
-
-<p>Specifies which elements are <a href="methods.html#place">placed</a> within the layout. These are special layout elements which will not be laid out by Packery. Rather, Packery will layout item elements <em>around</em> placed elements.</p>
-
-<p><code>placedElements</code> places elements only when the Packery instance is first initialized. You can place additional elements afterwards with the <a href="methods.html#place"><code>place</code> method</a>.</p>
-
-<div class="row example">
-  <div class="cell example-code">
-``` html
-<div id="placed-elements-demo">
-  <div class="placed placed1"></div>
-  <div class="placed placed2"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  ....
-</div>
-```
-``` js
-"itemSelector": ".item",
-"placedElements": ".placed"
-```
-``` css
-/* position placed elements with CSS */
-#placed-elements-demo {
-  position: relative;
-}
-#placed-elements-demo .placed {
-  position: absolute;
-  width: 30%;
-  height: 60px;
-  background: red;
-  border: 4px dotted white;
-}
-#placed-elements-demo .placed1 {
-  left: 20%;
-  top: 10px;
-}
-#placed-elements-demo .placed2 {
-  right: 10%;
-  top: 80px;
-}
-```
-  </div>
-  <div id="placed-elements-demo" class="cell demo packery has-placed js-packery" data-packery-options='{ "itemSelector": ".item", "placedElements": ".placed" }'>
-    <div class="placed placed1"></div>
-    <div class="placed placed2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2 h2"></div>
-    <div class="item w4"></div>
-    <div class="item h4"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-  </div>
-</div>
 
 </div><div class="primary-content">
 
@@ -373,6 +296,83 @@
     <div class="item"></div>
     <div class="item"></div>
     <div class="item w2"></div>
+    <div class="item"></div>
+  </div>
+</div>
+
+</div><div class="primary-content">
+
+<h2 id="stamped">stamped</h2>
+
+<p class="param">
+  <li class="param-bit type">
+    <span class="key">Type:</span>
+    <span class="value"><i>Element</i>, <i>NodeList</i>, <i>Array</i> of Elements, or Selector <i>String</i></span>
+  </li>
+</p>
+
+<p>Specifies which elements are <a href="methods.html#stamp">stamped</a> within the layout. These are special layout elements which will not be laid out by Packery. Rather, Packery will layout item elements <em>around</em> stamped elements.</p>
+
+<p><code>stamped</code> stamps elements only when the Packery instance is first initialized. You can stamp additional elements afterwards with the <a href="methods.html#stamp"><code>stamp</code> method</a>.</p>
+
+<div class="row example">
+  <div class="cell example-code">
+``` html
+<div id="stamped-demo">
+  <div class="stamp stamp1"></div>
+  <div class="stamp stamp2"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  ....
+</div>
+```
+``` js
+"itemSelector": ".item",
+"stamped": ".stamp"
+```
+``` css
+/* position stamped elements with CSS */
+#stamped-demo {
+  position: relative;
+}
+#stamped-demo .stamp {
+  position: absolute;
+  width: 30%;
+  height: 60px;
+  background: red;
+  border: 4px dotted white;
+}
+#stamped-demo .stamp1 {
+  left: 20%;
+  top: 10px;
+}
+#stamped-demo .stamp2 {
+  right: 10%;
+  top: 80px;
+}
+```
+  </div>
+  <div id="stamped-demo" class="cell demo packery has-stamp js-packery" data-packery-options='{ "itemSelector": ".item", "stamped": ".stamp" }'>
+    <div class="stamp stamp1"></div>
+    <div class="stamp stamp2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item w4"></div>
+    <div class="item h4"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
     <div class="item"></div>
   </div>
 </div>
