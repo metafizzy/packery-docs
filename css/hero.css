@@ -44,7 +44,7 @@
 
 #hero .item {
   border: none;
-  background: hsla(0, 0%, 0%, 0.4);
+  background: hsla(0, 0%, 0%, 0.3);
 }
 
 /* ---- big ol buttons ---- */
@@ -115,6 +115,14 @@
   background: hsla(0, 0%, 0%, 0.4);
 }
 
+#hero-demos .item:hover,
+#hero-demos .item.is-dragging {
+  border: 4px solid white;
+  cursor: move;
+}
+
+#hero-demos .item.is-dragging { z-index: 2 ; }
+
 #hero-demos .packery {
   border: none;
   margin-bottom: 0.5em;
@@ -123,10 +131,9 @@
 #hero-demos .item.expanded {
   width: 100% !important;
 }
-
 /* ---- basically ---- */
 
-#hero-demos .basically .item1 { width: 30%; }
+#hero-demos .basically .item1 { width: 45%; }
 #hero-demos .basically .item2 { width: 40%; }
 #hero-demos .basically .item3 { width: 12%; }
 
@@ -142,10 +149,6 @@
 
 /* ---- masonry ---- */
 
-#hero-demos .masonry .packery {
-  padding: 2px 1%;
-}
-
 #hero-demos .masonry .item {
   width: 30.5%;
   margin: 2px 1%;
@@ -160,9 +163,7 @@
 #hero-demos .masonry .item7 { height: 55px; }
 #hero-demos .masonry .item8 { height: 45px; }
 
-#hero-demos .meticulous .packery {
-  padding: 2px 0;
-}
+/* ---- desktop ---- */
 
 #hero-demos .meticulous .grid-sizer { width: 20%; }
 
@@ -175,6 +176,10 @@
 #hero-demos .meticulous .item.h2 { height: 84px; }
 #hero-demos .meticulous .item.w4 { width: 78%; }
 #hero-demos .meticulous .item.h4 { height: 172px; }
+
+#hero-demos .meticulous .item.expanded {
+  width: 98% !important;
+}
 
 /* ---- desktop ---- */
 

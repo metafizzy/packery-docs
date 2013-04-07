@@ -93,7 +93,7 @@ PS.index = function() {
     });
     var itemElems = pckry.getItemElements();
 
-    var onDragEnd = function( event, pointer, dragger ) {
+    var onDragEnd = function( dragger ) {
 
       var p1 = dragger.position;
       var p2 = dragger.startPosition;
@@ -102,7 +102,7 @@ PS.index = function() {
         var isExpanded = classie.has( dragger.element, 'expanded' );
         classie.toggle( dragger.element, 'expanded' );
         if ( !isExpanded ) {
-          console.log('fitting');
+          pckry.unstamp( dragger.element ); // HACK
           pckry.fit( dragger.element );
         } else {
           pckry.layout();
@@ -128,7 +128,7 @@ PS.index = function() {
       rowHeight: 44
     });
     var itemElems = pckry.getItemElements();
-    var onDragEnd = function( event, pointer, dragger ) {
+    var onDragEnd = function( dragger ) {
 
       var p1 = dragger.position;
       var p2 = dragger.startPosition;
@@ -137,7 +137,8 @@ PS.index = function() {
         var isExpanded = classie.has( dragger.element, 'expanded' );
         classie.toggle( dragger.element, 'expanded' );
         if ( !isExpanded ) {
-          console.log('fitting');
+          // console.log('fitting');
+          pckry.unstamp( dragger.element );
           pckry.fit( dragger.element );
         } else {
           pckry.layout();
