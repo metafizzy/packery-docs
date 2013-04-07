@@ -80,6 +80,12 @@ h3 {
   margin-bottom: 0.5em;
 }
 
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.1em;
+}
+
 /* ---- lists ---- */
 
 ul, ol {
