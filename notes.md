@@ -4,7 +4,7 @@ add jsFiddles example links
 
 commercial buttons
 
-hero buttons
+<!-- hero buttons -->
 
 place for examples?
 

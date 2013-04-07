@@ -58,6 +58,15 @@
   display: block;
   font-size: 1.3em;
   line-height: 1.2em;
+  position: relative;
+  padding-left: 50px;
+}
+
+.big-ol-buttons .icon {
+  font-size: 32px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 /* ---- big tagline ---- */
@@ -255,7 +264,13 @@
 
   .big-ol-buttons .button {
     font-size: 1.6em;
-    padding-left: 80px;
+    padding-left: 86px;
+  }
+
+  .big-ol-buttons .icon {
+    font-size: 56px;
+    left: 18px;
+    top: 16px;
   }
 
 }
