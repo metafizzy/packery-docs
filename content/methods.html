@@ -589,65 +589,6 @@ pckry.layout();
 
 </div><div class="primary-content">
 
-<h2 id="stamp">stamp</h2>
-
-``` js
-pckry.stamp( elements )
-// or with jQuery
-$container.packery( 'stamp', elements )
-```
-
-<p>Stamp the elements in the layout. Packery will lay out item elements <em>around</em> stamped elements.</p>
-
-<ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>elements</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b>
-      <span class="value">
-        <i>Element</i>,
-        <i>NodeList</i>, or
-        <i>Array</i> of Elements
-      </span>
-    </p>
-  </li>
-</ul>
-
-<div class="row example">
-  <div class="cell example-code">
-``` js
-var demo = document.querySelector('#stamp-demo');
-var stampElem = demo.querySelector('.stamp');
-var button = demo.querySelector('button');
-var pckry = new Packery( demo.querySelector('.packery'), {
-  itemSelector: '.item'
-});
-var isStamped = false;
-
-eventie.bind( button, 'click', function() {
-  // stamp or unstamp element
-  if ( isStamped ) {
-    pckry.unstamp( stampElem );
-  } else {
-    pckry.stamp( stampElem );
-  }
-  // trigger layout
-  pckry.layout();
-  isStamped = !isStamped;
-});
-```
-  </div>
-  <div id="stamp-demo" class="cell demo">
-    <button class="button">Toggle stamped</button>
-    <div class="packery has-stamp">
-      <div class="stamp"></div>
-      {{>demo-items}}
-    </div>
-  </div>
-</div>
-
-</div><div class="primary-content">
-
 <h2 id="reloaditems">reloadItems</h2>
 
 ``` js
@@ -705,6 +646,65 @@ eventie.bind( container, 'click', function( event ) {
   <div id="remove-demo" class="cell demo">
     <p class="instruction">Click items to remove them</p>
     <div class="packery clickable">
+      {{>demo-items}}
+    </div>
+  </div>
+</div>
+
+</div><div class="primary-content">
+
+<h2 id="stamp">stamp</h2>
+
+``` js
+pckry.stamp( elements )
+// or with jQuery
+$container.packery( 'stamp', elements )
+```
+
+<p>Stamp the elements in the layout. Packery will lay out item elements <em>around</em> stamped elements.</p>
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
+
+<div class="row example">
+  <div class="cell example-code">
+``` js
+var demo = document.querySelector('#stamp-demo');
+var stampElem = demo.querySelector('.stamp');
+var button = demo.querySelector('button');
+var pckry = new Packery( demo.querySelector('.packery'), {
+  itemSelector: '.item'
+});
+var isStamped = false;
+
+eventie.bind( button, 'click', function() {
+  // stamp or unstamp element
+  if ( isStamped ) {
+    pckry.unstamp( stampElem );
+  } else {
+    pckry.stamp( stampElem );
+  }
+  // trigger layout
+  pckry.layout();
+  isStamped = !isStamped;
+});
+```
+  </div>
+  <div id="stamp-demo" class="cell demo">
+    <button class="button">Toggle stamped</button>
+    <div class="packery has-stamp">
+      <div class="stamp"></div>
       {{>demo-items}}
     </div>
   </div>
