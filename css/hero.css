@@ -134,15 +134,15 @@
 /* ---- basically ---- */
 
 #hero-demos .basically .item1 { width: 45%; }
-#hero-demos .basically .item2 { width: 40%; }
-#hero-demos .basically .item3 { width: 12%; }
+#hero-demos .basically .item2 { width: 25%; }
+#hero-demos .basically .item3 { width: 20%; }
 
-#hero-demos .basically .item4 { width: 20%; }
-#hero-demos .basically .item5 { width: 60%; }
+#hero-demos .basically .item4 { width: 30%; }
+#hero-demos .basically .item5 { width: 50%; }
 
 #hero-demos .basically .item6 { width: 40%; }
-#hero-demos .basically .item7 { width: 15%; }
-#hero-demos .basically .item8 { width: 12%; }
+#hero-demos .basically .item7 { width: 30%; }
+#hero-demos .basically .item8 { width: 25%; }
 #hero-demos .basically .item9 { width: 20%; }
 
 #hero-demos .basically .item10 { width: 60%; }
@@ -150,8 +150,12 @@
 /* ---- masonry ---- */
 
 #hero-demos .masonry .item {
-  width: 30.5%;
+  width: 31.2%;
   margin: 2px 1%;
+}
+
+#hero-demos .masonry .grid-sizer {
+  width: 33.33%;
 }
 
 #hero-demos .masonry .item1 { height: 40px; }
