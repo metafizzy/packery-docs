@@ -141,7 +141,14 @@
   pointer-events: none;
 }
 
-/* desktop */
+/* ---- ribbon ---- */
+
+.ribbon-spinner {
+  box-sizing: content-box;
+}
+
+/* ---- desktop media query ---- */
+
 @media screen and ( min-width: 960px ) {
   .tagline {
     font-size: 1.8em;

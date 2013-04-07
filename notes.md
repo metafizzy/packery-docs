@@ -8,8 +8,6 @@ hero buttons
 
 place for examples?
 
-icons on homepage
-
 Twitter Card & Open Graph tags - add image?
 
 <!-- jshint page js -->
