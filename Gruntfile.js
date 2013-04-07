@@ -13,6 +13,11 @@ module.exports = function( grunt ) {
 
   grunt.initConfig({
 
+    jshint: {
+      docs: [ 'js/**/*.js' ],
+      options: grunt.file.readJSON('js/.jshintrc')
+    },
+
     concat: {
       js: {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
@@ -123,18 +128,20 @@ module.exports = function( grunt ) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   // load all tasks in tasks/
   grunt.loadTasks('tasks/');
 
   grunt.registerTask( 'default', [
+    'jshint',
     'bower-list-map',
     'package-sources',
     'concat',
     'uglify',
     'hbarz',
-    'copy',
+    'copy'
   ]);
 
 };

@@ -1,4 +1,4 @@
-breaking jQuery chainability
+<!-- breaking jQuery chainability -->
 
 add jsFiddles example links
 
@@ -12,4 +12,4 @@ icons on homepage
 
 Twitter Card & Open Graph tags - add image?
 
-jshint page js
+<!-- jshint page js -->
