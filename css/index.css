@@ -1,4 +1,8 @@
-/* ---- features ---- */
+#page-nav.is-at-top a {
+  color: white;
+}
+
+/* ---- what is packery ---- */
 
 #what {
   background: #0C9;
