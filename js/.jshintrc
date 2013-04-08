@@ -9,6 +9,7 @@
     "docReady": false,
     "Draggabilly": false,
     "eventie": false,
+    "getSize": false,
     "getStyleProperty": false,
     "Packery": false
   }

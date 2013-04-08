@@ -1,11 +1,17 @@
+<!-- breaking jQuery chainability -->
+
 add jsFiddles example links
 
-icons on homepage
+commercial buttons
+
+<!-- hero buttons -->
+
+place for examples?
 
 Twitter Card & Open Graph tags - add image?
 
-jshint page js
+<!-- jshint page js -->
 
-note about jQuery chainability with methods that return stuff
+<!-- note about jQuery chainability with methods that return stuff -->
 
 get order after dragging

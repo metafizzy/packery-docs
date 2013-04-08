@@ -1,21 +1,34 @@
-/* ---- features ---- */
+/* ---- page nav ---- */
 
-#features {
-  background: #C90;
+.index-page #page-nav a {
+  -webkit-transition: color 0.4s;
+     -moz-transition: color 0.4s;
+       -o-transition: color 0.4s;
+          transition: color 0.4s;
 }
 
-#features,
-#features h2 {
+#page-nav.is-at-top a {
   color: white;
 }
 
-#features p {
+/* ---- what is packery ---- */
+
+#what {
+  background: #0C9;
+}
+
+#what,
+#what h2 {
+  color: white;
+}
+
+#what p {
   font-size: 1.15em;
 }
 
-#features a { color: #90C; }
+#what a { color: #90C; }
 
-#features a:hover { color: #333; }
+#what a:hover { color: #333; }
 
 @media screen and ( min-width: 960px ) {
 

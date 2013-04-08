@@ -44,7 +44,7 @@
 
 #hero .item {
   border: none;
-  background: hsla(0, 0%, 0%, 0.4);
+  background: hsla(0, 0%, 0%, 0.3);
 }
 
 /* ---- big ol buttons ---- */
@@ -58,6 +58,15 @@
   display: block;
   font-size: 1.3em;
   line-height: 1.2em;
+  position: relative;
+  padding-left: 50px;
+}
+
+.big-ol-buttons .icon {
+  font-size: 32px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 /* ---- big tagline ---- */
@@ -115,6 +124,14 @@
   background: hsla(0, 0%, 0%, 0.4);
 }
 
+#hero-demos .item:hover,
+#hero-demos .item.is-dragging {
+  border: 4px solid white;
+  cursor: move;
+}
+
+#hero-demos .item.is-dragging { z-index: 2 ; }
+
 #hero-demos .packery {
   border: none;
   margin-bottom: 0.5em;
@@ -123,32 +140,31 @@
 #hero-demos .item.expanded {
   width: 100% !important;
 }
-
 /* ---- basically ---- */
 
-#hero-demos .basically .item1 { width: 30%; }
-#hero-demos .basically .item2 { width: 40%; }
-#hero-demos .basically .item3 { width: 12%; }
+#hero-demos .basically .item1 { width: 45%; }
+#hero-demos .basically .item2 { width: 25%; }
+#hero-demos .basically .item3 { width: 20%; }
 
-#hero-demos .basically .item4 { width: 20%; }
-#hero-demos .basically .item5 { width: 60%; }
+#hero-demos .basically .item4 { width: 30%; }
+#hero-demos .basically .item5 { width: 50%; }
 
 #hero-demos .basically .item6 { width: 40%; }
-#hero-demos .basically .item7 { width: 15%; }
-#hero-demos .basically .item8 { width: 12%; }
+#hero-demos .basically .item7 { width: 30%; }
+#hero-demos .basically .item8 { width: 25%; }
 #hero-demos .basically .item9 { width: 20%; }
 
 #hero-demos .basically .item10 { width: 60%; }
 
 /* ---- masonry ---- */
 
-#hero-demos .masonry .packery {
-  padding: 2px 1%;
+#hero-demos .masonry .item {
+  width: 31.2%;
+  margin: 2px 1%;
 }
 
-#hero-demos .masonry .item {
-  width: 30.5%;
-  margin: 2px 1%;
+#hero-demos .masonry .grid-sizer {
+  width: 33.33%;
 }
 
 #hero-demos .masonry .item1 { height: 40px; }
@@ -160,9 +176,7 @@
 #hero-demos .masonry .item7 { height: 55px; }
 #hero-demos .masonry .item8 { height: 45px; }
 
-#hero-demos .meticulous .packery {
-  padding: 2px 0;
-}
+/* ---- desktop ---- */
 
 #hero-demos .meticulous .grid-sizer { width: 20%; }
 
@@ -175,6 +189,10 @@
 #hero-demos .meticulous .item.h2 { height: 84px; }
 #hero-demos .meticulous .item.w4 { width: 78%; }
 #hero-demos .meticulous .item.h4 { height: 172px; }
+
+#hero-demos .meticulous .item.expanded {
+  width: 98% !important;
+}
 
 /* ---- desktop ---- */
 
@@ -193,49 +211,49 @@
     font-size: 32px;
   }
 
-  /* place elements, shape around titles */
-  #hero .placed {
+  /* stamp elements, shape around titles */
+  #hero .stamp {
     position: absolute;
   /*  background: hsla(0, 0%, 100%, 0.4); */
     z-index: 2;
   }
 
-  #hero .placed-ackery {
+  #hero .stamp-ackery {
     width: 476px;
     height: 90px;
     left: 294px;
     top: 92px;
   }
 
-  #hero .placed-p-top {
+  #hero .stamp-p-top {
     width: 95px;
     height: 82px;
     left: 200px;
     top: 70px;
   }
 
-  #hero .placed-p-bottom {
+  #hero .stamp-p-bottom {
     width: 40px;
     height: 90px;
     left: 200px;
     top: 92px;
   }
 
-  #hero .placed-k {
+  #hero .stamp-k {
     width: 34px;
     height: 90px;
     left: 459px;
     top: 65px;
   }
 
-  #hero .placed-y {
+  #hero .stamp-y {
     width: 70px;
     height: 88px;
     left: 675px;
     top: 120px;
   }
 
-  #hero .placed-tagline {
+  #hero .stamp-tagline {
     width: 494px;
     height: 40px;
     left: 200px;
@@ -246,7 +264,13 @@
 
   .big-ol-buttons .button {
     font-size: 1.6em;
-    padding-left: 80px;
+    padding-left: 86px;
+  }
+
+  .big-ol-buttons .icon {
+    font-size: 56px;
+    left: 18px;
+    top: 16px;
   }
 
 }

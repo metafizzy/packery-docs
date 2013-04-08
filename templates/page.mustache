@@ -9,7 +9,7 @@
 
   <title>Packery{{#unless page.is_homepage}} {{page.title}}{{/unless}}</title>
 
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700,400italic' rel='stylesheet'>
 
   {{#if isDev}}
     <!-- DEV MODE - including each .css file -->
@@ -97,6 +97,7 @@
 {{else}}
   {{! in production, just include concat/minified js }}
   <script src="js/packery-docs.min.js"></script>
+  <script src="https://www.ribbon.co/ribbon-modal.js"></script>
 {{/if}}
 
 {{#unless isDev}}

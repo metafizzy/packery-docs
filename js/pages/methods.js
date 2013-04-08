@@ -125,27 +125,27 @@ PS.methods = function() {
     });
   })();
 
-  // ----- placed demo ----- //
+  // ----- stamp demo ----- //
 
   ( function() {
-    var demo = document.querySelector('#place-demo');
-    var placedElem = demo.querySelector('.placed');
+    var demo = document.querySelector('#stamp-demo');
+    var stampElem = demo.querySelector('.stamp');
     var button = demo.querySelector('button');
     var pckry = new Packery( demo.querySelector('.packery'), {
       itemSelector: '.item'
     });
-    var isPlaced = false;
+    var isStamped = false;
 
     eventie.bind( button, 'click', function() {
-      // place or unplace element
-      if ( isPlaced ) {
-        pckry.unplace( placedElem );
+      // stamp or unstamp element
+      if ( isStamped ) {
+        pckry.unstamp( stampElem );
       } else {
-        pckry.place( placedElem );
+        pckry.stamp( stampElem );
       }
       // trigger layout
       pckry.layout();
-      isPlaced = !isPlaced;
+      isStamped = !isStamped;
     });
   })();
 

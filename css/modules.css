@@ -40,18 +40,31 @@
   list-style: none;
 }
 
-.params li {
-  margin-bottom: 4px;
+.param {
+  background: hsla(145, 100%, 40%, 0.05);
+  border-top: 2px solid hsla(145, 100%, 40%, 0.4);
+  padding: 0.3em 0.8em;;
+  margin: 0;
+}
+
+.param,
+.param code {
+  font-size: 14px;
+}
+
+/* just one param */
+div.param {
+  margin-bottom: 0.4em;
 }
 
 .param-bit {
-  padding: 0.4em 0.9em;
-  background: #0C9;
-  background: hsla(165, 100%, 40%, 0.3);
   display: inline;
   display: inline-block;
   margin-bottom: 0;
+  margin-right: 1.0em;
 }
+
+.param-bit:last-child { margin-right: 0}
 
 .param-name {
   font-size: 15px;
@@ -141,7 +154,14 @@
   pointer-events: none;
 }
 
-/* desktop */
+/* ---- ribbon ---- */
+
+.ribbon-spinner {
+  box-sizing: content-box;
+}
+
+/* ---- desktop media query ---- */
+
 @media screen and ( min-width: 960px ) {
   .tagline {
     font-size: 1.8em;

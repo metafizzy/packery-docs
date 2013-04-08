@@ -74,10 +74,11 @@
     max-width: 700px;
   }
 
+  /* stuff that can go extra wide */
   #content .primary-content .row,
   #content #notification,
   #content #hero-demos {
-    max-width: none;
+    max-width: 1200px;
   }
 
   .row {

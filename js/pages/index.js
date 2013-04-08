@@ -10,6 +10,21 @@ var PS = window.PS;
 
 var Draggabilly = window.Draggabilly;
 
+// --------------------------  -------------------------- //
+
+var defView = document.defaultView;
+
+var getStyle = defView && defView.getComputedStyle ?
+  function( elem ) {
+    return defView.getComputedStyle( elem, null );
+  } :
+  function( elem ) {
+    return elem.currentStyle;
+  };
+
+
+// --------------------------  -------------------------- //
+
 /**
  * create and return an item element
  * @returns {Element} item
@@ -61,6 +76,37 @@ function addItems( pckry, maxY, isRando ) {
 
 }
 
+// bind draggabillies to packry,
+// and allow for expansion when clicked
+function bindDraggies( pckry ) {
+  var itemElems = pckry.getItemElements();
+
+  var onDragEnd = function( dragger ) {
+    // compare movement
+    var drag = dragger.dragPoint;
+    if ( drag.x !== 0 || drag.y !== 0 ) {
+      return;
+    }
+    // dragger didn't move
+    var isExpanded = classie.has( dragger.element, 'expanded' );
+    classie.toggle( dragger.element, 'expanded' );
+    if ( !isExpanded ) {
+      pckry.unstamp( dragger.element ); // HACK
+      pckry.fit( dragger.element );
+    } else {
+      pckry.layout();
+    }
+  };
+
+  for ( var j=0, len = itemElems.length; j < len; j++ ) {
+    var itemElem = itemElems[j];
+    var draggie = new Draggabilly( itemElem );
+    pckry.bindDraggabillyEvents( draggie );
+    draggie.on( 'dragEnd', onDragEnd );
+  }
+}
+
+
 PS.index = function() {
 
   // ----- hero ----- //
@@ -70,12 +116,23 @@ PS.index = function() {
     var container = hero.querySelector('.packery');
     var pckry = new Packery( container, {
       itemSelector: '.item',
-      placedElements: '.placed',
+      stamped: '.stamp',
       gutter: 2,
       containerStyle: null
     });
 
     addItems( pckry, hero.offsetHeight + 40, true );
+  })();
+
+  // ----- masonry ----- //
+  
+  ( function() {
+    var container = document.querySelector('#hero-demos .masonry .packery');
+    var pckry = new Packery( container, {
+      itemSelector: '.item',
+      columnWidth: '.grid-sizer'
+    });
+    bindDraggies( pckry );
   })();
 
   // ----- ridiculous ----- //
@@ -91,31 +148,7 @@ PS.index = function() {
     var pckry = new Packery( container, {
       gutter: 4
     });
-    var itemElems = pckry.getItemElements();
-
-    var onDragEnd = function( event, pointer, dragger ) {
-
-      var p1 = dragger.position;
-      var p2 = dragger.startPosition;
-      if ( p1.x === p2.x && p1.y === p2.y ) {
-        // dragger didn't move
-        var isExpanded = classie.has( dragger.element, 'expanded' );
-        classie.toggle( dragger.element, 'expanded' );
-        if ( !isExpanded ) {
-          console.log('fitting');
-          pckry.fit( dragger.element );
-        } else {
-          pckry.layout();
-        }
-      }
-    };
-
-    for ( var j=0, len = itemElems.length; j < len; j++ ) {
-      var itemElem = itemElems[j];
-      var draggie = new Draggabilly( itemElem );
-      pckry.bindDraggabillyEvents( draggie );
-      draggie.on( 'dragEnd', onDragEnd );
-    }
+    bindDraggies( pckry );
   })();
 
   // ----- meticulous ----- //
@@ -127,28 +160,55 @@ PS.index = function() {
       columnWidth: '.grid-sizer',
       rowHeight: 44
     });
-    var itemElems = pckry.getItemElements();
-    var onDragEnd = function( event, pointer, dragger ) {
+    bindDraggies( pckry );
+  })();
 
-      var p1 = dragger.position;
-      var p2 = dragger.startPosition;
-      if ( p1.x === p2.x && p1.y === p2.y ) {
-        // dragger didn't move
-        var isExpanded = classie.has( dragger.element, 'expanded' );
-        classie.toggle( dragger.element, 'expanded' );
-        if ( !isExpanded ) {
-          console.log('fitting');
-          pckry.fit( dragger.element );
-        } else {
-          pckry.layout();
-        }
+  // ----- basically ----- //
+
+  ( function() {
+    var container = document.querySelector('#hero-demos .basically .packery');
+    var pckry = new Packery( container, {
+      rowHeight: 40,
+      gutter: 4
+    });
+    bindDraggies( pckry );
+  })();
+
+  // ----- scroll stuff ----- //
+
+  ( function() {
+    var pageNav = document.querySelector('#page-nav');
+    var isAtTop = true;
+    // add initial class
+    var style = getStyle( pageNav );
+    if ( style.position === 'absolute' || style.position === 'fixed' ) {
+      classie.add( pageNav, 'is-at-top' );
+    }
+    // only add scroll event if fixed
+    if ( style.position !== 'fixed' ) {
+      return;
+    }
+
+    var navY = getSize( pageNav ).height / 2 + parseInt( style.top, 10 );
+    var installHeader = document.querySelector('#install');
+    var contentY = installHeader.getBoundingClientRect().top;
+
+    var scrollTimeout;
+
+    // debounce scroll
+    eventie.bind( window, 'scroll', function() {
+      if ( scrollTimeout ) {
+        clearTimeout( scrollTimeout );
       }
-    };
-    for ( var j=0, len = itemElems.length; j < len; j++ ) {
-      var itemElem = itemElems[j];
-      var draggie = new Draggabilly( itemElem );
-      pckry.bindDraggabillyEvents( draggie );
-      draggie.on( 'dragEnd', onDragEnd );
+      scrollTimeout = setTimeout( onDebounceScroll, 100 );
+    });
+
+    function onDebounceScroll() {
+      var wasAtTop = isAtTop;
+      isAtTop = window.scrollY + navY < contentY;
+      if ( isAtTop !== wasAtTop ) {
+        classie[ isAtTop ? 'add' : 'remove' ]( pageNav, 'is-at-top' );
+      }
     }
   })();
 

@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+  font-family: 'Open Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
   font-size: 15px;
   line-height: 1.5;
   color: #555;
@@ -39,9 +39,7 @@ h1, h2, h3, h4, h5,
 #site-nav,
 #page-nav,
 .tagline,
-#features,
-.catch-phrase,
-.option-properties .key,
+#what,
 .param-bit b,
 .button,
 .instruction,
@@ -80,6 +78,12 @@ h1 {
 h3 {
   font-size: 1.4em;
   margin-bottom: 0.5em;
+}
+
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.1em;
 }
 
 /* ---- lists ---- */
