@@ -20,12 +20,17 @@
           Download packery.&#8203;pkgd.&#8203;min.js
         </a>
       </li>
-      <li class="cell download-docs">
-        <a class="button" href="packery-docs.zip">
-          <i class="icon icon-folder-download"></i>
-          Download these docs
-        </a>
-      </li>
+
+      {{! show download docs only in production }}
+      {{#unless isDev}}
+        <li class="cell download-docs">
+          <a class="button" href="packery-docs.zip">
+            <i class="icon icon-folder-download"></i>
+            Download these docs
+          </a>
+        </li>
+      {{/unless}}
+
       <li class="cell github">
         <a class="button" href="https://github.com/metafizzy/packery">
           <i class="icon icon-github"></i>
