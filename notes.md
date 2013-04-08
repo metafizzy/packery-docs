@@ -1,12 +1,13 @@
+<!-- breaking jQuery chainability -->
+
 add jsFiddles example links
 
-icons on homepage
+commercial buttons
+
+<!-- hero buttons -->
+
+place for examples?
 
 Twitter Card & Open Graph tags - add image?
 
-jshint page js
-
-## Additional examples
-
-getting sorted elements in current order
-
+<!-- jshint page js -->

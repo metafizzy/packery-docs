@@ -3,6 +3,7 @@
 .demo .packery,
 .demo.packery {
   background: #FDD;
+  background: hsla(45, 100%, 40%, 0.2);
 }
 
 .demo .button {
@@ -23,13 +24,13 @@
   width: 3%;
 }
 
-/* ---- placed ---- */
+/* ---- stamp ---- */
 
-.has-placed {
+.has-stamp {
   position: relative;
 }
 
-.demo .placed {
+.demo .stamp {
   position: absolute;
   width: 30%;
   height: 60px;
@@ -37,24 +38,24 @@
   border: 4px dotted white;
 }
 
-#placed-elements-demo .placed1 {
+#stamped-demo .stamp1 {
   left: 20%;
   top: 10px;
 }
 
-#placed-elements-demo .placed2 {
+#stamped-demo .stamp2 {
   right: 10%;
   top: 80px;
 }
 
-#place-demo .placed {
+#stamp-demo .stamp {
   left: 20%;
   top: 50px;
   width: 50%;
   height: 100px;
 }
 
-#place-demo .item { opacity: 0.8; }
+#stamp-demo .item { opacity: 0.8; }
 
 /* ---- draggable ---- */
 

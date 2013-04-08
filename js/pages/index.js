@@ -8,6 +8,23 @@
 
 var PS = window.PS;
 
+var Draggabilly = window.Draggabilly;
+
+// --------------------------  -------------------------- //
+
+var defView = document.defaultView;
+
+var getStyle = defView && defView.getComputedStyle ?
+  function( elem ) {
+    return defView.getComputedStyle( elem, null );
+  } :
+  function( elem ) {
+    return elem.currentStyle;
+  };
+
+
+// --------------------------  -------------------------- //
+
 /**
  * create and return an item element
  * @returns {Element} item
@@ -55,44 +72,145 @@ function addItems( pckry, maxY, isRando ) {
     addItems( pckry, maxY, isRando );
   }, 40 );
 
+  return items;
+
 }
+
+// bind draggabillies to packry,
+// and allow for expansion when clicked
+function bindDraggies( pckry ) {
+  var itemElems = pckry.getItemElements();
+
+  var onDragEnd = function( dragger ) {
+    // compare movement
+    var drag = dragger.dragPoint;
+    if ( drag.x !== 0 || drag.y !== 0 ) {
+      return;
+    }
+    // dragger didn't move
+    var isExpanded = classie.has( dragger.element, 'expanded' );
+    classie.toggle( dragger.element, 'expanded' );
+    if ( !isExpanded ) {
+      pckry.unstamp( dragger.element ); // HACK
+      pckry.fit( dragger.element );
+    } else {
+      pckry.layout();
+    }
+  };
+
+  for ( var j=0, len = itemElems.length; j < len; j++ ) {
+    var itemElem = itemElems[j];
+    var draggie = new Draggabilly( itemElem );
+    pckry.bindDraggabillyEvents( draggie );
+    draggie.on( 'dragEnd', onDragEnd );
+  }
+}
+
 
 PS.index = function() {
 
   // ----- hero ----- //
 
-  var hero = document.querySelector('#hero');
-  var heroPackryElem = hero.querySelector('#hero .packery');
-  var heroPckry = new Packery( heroPackryElem, {
-    itemSelector: '.item',
-    placedElements: '.placed',
-    gutter: 2,
-    containerStyle: null
-  });
+  ( function() {
+    var hero = document.querySelector('#hero');
+    var container = hero.querySelector('.packery');
+    var pckry = new Packery( container, {
+      itemSelector: '.item',
+      stamped: '.stamp',
+      gutter: 2,
+      containerStyle: null
+    });
 
-  addItems( heroPckry, hero.offsetHeight + 40, true );
+    addItems( pckry, hero.offsetHeight + 40, true );
+  })();
+
+  // ----- masonry ----- //
+  
+  ( function() {
+    var container = document.querySelector('#hero-demos .masonry .packery');
+    var pckry = new Packery( container, {
+      itemSelector: '.item',
+      columnWidth: '.grid-sizer'
+    });
+    bindDraggies( pckry );
+  })();
 
   // ----- ridiculous ----- //
 
-  var ridicPackeryElem = document.querySelector('.ridiculous .packery');
-  var fragment = document.createDocumentFragment();
-  for ( var i=0; i < 12; i++ ) {
-    var item = getItem( true );
-    fragment.appendChild( item );
-  }
-  ridicPackeryElem.appendChild( fragment );
-  var ridicPckry = new Packery( ridicPackeryElem, {
-    gutter: 4
-  });
+  ( function() {
+    var container = document.querySelector('.ridiculous .packery');
+    var fragment = document.createDocumentFragment();
+    for ( var i=0; i < 12; i++ ) {
+      var item = getItem( true );
+      fragment.appendChild( item );
+    }
+    container.appendChild( fragment );
+    var pckry = new Packery( container, {
+      gutter: 4
+    });
+    bindDraggies( pckry );
+  })();
 
-  // ----- ridiculous ----- //
+  // ----- meticulous ----- //
 
-  var meticPackeryElem = document.querySelector('.meticulous .packery');
-  var meticPckry = new Packery( meticPackeryElem, {
-    itemSelector: '.item',
-    columnWidth: '.grid-sizer',
-    rowHeight: 44
-  });
+  ( function() {
+    var container = document.querySelector('.meticulous .packery');
+    var pckry = new Packery( container, {
+      itemSelector: '.item',
+      columnWidth: '.grid-sizer',
+      rowHeight: 44
+    });
+    bindDraggies( pckry );
+  })();
+
+  // ----- basically ----- //
+
+  ( function() {
+    var container = document.querySelector('#hero-demos .basically .packery');
+    var pckry = new Packery( container, {
+      rowHeight: 40,
+      gutter: 4
+    });
+    bindDraggies( pckry );
+  })();
+
+  // ----- scroll stuff ----- //
+
+  ( function() {
+    var pageNav = document.querySelector('#page-nav');
+    var isAtTop = true;
+    // add initial class
+    var style = getStyle( pageNav );
+    if ( style.position === 'absolute' || style.position === 'fixed' ) {
+      classie.add( pageNav, 'is-at-top' );
+    }
+    // only add scroll event if fixed
+    if ( style.position !== 'fixed' ) {
+      return;
+    }
+
+    var navY = getSize( pageNav ).height / 2 + parseInt( style.top, 10 );
+    var installHeader = document.querySelector('#install');
+    var contentY = installHeader.getBoundingClientRect().top;
+
+    var scrollTimeout;
+
+    // debounce scroll
+    eventie.bind( window, 'scroll', function() {
+      if ( scrollTimeout ) {
+        clearTimeout( scrollTimeout );
+      }
+      scrollTimeout = setTimeout( onDebounceScroll, 100 );
+    });
+
+    function onDebounceScroll() {
+      var wasAtTop = isAtTop;
+      isAtTop = window.scrollY + navY < contentY;
+      if ( isAtTop !== wasAtTop ) {
+        classie[ isAtTop ? 'add' : 'remove' ]( pageNav, 'is-at-top' );
+      }
+    }
+  })();
 
 };
 

@@ -10,20 +10,22 @@
     "destroy",
     "fit",
     "getItemElements",
-    "getItemFromElement",
+    "getItem",
     "layout",
     "layoutItems",
     "off",
     "on",
     "Packery.data",
-    "place",
     "reloadItems",
     "remove",
+    "stamp",
     "unbindResize",
-    "unplace"
+    "unstamp"
   ]
 }
 ---
+
+<div class="primary-content">
 
 <p>Methods are actions taken on Packery instances.</p>
 
@@ -35,7 +37,7 @@ pckry.appended( elem );
 pckry.layout();
 ```
 
-<p>If you are using jQuery, methods follow jQuery UI pattern.</p>
+<p>If you are using jQuery, methods follow the jQuery UI pattern.</p>
 
 ``` js
 $('#container').packery()
@@ -45,15 +47,21 @@ $('#container').packery()
   .packery();
 ```
 
-<p><strong>Heads up:</strong> Methods that return values (<a href="#getitemelements">getItemElements</a>, <a href="#getitemfromelement">getItemFromElement</a>, <a href="#on">on</a>, and <a href="#off">off</a>) will break jQuery chain-ability.</p>
+<p>jQuery chaining is broken by methods that return values (i.e. 
+  <a href="#getitemelements"><code>getItemElements</code></a>,
+  <a href="#getitem"><code>getItem</code></a>,
+  <a href="#on"><code>on</code></a>, and
+  <a href="#off"><code>off</code></a>).</p>
 
 ``` js
-// 'appended' method is chainable
-$container.packery( 'appended', elem ).addClass('done');
-// 'on' method is NOT chainable
-$container.packery( 'on', 'layoutComplete', function() {...});
-$container.addClass('ready');
+// chaining works with 'fit' method
+$container.packery( 'fit', elem ).fadeIn();
+// 'on' method breaks jQuery chaining
+$container.packery( 'on', 'layoutComplete', function() {...} );
+$container.fadeIn();
 ```
+
+</div><div class="primary-content">
 
 <h2 id="additems">addItems</h2>
 
@@ -66,7 +74,7 @@ $container.packery( 'addItems', elements )
 <p>Add item elements to the Packery instance.</p>
 
 <ul class="params">
-  <li>
+  <li class="param">
     <h5 class="param-name param-bit"><code>elements</code></h5>
     <p class="type param-bit">
       <b>Type:</b>
@@ -79,6 +87,8 @@ $container.packery( 'addItems', elements )
   </li>
 </ul>
 
+</div><div class="primary-content">
+
 <h2 id="appended">appended</h2>
 
 ``` js
@@ -90,7 +100,7 @@ $container.packery( 'appended', elements )
 <p>Add and lay out newly appended item elements.</p>
 
 <ul class="params">
-  <li>
+  <li class="param">
     <h5 class="param-name param-bit"><code>elements</code></h5>
     <p class="type param-bit">
       <b>Type:</b>
@@ -140,6 +150,8 @@ eventie.bind( button, 'click', function() {
   </div>
 </div>
 
+</div><div class="primary-content">
+
 <h2 id="binddraggabillyevents">bindDraggabillyEvents</h2>
 
 ``` js
@@ -153,13 +165,15 @@ $container.packery( 'bindDraggabillyEvents', draggie )
 <p>See <a href="draggable.html#draggabilly">Draggable: Draggabilly</a> for more.</p>
 
 <ul class="params">
-  <li>
+  <li class="param">
     <h5 class="param-name param-bit"><code>draggie</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Draggabilly</i></span>
     </p>
   </li>
 </ul>
+
+</div><div class="primary-content">
 
 <h2 id="bindresize">bindResize</h2>
 
@@ -170,6 +184,8 @@ $container.packery('bindResize')
 ```
 
 <p>Binds event listener to window <code>resize</code>, so layout is triggered when the browser window is resized.</p>
+
+</div><div class="primary-content">
 
 <h2 id="binduidraggableevents">bindUIDraggableEvents</h2>
 
@@ -191,6 +207,8 @@ $container.packery( 'bindDraggabillyEvents', $elements )
     </p>
   </li>
 </ul>
+
+</div><div class="primary-content">
 
 <h2 id="destroy">destroy</h2>
 
@@ -229,6 +247,8 @@ eventie.bind( button, 'click', function() {
   </div>
 </div>
 
+</div><div class="primary-content">
+
 <h2 id="fit">fit</h2>
 
 ``` js
@@ -238,14 +258,14 @@ $container.packery( 'fit', element, x, y )
 ```
 
 <ul class="params">
-  <li>
+  <li class="param">
     <h5 class="param-name param-bit"><code>element</code></h5>
     <p class="type param-bit">
       <b>Type:</b>
       <span class="value"><i>Element</i></span>
     </p>
   </li>
-  <li>
+  <li class="param">
     <h5 class="param-name param-bit"><code>x</code></h5>
     <p class="type param-bit">
       <b>Type:</b>
@@ -253,7 +273,7 @@ $container.packery( 'fit', element, x, y )
     </p>
     <p class="description param-bit">Horizontal position of element, optional</p>
   </li>
-  <li>
+  <li class="param">
     <h5 class="param-name param-bit"><code>y</code></h5>
     <p class="type param-bit">
       <b>Type:</b>
@@ -263,7 +283,7 @@ $container.packery( 'fit', element, x, y )
   </li>
 </ul>
 
-<p>Fit an item element within the layout, and have other item elements laid out around it. This method is useful when expanding an element, and keeping it its same position.</p>
+<p>Fit an item element within the layout, and have other item elements laid out around it. This method is useful when expanding an element, and keeping it in its same position.</p>
 
 <div class="row example">
   <div class="cell example-code">
@@ -333,12 +353,14 @@ eventie.bind( container, 'click', function( event ) {
   </div>
 </div>
 
+</div><div class="primary-content">
+
 <h2 id="getitemelements">getItemElements</h2>
 
 ``` js
-var itemElems = pckry.getItemElements()
+var elems = pckry.getItemElements()
 // or with jQuery
-var itemElems = $container.packery('getItemElements')
+var elems = $container.packery('getItemElements')
 ```
 
 <p>Get an array of elements used as the Packery instance's items.</p>
@@ -353,12 +375,14 @@ var itemElems = $container.packery('getItemElements')
   </li>
 </ul>
 
-<h2 id="getitemfromelement">getItemFromElement</h2>
+</div><div class="primary-content">
+
+<h2 id="getitem">getItem</h2>
 
 ``` js
-var item = pckry.getItemFromElement( element )
+var item = pckry.getItem( element )
 // or with jQuery
-var item = $container.packery( 'getItemFromElement', element )
+var item = $container.packery( 'getItem', element )
 ```
 
 <p>Get a <i>Packery.Item</i> from an element.</p>
@@ -378,6 +402,8 @@ var item = $container.packery( 'getItemFromElement', element )
     </p>
   </li>
 </ul>
+
+</div><div class="primary-content">
 
 <h2 id="layout">layout</h2>
 
@@ -415,6 +441,8 @@ eventie.bind( container, 'click', function( event ) {
   </div>
 </div>
 
+</div><div class="primary-content">
+
 <h2 id="layoutitems">layoutItems</h2>
 
 ``` js
@@ -440,6 +468,8 @@ $container.packery( 'layoutItems', items, isStill )
     <p class="description param-bit">Disables transitions</p>
   </li>
 </ul>
+
+</div><div class="primary-content">
 
 <h2 id="off">off</h2>
 
@@ -474,7 +504,9 @@ var pckry = $container.packery( 'off', eventName, listener )
 
 <p>Remove an event listener. See <a href="events.html">Events</a>.</p>
 
-<h2 id="off">on</h2>
+</div><div class="primary-content">
+
+<h2 id="on">on</h2>
 
 ``` js
 pckry.on( eventName, listener )
@@ -518,6 +550,8 @@ pckry.on( 'layoutComplete', function() {
 });
 ```
 
+</div><div class="primary-content">
+
 <h2 id="packery-data">Packery.data</h2>
 
 ``` js
@@ -558,62 +592,7 @@ var pckry = Packery.data( container );
 pckry.layout();
 ```
 
-<h2 id="place">place</h2>
-
-``` js
-pckry.place( elements )
-// or with jQuery
-$container.packery( 'place', elements )
-```
-
-<p>Place the elements in the layout. Packery will lay out item elements <em>around</em> placed elements.</p>
-
-<ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>elements</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b>
-      <span class="value">
-        <i>Element</i>,
-        <i>NodeList</i>, or
-        <i>Array</i> of Elements
-      </span>
-    </p>
-  </li>
-</ul>
-
-<div class="row example">
-  <div class="cell example-code">
-``` js
-var demo = document.querySelector('#place-demo');
-var placedElem = demo.querySelector('.placed');
-var button = demo.querySelector('button');
-var pckry = new Packery( demo.querySelector('.packery'), {
-  itemSelector: '.item'
-});
-var isPlaced = false;
-
-eventie.bind( button, 'click', function() {
-  // place or unplace element
-  if ( isPlaced ) {
-    pckry.unplace( placedElem );
-  } else {
-    pckry.place( placedElem );
-  }
-  // trigger layout
-  pckry.layout();
-  isPlaced = !isPlaced;
-});
-```
-  </div>
-  <div id="place-demo" class="cell demo">
-    <button class="button">Toggle placed</button>
-    <div class="packery has-placed">
-      <div class="placed"></div>
-      {{>demo-items}}
-    </div>
-  </div>
-</div>
+</div><div class="primary-content">
 
 <h2 id="reloaditems">reloadItems</h2>
 
@@ -624,6 +603,8 @@ $container.packery('reloadItems')
 ```
 
 <p>Recollect all item elements.</p>
+
+</div><div class="primary-content">
 
 <h2 id="remove">remove</h2>
 
@@ -675,25 +656,17 @@ eventie.bind( container, 'click', function( event ) {
   </div>
 </div>
 
-<h2 id="unbindresize">unbindResize</h2>
+</div><div class="primary-content">
+
+<h2 id="stamp">stamp</h2>
 
 ``` js
-pckry.unbindResize()
+pckry.stamp( elements )
 // or with jQuery
-$container.packery('unbindResize')
+$container.packery( 'stamp', elements )
 ```
 
-<p>Un-bind layout to window <code>resize</code> event.</p>
-
-<h2 id="unplace">unplace</h2>
-
-``` js
-pckry.unplace( elements )
-// or with jQuery
-$container.packery( 'unplace', elements )
-```
-
-<p>Un-<a href="#place">place</a> the elements, so that Packery will no longer layout item elements around them.</p>
+<p>Stamp the elements in the layout. Packery will lay out item elements <em>around</em> stamped elements.</p>
 
 <ul class="params">
   <li class="param">
@@ -708,3 +681,76 @@ $container.packery( 'unplace', elements )
     </p>
   </li>
 </ul>
+
+<div class="row example">
+  <div class="cell example-code">
+``` js
+var demo = document.querySelector('#stamp-demo');
+var stampElem = demo.querySelector('.stamp');
+var button = demo.querySelector('button');
+var pckry = new Packery( demo.querySelector('.packery'), {
+  itemSelector: '.item'
+});
+var isStamped = false;
+
+eventie.bind( button, 'click', function() {
+  // stamp or unstamp element
+  if ( isStamped ) {
+    pckry.unstamp( stampElem );
+  } else {
+    pckry.stamp( stampElem );
+  }
+  // trigger layout
+  pckry.layout();
+  isStamped = !isStamped;
+});
+```
+  </div>
+  <div id="stamp-demo" class="cell demo">
+    <button class="button">Toggle stamped</button>
+    <div class="packery has-stamp">
+      <div class="stamp"></div>
+      {{>demo-items}}
+    </div>
+  </div>
+</div>
+
+</div><div class="primary-content">
+
+<h2 id="unbindresize">unbindResize</h2>
+
+``` js
+pckry.unbindResize()
+// or with jQuery
+$container.packery('unbindResize')
+```
+
+<p>Un-bind layout to window <code>resize</code> event.</p>
+
+</div><div class="primary-content">
+
+<h2 id="unstamp">unstamp</h2>
+
+``` js
+pckry.unstamp( elements )
+// or with jQuery
+$container.packery( 'unstamp', elements )
+```
+
+<p>Un-<a href="#stamp">stamp</a> the elements, so that Packery will no longer layout item elements around them.</p>
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
+
+</div>

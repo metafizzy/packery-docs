@@ -1,81 +1,39 @@
-#hero-demos {
-  margin-bottom: 2.0em;
+/* ---- page nav ---- */
+
+.index-page #page-nav a {
+  -webkit-transition: color 0.4s;
+     -moz-transition: color 0.4s;
+       -o-transition: color 0.4s;
+          transition: color 0.4s;
 }
 
-#hero-demos .cell {
+#page-nav.is-at-top a {
+  color: white;
 }
 
-#hero-demos .item {
-  width: 40px;
-  height: 40px;
+/* ---- what is packery ---- */
+
+#what {
+  background: #0C9;
 }
 
-#hero-demos .packery {
-  padding: 4px;
-  margin-bottom: 0.5em;
+#what,
+#what h2 {
+  color: white;
 }
 
-/* ---- basically ---- */
-
-#hero-demos .basically .item1 { width: 30%; }
-#hero-demos .basically .item2 { width: 40%; }
-#hero-demos .basically .item3 { width: 12%; }
-
-#hero-demos .basically .item4 { width: 20%; }
-#hero-demos .basically .item5 { width: 60%; }
-
-#hero-demos .basically .item6 { width: 40%; }
-#hero-demos .basically .item7 { width: 15%; }
-#hero-demos .basically .item8 { width: 12%; }
-#hero-demos .basically .item9 { width: 20%; }
-
-#hero-demos .basically .item10 { width: 60%; }
-
-/* ---- masonry ---- */
-
-#hero-demos .masonry .packery {
-  padding: 2px 1%;
+#what p {
+  font-size: 1.15em;
 }
 
-#hero-demos .masonry .item {
-  width: 30.5%;
-  margin: 2px 1%;
+#what a { color: #90C; }
+
+#what a:hover { color: #333; }
+
+@media screen and ( min-width: 960px ) {
+
+  .index-page #content > .primary-content:first-child {
+    padding: 0;
+  }
+
 }
-
-#hero-demos .masonry .item1 { height: 40px; }
-#hero-demos .masonry .item2 { height: 80px; }
-#hero-demos .masonry .item3 { height: 25px; }
-#hero-demos .masonry .item4 { height: 80px; }
-#hero-demos .masonry .item5 { height: 50px; }
-#hero-demos .masonry .item6 { height: 55px; }
-#hero-demos .masonry .item7 { height: 55px; }
-#hero-demos .masonry .item8 { height: 45px; }
-
-#hero-demos .meticulous .packery {
-  padding: 2px 0;
-}
-
-#hero-demos .meticulous .grid-sizer { width: 20%; }
-
-#hero-demos .meticulous .item {
-  width: 18%;
-  margin: 2px 1%;
-}
-
-#hero-demos .meticulous .item.w2 { width: 38%; }
-#hero-demos .meticulous .item.h2 { height: 84px; }
-#hero-demos .meticulous .item.w4 { width: 78%; }
-#hero-demos .meticulous .item.h4 { height: 172px; }
-
-
-#grid-packery .item {
-  width: 50px;
-  height: 50px;
-}
-
-#grid-packery .item.w2 { width:  104px; }
-#grid-packery .item.h2 { height: 104px; }
-
-#grid-packery .item.w4 { width:  212px; }
-#grid-packery .item.h4 { height: 212px; }
-
