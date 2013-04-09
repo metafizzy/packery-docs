@@ -147,6 +147,7 @@ eventie.bind( button, 'click', function() {
       <div class="item"></div>
       <div class="item h2"></div>
     </div>
+    <p class="edit" href="http://codepen.io/desandro/pen/ndoxe">Edit example on CodePen</p>
   </div>
 </div>
 
@@ -244,6 +245,7 @@ eventie.bind( button, 'click', function() {
     <div class="packery">
       {{>demo-items}}
     </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/scKGf">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -366,6 +368,7 @@ var elems = $container.packery('getItemElements')
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <h5 class="param-name param-bit"><code>itemElems</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Array</i></span>
     </p>
@@ -393,6 +396,7 @@ var item = $container.packery( 'getItem', element )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <h5 class="param-name param-bit"><code>item</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
     </p>
@@ -474,7 +478,7 @@ $container.packery( 'layoutItems', items, isStill )
 ``` js
 pckry.off( eventName, listener )
 // or with jQuery
-$container.packery( 'off', eventName, listener )
+var pckry = $container.packery( 'off', eventName, listener )
 ```
 
 <ul class="params">
@@ -493,8 +497,9 @@ $container.packery( 'off', eventName, listener )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
   </li>
 </ul>
@@ -508,7 +513,7 @@ $container.packery( 'off', eventName, listener )
 ``` js
 pckry.on( eventName, listener )
 // or with jQuery
-$container.packery( 'on', eventName, listener )
+var pckry = $container.packery( 'on', eventName, listener )
 ```
 
 <ul class="params">
@@ -527,8 +532,9 @@ $container.packery( 'on', eventName, listener )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
   </li>
 </ul>
@@ -551,7 +557,7 @@ pckry.on( 'layoutComplete', function() {
 <h2 id="packery-data">Packery.data</h2>
 
 ``` js
-Packery.data( element )
+var pckry = Packery.data( element )
 ```
 
 <ul class="params">
@@ -563,6 +569,7 @@ Packery.data( element )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>

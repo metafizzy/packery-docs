@@ -6,6 +6,15 @@
   padding-right: 10px;
 }
 
+#content .primary-content > * {
+  max-width: 700px;
+}
+
+#content #notification,
+#content #hero-demos {
+  max-width: none;
+}
+
 /* ---- #content ---- */
 
 #content h2,
