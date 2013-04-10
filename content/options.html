@@ -7,8 +7,8 @@
     "gutter",
     "isResizeBound",
     "itemSelector",
-    "stamped",
     "rowHeight",
+    "stamped",
     "transitionDuration",
     "Element sizing"
   ]
@@ -31,7 +31,7 @@
   </p>
 </div>
 
-<p>CSS styles that are applied to the container element.</p>
+<p>CSS styles that are applied to the container element. To disable Packery from setting any CSS to the container element, set <code>containerStyle: <span class="literal">null</span></code>.</p>
 
 </div><div class="primary-content">
 
@@ -52,22 +52,25 @@
 "columnWidth": 60
 ```
   </div>
-  <div class="cell demo packery js-packery" data-packery-options='{ "columnWidth": 60 }'>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <div class="cell demo">
+    <div class="packery js-packery"  data-packery-options='{ "columnWidth": 60 }'>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/eouHb">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -91,23 +94,26 @@
 "itemSelector": ".item"
 ```
   </div>
-  <div id="column-width-demo2" class="cell demo packery js-packery" data-packery-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
-    <div class="grid-sizer"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <div class="cell demo">
+    <div id="column-width-demo2" class="packery js-packery" data-packery-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
+      <div class="grid-sizer"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/tonpx">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -130,22 +136,25 @@
 "gutter": 10
 ```
   </div>
-  <div class="cell demo packery js-packery" data-packery-options='{ "gutter": 10 }'>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2 h2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <div class="cell demo">
+    <div class="packery js-packery" data-packery-options='{ "gutter": 10 }'>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2 h2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/fIbHB">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -155,7 +164,7 @@
   <div class="cell example-code">
 ``` html
 <div id="gutter-demo2">
-  <div class="grid-sizer"></div>
+  <div class="gutter-sizer"></div>
   <div class="item"></div>
   <div class="item"></div>
   ...
@@ -169,23 +178,26 @@
 "itemSelector": ".item"
 ```
   </div>
-  <div id="gutter-demo2" class="cell demo packery js-packery" data-packery-options='{ "gutter": ".gutter-sizer", "itemSelector": ".item" }'>
-    <div class="gutter-sizer"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2 h2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <div class="cell demo" >
+    <div id="gutter-demo2" class="packery js-packery" data-packery-options='{ "gutter": ".gutter-sizer", "itemSelector": ".item" }'>
+      <div class="gutter-sizer"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2 h2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/buyLF">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -244,21 +256,24 @@
 "rowHeight": 60
 ```
   </div>
-  <div class="cell demo packery js-packery" data-packery-options='{ "rowHeight": 60 }'>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item w4"></div>
-    <div class="item"></div>
-    <div class="item w4"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
+  <div class="cell demo">
+    <div class="packery js-packery" data-packery-options='{ "rowHeight": 60 }'>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2"></div>
+      <div class="item w4"></div>
+      <div class="item"></div>
+      <div class="item w4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/KGcqD">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -282,22 +297,25 @@
 "itemSelector": ".item"
 ```
   </div>
-  <div id="row-height-demo2" class="cell demo packery js-packery" data-packery-options='{ "rowHeight": ".grid-sizer", "itemSelector": ".item" }'>
-    <div class="grid-sizer"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item w4"></div>
-    <div class="item"></div>
-    <div class="item w4"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
+  <div class="cell demo">
+    <div id="row-height-demo2" class="packery js-packery" data-packery-options='{ "rowHeight": ".grid-sizer", "itemSelector": ".item" }'>
+      <div class="grid-sizer"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2"></div>
+      <div class="item w4"></div>
+      <div class="item"></div>
+      <div class="item w4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/dElba">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -353,28 +371,31 @@
 }
 ```
   </div>
-  <div id="stamped-demo" class="cell demo packery has-stamp js-packery" data-packery-options='{ "itemSelector": ".item", "stamped": ".stamp" }'>
-    <div class="stamp stamp1"></div>
-    <div class="stamp stamp2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2 h2"></div>
-    <div class="item w4"></div>
-    <div class="item h4"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item w2"></div>
-    <div class="item"></div>
-    <div class="item h2"></div>
-    <div class="item"></div>
+  <div class="cell demo">
+    <div id="stamped-demo" class="packery has-stamp js-packery" data-packery-options='{ "itemSelector": ".item", "stamped": ".stamp" }'>
+      <div class="stamp stamp1"></div>
+      <div class="stamp stamp2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2 h2"></div>
+      <div class="item w4"></div>
+      <div class="item h4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+      <div class="item"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/Hqwib">Edit this example on CodePen</a></p>
   </div>
 </div>
 

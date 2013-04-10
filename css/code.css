@@ -3,6 +3,7 @@
 
 pre, code {
   font-family: Consolas, Menlo, monospace;
+  font-size: 14px;
   background: #EEE;
   background: hsla(0, 0%, 0%, 0.05);
   color: #333;

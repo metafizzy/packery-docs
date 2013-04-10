@@ -8,6 +8,8 @@ commercial buttons
 
 place for examples?
 
+contributing in appendix
+
 Twitter Card & Open Graph tags - add image?
 
 <!-- jshint page js -->

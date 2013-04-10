@@ -71,8 +71,6 @@ pckry.addItems( elements )
 $container.packery( 'addItems', elements )
 ```
 
-<p>Add item elements to the Packery instance.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>elements</code></h5>
@@ -86,6 +84,8 @@ $container.packery( 'addItems', elements )
     </p>
   </li>
 </ul>
+
+<p>Add item elements to the Packery instance.</p>
 
 </div><div class="primary-content">
 
@@ -97,8 +97,6 @@ pckry.appended( elements )
 $container.packery( 'appended', elements )
 ```
 
-<p>Add and lay out newly appended item elements.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>elements</code></h5>
@@ -112,6 +110,8 @@ $container.packery( 'appended', elements )
     </p>
   </li>
 </ul>
+
+<p>Add and lay out newly appended item elements.</p>
 
 <div class="row example">
   <div class="cell example-code">
@@ -147,6 +147,7 @@ eventie.bind( button, 'click', function() {
       <div class="item"></div>
       <div class="item h2"></div>
     </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/ndoxe">Edit example on CodePen</a></p>
   </div>
 </div>
 
@@ -160,10 +161,6 @@ pckry.bindDraggabillyEvents( draggie )
 $container.packery( 'bindDraggabillyEvents', draggie )
 ```
 
-<p>Bind <a href="http://draggabilly.desandro.com">Draggabilly</a> events, so that the Packery instance will layout around the dragged element.</p>
-
-<p>See <a href="draggable.html#draggabilly">Draggable: Draggabilly</a> for more.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>draggie</code></h5>
@@ -172,6 +169,10 @@ $container.packery( 'bindDraggabillyEvents', draggie )
     </p>
   </li>
 </ul>
+
+<p>Bind <a href="http://draggabilly.desandro.com">Draggabilly</a> events, so that the Packery instance will layout around the dragged element.</p>
+
+<p>See <a href="draggable.html#draggabilly">Draggable: Draggabilly</a> for more.</p>
 
 </div><div class="primary-content">
 
@@ -195,10 +196,6 @@ pckry.bindUIDraggableEvents( $elements )
 $container.packery( 'bindDraggabillyEvents', $elements )
 ```
 
-<p>Bind <a href="http://jqueryui.com/draggable/">jQuery UI Draggable</a> events, so that the Packery instance will layout around the dragged element.</p>
-
-<p>See <a href="draggable.html#jquery-ui-draggable">Draggable: jQuery UI Draggable</a> for more.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>$element</code></h5>
@@ -207,6 +204,10 @@ $container.packery( 'bindDraggabillyEvents', $elements )
     </p>
   </li>
 </ul>
+
+<p>Bind <a href="http://jqueryui.com/draggable/">jQuery UI Draggable</a> events, so that the Packery instance will layout around the dragged element.</p>
+
+<p>See <a href="draggable.html#jquery-ui-draggable">Draggable: jQuery UI Draggable</a> for more.</p>
 
 </div><div class="primary-content">
 
@@ -244,6 +245,7 @@ eventie.bind( button, 'click', function() {
     <div class="packery">
       {{>demo-items}}
     </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/scKGf">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -322,6 +324,7 @@ eventie.bind( container, 'click', function( event ) {
       <div class="item"></div>
       <div class="item"></div>
     </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/rwhjq">Edit example on CodePen</a></p>
   </div>
 </div>
 
@@ -350,6 +353,7 @@ eventie.bind( container, 'click', function( event ) {
     <div class="packery clickable">
       {{>demo-items}}
     </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/uspgI">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -363,16 +367,17 @@ var elems = pckry.getItemElements()
 var elems = $container.packery('getItemElements')
 ```
 
-<p>Get an array of elements used as the Packery instance's items.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <h5 class="param-name param-bit"><code>itemElems</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Array</i></span>
     </p>
   </li>
 </ul>
+
+<p>Get an array of elements used as the Packery instance's items.</p>
 
 </div><div class="primary-content">
 
@@ -384,8 +389,6 @@ var item = pckry.getItem( element )
 var item = $container.packery( 'getItem', element )
 ```
 
-<p>Get a <i>Packery.Item</i> from an element.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>element</code></h5>
@@ -395,11 +398,14 @@ var item = $container.packery( 'getItem', element )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <h5 class="param-name param-bit"><code>item</code></h5>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
     </p>
   </li>
 </ul>
+
+<p>Get a <i>Packery.Item</i> from an element.</p>
 
 </div><div class="primary-content">
 
@@ -436,6 +442,7 @@ eventie.bind( container, 'click', function( event ) {
     <div class="packery clickable">
       {{>demo-items}}
     </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/dLgKw">Edit this example on CodePen</a></p>
   </div>
 </div>
 
@@ -448,8 +455,6 @@ pckry.layoutItems( items, isStill )
 // or with jQuery
 $container.packery( 'layoutItems', items, isStill )
 ```
-
-<p>Lay out specified items.</p>
 
 <ul class="params">
   <li class="param">
@@ -467,6 +472,8 @@ $container.packery( 'layoutItems', items, isStill )
   </li>
 </ul>
 
+<p>Lay out specified items.</p>
+
 </div><div class="primary-content">
 
 <h2 id="off">off</h2>
@@ -474,7 +481,7 @@ $container.packery( 'layoutItems', items, isStill )
 ``` js
 pckry.off( eventName, listener )
 // or with jQuery
-$container.packery( 'off', eventName, listener )
+var pckry = $container.packery( 'off', eventName, listener )
 ```
 
 <ul class="params">
@@ -493,8 +500,9 @@ $container.packery( 'off', eventName, listener )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
   </li>
 </ul>
@@ -508,7 +516,7 @@ $container.packery( 'off', eventName, listener )
 ``` js
 pckry.on( eventName, listener )
 // or with jQuery
-$container.packery( 'on', eventName, listener )
+var pckry = $container.packery( 'on', eventName, listener )
 ```
 
 <ul class="params">
@@ -527,8 +535,9 @@ $container.packery( 'on', eventName, listener )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>EventEmitter</i></span>
+      <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
   </li>
 </ul>
@@ -551,10 +560,8 @@ pckry.on( 'layoutComplete', function() {
 <h2 id="packery-data">Packery.data</h2>
 
 ``` js
-Packery.data( element )
+var pckry = Packery.data( element )
 ```
-
-<p>Get the Packery instance from an element. Note this method is of <code>Packery</code>, rather than of a Packery instance.</p>
 
 <ul class="params">
   <li class="param">
@@ -565,11 +572,14 @@ Packery.data( element )
   </li>
   <li class="param">
     <h5 class="param-name param-bit">returns</h5>
+    <p class="param-name param-bit"><code>pckry</code></p>
     <p class="type param-bit">
       <b>Type:</b> <span class="value"><i>Packery</i></span>
     </p>
   </li>
 </ul>
+
+<p>Get the Packery instance from an element. Note this method is of <code>Packery</code>, rather than of a Packery instance.</p>
 
 <p>This method is useful to access the Packery instance after it was initialized via HTML.</p>
 
@@ -609,8 +619,6 @@ pckry.remove( elements )
 $container.packery( 'remove', elements )
 ```
 
-<p>Remove elements from the Packery instance, then from the DOM.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>elements</code></h5>
@@ -624,6 +632,8 @@ $container.packery( 'remove', elements )
     </p>
   </li>
 </ul>
+
+<p>Remove elements from the Packery instance, then from the DOM.</p>
 
 <div class="row example">
   <div class="cell example-code">
@@ -661,8 +671,6 @@ pckry.stamp( elements )
 $container.packery( 'stamp', elements )
 ```
 
-<p>Stamp the elements in the layout. Packery will lay out item elements <em>around</em> stamped elements.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>elements</code></h5>
@@ -676,6 +684,8 @@ $container.packery( 'stamp', elements )
     </p>
   </li>
 </ul>
+
+<p>Stamp the elements in the layout. Packery will lay out item elements <em>around</em> stamped elements.</p>
 
 <div class="row example">
   <div class="cell example-code">
@@ -732,8 +742,6 @@ pckry.unstamp( elements )
 $container.packery( 'unstamp', elements )
 ```
 
-<p>Un-<a href="#stamp">stamp</a> the elements, so that Packery will no longer layout item elements around them.</p>
-
 <ul class="params">
   <li class="param">
     <h5 class="param-name param-bit"><code>elements</code></h5>
@@ -747,5 +755,7 @@ $container.packery( 'unstamp', elements )
     </p>
   </li>
 </ul>
+
+<p>Un-<a href="#stamp">stamp</a> the elements, so that Packery will no longer layout item elements around them.</p>
 
 </div>
