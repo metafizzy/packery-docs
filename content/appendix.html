@@ -34,9 +34,11 @@ imagesLoaded( container, function() {
 
 <h2>Component libraries</h2>
 
+<p>Packery includes several component libraries. You might have seen these used in the example code. You can use these libraries in your own code.</p>
+
 <h3 id="docready">docReady</h3>
 
-<p><a href="https://github.com/desandro/doc-ready">docReady</a> is a small component library, included with Packery, used to trigger initialization logic when the document is ready, just like jQuery's <code>$(document).ready()</code>. <code>docReady</code> is used to initialize all the demos in these docs.</p>
+<p><a href="https://github.com/desandro/doc-ready">docReady triggers initialization logic when the document is ready,</a> just like jQuery's <code>$(document).ready()</code>. <code>docReady</code> is used to initialize all the demos in these docs.</p>
 
 ``` js
 docReady( function() {
@@ -48,7 +50,30 @@ docReady( function() {
 
 <h3 id="classie">classie</h3>
 
+<p><a href="https://github.com/desandro/classie">classie has class helper functions.</a></p>
+
+``` js
+classie.has( element, 'my-class' ) // returns true/false
+classie.add( element, 'my-new-class' ) // add new class
+classie.remove( element, 'my-unwanted-class' ) // remove class
+classie.toggle( element, 'my-class' ) // toggle class
+```
+
 <h3 id="eventie">eventie</h3>
+
+<p><a href="https://github.com/desandro/eventie">Eventie makes event binding in IE8 legit.</a></p>
+
+``` js
+var elem = document.querySelector('#my-elem');
+function onElemClick( event ) {
+  console.log( event.type + ' just happened on #' + event.target.id );
+  // -> click just happened on #my-elem
+}
+// bind it
+eventie.bind( elem, 'click', onElemClick );
+// unbind it
+eventie.unbind( elem, 'click', onElemClick );
+```
 
 </div><div class="primary-content">
 
@@ -63,9 +88,7 @@ docReady( function() {
 
 </div><div class="primary-content">
 
-<h2>Reporting bugs and issues</h2>
-
-<p>Please read my <a href="https://github.com/desandro/issues-agreement/#readme">Issues Agreement</a> and then report bugs and issues on GitHub.</p>
+{{>submitting-issues}}
 
 </div>
 

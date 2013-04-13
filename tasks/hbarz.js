@@ -1,5 +1,6 @@
 var path = require('path');
 var handlebars = require('handlebars');
+var marked = require('marked');
 
 var highlight = require('./utils/highlight');
 var parseJSONFrontMatter = require('./utils/parse-json-front-matter');
@@ -34,6 +35,10 @@ module.exports = function( grunt ) {
       // register all as partials
       handlebars.registerPartial( name, src );
     });
+
+    // read packery's contributing file, convert to HTML
+    var submittingIssuesContent = marked( grunt.file.read('components/packery/contributing.md') );
+    handlebars.registerPartial( 'submitting-issues', submittingIssuesContent );
 
     // properties made available for templating
     var site = {};
