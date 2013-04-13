@@ -1,6 +1,6 @@
 <!-- breaking jQuery chainability -->
 
-add jsFiddles example links
+<!-- add jsFiddles example links -->
 
 commercial buttons
 
