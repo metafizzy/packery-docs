@@ -265,6 +265,7 @@
   .big-ol-buttons .button {
     font-size: 1.6em;
     padding-left: 86px;
+    min-height: 94px;
   }
 
   .big-ol-buttons .icon {

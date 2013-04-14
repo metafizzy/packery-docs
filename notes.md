@@ -14,6 +14,14 @@ Twitter Card & Open Graph tags - add image?
 
 <!-- jshint page js -->
 
-<!-- note about jQuery chainability with methods that return stuff -->
+page descriptions
 
-get order after dragging
+favicon
+
+## FAQ
+
+<!-- How do I get the order of items after dragging? -->
+
+What's the difference between Packery, Masonry, and Isotope?
+
+I work for non-profit/education, do we need a commercial license?
