@@ -13,3 +13,12 @@ place for examples?
 Twitter Card & Open Graph tags - add image?
 
 <!-- jshint page js -->
+
+
+## FAQ
+
+How do I get the order of items after dragging?
+
+What's the difference between Packery, Masonry, and Isotope?
+
+I work for non-profit/education, do we need a commercial license?
