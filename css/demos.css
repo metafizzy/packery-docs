@@ -141,3 +141,45 @@
 #animate-item-size .item.is-expanded .item-content {
   background: #C90;
 }
+
+
+/* ---- animate item size responsive ---- */
+
+#animate-item-size-responsive .item {
+  width: 20%;
+  height: 60px;
+  border: none;
+  background: transparent;
+}
+
+#animate-item-size-responsive .item-content {
+  width:  100%;
+  height: 100%;
+  background: #09D;
+  border: 4px solid #333;
+  border-color: hsla(0, 0%, 100%, 0.4);
+  -webkit-transition: width 0.4s, height 0.4s;
+     -moz-transition: width 0.4s, height 0.4s;
+       -o-transition: width 0.4s, height 0.4s;
+          transition: width 0.4s, height 0.4s;
+}
+
+/* item has expanded size */
+#animate-item-size-responsive .item.is-expanded {
+  width: 60%;
+  height: 120px;
+}
+
+#animate-item-size-responsive .item:hover { cursor: pointer; }
+
+#animate-item-size-responsive .item:hover .item-content {
+  border-color: white;
+}
+
+#animate-item-size-responsive .item.is-expanded {
+  z-index: 2;
+}
+
+#animate-item-size-responsive .item.is-expanded .item-content {
+  background: #C90;
+}
