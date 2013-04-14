@@ -17,7 +17,7 @@ Twitter Card & Open Graph tags - add image?
 
 ## FAQ
 
-How do I get the order of items after dragging?
+<!-- How do I get the order of items after dragging? -->
 
 What's the difference between Packery, Masonry, and Isotope?
 

@@ -183,3 +183,11 @@
 #animate-item-size-responsive .item.is-expanded .item-content {
   background: #C90;
 }
+
+/* ---- order after drag ---- */
+
+#order-after-drag-demo .item {
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+}
