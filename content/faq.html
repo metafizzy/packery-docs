@@ -1,0 +1,131 @@
+---
+{
+  "title": "FAQ",
+  "nav": [
+    "Overlapping",
+    "Animate item width or height"
+  ]
+}
+---
+
+
+<div class="primary-content">
+
+  <h2 id="overlapping">How do I fix overlapping item elements?</h2>
+
+  <p>You need to initialize or <a href="methods.html#layout">trigger `.layout()`</a> after all the items have their proper size. If your elements have images, use <a href="appendix.html#imagesloaded">imagesLoaded</a>. See also <a href="appendix.html#web-fonts">Appendix - Web fonts</a>.</p>
+
+</div><div class="primary-content">
+
+  <h2 id="animate-item-width-or-height">How do I animate the width or height of item elements?</h2>
+
+  <p>You cannot transition or animate the size of an item element <em>and</em> properly lay out. But there is a trick &mdash; you can animate a child element of the item element.</p>
+
+  <div class="row example">
+    <div class="cell example-code">
+``` html
+<div class="packery">
+  <!-- items have item-content children element -->
+  <div class="item">
+    <div class="item-content"></div>
+  </div>
+  ...
+```
+``` css
+/* item is invisible, but used for layout
+item-content is visible, and transitions size */
+#animate-item-size .item,
+#animate-item-size .item-content {
+  width: 60px;
+  height: 60px;
+}
+#animate-item-size .item-content {
+  background: #09D;
+  transition: width 0.4s, height 0.4s;
+  /* -webkit-transition -moz, etc, too */
+}
+/* both item and item content change size */
+#animate-item-size .item.is-expanded,
+#animate-item-size .item.is-expanded .item-content {
+  width: 180px;
+  height: 120px;
+}
+```
+``` js
+var container = document.querySelector('#animate-item-size .packery');
+var pckry = new Packery( container );
+
+eventie.bind( container, 'click', function( event ) {
+  // don't proceed if item content was not clicked on
+  var target = event.target;
+  if ( !classie.has( target, 'item-content' )  ) {
+    return;
+  }
+  var itemElem = target.parentNode;
+  var isExpanded = classie.has( itemElem, 'is-expanded' );
+  classie.toggleClass( itemElem, 'is-expanded' );
+
+  if ( isExpanded ) {
+    // if shrinking, just layout
+    pckry.layout();
+  } else {
+    // if expanding, fit it
+    pckry.fit( itemElem );
+  }
+});
+```
+    </div>
+    <div id="animate-item-size" class="cell demo">
+      <p class="instruction">Click to item to toggle size</p>
+      <div class="packery clickable">
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+        <div class="item">
+          <div class="item-content"></div>
+        </div>
+      </div>
+      <p class="edit"><a href="http://codepen.io/desandro/pen/eouHb">Edit this example on CodePen</a></p>
+    </div>
+  </div>
+
+</div>
