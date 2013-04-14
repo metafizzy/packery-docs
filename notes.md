@@ -14,6 +14,9 @@ Twitter Card & Open Graph tags - add image?
 
 <!-- jshint page js -->
 
+page descriptions
+
+favicon
 
 ## FAQ
 
