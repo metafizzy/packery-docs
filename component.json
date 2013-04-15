@@ -10,7 +10,7 @@
     "get-style-property": "desandro/get-style-property",
     "jquery-ui-draggable": "git://gist.github.com/4985610.git",
     "normalize-css": "~2",
-    "packery": "../packery"
+    "packery": "latest"
   },
   "devDependencies": {
     "jquery": "~1"

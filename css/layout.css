@@ -20,7 +20,8 @@
 #content h2,
 #content .horiz-rule {
   font-size: 1.7em;
-  padding-top: 0.4em;
+  font-weight: 400;
+  padding: 0.4em 0;
 }
 
 #content h2:target {

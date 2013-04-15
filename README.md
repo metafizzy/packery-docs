@@ -19,7 +19,7 @@ This will build the docs in `build/`.
 Watch for updates to rebuild docs on the fly.
 
 ``` bash
-grunt && grunt watch
+grunt default watch
 ```
 
 Pass `--dev` to build the site with JS and CSS files included separately, un-concatenated, and un-minified.

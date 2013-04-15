@@ -16,7 +16,7 @@ Twitter Card & Open Graph tags - add image?
 
 page descriptions
 
-favicon
+<!-- favicon -->
 
 ## FAQ
 
