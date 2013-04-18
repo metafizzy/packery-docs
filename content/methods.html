@@ -16,6 +16,7 @@
     "off",
     "on",
     "Packery.data",
+    "prepended",
     "reloadItems",
     "remove",
     "stamp",
@@ -111,7 +112,7 @@ $container.packery( 'appended', elements )
   </li>
 </ul>
 
-<p>Add and lay out newly appended item elements.</p>
+<p>Add and lay out newly appended item elements. See also <a href="#prepended">prepended</a>.</p>
 
 <div class="row example">
   <div class="cell example-code">
@@ -596,6 +597,70 @@ var pckry = Packery.data( container );
 // do stuff with Packery instance
 pckry.layout();
 ```
+
+</div><div class="primary-content">
+
+<h2 id="prepended">prepended</h2>
+
+``` js
+pckry.prepended( elements )
+// or with jQuery
+$container.packery( 'prepended', elements )
+```
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>elements</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b>
+      <span class="value">
+        <i>Element</i>,
+        <i>NodeList</i>, or
+        <i>Array</i> of Elements
+      </span>
+    </p>
+  </li>
+</ul>
+
+<p>Add and lay out newly prepended item elements at the beginning of layout. Similar to <a href="#appended">appended</a>.</p>
+
+<div class="row example">
+  <div class="cell example-code">
+``` js
+var demo = document.querySelector('#prepended-demo');
+var container = demo.querySelector('.packery');
+var button = demo.querySelector('button');
+var pckry = new Packery( container );
+
+eventie.bind( button, 'click', function() {
+  // create new item elements
+  var elems = [];
+  var fragment = document.createDocumentFragment();
+  for ( var i = 0; i < 3; i++ ) {
+    var elem = document.createElement('div');
+    elem.className = '.item';
+    fragment.appendChild( elem );
+    elems.push( elem );
+  }
+  // append elements to container
+  container.insertBefore( fragment, container.firstChild );
+  // add and lay out newly prepended elements
+  pckry.prepended( elems );
+});
+```
+  </div>
+  <div id="prepended-demo" class="cell demo">
+    <button class="button">Prepend items</button>
+    <div class="packery">
+      <div class="item w4"></div>
+      <div class="item h4"></div>
+      <div class="item w2"></div>
+      <div class="item"></div>
+      <div class="item h2"></div>
+    </div>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/EhvLy">Edit example on CodePen</a></p>
+  </div>
+</div>
 
 </div><div class="primary-content">
 

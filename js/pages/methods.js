@@ -125,6 +125,31 @@ PS.methods = function() {
     });
   })();
 
+  // ----- prepended ----- //
+
+  ( function() {
+    var demo = document.querySelector('#prepended-demo');
+    var container = demo.querySelector('.packery');
+    var button = demo.querySelector('button');
+    var pckry = new Packery( container );
+
+    eventie.bind( button, 'click', function() {
+      // create new item elements
+      var elems = [];
+      var fragment = document.createDocumentFragment();
+      for ( var i = 0; i < 3; i++ ) {
+        var elem = getItemElement();
+        fragment.appendChild( elem );
+        elems.push( elem );
+      }
+      // prepend elements to container
+      container.insertBefore( fragment, container.firstChild );
+      // add and lay out newly prepended elements
+      pckry.prepended( elems );
+    });
+  })();
+
+
   // ----- stamp demo ----- //
 
   ( function() {
