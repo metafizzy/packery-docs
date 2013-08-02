@@ -116,7 +116,7 @@ PS.index = function() {
     var container = hero.querySelector('.packery');
     var pckry = new Packery( container, {
       itemSelector: '.item',
-      stamped: '.stamp',
+      stamp: '.stamp',
       gutter: 2,
       containerStyle: null
     });

@@ -38,12 +38,12 @@
   border: 4px dotted white;
 }
 
-#stamped-demo .stamp1 {
+#stamp-opt-demo .stamp1 {
   left: 20%;
   top: 10px;
 }
 
-#stamped-demo .stamp2 {
+#stamp-opt-demo .stamp2 {
   right: 10%;
   top: 80px;
 }
