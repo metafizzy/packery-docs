@@ -9,7 +9,7 @@
     "isResizeBound",
     "itemSelector",
     "rowHeight",
-    "stamped",
+    "stamp",
     "transitionDuration",
     "Element sizing"
   ]
@@ -351,7 +351,7 @@ pckry.layout();
 
 </div><div class="primary-content">
 
-<h2 id="stamped">stamped</h2>
+<h2 id="stamp">stamp</h2>
 
 <div class="param">
   <p class="param-bit type">
@@ -360,14 +360,14 @@ pckry.layout();
   </p>
 </div>
 
-<p>Specifies which elements are <a href="methods.html#stamp">stamped</a> within the layout. These are special layout elements which will not be laid out by Packery. Rather, Packery will layout item elements <em>around</em> stamped elements.</p>
+<p>Specifies which elements are <em>stamped</em> within the layout. These are special layout elements which will not be laid out by Packery. Rather, Packery will layout item elements <em>around</em> stamped elements.</p>
 
-<p><code>stamped</code> stamps elements only when the Packery instance is first initialized. You can stamp additional elements afterwards with the <a href="methods.html#stamp"><code>stamp</code> method</a>.</p>
+<p>The <code>stamp</code> option stamps elements only when the Packery instance is first initialized. You can stamp additional elements afterwards with the <a href="methods.html#stamp"><code>stamp</code> method</a>.</p>
 
 <div class="row example">
   <div class="cell example-code">
 ``` html
-<div id="stamped-demo">
+<div id="stamp-opt-demo">
   <div class="stamp stamp1"></div>
   <div class="stamp stamp2"></div>
   <div class="item"></div>
@@ -377,32 +377,32 @@ pckry.layout();
 ```
 ``` js
 "itemSelector": ".item",
-"stamped": ".stamp"
+"stamp": ".stamp"
 ```
 ``` css
 /* position stamped elements with CSS */
-#stamped-demo {
+#stamp-opt-demo {
   position: relative;
 }
-#stamped-demo .stamp {
+#stamp-opt-demo .stamp {
   position: absolute;
   width: 30%;
   height: 60px;
   background: red;
   border: 4px dotted white;
 }
-#stamped-demo .stamp1 {
+#stamp-opt-demo .stamp1 {
   left: 20%;
   top: 10px;
 }
-#stamped-demo .stamp2 {
+#stamp-opt-demo .stamp2 {
   right: 10%;
   top: 80px;
 }
 ```
   </div>
   <div class="cell demo">
-    <div id="stamped-demo" class="packery has-stamp js-packery" data-packery-options='{ "itemSelector": ".item", "stamped": ".stamp" }'>
+    <div id="stamp-opt-demo" class="packery has-stamp js-packery" data-packery-options='{ "itemSelector": ".item", "stamp": ".stamp" }'>
       <div class="stamp stamp1"></div>
       <div class="stamp stamp2"></div>
       <div class="item"></div>

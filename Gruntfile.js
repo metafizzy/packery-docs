@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 
   // get banner comment from draggabilly.js
   var banner = ( function() {
-    var src = grunt.file.read('components/packery/js/packery.js');
+    var src = grunt.file.read('bower_components/packery/js/packery.js');
     var re = new RegExp('^\\s*(?:\\/\\*[\\s\\S]*?\\*\\/)\\s*');
     var matches = src.match( re );
     return matches[0].replace( 'Packery', 'Packery PACKAGED' );
@@ -31,7 +31,7 @@ module.exports = function( grunt ) {
         }
       },
       css: {
-        src: [ 'components/normalize-css/normalize.css', 'css/*.css' ],
+        src: [ 'bower_components/normalize-css/normalize.css', 'css/*.css' ],
         dest: 'build/css/packery-docs.css'
       }
     },
@@ -98,9 +98,8 @@ module.exports = function( grunt ) {
         ]
       },
       bowerSources: {
-        // additional sources will be set in bower-list-map
-        // friggin Nicolas, not using main the right way :P
-        src: [ 'components/normalize-css/normalize.css', 'components/jquery/jquery.min.js' ],
+        // src will be set in bower-list-map
+        src: [],
         dest: 'build/'
       }
     },

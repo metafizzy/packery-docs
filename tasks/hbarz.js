@@ -37,7 +37,7 @@ module.exports = function( grunt ) {
     });
 
     // read packery's contributing file, convert to HTML
-    var submittingIssuesContent = marked( grunt.file.read('components/packery/contributing.md') );
+    var submittingIssuesContent = marked( grunt.file.read('bower_components/packery/contributing.md') );
     handlebars.registerPartial( 'submitting-issues', submittingIssuesContent );
 
     // properties made available for templating
