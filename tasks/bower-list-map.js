@@ -6,6 +6,21 @@ var spawn = require('child_process').spawn;
 
 var organizeSources = require('./utils/organize-sources');
 
+// pass a command, return its contents
+function cli( command, callback ) {
+  var args = command.split(' ');
+  var arg1 = args.splice( 0, 1 );
+  var process = spawn( arg1[0], args );
+  var output = '';
+  process.stdout.setEncoding('utf8');
+  process.stdout.on( 'data',  function( data ) {
+    output += data;
+  });
+  process.on( 'close', function() {
+    callback( output );
+  });
+}
+
 module.exports = function( grunt ) {
 
   grunt.registerTask( 'bower-list-map', function() {
@@ -19,7 +34,7 @@ module.exports = function( grunt ) {
       mapSrc += data;
     });
 
-    childProc.on('close', function() {
+    cli( 'bower list --json', function( mapSrc ) {
       var bowerMap = JSON.parse( mapSrc );
       // set bowerMap
       grunt.config.set( 'bowerMap', bowerMap );
@@ -42,7 +57,7 @@ module.exports = function( grunt ) {
       // add CSS sources from Bower
       if ( bowerSources['.css'] && bowerSources['.css'].length ) {
         var cssSrcs = grunt.config.get( 'concat.css.src' );
-        cssSrcs.push.apply( cssSrcs, bowerSources['.css'] );
+        cssSrcs = bowerSources['.css'].concat( cssSrcs );
         // console.log( sources['.css'], cssSrcs );
         grunt.config.set( 'concat.css.src', cssSrcs );
       }

@@ -12,11 +12,8 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'package-sources', function() {
     // copy over just the packery obj
     var bowerMap = grunt.config.get('bowerMap');
-    var packeryMap = {
-      packery: bowerMap.packery
-    };
 
-    var packerySources = organizeSources( packeryMap );
+    var packerySources = organizeSources( bowerMap, 'packery' );
     // console.log( packerySources );
     var srcs = packerySources['.js'];
     // filter out minified files, like EventEmitter.min.js
