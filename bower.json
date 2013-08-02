@@ -9,7 +9,7 @@
     "eventie": "desandro/eventie",
     "get-style-property": "desandro/get-style-property",
     "jquery": "~1",
-    "jquery-ui-draggable": "git://gist.github.com/4985610.git",
+    "jquery-ui-draggable": "http://gist.github.com/4985610.git",
     "normalize-css": "~2",
     "packery": "latest"
   }
