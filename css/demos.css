@@ -57,6 +57,22 @@
 
 #stamp-demo .item { opacity: 0.8; }
 
+/* counting */
+
+.packery.counting {
+  counter-reset: item;
+}
+
+.packery.counting .item:before {
+  counter-increment: item;
+  content: counter(item);
+  display: block;
+  color: white;
+  padding-top: 0.2em;
+  text-align: center;
+  font-size: 14px;
+}
+
 /* ---- draggable ---- */
 
 .draggable .item {
