@@ -109,7 +109,7 @@ module.exports = function( grunt ) {
     watch: {
       content: {
         files: [ 'content/*', 'templates/*.mustache' ],
-        tasks: [ 'bower-list-map', 'hbarz' ]
+        tasks: [ 'integrate-bower-sources', 'hbarz' ]
       },
       public: {
         files: [ 'public/**' ],

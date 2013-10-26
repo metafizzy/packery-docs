@@ -63,7 +63,7 @@ function integrateJsSources( namespace, grunt, bowerSources ) {
 // add CSS sources to concat, if any
 function integrateCssSources( grunt, bowerSources ) {
   var bowerCssSources = bowerSources['.css'];
-  if ( bowerCssSources && bowerCssSources.length ) {
+  if ( !bowerCssSources || !bowerCssSources.length ) {
     return;
   }
   var cssSrcs = grunt.config.get( 'concat.css.src' );
