@@ -1,4 +1,6 @@
 
+var integrateBowerSources = require('./tasks/utils/integrate-bower-sources');
+
 // -------------------------- grunt -------------------------- //
 
 module.exports = function( grunt ) {
@@ -24,14 +26,14 @@ module.exports = function( grunt ) {
         dest: 'build/js/packery-docs.js'
       },
       pkgd: {
-        // src will be set in package-sources task
+        // src will be set in integrate-bower-sources task
         dest: 'build/packery.pkgd.js',
         options: {
           banner: banner
         }
       },
       css: {
-        src: [ 'bower_components/normalize-css/normalize.css', 'css/*.css' ],
+        src: [ 'css/*.css' ],
         dest: 'build/css/packery-docs.css'
       }
     },
@@ -107,7 +109,7 @@ module.exports = function( grunt ) {
     watch: {
       content: {
         files: [ 'content/*', 'templates/*.mustache' ],
-        tasks: [ 'bower-list-map', 'hbarz' ]
+        tasks: [ 'integrate-bower-sources', 'hbarz' ]
       },
       public: {
         files: [ 'public/**' ],
@@ -133,10 +135,13 @@ module.exports = function( grunt ) {
   // load all tasks in tasks/
   grunt.loadTasks('tasks/');
 
+  grunt.registerTask( 'integrate-bower-sources', function() {
+    integrateBowerSources( 'packery', grunt, this.async() );
+  });
+
   grunt.registerTask( 'default', [
     'jshint',
-    'bower-list-map',
-    'package-sources',
+    'integrate-bower-sources',
     'concat',
     'uglify',
     'hbarz',
