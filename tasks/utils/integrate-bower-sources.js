@@ -56,6 +56,7 @@ function integrateJsSources( namespace, grunt, bowerSources ) {
   var uglifyJSOpt = {};
   uglifyJSOpt[ 'build/js/' + namespace + '-docs.min.js' ] = jsSrcs;
   grunt.config.set( 'uglify.js.files', uglifyJSOpt );
+  grunt.log.writeln('integrated .js sources');
 }
 
 // add CSS sources to concat, if any
@@ -67,6 +68,7 @@ function integrateCssSources( grunt, bowerSources ) {
   var cssSrcs = grunt.config.get( 'concat.css.src' );
   cssSrcs = bowerCssSources.concat( cssSrcs );
   grunt.config.set( 'concat.css.src', cssSrcs );
+  grunt.log.writeln('integrated .css sources');
 }
 
 // copy over all sources for copying into build/
@@ -77,4 +79,5 @@ function setCopySources( grunt, bowerSources ) {
     copySources.push.apply( copySources, extSources );
   }
   grunt.config.set( 'copy.bowerSources.src', copySources );
+  grunt.log.writeln('copy sources set');
 }

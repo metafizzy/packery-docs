@@ -21,6 +21,7 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'package-sources', function() {
     var done = this.async();
     requirejs.optimize( config, function() {
+      grunt.log.writeln( 'File "' + config.out + '" created.' );
       done();
     }, function( err ) {
       grunt.log.error( err );
