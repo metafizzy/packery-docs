@@ -175,31 +175,24 @@ item-content is visible, and transitions size */
 
 <h2 id="requirejs">RequireJS</h2>
 
-<p>Packery is compatible with <a href="http://requirejs.org">RequireJS</a>. Some configuration is required for its dependencies. All dependencies need to installed. The easiest way to do is by installing Packery with <a href="http://bower.io">Bower</a>.</p>
+<p>Packery is compatible with <a href="http://requirejs.org">RequireJS</a>.</p>
 
-<p>Set <a href="http://requirejs.org/docs/api.html#config-paths">config paths</a> for Packery and all its dependencies.</p>
+<p>You can require <a href="packery.pkgd.js">packery.pkgd.js</a>. It provides a named module <code>packery/js/packery</code>, which will need to be required as well.</p>
 
 ``` js
-requirejs.config({
-  paths: {
-    classie: 'bower_components/classie',
-    eventie: 'bower_components/eventie',
-    'doc-ready': 'bower_components/doc-ready',
-    eventEmitter: 'bower_components/eventEmitter',
-    'get-style-property': 'bower_components/get-style-property',
-    'get-size': 'bower_components/get-size',
-    'matches-selector': 'bower_components/matches-selector',
-    outlayer: 'bower_components/outlayer',
-    packery: 'bower_components/packery'
-  }
-});
-
-requirejs( [ 'packery/packery' ], function( Packery ) {
-  new Packery( /*...*/ )
+requirejs( [
+  // require the file
+  'path/to/packery.pkgd.js',
+  // require the named module
+  'packery/js/packery'
+  // two parameters, packeryPkg is undefined
+  // Packery is the working module
+], function( packeryPkg, Packery ) {
+  new Packery('#container');
 });
 ```
 
-<p>Or, you can set <a href="http://requirejs.org/docs/api.html#config-baseUrl">baseUrl</a> to bower_components and set a path config for all your application code.</p>
+<p>Or, you can manage dependencies with <a href="http://bower.io">Bower</a>. Set <a href="http://requirejs.org/docs/api.html#config-baseUrl">baseUrl</a> to <code>bower_components</code> and set a path config for all your application code.</p>
 
 ``` js
 requirejs.config({
@@ -209,8 +202,11 @@ requirejs.config({
   }
 });
 
-requirejs( [ 'packery/packery', 'app/my-component.js' ], function( Packery, myComp ) {
-  new Packery( /*...*/ )
+requirejs( [
+  'packery/js/packery',
+  'app/my-component.js'
+], function( Packery, myComp ) {
+  new Packery('#container')
 });
 ```
 
@@ -229,7 +225,7 @@ requirejs.config({
 });
 
 // require jQuery bridget, which will enable $.fn.packery
-requirejs( [ 'jquery-bridget/jquery.bridget', 'packery/packery' ], function() {
+requirejs( [ 'jquery-bridget/jquery.bridget', 'packery/js/packery' ], function() {
   var $ = window.jQuery
   $('#basic').packery();
 });

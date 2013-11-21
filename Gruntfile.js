@@ -1,17 +1,12 @@
 
 var integrateBowerSources = require('./tasks/utils/integrate-bower-sources');
+var getPkgdBanner = require('./tasks/utils/get-pkgd-banner.js');
 
 // -------------------------- grunt -------------------------- //
 
 module.exports = function( grunt ) {
 
-  // get banner comment from draggabilly.js
-  var banner = ( function() {
-    var src = grunt.file.read('bower_components/packery/js/packery.js');
-    var re = new RegExp('^\\s*(?:\\/\\*[\\s\\S]*?\\*\\/)\\s*');
-    var matches = src.match( re );
-    return matches[0].replace( 'Packery', 'Packery PACKAGED' );
-  })();
+  var banner = getPkgdBanner( grunt );
 
   grunt.initConfig({
 
@@ -24,13 +19,6 @@ module.exports = function( grunt ) {
       js: {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
         dest: 'build/js/packery-docs.js'
-      },
-      pkgd: {
-        // src will be set in integrate-bower-sources task
-        dest: 'build/packery.pkgd.js',
-        options: {
-          banner: banner
-        }
       },
       css: {
         src: [ 'css/*.css' ],
@@ -142,6 +130,7 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'default', [
     'jshint',
     'integrate-bower-sources',
+    'package-sources',
     'concat',
     'uglify',
     'hbarz',
