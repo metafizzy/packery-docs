@@ -21,8 +21,6 @@ module.exports = function integrateBowerSources( namespace, grunt, callback ) {
 
     setCopySources( grunt, bowerSources );
 
-    createPackagedJS( grunt, bowerMap );
-
     if ( typeof callback === 'function' ) {
       callback();
     }
@@ -79,16 +77,4 @@ function setCopySources( grunt, bowerSources ) {
     copySources.push.apply( copySources, extSources );
   }
   grunt.config.set( 'copy.bowerSources.src', copySources );
-}
-
-// create foo.pkgd.js source file
-function createPackagedJS( grunt, bowerMap ) {
-  var sources = organizeSources( bowerMap, 'packery' );
-  // console.log( packerySources );
-  var packagedSources = sources['.js'];
-  // filter out minified files, like EventEmitter.min.js
-  packagedSources = packagedSources.filter( function( src ) {
-    return src.indexOf('.min.js') === -1;
-  });
-  grunt.config.set( 'concat.pkgd.src', packagedSources );
 }
