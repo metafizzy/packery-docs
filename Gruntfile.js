@@ -20,6 +20,16 @@ module.exports = function( grunt ) {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
         dest: 'build/js/packery-docs.js'
       },
+      pkgd: {
+        src: [
+          'bower_components/jquery-bridget/jquery.bridget.js',
+          'packery.require.js',
+        ],
+        dest: 'build/packery.pkgd.js',
+        options: {
+          banner: banner
+        }
+      },
       css: {
         src: [ 'css/*.css' ],
         dest: 'build/css/packery-docs.css'
