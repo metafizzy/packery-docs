@@ -1,11 +1,14 @@
 
-var getPkgdBanner = require('./tasks/utils/get-pkgd-banner.js');
-
 // -------------------------- grunt -------------------------- //
 
 module.exports = function( grunt ) {
 
-  var banner = getPkgdBanner( grunt );
+  var banner = ( function() {
+    var src = grunt.file.read('bower_components/packery/js/packery.js');
+    var re = new RegExp('^\\s*(?:\\/\\*[\\s\\S]*?\\*\\/)\\s*');
+    var matches = src.match( re );
+    return matches[0].replace( 'Packery', 'Packery PACKAGED' );
+  })();
 
   grunt.initConfig({
     // global settings
@@ -150,8 +153,7 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-requirejs');
-  // load all tasks in tasks/
-  grunt.loadTasks('tasks/');
+  grunt.loadNpmTasks('grunt-fizzy-docs');
 
   grunt.registerTask( 'default', [
     'jshint',
