@@ -29,17 +29,15 @@ function cli( command, callback ) {
 
 module.exports = function ( grunt ) {
 
-  grunt.registerMultiTask( 'int-bower', 'Integrate Bower sources', function() {
+  grunt.registerTask( 'int-bower', 'Integrate Bower sources', function() {
 
-    var options = this.options();
-    var namespace = options.namespace;
     var done = this.async();
     // get full bower map
     cli( 'bower list --json', function( mapSrc ) {
       var bowerMap = JSON.parse( mapSrc );
       var bowerSources = organizeSources( bowerMap );
 
-      integrateJsSources( namespace, bowerSources );
+      integrateJsSources( bowerSources );
       integrateCssSources( bowerSources );
       setCopySources( bowerSources );
 
@@ -49,7 +47,7 @@ module.exports = function ( grunt ) {
   });
 
   // JS files to concat and uglified for foo-docs.js and foo-docs.min.js
-  function integrateJsSources( namespace, bowerSources ) {
+  function integrateJsSources( bowerSources ) {
     // remove jQuery, EventEmitter.min.js
     var bowerJsSources = bowerSources['.js'].filter( function( src ) {
       return src.indexOf('/jquery.js') === -1 &&
@@ -60,11 +58,8 @@ module.exports = function ( grunt ) {
     jsSrcs = bowerJsSources.concat( jsSrcs );
     grunt.config.set( 'concat.js.src', jsSrcs );
     // save in a data file
-    grunt.file.write( 'tasks/data/js-sources.json', JSON.stringify( jsSrcs ) );
-    // add to uglify
-    var uglifyJSOpt = {};
-    uglifyJSOpt[ 'build/js/' + namespace + '-docs.min.js' ] = jsSrcs;
-    grunt.config.set( 'uglify.js.files', uglifyJSOpt );
+    var dataDir = grunt.config.get('dataDir');
+    grunt.file.write( dataDir + '/js-sources.json', JSON.stringify( jsSrcs ) );
     grunt.log.writeln('integrated .js sources');
   }
 
@@ -78,7 +73,8 @@ module.exports = function ( grunt ) {
     cssSrcs = bowerCssSources.concat( cssSrcs );
     grunt.config.set( 'concat.css.src', cssSrcs );
     // save in a data file
-    grunt.file.write( 'tasks/data/css-sources.json', JSON.stringify(cssSrcs) );
+    var dataDir = grunt.config.get('dataDir');
+    grunt.file.write( dataDir + '/css-sources.json', JSON.stringify(cssSrcs) );
     grunt.log.writeln('integrated .css sources');
   }
 

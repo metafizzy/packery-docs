@@ -8,7 +8,11 @@ module.exports = function( grunt ) {
   var banner = getPkgdBanner( grunt );
 
   grunt.initConfig({
+    // global settings
+    namespace: 'packery',
+    dataDir: 'tasks/data',
 
+    // task settings
     jshint: {
       docs: [ 'js/**/*.js' ],
       options: grunt.file.readJSON('js/.jshintrc')
@@ -57,9 +61,9 @@ module.exports = function( grunt ) {
           banner: banner
         }
       },
-      js: {
+      docs: {
         files: {
-          // 'build/js/packery-site.min.js' will be set in bower-list-map
+          'build/js/packery-docs.min.js': [ 'build/js/packery-docs.js' ]
         }
       }
     },
@@ -135,14 +139,6 @@ module.exports = function( grunt ) {
       js: {
         files: [ 'js/**' ],
         tasks: [ 'copy:js' ]
-      }
-    },
-
-    'int-bower': {
-      docs: {
-        options: {
-          namespace: 'packery'
-        }
       }
     }
 
