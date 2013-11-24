@@ -14,6 +14,19 @@ module.exports = function( grunt ) {
       options: grunt.file.readJSON('js/.jshintrc')
     },
 
+    requirejs: {
+      pkgd: {
+        options: {
+          baseUrl: 'bower_components',
+          include: [
+            'packery/js/packery'
+          ],
+          out: 'packery.require.js',
+          optimize: 'none'
+        }
+      }
+    },
+
     concat: {
       js: {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
@@ -137,13 +150,14 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-requirejs');
   // load all tasks in tasks/
   grunt.loadTasks('tasks/');
 
   grunt.registerTask( 'default', [
     'jshint',
+    'requirejs',
     'int-bower',
-    'package-sources',
     'concat',
     'uglify',
     'hbarz',
