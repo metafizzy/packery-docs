@@ -1,5 +1,4 @@
 
-var integrateBowerSources = require('./tasks/utils/integrate-bower-sources');
 var getPkgdBanner = require('./tasks/utils/get-pkgd-banner.js');
 
 // -------------------------- grunt -------------------------- //
@@ -121,6 +120,14 @@ module.exports = function( grunt ) {
         files: [ 'js/**' ],
         tasks: [ 'copy:js' ]
       }
+    },
+
+    'int-bower': {
+      docs: {
+        options: {
+          namespace: 'packery'
+        }
+      }
     }
 
   });
@@ -133,13 +140,9 @@ module.exports = function( grunt ) {
   // load all tasks in tasks/
   grunt.loadTasks('tasks/');
 
-  grunt.registerTask( 'integrate-bower-sources', function() {
-    integrateBowerSources( 'packery', grunt, this.async() );
-  });
-
   grunt.registerTask( 'default', [
     'jshint',
-    'integrate-bower-sources',
+    'int-bower',
     'package-sources',
     'concat',
     'uglify',
