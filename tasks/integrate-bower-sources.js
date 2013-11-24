@@ -53,29 +53,31 @@ module.exports = function ( grunt ) {
       return src.indexOf('/jquery.js') === -1 &&
         src.indexOf('.min.js') === -1;
     });
-    // add bower JS to JS collection
-    var jsSrcs = grunt.config.get('concat.js.src');
-    jsSrcs = bowerJsSources.concat( jsSrcs );
-    grunt.config.set( 'concat.js.src', jsSrcs );
-    // save in a data file
-    var dataDir = grunt.config.get('dataDir');
-    grunt.file.write( dataDir + '/js-sources.json', JSON.stringify( jsSrcs ) );
-    grunt.log.writeln('integrated .js sources');
+    integrateSources( 'docs-js', 'js', bowerJsSources );
   }
 
   // add CSS sources to concat, if any
   function integrateCssSources( bowerSources ) {
     var bowerCssSources = bowerSources['.css'];
-    if ( !bowerCssSources || !bowerCssSources.length ) {
+    integrateSources( 'docs-css', 'css', bowerCssSources );
+  }
+
+  function integrateSources( concatTarget, fileExt, sources ) {
+    if ( !sources || !sources.length ) {
       return;
     }
-    var cssSrcs = grunt.config.get( 'concat.css.src' );
-    cssSrcs = bowerCssSources.concat( cssSrcs );
-    grunt.config.set( 'concat.css.src', cssSrcs );
-    // save in a data file
+    // src of concat target, i.e. concat.docs-js.src
+    var concatConfig = 'concat.' + concatTarget + '.src';
+    var configSrcs = grunt.config.get( concatConfig );
+    // add bower sources
+    configSrcs = sources.concat( configSrcs );
+    grunt.config.set( concatConfig, configSrcs );
+    // save in data file
     var dataDir = grunt.config.get('dataDir');
-    grunt.file.write( dataDir + '/css-sources.json', JSON.stringify(cssSrcs) );
-    grunt.log.writeln('integrated .css sources');
+    var dataFilePath = dataDir + '/' + fileExt + '-sources.json';
+    grunt.file.write( dataFilePath, JSON.stringify( configSrcs ) );
+    // done
+    grunt.log.writeln( 'integrated .' + fileExt + ' sources' );
   }
 
   // copy over all sources for copying into build/

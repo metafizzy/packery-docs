@@ -32,7 +32,7 @@ module.exports = function( grunt ) {
     },
 
     concat: {
-      js: {
+      'docs-js': {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
         dest: 'build/js/packery-docs.js'
       },
@@ -46,7 +46,7 @@ module.exports = function( grunt ) {
           banner: banner
         }
       },
-      css: {
+      'docs-css': {
         src: [ 'css/*.css' ],
         dest: 'build/css/packery-docs.css'
       }
