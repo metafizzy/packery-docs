@@ -22,7 +22,7 @@ handlebars.registerHelper( 'slug', function( str ) {
 
 module.exports = function( grunt ) {
 
-  grunt.registerMultiTask( 'hbarz', 'Process Handlebars templates', function() {
+  grunt.registerMultiTask( 'template', 'Generate Handlebars templates', function() {
     var opts = this.options();
 
     var templateFiles = grunt.file.expand( opts.templates );
@@ -36,14 +36,18 @@ module.exports = function( grunt ) {
       handlebars.registerPartial( name, src );
     });
 
-    // read packery's contributing file, convert to HTML
-    var submittingIssuesContent = marked( grunt.file.read('bower_components/packery/contributing.md') );
-    handlebars.registerPartial( 'submitting-issues', submittingIssuesContent );
+    // register any partial files
+    for ( var partialName in opts.partialFiles ) {
+      var partialFile = opts.partialFiles[ partialName ];
+      var content = marked( grunt.file.read( partialFile ) );
+      handlebars.registerPartial( partialName, content );
+    }
 
     // properties made available for templating
     var site = {};
-    site.css = grunt.file.expand( grunt.config.get('concat.css.src') );
-    site.js = grunt.file.expand( grunt.config.get('concat.js.src') );
+    // read file paths from JSON
+    site.css = grunt.file.expand( grunt.file.readJSON('tasks/data/css-sources.json') );
+    site.js = grunt.file.expand( grunt.file.readJSON('tasks/data/js-sources.json') );
 
     this.files.forEach( function( file ) {
       file.src.forEach( function( filepath ) {

@@ -59,6 +59,9 @@ module.exports = function ( grunt ) {
     var jsSrcs = grunt.config.get('concat.js.src');
     jsSrcs = bowerJsSources.concat( jsSrcs );
     grunt.config.set( 'concat.js.src', jsSrcs );
+    // save in a data file
+    grunt.file.write( 'tasks/data/js-sources.json', JSON.stringify( jsSrcs ) );
+    // add to uglify
     var uglifyJSOpt = {};
     uglifyJSOpt[ 'build/js/' + namespace + '-docs.min.js' ] = jsSrcs;
     grunt.config.set( 'uglify.js.files', uglifyJSOpt );
@@ -74,6 +77,8 @@ module.exports = function ( grunt ) {
     var cssSrcs = grunt.config.get( 'concat.css.src' );
     cssSrcs = bowerCssSources.concat( cssSrcs );
     grunt.config.set( 'concat.css.src', cssSrcs );
+    // save in a data file
+    grunt.file.write( 'tasks/data/css-sources.json', JSON.stringify(cssSrcs) );
     grunt.log.writeln('integrated .css sources');
   }
 

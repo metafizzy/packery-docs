@@ -65,14 +65,17 @@ module.exports = function( grunt ) {
     },
 
     // ----- handlebars templating ----- //
-    hbarz: {
+    template: {
       docs: {
         files: {
           'build/': 'content/*'
         },
         options: {
           templates: 'templates/*.mustache',
-          defaultTemplate: 'page'
+          defaultTemplate: 'page',
+          partialFiles: {
+            'submitting-issues': 'bower_components/packery/contributing.md'
+          }
         }
       }
     },
@@ -119,7 +122,7 @@ module.exports = function( grunt ) {
     watch: {
       content: {
         files: [ 'content/*', 'templates/*.mustache' ],
-        tasks: [ 'integrate-bower-sources', 'hbarz' ]
+        tasks: [ 'template' ]
       },
       public: {
         files: [ 'public/**' ],
@@ -160,7 +163,7 @@ module.exports = function( grunt ) {
     'int-bower',
     'concat',
     'uglify',
-    'hbarz',
+    'template',
     'copy'
   ]);
 
