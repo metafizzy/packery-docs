@@ -26,10 +26,17 @@ module.exports = function( grunt ) {
         options: {
           baseUrl: 'bower_components',
           include: [
+            'jquery-bridget/jquery.bridget',
             'packery/js/packery'
           ],
-          out: 'packery.require.js',
-          optimize: 'none'
+          out: 'build/packery.pkgd.js',
+          optimize: 'none',
+          wrap: {
+            start: banner
+          },
+          paths: {
+            jquery: 'empty:'
+          }
         }
       }
     },
@@ -38,16 +45,6 @@ module.exports = function( grunt ) {
       'docs-js': {
         src: [ 'js/controller.js', 'js/pages/*.js' ],
         dest: 'build/js/packery-docs.js'
-      },
-      pkgd: {
-        src: [
-          'bower_components/jquery-bridget/jquery.bridget.js',
-          'packery.require.js',
-        ],
-        dest: 'build/packery.pkgd.js',
-        options: {
-          banner: banner
-        }
       },
       'docs-css': {
         src: [ 'css/*.css' ],
