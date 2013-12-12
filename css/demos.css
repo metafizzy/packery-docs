@@ -112,6 +112,12 @@
   cursor: pointer;
 }
 
+/* ---- stamp ---- */
+
+.packery.horizontal {
+  height: 200px;
+}
+
 /* ---- animate-item-size ---- */
 
 /* item is invisible, but used for layout */
