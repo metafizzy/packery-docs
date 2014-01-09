@@ -152,9 +152,27 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-fizzy-docs');
 
+  // edit packery.pkgd.js
+  grunt.registerTask( 'requirejs-extra', function() {
+    var outFile = grunt.config.get('requirejs.pkgd.options.out');
+    var contents = grunt.file.read( outFile );
+    // get requireJS definition code
+    var definitionRE = /define\(\s*'packery\/js\/packery'(.|\n)+packeryDefinition\s*\)/;
+    var definition = contents.match( definitionRE )[0];
+    // remove name module
+    var fixDefinition = definition.replace( "'packery/js/packery',", '' )
+      // ./item -> packery/js/item
+      .replace( /'.\//g, "'packery/js/" );
+    contents = contents.replace( definition, fixDefinition );
+    grunt.file.write( outFile, contents );
+    grunt.log.writeln( 'Edited ' + outFile );
+  });
+
+
   grunt.registerTask( 'default', [
     'jshint',
     'requirejs',
+    'requirejs-extra',
     'int-bower',
     'concat',
     'uglify',

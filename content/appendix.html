@@ -177,17 +177,10 @@ item-content is visible, and transitions size */
 
 <p>Packery is compatible with <a href="http://requirejs.org">RequireJS</a>.</p>
 
-<p>You can require <a href="packery.pkgd.js">packery.pkgd.js</a>. It provides a named module <code>packery/js/packery</code>, which will need to be required as well.</p>
+<p>You can require <a href="packery.pkgd.js">packery.pkgd.js</a>.</p>
 
 ``` js
-requirejs( [
-  // require the file
-  'path/to/packery.pkgd.js',
-  // require the named module
-  'packery/js/packery'
-  // two parameters, packeryPkg is undefined
-  // Packery is the working module
-], function( packeryPkg, Packery ) {
+requirejs( [ 'path/to/packery.pkgd.js' ], function( Packery ) {
   new Packery('#container');
 });
 ```
@@ -212,22 +205,24 @@ requirejs( [
 
 <h3 id="requirejs-and-jquery">RequireJS and jQuery</h3>
 
-<p>To use Packery with <a href="http://requirejs.org/docs/jquery.html#modulename">jQuery via RequireJS</a>, require <code>jquery.bridget</code>:</p>
+<p>To use Packery as a jQuery plugin with RequireJS, you’ll need to run jQuery bridget.</p>
 
 ``` js
+// if you are using masonry.pkgd.js,
+// provide path to jquery.bridget as masonry.pkgd.js path
 requirejs.config({
-  // change base_path to bower_components
-  baseUrl: '../bower_components/',
-  // add path config for jQuery
   paths: {
-    jquery: 'jquery/jquery'
+    'jquery-bridget/jquery.bridget': 'path/to/masonry.pkgd.js'
   }
 });
 
-// require jQuery bridget, which will enable $.fn.packery
-requirejs( [ 'jquery-bridget/jquery.bridget', 'packery/js/packery' ], function() {
-  var $ = window.jQuery
-  $('#basic').packery();
+requirejs( [
+  'path/to/packery.pkgd.js',
+  'jquery-bridget/jquery.bridget'
+], function( Masonry, bridget ) {
+  // make Packery a jQuery plugin
+  bridget( 'packery', Packery );
+  $('#container').packery();
 });
 ```
 
