@@ -208,18 +208,18 @@ requirejs( [
 <p>To use Packery as a jQuery plugin with RequireJS, you’ll need to run jQuery bridget.</p>
 
 ``` js
-// if you are using masonry.pkgd.js,
-// provide path to jquery.bridget as masonry.pkgd.js path
+// if you are using packery.pkgd.js,
+// provide path to jquery.bridget as packery.pkgd.js path
 requirejs.config({
   paths: {
-    'jquery-bridget/jquery.bridget': 'path/to/masonry.pkgd.js'
+    'jquery-bridget/jquery.bridget': 'path/to/packery.pkgd.js'
   }
 });
 
 requirejs( [
   'path/to/packery.pkgd.js',
   'jquery-bridget/jquery.bridget'
-], function( Masonry, bridget ) {
+], function( Packery, bridget ) {
   // make Packery a jQuery plugin
   bridget( 'packery', Packery );
   $('#container').packery();
