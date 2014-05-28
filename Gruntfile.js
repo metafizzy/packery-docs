@@ -1,14 +1,8 @@
+/*jhint node: true, usued: true, undef: true */
 
 // -------------------------- grunt -------------------------- //
 
 module.exports = function( grunt ) {
-
-  var banner = ( function() {
-    var src = grunt.file.read('bower_components/packery/js/packery.js');
-    var re = new RegExp('^\\s*(?:\\/\\*[\\s\\S]*?\\*\\/)\\s*');
-    var matches = src.match( re );
-    return matches[0].replace( 'Packery', 'Packery PACKAGED' );
-  })();
 
   grunt.initConfig({
     // global settings
@@ -19,26 +13,6 @@ module.exports = function( grunt ) {
     jshint: {
       docs: [ 'js/**/*.js' ],
       options: grunt.file.readJSON('js/.jshintrc')
-    },
-
-    requirejs: {
-      pkgd: {
-        options: {
-          baseUrl: 'bower_components',
-          include: [
-            'jquery-bridget/jquery.bridget',
-            'packery/js/packery'
-          ],
-          out: 'build/packery.pkgd.js',
-          optimize: 'none',
-          wrap: {
-            start: banner
-          },
-          paths: {
-            jquery: 'empty:'
-          }
-        }
-      }
     },
 
     concat: {
@@ -53,14 +27,6 @@ module.exports = function( grunt ) {
     },
 
     uglify: {
-      pkgd: {
-        files: {
-          'build/packery.pkgd.min.js': [ 'build/packery.pkgd.js' ]
-        },
-        options: {
-          banner: banner
-        }
-      },
       docs: {
         files: {
           'build/js/packery-docs.min.js': [ 'build/js/packery-docs.js' ]
@@ -116,6 +82,16 @@ module.exports = function( grunt ) {
           }
         ]
       },
+      pkgd: {
+        files: [
+          {
+            expand: true, // enable dynamic options
+            cwd: 'bower_components/packery/dist/', // set cwd, excludes it in build path
+            src: [ '*.*' ],
+            dest: 'build/'
+          }
+        ]
+      },
       bowerSources: {
         // src will be set in bower-list-map
         src: [],
@@ -149,30 +125,11 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-fizzy-docs');
-
-  // edit packery.pkgd.js
-  grunt.registerTask( 'requirejs-extra', function() {
-    var outFile = grunt.config.get('requirejs.pkgd.options.out');
-    var contents = grunt.file.read( outFile );
-    // get requireJS definition code
-    var definitionRE = /define\(\s*'packery\/js\/packery'(.|\n)+packeryDefinition\s*\)/;
-    var definition = contents.match( definitionRE )[0];
-    // remove name module
-    var fixDefinition = definition.replace( "'packery/js/packery',", '' )
-      // ./item -> packery/js/item
-      .replace( /'.\//g, "'packery/js/" );
-    contents = contents.replace( definition, fixDefinition );
-    grunt.file.write( outFile, contents );
-    grunt.log.writeln( 'Edited ' + outFile );
-  });
 
 
   grunt.registerTask( 'default', [
     'jshint',
-    'requirejs',
-    'requirejs-extra',
     'int-bower',
     'concat',
     'uglify',
