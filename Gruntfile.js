@@ -42,10 +42,7 @@ module.exports = function( grunt ) {
         },
         options: {
           templates: 'templates/*.mustache',
-          defaultTemplate: 'page',
-          partialFiles: {
-            'submitting-issues': 'bower_components/packery/contributing.md'
-          }
+          defaultTemplate: 'page'
         }
       }
     },
