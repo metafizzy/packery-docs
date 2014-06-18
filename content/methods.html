@@ -118,25 +118,19 @@ pckry.appended( elements )
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var demo = document.querySelector('#appended-demo');
-var container = demo.querySelector('.packery');
-var button = demo.querySelector('button');
-var pckry = new Packery( container );
+var $container = $('#container').packery();
 
-eventie.bind( button, 'click', function() {
+$('#append').on( 'click', function() {
   // create new item elements
   var elems = [];
-  var fragment = document.createDocumentFragment();
   for ( var i = 0; i < 3; i++ ) {
-    var elem = document.createElement('div');
-    elem.className = '.item';
-    fragment.appendChild( elem );
+    var elem = getItemElement();
     elems.push( elem );
   }
   // append elements to container
-  container.appendChild( fragment );
+  $container.append( elems );
   // add and lay out newly appended elements
-  pckry.appended( elems );
+  $container.packery( 'appended', elems );
 });
 ```
   </div>
@@ -149,7 +143,7 @@ eventie.bind( button, 'click', function() {
       <div class="item"></div>
       <div class="item h2"></div>
     </div>
-    <p class="edit"><a href="http://codepen.io/desandro/pen/ndoxe">Edit example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/HFbia">Edit example on CodePen</a> or <a href="http://codepen.io/desandro/pen/ndoxe">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -226,17 +220,14 @@ pckry.destroy()
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var demo = document.querySelector('#destroy-demo');
-var container = demo.querySelector('.packery');
-var button = demo.querySelector('button');
-var pckry = new Packery( container );
+var $container = $('#container').packery();
 var isActive = true;
 
-eventie.bind( button, 'click', function() {
+$('#destroy-button').on( 'click', function() {
   if ( isActive ) {
-    pckry.destroy();
+    $container.packery('destroy');
   } else {
-    pckry = new Packery( container );
+    $container.packery();
   }
   isActive = !isActive;
 });
@@ -247,7 +238,7 @@ eventie.bind( button, 'click', function() {
     <div class="packery">
       {{>demo-items}}
     </div>
-    <p class="edit"><a href="http://codepen.io/desandro/pen/scKGf">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/kEjed">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/scKGf">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -292,25 +283,18 @@ pckry.fit( element, x, y )
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var container = document.querySelector('#fit-demo .packery');
-var pckry = new Packery( container );
+var $container = $('.packery').packery();
 
-eventie.bind( container, 'click', function( event ) {
-  // don't proceed if item was not clicked on
-  var target = event.target;
-  if ( !classie.has( target, 'item' ) ) {
-    return;
-  }
-
-  var isGigante = classie.has( target, 'gigante' );
-  classie.toggleClass( target, 'gigante' );
+$container.on( 'click', '.item', function( event ) {
+  var $target = $( event.target )
+  var isGigante = $target.hasClass('gigante');
+  $target.toggleClass('gigante');
 
   if ( isGigante ) {
     // if shrinking, just layout
-    pckry.layout();
+    $container.packery();
   } else {
-    // if expanding, fit it
-    pckry.fit( target );
+    $container.packery( 'fit', event.target );
   }
 });
 ```
@@ -326,7 +310,7 @@ eventie.bind( container, 'click', function( event ) {
       <div class="item"></div>
       <div class="item"></div>
     </div>
-    <p class="edit"><a href="http://codepen.io/desandro/pen/rwhjq">Edit example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/iLyfC">Edit example on CodePen</a> or <a href="http://codepen.io/desandro/pen/rwhjq">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -335,19 +319,11 @@ eventie.bind( container, 'click', function( event ) {
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var container = document.querySelector('#fit-position-demo .packery');
-var pckry = new Packery( container );
+var $container = $('#container').packery();
 
-eventie.bind( container, 'click', function( event ) {
-  // don't proceed if item was not clicked on
-  var target = event.target;
-  if ( !classie.has( target, 'item' ) ) {
-    return;
-  }
-  // position item at 40, 40
-  pckry.fit( target, 40, 40 );
+$container.on( 'click', '.item', function( event ) {
+  $container.packery( 'fit', event.target, 80, 80 );
 });
-
 ```
   </div>
   <div id="fit-position-demo" class="cell demo">
@@ -355,7 +331,7 @@ eventie.bind( container, 'click', function( event ) {
     <div class="packery clickable">
       {{>demo-items}}
     </div>
-    <p class="edit"><a href="http://codepen.io/desandro/pen/uspgI">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/fguJH">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/uspgI">vanilla JS example</a></p>
   </div>
 </div>
 
