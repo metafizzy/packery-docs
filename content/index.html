@@ -97,6 +97,17 @@ bower install packery
 
 <h3 id="javascript">Initialize with JavaScript</h3>
 
+<p>Initialize a Packery instance as a jQuery plugin:  <code>$('#container').packery()</code>.</p>
+
+``` js
+var $container = $('#container');
+// init
+$container.packery({
+  itemSelector: '.item',
+  gutter: 10
+});
+```
+
 <p>Initialize a Packery instance with <code><span class="keyword">new</span> Packery( element, options )</code>. The <code>Packery</code> constructor accepts two arguments: the container element and an <a href="options.html">options</a> object.</p>
 
 ``` js
@@ -123,23 +134,28 @@ var pckry = new Packery( container, {
 
 </div><div class="primary-content">
 
-<h2 id="jquery">jQuery</h2>
+<h2 id="vanilla-javascript">Vanilla JavaScript</h2>
 
-<p>jQuery is <strong>not</strong> required to use Packery. But if you do enjoy jQuery, Packery works with it as a jQuery plugin.</p>
+<p>jQuery is <strong>not</strong> required to use Packery. Given its popularity, jQuery will be used for all example code in these docs. But you can still use Packery with vanilla JS.</p>
+
+<p>Initialize a Packery instance with <code><span class="keyword">new</span> Packery( element, options )</code>. The <code>Packery</code> constructor accepts two arguments: the container element and an <a href="options.html">options</a> object.</p>
 
 ``` js
-var $container = $('#container');
-// initialize
-$container.packery({
+var container = document.querySelector('#container');
+// init
+var pckry = new Packery( container, {
+  // options
   itemSelector: '.item',
   gutter: 10
 });
 ```
 
-<p>Get the Packery instance with <code>.data(<span class="string">'packery'</span>)</code>.</p>
+<p>The element can be a selector string for a single element.</p>
 
 ``` js
-var pckry = $container.data('packery');
+var pckry = new Packery( '#container', {
+  // options
+});
 ```
 
 </div>

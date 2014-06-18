@@ -256,15 +256,15 @@
 <p>Enables layout on initialization. Set this to <code><span class="literal">false</span></code> to disable layout on initialization, so you can use <a href="methods.html">methods</a> or add <a href="events.html">events</a> before the initial layout.</p>
 
 ``` js
-var pckry = new Packery( container, {
+var $container = $('#container').packery({
   // disables initial layout
   isInitLayout: false
 });
-pckry.on( 'layoutComplete', function() {
+$container.packery( 'on', 'layoutComplete', function() {
   console.log('layout is complete');
 });
 // manually trigger initial layout
-pckry.layout();
+$container.packery();
 ```
 
 </div><div class="primary-content">
@@ -563,10 +563,9 @@ pckry.layout();
 ```
 
 ``` js
-var container = document.querySelector('#container');
-var pckry = new Packery( container, {
+var $container = $('#container').packery({
   itemSelector: '.item',
-  columnWidth: container.querySelector('.grid-sizer')
+  columnWidth: $container.find('.grid-sizer')[0]
 });
 ```
 
