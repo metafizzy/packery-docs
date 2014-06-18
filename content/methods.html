@@ -30,14 +30,6 @@
 
 <p>Methods are actions taken on Packery instances.</p>
 
-``` js
-var container = document.querySelector('#container');
-var pckry = new Packery( container );
-container.appendChild( elem );
-pckry.appended( elem );
-pckry.layout();
-```
-
 <p>If you are using jQuery, methods follow the jQuery UI pattern.</p>
 
 ``` js
@@ -62,14 +54,23 @@ $container.packery( 'on', 'layoutComplete', function() {...} );
 $container.fadeIn();
 ```
 
+<p>With vanilla JS, methods are on the Packery instance.</p>
+
+``` js
+var pckry = new Packery('#container');
+container.appendChild( elem );
+pckry.appended( elem );
+pckry.layout();
+```
+
 </div><div class="primary-content">
 
 <h2 id="additems">addItems</h2>
 
 ``` js
-pckry.addItems( elements )
-// or with jQuery
 $container.packery( 'addItems', elements )
+// or with vanilla JS
+pckry.addItems( elements )
 ```
 
 <ul class="params">
@@ -93,9 +94,9 @@ $container.packery( 'addItems', elements )
 <h2 id="appended">appended</h2>
 
 ``` js
-pckry.appended( elements )
-// or with jQuery
 $container.packery( 'appended', elements )
+// or with vanilla JS
+pckry.appended( elements )
 ```
 
 <ul class="params">
@@ -157,9 +158,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="binddraggabillyevents">bindDraggabillyEvents</h2>
 
 ``` js
-pckry.bindDraggabillyEvents( draggie )
-// or with jQuery
 $container.packery( 'bindDraggabillyEvents', draggie )
+// or with vanilla JS
+pckry.bindDraggabillyEvents( draggie )
 ```
 
 <ul class="params">
@@ -180,9 +181,9 @@ $container.packery( 'bindDraggabillyEvents', draggie )
 <h2 id="bindresize">bindResize</h2>
 
 ``` js
-pckry.bindResize()
-// or with jQuery
 $container.packery('bindResize')
+// or with vanilla JS
+pckry.bindResize()
 ```
 
 <p>Binds event listener to window <code>resize</code>, so layout is triggered when the browser window is resized.</p>
@@ -192,9 +193,9 @@ $container.packery('bindResize')
 <h2 id="binduidraggableevents">bindUIDraggableEvents</h2>
 
 ``` js
-pckry.bindUIDraggableEvents( $elements )
-// or with jQuery
 $container.packery( 'bindDraggabillyEvents', $elements )
+// or with vanilla JS
+pckry.bindUIDraggableEvents( $elements )
 ```
 
 <ul class="params">
@@ -215,9 +216,9 @@ $container.packery( 'bindDraggabillyEvents', $elements )
 <h2 id="destroy">destroy</h2>
 
 ``` js
-pckry.destroy()
-// or with jQuery
 $container.packery('destroy')
+// or with vanilla JS
+pckry.destroy()
 ```
 
 <p>Removes the Packery functionality completely. This will return the element back to its pre-initialized state.</p>
@@ -255,9 +256,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="fit">fit</h2>
 
 ``` js
-pckry.fit( element, x, y )
-// or with jQuery
 $container.packery( 'fit', element, x, y )
+// or with vanilla JS
+pckry.fit( element, x, y )
 ```
 
 <ul class="params">
@@ -363,9 +364,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="getitemelements">getItemElements</h2>
 
 ``` js
-var elems = pckry.getItemElements()
-// or with jQuery
 var elems = $container.packery('getItemElements')
+// or with vanilla JS
+var elems = pckry.getItemElements()
 ```
 
 <ul class="params">
@@ -385,9 +386,9 @@ var elems = $container.packery('getItemElements')
 <h2 id="getitem">getItem</h2>
 
 ``` js
-var item = pckry.getItem( element )
-// or with jQuery
 var item = $container.packery( 'getItem', element )
+// or with vanilla JS
+var item = pckry.getItem( element )
 ```
 
 <ul class="params">
@@ -413,9 +414,9 @@ var item = $container.packery( 'getItem', element )
 <h2 id="layout">layout</h2>
 
 ``` js
-pckry.layout()
-// or with jQuery
 $container.packery()
+// or with vanilla JS
+pckry.layout()
 ```
 
 <p>Lay out all item elements.</p>
@@ -452,9 +453,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="layoutitems">layoutItems</h2>
 
 ``` js
-pckry.layoutItems( items, isStill )
-// or with jQuery
 $container.packery( 'layoutItems', items, isStill )
+// or with vanilla JS
+pckry.layoutItems( items, isStill )
 ```
 
 <ul class="params">
@@ -480,9 +481,9 @@ $container.packery( 'layoutItems', items, isStill )
 <h2 id="off">off</h2>
 
 ``` js
-pckry.off( eventName, listener )
-// or with jQuery
 var pckry = $container.packery( 'off', eventName, listener )
+// or with vanilla JS
+pckry.off( eventName, listener )
 ```
 
 <ul class="params">
@@ -515,9 +516,9 @@ var pckry = $container.packery( 'off', eventName, listener )
 <h2 id="on">on</h2>
 
 ``` js
-pckry.on( eventName, listener )
-// or with jQuery
 var pckry = $container.packery( 'on', eventName, listener )
+// or with vanilla JS
+pckry.on( eventName, listener )
 ```
 
 <ul class="params">
@@ -603,9 +604,9 @@ pckry.layout();
 <h2 id="prepended">prepended</h2>
 
 ``` js
-pckry.prepended( elements )
-// or with jQuery
 $container.packery( 'prepended', elements )
+// or with vanilla JS
+pckry.prepended( elements )
 ```
 
 <ul class="params">
@@ -667,9 +668,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="reloaditems">reloadItems</h2>
 
 ``` js
-pckry.reloadItems()
-// or with jQuery
 $container.packery('reloadItems')
+// or with vanilla JS
+pckry.reloadItems()
 ```
 
 <p>Recollect all item elements.</p>
@@ -679,9 +680,9 @@ $container.packery('reloadItems')
 <h2 id="remove">remove</h2>
 
 ``` js
-pckry.remove( elements )
-// or with jQuery
 $container.packery( 'remove', elements )
+// or with vanilla JS
+pckry.remove( elements )
 ```
 
 <ul class="params">
@@ -732,9 +733,9 @@ eventie.bind( container, 'click', function( event ) {
 <h2 id="stamp">stamp</h2>
 
 ``` js
-pckry.stamp( elements )
-// or with jQuery
 $container.packery( 'stamp', elements )
+// or with vanilla JS
+pckry.stamp( elements )
 ```
 
 <ul class="params">
@@ -792,9 +793,9 @@ eventie.bind( button, 'click', function() {
 <h2 id="unbindresize">unbindResize</h2>
 
 ``` js
-pckry.unbindResize()
-// or with jQuery
 $container.packery('unbindResize')
+// or with vanilla JS
+pckry.unbindResize()
 ```
 
 <p>Un-bind layout to window <code>resize</code> event.</p>
@@ -804,9 +805,9 @@ $container.packery('unbindResize')
 <h2 id="unstamp">unstamp</h2>
 
 ``` js
-pckry.unstamp( elements )
-// or with jQuery
 $container.packery( 'unstamp', elements )
+// or with vanilla JS
+pckry.unstamp( elements )
 ```
 
 <ul class="params">
