@@ -12,8 +12,13 @@
 
 /* ---- measurement demos ---- */
 
-#column-width-demo2 .grid-sizer {
+#column-width-demo2 .grid-sizer,
+#column-width-demo2 .item {
   width: 20%;
+}
+
+#column-width-demo2 .item.w2 {
+  width: 40%;
 }
 
 #row-height-demo2 .grid-sizer {
