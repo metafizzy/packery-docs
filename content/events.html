@@ -14,22 +14,21 @@
 
 <div class="primary-content">
 
-<p>Packery is an Event Emitter. You can bind listeners to events with the <a href="methods.html#on">on</a> and <a href="methods.html#off">off</a> methods.</p>
+<p>Packery is an Event Emitter. You can bind listeners to events with the <a href="methods.html#on">on</a>, <a href="methods.html#off">off</a>, and <a href="methods.html#once">once</a> methods.</p>
 
 ```js
-var pckry = new Packery( elem );
+var $container = $('#container').packery({...});
 
 function onLayout() {
   console.log('layout done');
 }
 // bind event listener
-pckry.on( 'layoutComplete', onLayout );
+$container.packery( 'on', 'layoutComplete', onLayout );
 // un-bind event listener
-pckry.off( 'layoutComplete', onLayout );
-// return true to trigger an event listener just once
-pckry.on( 'layoutComplete', function() {
+$container.packery( 'off', 'layoutComplete', onLayout );
+// bind event listener to be triggered just once
+$container.packery( 'once', 'layoutComplete', function() {
   console.log('layout done, just this one time');
-  return true;
 });
 ```
 
@@ -38,9 +37,9 @@ pckry.on( 'layoutComplete', function() {
 <h2 id="dragitempositioned">dragItemPositioned</h2>
 
 ``` js
-pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) { //...
-// or with jQuery
-$container.packery( 'on', 'dragItemPositioned', function( pckryInstance, draggedItem ) {} )
+$container.packery( 'on', 'dragItemPositioned', function( pckryInstance, draggedItem ) {...} )
+// or with vanilla JS
+pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {...} )
 ```
 
 <ul class="params">
@@ -67,14 +66,16 @@ $container.packery( 'on', 'dragItemPositioned', function( pckryInstance, dragged
 ``` js
 // set up Packery and Draggabillies
 // like the bindDraggabillyEvents demo, then...
-pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
-  console.log( 'Packery positioned dragged ' + draggedItem.element.nodeName );
-});
+$container.packery( 'on', 'dragItemPositioned',
+  function( pckryInstance, draggedItem ) {
+    notify( 'Packery positioned dragged ' + draggedItem.element.nodeName );
+  }
+);
 ```
   </div>
   <div id="drag-item-positioned-demo" class="cell demo">
     {{>draggable-packery}}
-    <p class="edit"><a href="http://codepen.io/desandro/pen/zacdn">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/wnyci">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/zacdn">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -83,9 +84,9 @@ pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
 <h2 id="fitcomplete">fitComplete</h2>
 
 ``` js
-pckry.on( 'fitComplete', function( pckryInstance, item ) { //...
-// or with jQuery
-$container.packery( 'on', 'fitComplete', function( pckryInstance, item ) {} )
+$container.packery( 'on', 'fitComplete', function( pckryInstance, item ) {...} )
+// or with vanilla JS
+pckry.on( 'fitComplete', function( pckryInstance, item ) {...} )
 ```
 
 <ul class="params">
@@ -110,9 +111,11 @@ $container.packery( 'on', 'fitComplete', function( pckryInstance, item ) {} )
 <div class="row example">
   <div class="cell example-code">
 ``` js
-pckry.on( 'fitComplete', function( pckryInstance, item ) {
-  notify( 'fit ' + item.element.className );
-});
+$container.packery( 'on', 'fitComplete',
+  function( pckryInstance, item ) {
+    notify( 'fit ' + item.element.className );
+  }
+);
 ```
   </div>
   <div id="fit-complete-demo" class="cell demo">
@@ -120,7 +123,7 @@ pckry.on( 'fitComplete', function( pckryInstance, item ) {
     <div class="packery clickable">
       {{>demo-items}}
     </div>
-  <p class="edit"><a href="http://codepen.io/desandro/pen/pqtvB">Edit this example on CodePen</a></p>
+  <p class="edit"><a href="http://codepen.io/desandro/pen/zydJr">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/pqtvB">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -129,9 +132,9 @@ pckry.on( 'fitComplete', function( pckryInstance, item ) {
 <h2 id="layoutcomplete">layoutComplete</h2>
 
 ``` js
-pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) { //...
-// or with jQuery
-$container.packery( 'on', 'layoutComplete', function( pckryInstance, laidOutItems ) {} )
+$container.packery( 'on', 'layoutComplete', function( pckryInstance, laidOutItems ) {...} )
+// or with vanilla JS
+pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {...} )
 ```
 
 <ul class="params">
@@ -156,9 +159,12 @@ $container.packery( 'on', 'layoutComplete', function( pckryInstance, laidOutItem
 <div class="row example">
   <div class="cell example-code">
 ``` js
-pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
-  console.log('Packery layout completed on ' + laidOutItems.length + ' items');
-});
+$container.packery( 'on', 'layoutComplete',
+  function( pckryInstance, laidOutItems ) {
+    console.log('Packery layout completed on ' +
+      laidOutItems.length + ' items');
+  }
+);
 ```
   </div>
   <div id="layout-complete-demo" class="cell demo">
@@ -166,7 +172,7 @@ pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
     <div class="packery clickable">
       {{>demo-items}}
     </div>
-    <p class="edit"><a href="http://codepen.io/desandro/pen/hdxge">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/olKGA">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/hdxge">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -175,9 +181,9 @@ pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
 <h2 id="removecomplete">removeComplete</h2>
 
 ``` js
-pckry.on( 'removeComplete', function( pckryInstance, removedItems ) { //...
-// or with jQuery
-$container.packery( 'on', 'removeComplete', function( pckryInstance, removedItems ) {} )
+pckry.on( 'removeComplete', function( pckryInstance, removedItems ) {...} )
+// or with vanilla JS
+$container.packery( 'on', 'removeComplete', function( pckryInstance, removedItems ) {...} )
 ```
 
 <p>Triggered after an item element has been removed.</p>
@@ -202,9 +208,11 @@ $container.packery( 'on', 'removeComplete', function( pckryInstance, removedItem
 <div class="row example">
   <div class="cell example-code">
 ``` js
-pckry.on( 'removeComplete', function( pckryInstance, removedItems ) {
-  console.log( 'Removed ' + removedItems.length + ' items' );
-});
+$container.packery( 'on', 'removeComplete',
+  function( pckryInstance, removedItems ) {
+    console.log( 'Removed ' + removedItems.length + ' items' );
+  }
+);
 ```
   </div>
   <div id="remove-complete-demo" class="cell demo">
@@ -212,7 +220,7 @@ pckry.on( 'removeComplete', function( pckryInstance, removedItems ) {
     <div class="packery clickable">
       {{>demo-items}}
     </div>
-    <p class="edit"><a href="http://codepen.io/desandro/pen/JFCfb">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/Czfpq">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/JFCfb">vanilla JS example</a></p>
   </div>
 </div>
 
