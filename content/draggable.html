@@ -24,26 +24,22 @@
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var container = document.querySelector('#draggabilly-demo .packery');
-var pckry = new Packery( container, {
+var $container = $('#container').packery({
   columnWidth: 80,
   rowHeight: 80
 });
 
-var itemElems = pckry.getItemElements();
-// for each item...
-for ( var i=0, len = itemElems.length; i < len; i++ ) {
-  var elem = itemElems[i];
+$container.find('.item').each( function( i, itemElem ) {
   // make element draggable with Draggabilly
-  var draggie = new Draggabilly( elem );
+  var draggie = new Draggabilly( itemElem );
   // bind Draggabilly events to Packery
-  pckry.bindDraggabillyEvents( draggie );
-}
+  $container.packery( 'bindDraggabillyEvents', draggie );
+});
 ```
   </div>
   <div id="draggabilly-demo" class="cell demo">
     {{>draggable-packery}}
-    <p class="edit"><a href="http://codepen.io/desandro/pen/ciAdD">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/aGvIq">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/ciAdD">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -56,13 +52,12 @@ for ( var i=0, len = itemElems.length; i < len; i++ ) {
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var $container = $('#ui-draggable-demo .packery');
-$container.packery({
+var $container = $('#container').packery({
   columnWidth: 80,
   rowHeight: 80
 });
 // get item elements, jQuery-ify them
-var $itemElems = $( $container.packery('getItemElements') );
+var $itemElems = $container.find('.item');
 // make item elements draggable
 $itemElems.draggable();
 // bind Draggable events to Packery
@@ -84,12 +79,12 @@ $container.packery( 'bindUIDraggableEvents', $itemElems );
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var pckry = new Packery( container );
+var $container = $('#container').packery();
 ```
   </div>
   <div id="non-grid-demo" class="cell demo">
     {{>draggable-packery}}
-    <p class="edit"><a href="http://codepen.io/desandro/pen/lveqb">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/Gsexn">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/lveqb">vanilla JS example</a></p>
   </div>
 </div>
 
@@ -98,7 +93,7 @@ var pckry = new Packery( container );
 <div class="row example">
   <div class="cell example-code">
 ``` js
-var pckry = new Packery( container, {
+var $container = $('#container').packery({
   columnWidth: 80,
   rowHeight: 80
 });
@@ -106,7 +101,7 @@ var pckry = new Packery( container, {
   </div>
   <div id="grid-demo" class="cell demo">
     {{>draggable-packery}}
-    <p class="edit"><a href="http://codepen.io/desandro/pen/ciAdD">Edit this example on CodePen</a></p>
+    <p class="edit"><a href="http://codepen.io/desandro/pen/aGvIq">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/ciAdD">vanilla JS example</a></p>
   </div>
 </div>
 
