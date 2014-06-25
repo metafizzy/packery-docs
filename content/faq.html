@@ -35,29 +35,26 @@
 
   <h2 id="order-after-drag">How do I get the order of item elements after dragging?</h2>
 
-  <p>Use <a href="methods.html#getitemelements"><code>.getItemElements()</code></a>.</p>
+  <p>Use <a href="methods.html#getitemelements"><code>getItemElements</code></a>.</p>
 
   <div class="row example">
     <div class="cell example-code">
 ``` js
 // show item order after layout
 function orderItems() {
-  // items are in order within the layout
-  var itemElems = pckry.getItemElements();
-  // for this demo, let's set text based on their order
-  for ( var i=0, len = itemElems.length; i < len; i++ ) {
-    var elem = itemElems[i];
-    setText( elem, i + 1 );
-  }
+  var itemElems = $container.packery('getItemElements');
+  $( itemElems ).each( function( i, itemElem ) {
+    $(itemElem).text( i + 1 );
+  });
 }
-// bind it to layoutComplete and dragItemPositioned
-pckry.on( 'layoutComplete', orderItems );
-pckry.on( 'dragItemPositioned', orderItems );
+
+$container.packery( 'on', 'layoutComplete', orderItems );
+$container.packery( 'on', 'dragItemPositioned', orderItems );
 ```
     </div>
     <div id="order-after-drag-demo" class="cell demo">
       {{>draggable-packery}}
-      <p class="edit"><a href="http://codepen.io/desandro/pen/mdJnF">Edit this example on CodePen</a></p>
+      <p class="edit"><a href="http://codepen.io/desandro/pen/qwyuF">Edit this example</a> or <a href="http://codepen.io/desandro/pen/mdJnF">vanilla JS example</a> on CodePen</p>
     </div>
   </div>
 
