@@ -4,6 +4,14 @@
   margin-bottom: 0.4em;
 }
 
+/* ---- clearfix ---- */
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 /* ---- button ---- */
 
 .button {
@@ -191,10 +199,44 @@ div.param {
   font-size: 20px;
 }
 
+/* ---- in-use ---- */
+
+#content .primary-content > #in-use-container {
+  max-width: none;
+}
+
+.in-use-item {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 40px;
+}
+
+.in-use-item a {
+  display: block;
+}
+
+.in-use-item img {
+  display: block;
+  max-width: 100%;
+}
+
+.in-use-item .title {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
 /* ---- desktop media query ---- */
 
 @media screen and ( min-width: 960px ) {
   .tagline {
     font-size: 1.8em;
+  }
+
+
+  .in-use-item {
+    width: 23%;
   }
 }

@@ -42,6 +42,7 @@ module.exports = function( grunt ) {
         },
         options: {
           templates: 'templates/*.mustache',
+          dataFiles: "data/*.json",
           defaultTemplate: 'page'
         }
       }
