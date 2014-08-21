@@ -181,6 +181,24 @@ requirejs( [ 'path/to/packery.pkgd.js' ], function( Packery ) {
 });
 ```
 
+<p>To use Packery as a jQuery plugin with RequireJS and packery.pkgd.js, you need to run jQuery bridget.</p>
+
+``` js
+// require the require function
+requirejs( [ 'require', 'jquery', 'path/to/packery.pkgd.js' ],
+  function( require, $, Packery ) {
+    // require jquery-bridget, it's included in packery.pkgd.js
+    require( [ 'jquery-bridget/jquery.bridget' ],
+    function() {
+      // make Packery a jQuery plugin
+      $.bridget( 'packery', Packery );
+      // now you can use $().packery()
+      $('#container').packery({...});
+    }
+  );
+});
+```
+
 <p>Or, you can manage dependencies with <a href="http://bower.io">Bower</a>. Set <a href="http://requirejs.org/docs/api.html#config-baseUrl">baseUrl</a> to <code>bower_components</code> and set a path config for all your application code.</p>
 
 ``` js
@@ -196,6 +214,29 @@ requirejs( [
   'app/my-component.js'
 ], function( Packery, myComp ) {
   new Packery('#container')
+});
+```
+
+<p>You can require Bower dependencies and use Packery as a jQuery plugin with jQuery Bridget.</p>
+
+``` js
+requirejs.config({
+  baseUrl: '../bower_components',
+  paths: {
+    jquery: 'jquery/jquery'
+  }
+});
+
+requirejs( [
+    'jquery',
+    'packery/js/packery',
+    'jquery-bridget/jquery.bridget'
+  ],
+  function( $, Packery ) {
+    // make Packery a jQuery plugin
+    $.bridget( 'packery', Packery );
+    // now you can use $().packery()
+    $('#container').packery({...});
 });
 ```
 
