@@ -7,6 +7,7 @@
     "Web fonts",
     "Animating item size",
     "RequireJS",
+    "Browserify",
     "Submitting issues",
     "Extra examples"
   ]
@@ -260,6 +261,43 @@ requirejs( [
   // make Packery a jQuery plugin
   bridget( 'packery', Packery );
   $('#container').packery();
+});
+```
+
+</div><div class="primary-content">
+
+<h2 id="browserify">Browserify</h2>
+
+<p>Packery works with <a href="http://browserify.org">Browserify</a>. <a href="https://www.npmjs.org/package/packery">Install Packery with npm</a>.</p>
+
+```
+npm install packery
+```
+
+``` js
+var Packery = require('packery');
+
+var pckry = new Packery( '#container', {
+  // options...
+});
+```
+
+<p id="browserify-jquery">To use Packery as a jQuery plugin with Browserify, you need to use <a href="https://www.npmjs.org/package/jquery-bridget">jQuery Bridget</a></p>
+
+```
+npm install jquery
+npm install jquery-bridget
+```
+
+``` js
+var $ = require('jquery');
+var jQBridget = require('jquery-bridget');
+var Packery = require('packery');
+// make Packery a jQuery plugin
+$.bridget( 'packery', Packery );
+// now you can use $().packery()
+$('#container').packery({
+  // options...
 });
 ```
 
