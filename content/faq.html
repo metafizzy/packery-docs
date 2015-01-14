@@ -5,7 +5,8 @@
     "Overlapping",
     "Browser support",
     "Difference between Isotope, Masonry, and Packery",
-    "Order after drag"
+    "Order after drag",
+    "Scroll-bar gap"
   ]
 }
 ---
@@ -61,5 +62,15 @@ $container.packery( 'on', 'dragItemPositioned', orderItems );
       <p class="edit"><a href="http://codepen.io/desandro/pen/qwyuF">Edit this example</a> or <a href="http://codepen.io/desandro/pen/mdJnF">vanilla JS example</a> on CodePen</p>
     </div>
   </div>
+
+</div><div class="primary-content">
+
+  <h2 id="scroll-bar-gap">There&rsquo;s a gap that goes away after resizing</h2>
+
+  <p>This gap may be caused by the vertical scroll-bar. Try making the scroll-bar persistent with this CSS.</p>
+
+``` css
+html { overflow-y: scroll; }
+```
 
 </div>
