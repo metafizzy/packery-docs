@@ -72,12 +72,39 @@
   </div>
 
   <div id="footer">
-    <div class="footer-content">
+    <div class="primary-content">
+      {{!unless is_dev}}
+      <p class="footer-copy">Also made by Metafizzy</p>
+
+      <div class="row other-products">
+        <div class="cell other-product">
+          <a href="http://isotope.metafizzy.co/">
+            <img src="http://i.imgur.com/xfGupRf.png" alt="Isotope" />
+            <h3>Isotope</h3>
+            <p class="description">Filter &amp; sort magical layouts</p>
+          </a>
+        </div>
+
+        <div class="cell other-product">
+          <a href="http://flickity.metafizzy.co/">
+            <img src="http://i.imgur.com/8BFo4Aj.png" alt="Flickity" />
+            <h3>Flickity</h3>
+            <p class="description">Touch, responsive, flickable&nbsp;galleries</p>
+          </a>
+        </div>
+      </div>
+      {{!unless}}
+
+      <p class="footer-copy">Follow <a href="https://twitter.com/metafizzyco">@metafizzyco on Twitter for Packery updates</a></p>
+    </div>
+
+    <div class="brand">
       {{! logo is broken up so font renders just the logo in M }}
       <a class="metafizzy-logo" href="http://metafizzy.co">M<span class="etafizzy">etafizzy</span></a>
       <span class="copyright">&copy; 2013&ndash;2015</span>
     </div>
-  </div>
+
+  </div> {{! #footer }}
 
 <!-- Packery does NOT require jQuery.  -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
