@@ -23,29 +23,39 @@ is_homepage: true
   </li>
 </ul>
 
-<h3>Bower</h3>
+<h3>Package managers</h3>
 
-<p>If you are familiar with the command line and build processes, Packery can be installed with <a href="http://twitter.github.com/bower">Bower</a>. Packery is built on dependencies. Bower takes care of these.</p>
+<p>Install with Bower: <code>bower install flickity --save</code></p>
 
-```
-bower install packery
-```
+<p>Install with npm: <code>npm install flickity</code></p>
 
 </div><div class="primary-content">
 
-<h2>Commercial licensing</h2>
+<h2>License</h2>
 
-<p>Packery may be used in commercial projects and applications with the one-time purchase of a commercial license. <a href="license.html">Read more about Packery commercial licensing.</a></p>
+<h3>Commercial license</h3>
 
-<p>
-  {{>developer-buy-button}}
+<p>If you want to use Packery to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. <a href="license.html">Read more about Packery commercial licensing</a>.</p>
 
-  {{>org-buy-button}}
-</p>
+<p>Once purchased, you&rsquo;ll receive a commercial license PDF and be all set to use Packery in your commercial applications.</p>
 
-<p>Purchasing takes a minute. Our purchasing form accepts credit cards or PayPal. Once purchased, you&rsquo;ll receive a commercial license PDF and you will be all set to use Packery in your commercial applications.</p>
+<div class="buy-button-trio">
+  {{#license-options.developer}}
+    {{> buy-button}}
+  {{/license-options.developer}}
 
-<p>For non-commercial, personal, or open source projects and applications, you may use Packery under the terms of the <a href="http://choosealicense.com/licenses/gpl-v3/">GPL v3 License</a>. You may use Packery for free.</p>
+  {{#license-options.team}}
+    {{> buy-button}}
+  {{/license-options.team}}
+
+  {{#license-options.organization}}
+    {{> buy-button}}
+  {{/license-options.organization}}
+</div>
+
+<h3>Open source license</h3>
+
+<p>If you are creating an open source application under a license compatible with the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL license v3</a>, you may use Packery under the terms of the GPLv3. <a href="license.html">Read more about Packery open source licensing</a>.</p>
 
 </div><div class="primary-content">
 

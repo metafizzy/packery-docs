@@ -30,12 +30,6 @@
 
 #what a:hover { color: #333; }
 
-/* ---- buy buttons ---- */
-
-.index-page .buy-button:first-child {
-  margin-right: 2.0em;
-}
-
 /* ---- desktop  ---- */
 
 @media screen and ( min-width: 960px ) {
