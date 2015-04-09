@@ -81,18 +81,13 @@ function addItems( pckry, maxY, isRando ) {
 function bindDraggies( pckry ) {
   var itemElems = pckry.getItemElements();
 
-  var onDragEnd = function( dragger ) {
-    // compare movement
-    var drag = dragger.dragPoint;
-    if ( drag.x !== 0 || drag.y !== 0 ) {
-      return;
-    }
+  var onStaticClick = function() {
     // dragger didn't move
-    var isExpanded = classie.has( dragger.element, 'expanded' );
-    classie.toggle( dragger.element, 'expanded' );
+    var isExpanded = classie.has( this.element, 'expanded' );
+    classie.toggle( this.element, 'expanded' );
     if ( !isExpanded ) {
-      pckry.unstamp( dragger.element ); // HACK
-      pckry.fit( dragger.element );
+      pckry.unstamp( this.element ); // HACK
+      pckry.fit( this.element );
     } else {
       pckry.layout();
     }
@@ -102,7 +97,7 @@ function bindDraggies( pckry ) {
     var itemElem = itemElems[j];
     var draggie = new Draggabilly( itemElem );
     pckry.bindDraggabillyEvents( draggie );
-    draggie.on( 'dragEnd', onDragEnd );
+    draggie.on( 'staticClick', onStaticClick );
   }
 }
 

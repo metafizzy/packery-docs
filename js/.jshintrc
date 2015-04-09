@@ -11,6 +11,9 @@
     "eventie": false,
     "getSize": false,
     "getStyleProperty": false,
-    "Packery": false
+    "Packery": false,
+    "matchesSelector": false,
+    "fizzyUIUtils": false,
+    "PS": true
   }
 }

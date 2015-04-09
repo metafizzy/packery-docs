@@ -61,6 +61,7 @@ var jsSrc = [
   'bower_components/doc-ready/doc-ready.js',
   'bower_components/classie/classie.js',
   'bower_components/fizzy-ui-utils/utils.js',
+  'bower_components/jquery-bridget/jquery.bridget.js',
   'bower_components/outlayer/item.js',
   'bower_components/outlayer/outlayer.js',
   // packery

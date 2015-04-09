@@ -11,6 +11,9 @@
     "jquery": "~1",
     "jquery-ui-draggable": "http://gist.github.com/4985610.git",
     "normalize.css": "~3",
-    "packery": "latest"
+    "packery": "latest",
+    "matches-selector": "~1.0.3",
+    "fizzy-ui-utils": "~1.0.1",
+    "jquery-bridget": "~1.1.0"
   }
 }
