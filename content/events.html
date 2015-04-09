@@ -29,19 +29,12 @@ $container.packery( 'once', 'layoutComplete', function() {
 <h2>dragItemPositioned</h2>
 
 ``` js
-$container.packery( 'on', 'dragItemPositioned', function( pckryInstance, draggedItem ) {...} )
+$container.packery( 'on', 'dragItemPositioned', function( draggedItem ) {...} )
 // or with vanilla JS
-pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {...} )
+pckry.on( 'dragItemPositioned', function( draggedItem ) {...} )
 ```
 
 <ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>pckryInstance</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>Packery</i></span>
-    </p>
-    <p class="description param-bit">the Packery instance</p>
-  </li>
   <li class="param">
     <h5 class="param-name param-bit"><code>draggedItem</code></h5>
     <p class="type param-bit">
@@ -59,7 +52,7 @@ pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {...} )
 // set up Packery and Draggabillies
 // like the bindDraggabillyEvents demo, then...
 $container.packery( 'on', 'dragItemPositioned',
-  function( pckryInstance, draggedItem ) {
+  function( draggedItem ) {
     notify( 'Packery positioned dragged ' + draggedItem.element.nodeName );
   }
 );
@@ -76,19 +69,12 @@ $container.packery( 'on', 'dragItemPositioned',
 <h2>fitComplete</h2>
 
 ``` js
-$container.packery( 'on', 'fitComplete', function( pckryInstance, item ) {...} )
+$container.packery( 'on', 'fitComplete', function( item ) {...} )
 // or with vanilla JS
-pckry.on( 'fitComplete', function( pckryInstance, item ) {...} )
+pckry.on( 'fitComplete', function( item ) {...} )
 ```
 
 <ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>pckryInstance</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>Packery</i></span>
-    </p>
-    <p class="description param-bit">the Packery instance</p>
-  </li>
   <li class="param">
     <h5 class="param-name param-bit"><code>item</code></h5>
     <p class="type param-bit">
@@ -104,7 +90,7 @@ pckry.on( 'fitComplete', function( pckryInstance, item ) {...} )
   <div class="cell example-code">
 ``` js
 $container.packery( 'on', 'fitComplete',
-  function( pckryInstance, item ) {
+  function( item ) {
     notify( 'fit ' + item.element.className );
   }
 );
@@ -124,19 +110,12 @@ $container.packery( 'on', 'fitComplete',
 <h2>layoutComplete</h2>
 
 ``` js
-$container.packery( 'on', 'layoutComplete', function( pckryInstance, laidOutItems ) {...} )
+$container.packery( 'on', 'layoutComplete', function( laidOutItems ) {...} )
 // or with vanilla JS
-pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {...} )
+pckry.on( 'layoutComplete', function( laidOutItems ) {...} )
 ```
 
 <ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>pckryInstance</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>Packery</i></span>
-    </p>
-    <p class="description param-bit">the Packery instance</p>
-  </li>
   <li class="param">
     <h5 class="param-name param-bit"><code>laidOutItems</code></h5>
     <p class="type param-bit">
@@ -152,7 +131,7 @@ pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {...} )
   <div class="cell example-code">
 ``` js
 $container.packery( 'on', 'layoutComplete',
-  function( pckryInstance, laidOutItems ) {
+  function( laidOutItems ) {
     console.log('Packery layout completed on ' +
       laidOutItems.length + ' items');
   }
@@ -173,21 +152,14 @@ $container.packery( 'on', 'layoutComplete',
 <h2>removeComplete</h2>
 
 ``` js
-pckry.on( 'removeComplete', function( pckryInstance, removedItems ) {...} )
+pckry.on( 'removeComplete', function( removedItems ) {...} )
 // or with vanilla JS
-$container.packery( 'on', 'removeComplete', function( pckryInstance, removedItems ) {...} )
+$container.packery( 'on', 'removeComplete', function( removedItems ) {...} )
 ```
 
 <p>Triggered after an item element has been removed.</p>
 
 <ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>pckryInstance</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>Packery</i></span>
-    </p>
-    <p class="description param-bit">the Packery instance</p>
-  </li>
   <li class="param">
     <h5 class="param-name param-bit"><code>removedItems</code></h5>
     <p class="type param-bit">
@@ -201,7 +173,7 @@ $container.packery( 'on', 'removeComplete', function( pckryInstance, removedItem
   <div class="cell example-code">
 ``` js
 $container.packery( 'on', 'removeComplete',
-  function( pckryInstance, removedItems ) {
+  function( removedItems ) {
     console.log( 'Removed ' + removedItems.length + ' items' );
   }
 );

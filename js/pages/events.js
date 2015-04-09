@@ -89,8 +89,8 @@ PS.events = function() {
       pckry.bindDraggabillyEvents( draggie );
     }
 
-    pckry.on( 'dragItemPositioned', function( pckryInstance, draggedItem ) {
-      var classes = getClassString( pckryInstance.element );
+    pckry.on( 'dragItemPositioned', function( draggedItem ) {
+      var classes = getClassString( this.element );
       notify( 'Packery ' + classes +
         ' positioned dragged ' + draggedItem.element.nodeName );
     });
@@ -103,8 +103,8 @@ PS.events = function() {
     var container = document.querySelector('#fit-complete-demo .packery');
     var pckry = new Packery( container );
 
-    pckry.on( 'fitComplete', function( pckryInstance, item ) {
-      var classes = getClassString( item.element );
+    pckry.on( 'fitComplete', function() {
+      var classes = getClassString( this.element );
       notify( 'Fit ' + classes );
     });
 
@@ -124,8 +124,8 @@ PS.events = function() {
   ( function() {
     var container = document.querySelector('#layout-complete-demo .packery');
     var pckry = new Packery( container );
-    pckry.on( 'layoutComplete', function( pckryInstance, laidOutItems ) {
-      var classes = getClassString( pckryInstance.element );
+    pckry.on( 'layoutComplete', function( laidOutItems ) {
+      var classes = getClassString( this.element );
       notify( 'Packery ' + classes + ' layout completed on ' + laidOutItems.length + ' items' );
     });
 
@@ -147,8 +147,8 @@ PS.events = function() {
     var container = document.querySelector('#remove-complete-demo .packery');
     var pckry = new Packery( container );
 
-    pckry.on( 'removeComplete', function( pckryInstance, items ) {
-      var classes = getClassString( pckryInstance.element );
+    pckry.on( 'removeComplete', function( items ) {
+      var classes = getClassString( this.element );
       notify( 'Removed ' + items.length + ' items from ' + classes );
     });
 
