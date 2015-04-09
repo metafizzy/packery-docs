@@ -57,13 +57,7 @@
         {{/unless}}
 
       {{! page nav }}
-      {{#if page.nav}}
-        <ul id="page-nav">
-          {{#each page.nav}}
-            <li><a href="#{{slug this}}">{{this}}</a></li>
-          {{/each}}
-        </ul>
-      {{/if}}
+      <ul id="page-nav"></ul>
     </div>
 
     {{! all page content goes here }}
