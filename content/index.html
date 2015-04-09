@@ -1,27 +1,16 @@
 ---
-{
-  "is_homepage": true,
-  "nav": [
-    "What is Packery?",
-    "Install",
-    "Commercial licensing",
-    "Getting started",
-    "Vanilla JavaScript",
-    "Packery in use",
-    "Twitter updates"
-  ]
-}
+is_homepage: true
 ---
 
 <div id="what" class="primary-content">
 
-  <h2 id="what-is-packery">What is Packery?</h2>
+  <h2>What is Packery?</h2>
 
   <p>Packery is a JavaScript layout library that uses a bin-packing algorithm. This is a fancy way of saying &ldquo;it fills empty gaps.&rdquo; Packery layouts can be intelligently ordered or organically wild. Elements can be <a href="options.html#stamp">stamped</a> in place, <a href="methods.html#fit">fit</a> in an ideal spot, or <a href="draggable.html">dragged around</a>.</p>
 
 </div><div class="primary-content">
 
-<h2 id="install">Install</h2>
+<h2>Install</h2>
 
 <p>A packaged source file includes everything you need to use Packery.</p>
 
@@ -34,7 +23,7 @@
   </li>
 </ul>
 
-<h3 id="bower">Bower</h3>
+<h3>Bower</h3>
 
 <p>If you are familiar with the command line and build processes, Packery can be installed with <a href="http://twitter.github.com/bower">Bower</a>. Packery is built on dependencies. Bower takes care of these.</p>
 
@@ -44,7 +33,7 @@ bower install packery
 
 </div><div class="primary-content">
 
-<h2 id="commercial-licensing">Commercial licensing</h2>
+<h2>Commercial licensing</h2>
 
 <p>Packery may be used in commercial projects and applications with the one-time purchase of a commercial license. <a href="license.html">Read more about Packery commercial licensing.</a></p>
 
@@ -60,9 +49,9 @@ bower install packery
 
 </div><div class="primary-content">
 
-<h2 id="getting-started">Getting started</h2>
+<h2>Getting started</h2>
 
-<h3 id="html">HTML</h3>
+<h3>HTML</h3>
 
 <p>Packery works on a container element with a group of similar child items.</p>
 
@@ -81,7 +70,7 @@ bower install packery
 <script src="/path/to/packery.pkgd.min.js"></script>
 ```
 
-<h3 id="css">CSS</h3>
+<h3>CSS</h3>
 
 <p>All sizing of items is handled by your CSS.</p>
 
@@ -90,7 +79,7 @@ bower install packery
 .item.w2 { width: 50%; }
 ```
 
-<h3 id="javascript">Initialize with JavaScript</h3>
+<h3>Initialize with JavaScript</h3>
 
 <p>Initialize a Packery instance as a jQuery plugin:  <code>$('#container').packery()</code>.</p>
 
@@ -114,7 +103,7 @@ var pckry = new Packery( container, {
 });
 ```
 
-<h3 id="init-with-html">Initialize in HTML</h3>
+<h3>Initialize in HTML</h3>
 
 <p>You can initialize Packery in HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. <a href="options.html">Options</a> can be set with a <code>data-packery-options</code> attribute.</p>
 
@@ -129,7 +118,7 @@ var pckry = new Packery( container, {
 
 </div><div class="primary-content">
 
-<h2 id="vanilla-javascript">Vanilla JavaScript</h2>
+<h2>Vanilla JavaScript</h2>
 
 <p>jQuery is <strong>not</strong> required to use Packery. Given its popularity, jQuery will be used for all example code in these docs. But you can still use Packery with vanilla JS.</p>
 
@@ -155,7 +144,7 @@ var pckry = new Packery( '#container', {
 
 </div><div class="primary-content">
 
-<h2 id="packery-in-use">Packery in use</h2>
+<h2>Packery in use</h2>
 
 <p>Are you using Packery? <a href="https://twitter.com/metafizzyco">Tweet @metafizzyco</a> or email <a href="mailto:yo@metafizzy.co">yo@metafizzy.co</a> to share your work and possibly get it featured here.</p>
 
@@ -172,7 +161,7 @@ var pckry = new Packery( '#container', {
 
 </div><div class="primary-content">
 
-<h2 id="twitter-updates">Twitter updates from <a href="https://twitter.com/metafizzyco">@metafizzyco</a></h2>
+<h2>Twitter updates from <a href="https://twitter.com/metafizzyco">@metafizzyco</a></h2>
 
 <p><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=packery+from%3Ametafizzyco" data-widget-id="502208269725605888">Packery tweets</a></p>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

@@ -1,13 +1,5 @@
 ---
-{
-  "title": "Events",
-  "nav": [
-    "dragItemPositioned",
-    "fitComplete",
-    "layoutComplete",
-    "removeComplete"
-  ]
-}
+title: Events
 ---
 
 <div id="notification"></div>
@@ -34,7 +26,7 @@ $container.packery( 'once', 'layoutComplete', function() {
 
 </div><div class="primary-content">
 
-<h2 id="dragitempositioned">dragItemPositioned</h2>
+<h2>dragItemPositioned</h2>
 
 ``` js
 $container.packery( 'on', 'dragItemPositioned', function( pckryInstance, draggedItem ) {...} )
@@ -81,7 +73,7 @@ $container.packery( 'on', 'dragItemPositioned',
 
 </div><div class="primary-content">
 
-<h2 id="fitcomplete">fitComplete</h2>
+<h2>fitComplete</h2>
 
 ``` js
 $container.packery( 'on', 'fitComplete', function( pckryInstance, item ) {...} )
@@ -129,7 +121,7 @@ $container.packery( 'on', 'fitComplete',
 
 </div><div class="primary-content">
 
-<h2 id="layoutcomplete">layoutComplete</h2>
+<h2>layoutComplete</h2>
 
 ``` js
 $container.packery( 'on', 'layoutComplete', function( pckryInstance, laidOutItems ) {...} )
@@ -178,7 +170,7 @@ $container.packery( 'on', 'layoutComplete',
 
 </div><div class="primary-content">
 
-<h2 id="removecomplete">removeComplete</h2>
+<h2>removeComplete</h2>
 
 ``` js
 pckry.on( 'removeComplete', function( pckryInstance, removedItems ) {...} )

@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width" />
-  <meta name="description" content="The bin-packing layout library. Packery makes your crazy and clever layout a real thing. Be clever. Get crazy." />
+  <meta name="description" content="The bin-packing layout library." />
 
-  <title>Packery{{#unless page.is_homepage}} {{page.title}}{{/unless}}</title>
+  <title>Packery{{#unless page.is_homepage}} &middot; {{page.title}}{{/unless}}</title>
 
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700,400italic' rel='stylesheet'>
 
   {{#if is_dev}}
-    <!-- DEV MODE - including each .css file -->
-    {{#each site.css}}
-      <link rel="stylesheet" href="{{this}}" />
+    {{! DEV MODE - including each .css file }}
+    {{#each css_paths}}
+      <link rel="stylesheet" href="../{{this}}" />
     {{/each}}
   {{else}}
     {{! in production, just include concat CSS }}
-    <link rel="stylesheet" href="css/packery-docs.css" />
+    <link rel="stylesheet" href="{{#if page.is_404}}/{{/if}}css/packery-docs.css" media="screen" />
   {{/if}}
 
   {{! Twitter Cards }}
@@ -60,8 +60,8 @@
       <ul id="page-nav"></ul>
     </div>
 
-    {{! all page content goes here }}
-    {{{ content }}}
+{{! all page content goes here }}
+{{> body}}
 
   </div>
 
@@ -101,31 +101,32 @@
   </div> {{! #footer }}
 
 <!-- Packery does NOT require jQuery.  -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
      <!-- jQuery is only used for jQuery UI Draggable
      and to demonstrate Packery as a jQuery plugin -->
 <script>window.jQuery || document.write('<script src="bower_components/jquery/jquery.js"><\/script>')</script>
 
 {{#if is_dev}}
-  <!-- DEV MODE - including each .js file -->
-  {{#each site.js}}
-    <script src="{{this}}"></script>
+  {{#each js_paths}}
+    {{! DEV MODE - including each .js file }}
+    <script src="../{{this}}"></script>
   {{/each}}
 {{else}}
   {{! in production, just include concat/minified js }}
-  <script src="js/packery-docs.min.js"></script>
+  <script src="{{#if page.is_404}}/{{/if}}js/packery-docs.min.js"></script>
+{{/if}}
 
+{{#unless is_dev}}
   <!-- Google Analytics - Remove this if you copy/pasted this page -->
   <script>
-    // Google Analytics
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
     e=o.createElement(i);r=o.getElementsByTagName(i)[0];
     e.src='//www.google-analytics.com/analytics.js';
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-58739927-4','auto');ga('send','pageview');
   </script>
-{{/if}}
+{{/unless}}
 
 </body>
 </html>
