@@ -7,7 +7,7 @@
   line-height: 1.3em;
   border: 2px solid;
   border-radius: 8px;
-  border-color: #8C8;
+  border-color: #0C9;
   padding: 10px 100px 10px 10px;
   position: relative;
   text-align: center;
@@ -20,7 +20,7 @@
 
 .buy-button__price {
   font-size: 1.6em;
-  background: #8C8;
+  background: #0C9;
   color: white;
   position: absolute;
   right: 0;
@@ -38,11 +38,11 @@
 }
 
 .buy-button:hover {
-  border-color: #E90;
+  border-color: #C90;
 }
 
 .buy-button:hover .buy-button__price {
-  background: #E90;
+  background: #C90;
 }
 
 @media screen and (min-width: 768px) {
