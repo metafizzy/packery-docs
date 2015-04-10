@@ -1,6 +1,6 @@
 {
   "name": "packery-docs",
-  "version": "1.3.1",
+  "version": "1.4.1",
   "dependencies": {
     "gulp-rename": "^1.2.2",
     "through2": "^0.6.3",
