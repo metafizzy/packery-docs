@@ -67,7 +67,7 @@ title: Options
 <div class="row example">
   <div class="cell example-code">
 ``` html
-<div id="column-width-demo2">
+<div class="packery">
   <div class="grid-sizer"></div>
   <div class="item"></div>
   <div class="item"></div>
@@ -75,11 +75,11 @@ title: Options
 </div>
 ```
 ``` css
-#column-width-demo2 .grid-sizer,
-#column-width-demo2 .item {
+.grid-sizer,
+.item {
   width: 20%;
 }
-#column-width-demo2 .item.w2 {
+.item.w2 {
   width: 40%;
 }
 ```
@@ -90,24 +90,7 @@ title: Options
 ```
   </div>
   <div class="cell demo">
-    <div id="column-width-demo2" class="packery js-packery" data-packery-options='{  "itemSelector": ".item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
-      <div class="grid-sizer"></div>
-      <div class="item"></div>
-      <div class="item w2"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item h2"></div>
-      <div class="item"></div>
-      <div class="item w2"></div>
-      <div class="item h2"></div>
-      <div class="item"></div>
-      <div class="item h2"></div>
-      <div class="item"></div>
-      <div class="item w2"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-    </div>
-    <p class="edit"><a href="http://codepen.io/desandro/pen/tonpx">Edit this example on CodePen</a></p>
+    {{> percent-width-demo}}
   </div>
 </div>
 
@@ -337,6 +320,29 @@ var $container = $('#container').packery({
 </div>
 
 <p>Will set item position in percent values, rather than pixel values. <code>percentPosition</code> works well with percent-width items, as items will not transition their position on resize.</p>
+
+<div class="row example">
+  <div class="cell example-code">
+``` css
+.grid-sizer,
+.item {
+  width: 20%;
+}
+.item.w2 {
+  width: 40%;
+}
+```
+``` js
+"itemSelector": ".item",
+"columnWidth": ".grid-sizer",
+"percentPosition": true
+```
+  </div>
+  <div class="cell demo">
+    {{> percent-width-demo}}
+  </div>
+</div>
+
 
 </div><div class="primary-content">
 
