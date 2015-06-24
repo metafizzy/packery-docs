@@ -203,7 +203,7 @@ function buildContent( dataOptions ) {
   return function() {
     var data = extend( siteData, dataOptions );
     data.source_url_path = data.is_export ? '' :
-      'http://cdnjs.cloudflare.com/ajax/libs/packery/' + data.packery_version + '/';
+      'https://cdnjs.cloudflare.com/ajax/libs/packery/' + data.packery_version + '/';
     var filter = gulpFilter( filterQuery );
 
     var buildOptions = {

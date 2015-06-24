@@ -2,36 +2,56 @@
 is_homepage: true
 ---
 
+{{! --------------------------------------------------- }}
 <div id="what" class="primary-content">
 
   <h2>What is Packery?</h2>
 
   <p>Packery is a JavaScript layout library that uses a bin-packing algorithm. This is a fancy way of saying &ldquo;it fills empty gaps.&rdquo; Packery layouts can be intelligently ordered or organically wild. Elements can be <a href="options.html#stamp">stamped</a> in place, <a href="methods.html#fit">fit</a> in an ideal spot, or <a href="draggable.html">dragged around</a>.</p>
 
-</div><div class="primary-content">
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
 
 <h2>Install</h2>
 
-<p>A packaged source file includes everything you need to use Packery.</p>
+{{! --------------------------------------------------- }}
+
+<h3>Download</h3>
 
 <ul>
-  <li>
-    <a href="packery.pkgd.min.js">packery.pkgd.min.js</a> for production
-  </li>
-  <li>
-    <a href="packery.pkgd.js">packery.pkgd.js</a> for development
-  </li>
+  <li><a href="{{source_url_path}}packery.pkgd.js">packery.pkgd.js</a> un-minified, or</li>
+  <li><a href="{{source_url_path}}packery.pkgd.min.js">packery.pkgd.min.js</a> minified</li>
 </ul>
+
+{{! --------------------------------------------------- }}
+
+<h3>CDN</h3>
+
+<p>Link directly to <a href="https://cdnjs.com/libraries/packery">Packery files on cdnjs</a>.</p>
+
+
+``` html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/packery/{{packery_version}}/packery.pkgd.js"></script>
+<!-- or -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/packery/{{packery_version}}/packery.pkgd.min.js"></script>
+```
+
+{{! --------------------------------------------------- }}
 
 <h3>Package managers</h3>
 
 <p>Install with Bower: <code>bower install packery --save</code></p>
 
-<p>Install with npm: <code>npm install packery</code></p>
+<p><a href="https://www.npmjs.com/package/packery">Install with npm</a>: <code>npm install packery</code></p>
 
-</div><div class="primary-content">
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
 
 <h2>License</h2>
+
+{{! --------------------------------------------------- }}
 
 <h3>Commercial license</h3>
 
@@ -53,13 +73,19 @@ is_homepage: true
   {{/license-options.organization}}
 </div>
 
+{{! --------------------------------------------------- }}
+
 <h3>Open source license</h3>
 
 <p>If you are creating an open source application under a license compatible with the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL license v3</a>, you may use Packery under the terms of the GPLv3. <a href="license.html">Read more about Packery open source licensing</a>.</p>
 
-</div><div class="primary-content">
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
 
 <h2>Getting started</h2>
+
+{{! --------------------------------------------------- }}
 
 <h3>HTML</h3>
 
@@ -79,6 +105,8 @@ is_homepage: true
 ``` html
 <script src="/path/to/packery.pkgd.min.js"></script>
 ```
+
+{{! --------------------------------------------------- }}
 
 <h3>CSS</h3>
 
