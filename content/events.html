@@ -57,17 +57,17 @@ pckry.on( 'layoutComplete', function( items ) {
 
 ```js
 // vanilla JS
-var iso = new Packery( '.grid', {...});
+var pckry = new Packery( '.grid', {...});
 
 function onLayout() {
   console.log('layout done');
 }
 // bind event listener
-iso.on( 'layoutComplete', onLayout );
+pckry.on( 'layoutComplete', onLayout );
 // un-bind event listener
-iso.off( 'layoutComplete', onLayout );
+pckry.off( 'layoutComplete', onLayout );
 // bind event listener to be triggered just once
-iso.once( 'layoutComplete', function() {
+pckry.once( 'layoutComplete', function() {
   console.log('layout done, just this one time');
 });
 ```
