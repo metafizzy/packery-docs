@@ -3,115 +3,91 @@ title: Events
 ---
 
 <div id="notification"></div>
-
+{{! --------------------------------------------------- }}
 <div class="primary-content">
 
-<p>Packery is an Event Emitter. You can bind listeners to events with the <a href="methods.html#on">on</a>, <a href="methods.html#off">off</a>, and <a href="methods.html#once">once</a> methods.</p>
+  <h2>Event binding</h2>
 
-```js
-var $container = $('#container').packery({...});
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
+
+<h3>jQuery event binding</h3>
+
+<p>Bind events with jQuery with standard jQuery event methods <code>.on()</code>, <code>.off()</code>, and <code>.one()</code>.</p>
+
+``` js
+// jQuery
+var $grid = $('.grid').packery({...});
 
 function onLayout() {
   console.log('layout done');
 }
 // bind event listener
-$container.packery( 'on', 'layoutComplete', onLayout );
+$grid.on( 'layoutComplete', onLayout );
 // un-bind event listener
-$container.packery( 'off', 'layoutComplete', onLayout );
-// bind event listener to be triggered just once
-$container.packery( 'once', 'layoutComplete', function() {
+$grid.off( 'layoutComplete', onLayout );
+// bind event listener to be triggered just once. note ONE not ON
+$grid.one( 'layoutComplete', function() {
   console.log('layout done, just this one time');
 });
 ```
 
-</div><div class="primary-content">
-
-<h2>dragItemPositioned</h2>
+<p>jQuery event listeners have an <code>event</code> argument, whereas vanilla JS listeners do not.</p>
 
 ``` js
-$container.packery( 'on', 'dragItemPositioned', function( draggedItem ) {...} )
-// or with vanilla JS
-pckry.on( 'dragItemPositioned', function( draggedItem ) {...} )
+// jQuery, has event argument
+$grid.on( 'layoutComplete', function( event, items ) {
+  console.log( items.length );
+});
+
+// vanilla JS, no event argument
+pckry.on( 'layoutComplete', function( items ) {
+  console.log( items.length );
+});
 ```
 
-<ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>draggedItem</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
-    </p>
-    <p class="description param-bit">the dragged item that was positioned</p>
-  </li>
-</ul>
-
-<p>Triggered after a drag end, only when an item is positioned, either into a row or column, or into its container element. This event is triggered after the positioning transition has ended.</p>
-
-<div class="row example">
-  <div class="cell example-code">
-``` js
-// set up Packery and Draggabillies
-// like the bindDraggabillyEvents demo, then...
-$container.packery( 'on', 'dragItemPositioned',
-  function( draggedItem ) {
-    notify( 'Packery positioned dragged ' + draggedItem.element.nodeName );
-  }
-);
-```
-  </div>
-  <div id="drag-item-positioned-demo" class="cell demo">
-    {{>draggable-packery}}
-    <p class="edit"><a href="http://codepen.io/desandro/pen/wnyci">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/zacdn">vanilla JS example</a></p>
-  </div>
 </div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
 
-</div><div class="primary-content">
+<h3>Vanilla JS event binding</h3>
 
-<h2>fitComplete</h2>
+<p>Bind events with vanilla JS with <a href="methods.html#on">.on()</a>, <a href="methods.html#off">.off()</a>, and <a href="methods.html#once">.once()</a> methods.</p>
 
-``` js
-$container.packery( 'on', 'fitComplete', function( item ) {...} )
-// or with vanilla JS
-pckry.on( 'fitComplete', function( item ) {...} )
+```js
+// vanilla JS
+var iso = new Packery( '.grid', {...});
+
+function onLayout() {
+  console.log('layout done');
+}
+// bind event listener
+iso.on( 'layoutComplete', onLayout );
+// un-bind event listener
+iso.off( 'layoutComplete', onLayout );
+// bind event listener to be triggered just once
+iso.once( 'layoutComplete', function() {
+  console.log('layout done, just this one time');
+});
 ```
 
-<ul class="params">
-  <li class="param">
-    <h5 class="param-name param-bit"><code>item</code></h5>
-    <p class="type param-bit">
-      <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
-    </p>
-    <p class="description param-bit">items that was fit</p>
-  </li>
-</ul>
-
-<p>Triggered after an item element is <a href="methods.html#fit">fit</a>.</p>
-
-<div class="row example">
-  <div class="cell example-code">
-``` js
-$container.packery( 'on', 'fitComplete',
-  function( item ) {
-    notify( 'fit ' + item.element.className );
-  }
-);
-```
-  </div>
-  <div id="fit-complete-demo" class="cell demo">
-    <p class="instruction">Click item to fit it at 40, 40</p>
-    <div class="packery clickable">
-      {{>demo-items}}
-    </div>
-  <p class="edit"><a href="http://codepen.io/desandro/pen/zydJr">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/pqtvB">vanilla JS example</a></p>
-  </div>
 </div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
 
-</div><div class="primary-content">
+<h2>Packery events</h2>
 
-<h2>layoutComplete</h2>
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
+
+<h3>layoutComplete</h3>
 
 ``` js
-$container.packery( 'on', 'layoutComplete', function( laidOutItems ) {...} )
-// or with vanilla JS
+// jQuery
+$grid.on( 'layoutComplete', function( event, laidOutItems ) {...} )
+// vanilla JS
 pckry.on( 'layoutComplete', function( laidOutItems ) {...} )
 ```
 
@@ -129,14 +105,14 @@ pckry.on( 'layoutComplete', function( laidOutItems ) {...} )
 
 <div class="row example">
   <div class="cell example-code">
-``` js
-$container.packery( 'on', 'layoutComplete',
-  function( laidOutItems ) {
-    console.log('Packery layout completed on ' +
-      laidOutItems.length + ' items');
-  }
-);
-```
+    ``` js
+    $grid.on( 'layoutComplete',
+      function( event, laidOutItems ) {
+        console.log('Packery layout completed on ' +
+          laidOutItems.length + ' items');
+      }
+    );
+    ```
   </div>
   <div id="layout-complete-demo" class="cell demo">
     <p class="instruction">Resize browser or click item to toggle size</p>
@@ -147,14 +123,103 @@ $container.packery( 'on', 'layoutComplete',
   </div>
 </div>
 
-</div><div class="primary-content">
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
 
-<h2>removeComplete</h2>
+<h3>dragItemPositioned</h3>
 
 ``` js
+// jQuery
+$grid.on( 'dragItemPositioned', function( event, draggedItem ) {...} )
+// vanilla JS
+pckry.on( 'dragItemPositioned', function( draggedItem ) {...} )
+```
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>draggedItem</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
+    </p>
+    <p class="description param-bit">the dragged item that was positioned</p>
+  </li>
+</ul>
+
+<p>Triggered after a drag end, only when an item is positioned, either into a row or column, or into its container element. This event is triggered after the positioning transition has ended.</p>
+
+<div class="row example">
+  <div class="cell example-code">
+    ``` js
+    $grid.on( 'dragItemPositioned',
+      function( event, draggedItem ) {
+        console.log( 'Packery positioned dragged ' +
+          draggedItem.element.nodeName );
+      }
+    );
+    ```
+  </div>
+  <div id="drag-item-positioned-demo" class="cell demo">
+    {{>draggable-packery}}
+    <p class="edit"><a href="http://codepen.io/desandro/pen/wnyci">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/zacdn">vanilla JS example</a></p>
+  </div>
+</div>
+
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
+
+<h3>fitComplete</h3>
+
+``` js
+// jQuery
+$grid.on( 'fitComplete', function( event, item ) {...} )
+// vanilla JS
+pckry.on( 'fitComplete', function( item ) {...} )
+```
+
+<ul class="params">
+  <li class="param">
+    <h5 class="param-name param-bit"><code>item</code></h5>
+    <p class="type param-bit">
+      <b>Type:</b> <span class="value"><i>Packery.Item</i></span>
+    </p>
+    <p class="description param-bit">items that was fit</p>
+  </li>
+</ul>
+
+<p>Triggered after an item element is <a href="methods.html#fit">fit</a>.</p>
+
+<div class="row example">
+  <div class="cell example-code">
+    ``` js
+    $grid.on( 'fitComplete',
+      function( event, item ) {
+        console.log( 'fit ' + item.element.className );
+      }
+    );
+    ```
+  </div>
+  <div id="fit-complete-demo" class="cell demo">
+    <p class="instruction">Click item to fit it at 40, 40</p>
+    <div class="packery clickable">
+      {{>demo-items}}
+    </div>
+  <p class="edit"><a href="http://codepen.io/desandro/pen/zydJr">Edit this example on CodePen</a> or <a href="http://codepen.io/desandro/pen/pqtvB">vanilla JS example</a></p>
+  </div>
+</div>
+
+</div>
+{{! --------------------------------------------------- }}
+<div class="primary-content">
+
+<h3>removeComplete</h3>
+
+``` js
+// jQuery
+$grid.on( 'removeComplete', function( event, removedItems ) {...} )
+// vanilla JS
 pckry.on( 'removeComplete', function( removedItems ) {...} )
-// or with vanilla JS
-$container.packery( 'on', 'removeComplete', function( removedItems ) {...} )
 ```
 
 <p>Triggered after an item element has been removed.</p>
@@ -171,13 +236,13 @@ $container.packery( 'on', 'removeComplete', function( removedItems ) {...} )
 
 <div class="row example">
   <div class="cell example-code">
-``` js
-$container.packery( 'on', 'removeComplete',
-  function( removedItems ) {
-    console.log( 'Removed ' + removedItems.length + ' items' );
-  }
-);
-```
+    ``` js
+    $grid.packery( 'on', 'removeComplete',
+      function( event, removedItems ) {
+        console.log( 'Removed ' + removedItems.length + ' items' );
+      }
+    );
+    ```
   </div>
   <div id="remove-complete-demo" class="cell demo">
     <p class="instruction">Click items to remove them</p>
