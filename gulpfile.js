@@ -202,10 +202,10 @@ function buildContent( dataOptions ) {
   // gulp task
   return function() {
     var data = extend( siteData, dataOptions );
-    // data.source_url_path = data.is_export ? '' :
-    //   'https://cdnjs.cloudflare.com/ajax/libs/packery/' + data.packery_version + '/';
+    data.source_url_path = data.is_export ? '' :
+      'https://cdnjs.cloudflare.com/ajax/libs/packery/' + data.packery_version + '/';
     // HACK, wait on cdnjs to update
-    data.source_url_path = '';
+    // data.source_url_path = '';
     var filter = gulpFilter( filterQuery );
 
     var buildOptions = {
