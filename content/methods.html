@@ -262,7 +262,7 @@ pckry.fit( element, x, y )
 var $container = $('.packery').packery();
 
 $container.on( 'click', '.item', function( event ) {
-  var $target = $( event.target )
+  var $target = $( event.currentTarget )
   var isGigante = $target.hasClass('gigante');
   $target.toggleClass('gigante');
 
@@ -270,7 +270,7 @@ $container.on( 'click', '.item', function( event ) {
     // if shrinking, just layout
     $container.packery();
   } else {
-    $container.packery( 'fit', event.target );
+    $container.packery( 'fit', event.currentTarget );
   }
 });
 ```
@@ -298,7 +298,7 @@ $container.on( 'click', '.item', function( event ) {
 var $container = $('#container').packery();
 
 $container.on( 'click', '.item', function( event ) {
-  $container.packery( 'fit', event.target, 80, 80 );
+  $container.packery( 'fit', event.currentTarget, 80, 80 );
 });
 ```
   </div>
@@ -380,7 +380,7 @@ var $container = $('#container').packery();
 
 $container.on( 'click', '.item', function( event ) {
   // change size of item via class
-  $( event.target ).toggleClass('gigante');
+  $( event.currentTarget ).toggleClass('gigante');
   // trigger layout
   $container.packery();
 });
@@ -669,7 +669,7 @@ var $container = $('#container').packery();
 
 $container.on( 'click', '.item', function( event ) {
   // remove clicked element
-  $container.packery( 'remove', event.target );
+  $container.packery( 'remove', event.currentTarget );
   // layout remaining item elements
   $container.packery();
 });
