@@ -1,14 +1,3 @@
-/* ---- Metafizzy logo ---- */
-
-/* use custom font for logo */
-.metafizzy-logo {
-  font-family: 'Metafizzy Logo', sans-serif;
-}
-
-.metafizzy-logo .etafizzy {
-  display: none;
-}
-
 /* ---- footer ---- */
 
 #footer {
@@ -16,21 +5,6 @@
   padding: 2.0em 0;
   background: hsla(0, 60%, 50%, 0.1);
 }
-
-#footer .brand {
-  text-align: center;
-  font-size: 12px;
-}
-
-#footer .metafizzy-logo {
-  display: block;
-  font-size: 80px;
-  line-height: 1.0;
-  background: none;
-  opacity: 0.25;
-}
-
-#footer .metafizzy-logo:hover { opacity: 1; }
 
 /* ---- other-products ---- */
 
@@ -72,20 +46,66 @@
   font-size: 15px;
 }
 
+/* ---- footer brand ---- */
+
+.footer__brand {
+
+  padding: 0 10px;
+}
+
+.footer__metafizzy-logo {
+  height: 50px;
+}
+
+.footer__metafizzy-wordmark {
+  width: 140px;
+  height: auto;
+  fill: #A80;
+}
+
+.metafizzy-logo__body {
+  fill: #A80;
+}
+
+.metafizzy-logo__stripe1 { fill: transparent; }
+.metafizzy-logo__stripe2 { fill: transparent; }
+.metafizzy-logo__stripe3 { fill: transparent; }
+.metafizzy-logo__stripe4 { fill: transparent; }
+
+a:hover .footer__metafizzy-wordmark {
+  fill: #90C;
+}
+
+a:hover .metafizzy-logo__body { fill: transparent; }
+
+a:hover .metafizzy-logo__stripe1 { fill: #C25; }
+a:hover .metafizzy-logo__stripe2 { fill: #E62; }
+a:hover .metafizzy-logo__stripe3 { fill: #EA0; }
+a:hover .metafizzy-logo__stripe4 { fill: #19F; }
+
 /* desktop */
 @media screen and ( min-width: 960px ) {
   #footer {
     margin-top: 40px;
   }
 
-  #footer .brand {
+  .footer__brand {
     width: 180px;
     position: absolute;
     left: 0;
     bottom: 3.0em;
   }
 
-  #footer .metafizzy-logo {
-    font-size: 140px;
+  .footer__metafizzy-logo {
+    height: 100px;
+    display: block;
+    margin: 0 auto 10px;
   }
+
+  .footer__metafizzy-wordmark {
+    width: 140px;
+    display: block;
+    margin: 0 auto;
+  }
+
 }
