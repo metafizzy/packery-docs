@@ -1,30 +1,23 @@
 var fs = require('fs');
-var glob = require('glob');
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 var gulpFilter = require('gulp-filter');
+var Handlebars = require('handlebars');
 
-// ----- getGlobPaths ----- //
+// ----- site ----- //
 
-/**
- * takes glob src and returns expanded paths
- * @param {Array} src
- * @returns {Array} paths
- */
-function getGlobPaths( src ) {
-  // copy src
-  var paths = src.slice(0);
-  // replace all glob paths with expanded paths
-  src.forEach( function( path, i ) {
-    if ( glob.hasMagic( path ) ) {
-      var files = glob.sync( path );
-      // replace glob with paths
-      paths.splice.apply( paths, [ i, 1 ].concat( files ) );
-    }
-  });
-  return paths;
-}
+// stuff used across tasks
+var site = {
+  // templating data
+  data: {
+    isDev: process.argv[2] == 'dev'
+  },
+  // src to watch, tasks to trigger
+  watches: [],
+  watch: function( src, tasks ) {
+    site.watches.push( [ src, tasks ] );
+  }
+
+};
 
 // ----- prod assets ----- //
 
@@ -49,103 +42,22 @@ gulp.task( 'dist', function() {
     .pipe( gulp.dest('build') );
 });
 
-// ----- js ----- //
+// ----- tasks ----- //
 
-var jsSrc = [
-  // packery dependencies
-  'bower_components/get-style-property/get-style-property.js',
-  'bower_components/get-size/get-size.js',
-  'bower_components/matches-selector/matches-selector.js',
-  'bower_components/eventEmitter/EventEmitter.js',
-  'bower_components/eventie/eventie.js',
-  'bower_components/doc-ready/doc-ready.js',
-  'bower_components/classie/classie.js',
-  'bower_components/fizzy-ui-utils/utils.js',
-  'bower_components/jquery-bridget/jquery.bridget.js',
-  'bower_components/outlayer/item.js',
-  'bower_components/outlayer/outlayer.js',
-  // packery
-  'bower_components/packery/js/rect.js',
-  'bower_components/packery/js/packer.js',
-  'bower_components/packery/js/item.js',
-  'bower_components/packery/js/packery.js',
-  // draggabilly
-  'bower_components/unipointer/unipointer.js',
-  'bower_components/unidragger/unidragger.js',
-  'bower_components/draggabilly/draggabilly.js',
-  // jquery ui draggable
-  'bower_components/jquery-ui-draggable/jquery-ui-draggable.js',
-  // docs
-  'js/controller.js',
-  'js/pages/*.js'
-];
-
-
-// concat & minify js
-gulp.task( 'js', function() {
-  gulp.src( jsSrc )
-    .pipe( uglify() )
-    .pipe( concat('packery-docs.min.js') )
-    .pipe( gulp.dest('build/js') );
-});
-
-// ----- hint ----- //
-
-var jshint = require('gulp-jshint');
-
-gulp.task( 'hint-js', function() {
-  return gulp.src('js/**/*.js')
-    .pipe( jshint() )
-    .pipe( jshint.reporter('default') );
-});
-
-gulp.task( 'hint-tasks', function() {
-  return gulp.src([ 'gulpfile.js', 'tasks/*.js' ])
-    .pipe( jshint() )
-    .pipe( jshint.reporter('default') );
-});
-
-gulp.task( 'hint', [ 'hint-js', 'hint-tasks' ]);
-
-// ----- css ----- //
-
-var cssSrc = [
-  // dependencies
-  'bower_components/normalize.css/normalize.css',
-  // docs
-  'css/*.css'
-];
-
-gulp.task( 'css', function() {
-  gulp.src( cssSrc )
-    .pipe( concat('packery-docs.css') )
-    .pipe( gulp.dest('build/css') );
-});
+require('./tasks/hint')( site );
+require('./tasks/js')( site );
+require('./tasks/css')( site );
+require('./tasks/data')( site );
 
 // ----- data ----- //
 
 // add all data/*.json to siteData
 // file.json => siteData.file: {json}
-var dataSrc = 'data/*.json';
-
 var siteData = {
   // get packery version from its bower.json
-  packery_version: JSON.parse( fs.readFileSync('bower_components/packery/bower.json') ).version,
-  css_paths: getGlobPaths( cssSrc ),
-  js_paths: getGlobPaths( jsSrc )
+  packery_version: JSON.parse( fs.readFileSync('bower_components/packery/bower.json') ).version
 };
 
-gulp.task( 'data', function() {
-  var addJsonData = through2.obj( function( file, enc, callback ) {
-    var basename = path.basename( file.path, path.extname( file.path ) );
-    siteData[ basename ] = JSON.parse( file.contents.toString() );
-    this.push( file );
-    callback();
-  });
-
-  return gulp.src( dataSrc )
-    .pipe( addJsonData );
-});
 
 
 // ----- content ----- //
@@ -271,7 +183,6 @@ gulp.task( 'watch', [ 'default' ], function() {
   gulp.watch( contentSrc, [ 'content' ] );
   gulp.watch( partialsSrc, [ 'content' ] );
   gulp.watch( pageTemplateSrc, [ 'content' ] );
-  gulp.watch( dataSrc, [ 'content' ] );
   gulp.watch( 'css/*.css', [ 'css' ] );
 });
 
@@ -280,5 +191,4 @@ gulp.task( 'watch-dev', [ 'dev' ], function() {
   gulp.watch( contentSrc, [ 'content-dev' ] );
   gulp.watch( partialsSrc, [ 'content-dev' ] );
   gulp.watch( pageTemplateSrc, [ 'content-dev' ] );
-  gulp.watch( dataSrc, [ 'content-dev' ] );
 });
