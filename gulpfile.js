@@ -1,7 +1,4 @@
-var fs = require('fs');
 var gulp = require('gulp');
-var gulpFilter = require('gulp-filter');
-var Handlebars = require('handlebars');
 
 // ----- site ----- //
 
@@ -9,14 +6,14 @@ var Handlebars = require('handlebars');
 var site = {
   // templating data
   data: {
-    isDev: process.argv[2] == 'dev'
+    isDev: process.argv[2] == 'dev',
+    isExport: process.argv[2] == 'export',
   },
   // src to watch, tasks to trigger
   watches: [],
   watch: function( src, tasks ) {
     site.watches.push( [ src, tasks ] );
   }
-
 };
 
 // ----- tasks ----- //
@@ -41,13 +38,6 @@ gulp.task( 'default', [
   'prod-assets'
 ] );
 
-// ----- dev ----- //
-
-gulp.task( 'dev', [
-  'hint',
-  'content-dev'
-] );
-
 // ----- export ----- //
 
 // version of site used in packery-docs.zip
@@ -62,16 +52,12 @@ gulp.task( 'export', [
 
 // ----- watch ----- //
 
-gulp.task( 'watch', [ 'default' ], function() {
-  gulp.watch( contentSrc, [ 'content' ] );
-  gulp.watch( partialsSrc, [ 'content' ] );
-  gulp.watch( pageTemplateSrc, [ 'content' ] );
-  gulp.watch( 'css/*.css', [ 'css' ] );
-});
-
-
-gulp.task( 'watch-dev', [ 'dev' ], function() {
-  gulp.watch( contentSrc, [ 'content-dev' ] );
-  gulp.watch( partialsSrc, [ 'content-dev' ] );
-  gulp.watch( pageTemplateSrc, [ 'content-dev' ] );
+gulp.task( 'dev', [
+  'hint',
+  'dist',
+  'prod-assets',
+], function() {
+  site.watches.forEach( function( watchable ) {
+    gulp.watch.apply( gulp, watchable );
+  });
 });

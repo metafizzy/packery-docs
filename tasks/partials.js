@@ -22,4 +22,6 @@ module.exports = function( site ) {
       .pipe( addPartial );
   });
 
+  site.watch( partialsSrc, [ 'content' ] );
+
 };

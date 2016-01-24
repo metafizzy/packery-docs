@@ -9,7 +9,7 @@ module.exports = function( site ) {
 
   var addJsonData = through2.obj( function( file, enc, callback ) {
     var basename = path.basename( file.path, path.extname( file.path ) );
-    site[ basename ] = JSON.parse( file.contents.toString() );
+    site.data[ basename ] = JSON.parse( file.contents.toString() );
     this.push( file );
     callback();
   });
