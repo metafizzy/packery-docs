@@ -2,18 +2,19 @@
   "name": "packery-docs",
   "version": "1.4.1",
   "dependencies": {
-    "gulp-rename": "^1.2.2",
-    "through2": "^0.6.3",
-    "gulp-concat": "^2.5.2",
-    "highlight.js": "^8.5.0",
-    "gulp": "^3.8.11",
-    "gulp-jshint": "^1.10.0",
-    "gulp-uglify": "^1.1.0",
     "cheerio": "^0.19.0",
     "glob": "^5.0.3",
-    "gulp-front-matter": "^1.2.2",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
     "gulp-filter": "^2.0.2",
-    "handlebars": "^3.0.1"
+    "gulp-front-matter": "^1.2.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.7",
+    "handlebars": "^3.0.1",
+    "highlight.js": "^8.5.0",
+    "through2": "^0.6.3"
   },
   "repository": {
     "type": "git",

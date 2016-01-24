@@ -13,7 +13,6 @@ module.exports = function( site ) {
     });
     return callback( null, file );
   });
-  
 
   gulp.task( 'partials', function() {
     site.partials = [];

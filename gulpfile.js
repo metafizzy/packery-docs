@@ -42,13 +42,7 @@ gulp.task( 'default', [
 
 // version of site used in packery-docs.zip
 
-gulp.task( 'export', [
-  'hint',
-  'content-export',
-  'js',
-  'css',
-  'dist'
-] );
+gulp.task( 'export', [ 'default' ] );
 
 // ----- watch ----- //
 
@@ -56,6 +50,7 @@ gulp.task( 'dev', [
   'hint',
   'dist',
   'prod-assets',
+  'content'
 ], function() {
   site.watches.forEach( function( watchable ) {
     gulp.watch.apply( gulp, watchable );
