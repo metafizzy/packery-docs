@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var through2 = require('through2');
 var path = require('path');
 
-var partialsSrc = 'templates/partials/*.*';
+var partialsSrc = 'modules/*/**/*.mustache';
 
 module.exports = function( site ) {
 
