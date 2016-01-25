@@ -29,7 +29,13 @@ var jsSrc = [
   'bower_components/jquery-ui-draggable/jquery-ui-draggable.js',
   // docs
   'js/controller.js',
-  'js/pages/*.js'
+  'js/pages/*.js',
+  // namespace
+  'js/namespace.js',
+  // modules
+  'modules/*/**/*.js',
+  // init
+  'js/init.js'
 ];
 
 // concat & minify js

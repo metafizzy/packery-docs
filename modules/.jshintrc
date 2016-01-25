@@ -1,0 +1,9 @@
+{
+  "browser": true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "PD": false,
+    "Packery": false
+  }
+}

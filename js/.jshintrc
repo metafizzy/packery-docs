@@ -14,6 +14,7 @@
     "Packery": false,
     "matchesSelector": false,
     "fizzyUIUtils": false,
-    "PS": true
+    "PS": true,
+    "PD": true
   }
 }
