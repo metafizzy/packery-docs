@@ -2,8 +2,6 @@
 
 .index-page #page-nav a {
   -webkit-transition: color 0.4s;
-     -moz-transition: color 0.4s;
-       -o-transition: color 0.4s;
           transition: color 0.4s;
 }
 
@@ -23,7 +21,7 @@
 }
 
 #what p {
-  font-size: 1.15em;
+  font-size: 1.15rem;
 }
 
 #what a { color: #90C; }
