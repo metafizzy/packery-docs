@@ -6,15 +6,13 @@ var dataSrc = 'data/*.json';
 
 module.exports = function( site ) {
 
-  var addJsonData = getTransform( function( file, enc, next ) {
-    var basename = path.basename( file.path, path.extname( file.path ) );
-    site.data[ basename ] = JSON.parse( file.contents.toString() );
-    next( null, file );
-  });
-
   gulp.task( 'json-data', function() {
     return gulp.src( dataSrc )
-      .pipe( addJsonData );
+      .pipe( getTransform( function( file, enc, next ) {
+        var basename = path.basename( file.path, path.extname( file.path ) );
+        site.data[ basename ] = JSON.parse( file.contents.toString() );
+        next( null, file );
+      }) );
   });
 
   gulp.task( 'packery-version', function() {
