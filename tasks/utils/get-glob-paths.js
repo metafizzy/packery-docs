@@ -6,15 +6,16 @@ var glob = require('glob');
  * @returns {Array} paths
  */
 module.exports = function getGlobPaths( src ) {
-  // copy src
-  var paths = src.slice(0);
-  // replace all glob paths with expanded paths
-  src.forEach( function( path, i ) {
+  var paths = [];
+  // expand paths
+  src.forEach( function( path ) {
     if ( glob.hasMagic( path ) ) {
       var files = glob.sync( path );
-      // replace glob with paths
-      paths.splice.apply( paths, [ i, 1 ].concat( files ) );
+      paths = paths.concat( files )
+    } else {
+      paths.push( path );
     }
   });
+
   return paths;
 };

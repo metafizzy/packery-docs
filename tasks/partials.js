@@ -1,24 +1,24 @@
 var gulp = require('gulp');
-var through2 = require('through2');
 var path = require('path');
-
 var partialsSrc = 'modules/*/**/*.mustache';
+var getTransform = require('./utils/get-transform');
+
 
 module.exports = function( site ) {
 
-  var addPartial = through2.obj( function( file, enc, callback ) {
+  var addPartials = getTransform( function( file, enc, next ) {
     site.partials.push({
       name: path.basename( file.path, path.extname( file.path ) ),
       tpl: file.contents.toString()
     });
-    return callback( null, file );
+    next( null, file );
   });
 
   gulp.task( 'partials', function() {
     site.partials = [];
 
     return gulp.src( partialsSrc )
-      .pipe( addPartial );
+      .pipe( addPartials );
   });
 
   site.watch( partialsSrc, [ 'content' ] );

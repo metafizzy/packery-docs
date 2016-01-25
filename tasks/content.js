@@ -1,9 +1,9 @@
 var gulp = require('gulp');
-var fs = require('fs');
 var rename = require('gulp-rename');
 var gulpFilter = require('gulp-filter');
 var frontMatter = require('gulp-front-matter');
 
+var getTransform = require('./utils/get-transform');
 var pageNav = require('./utils/page-nav');
 var highlightCodeBlock = require('./utils/highlight-code-block');
 var build = require('./utils/build');
@@ -13,20 +13,29 @@ var contentSrc = [
   'content/*.mustache'
 ];
 
+// ----- page template ----- //
+
 var pageTemplateSrc = 'templates/page.mustache';
-var pageTemplate = fs.readFileSync( pageTemplateSrc, 'utf8' );
+var pageTemplate;
+
+gulp.task( 'page-template', function() {
+  return gulp.src( pageTemplateSrc )
+    .pipe( getTransform( function( file, enc, next ) {
+      pageTemplate = file.contents.toString();
+      next( null, file );
+    }));
+});
 
 module.exports = function( site ) {
 
-  gulp.task( 'content', [ 'partials', 'data' ], function() {
-    // exclude 404 if export
-    var filterQuery = site.data.isExport ? [ '*', '!**/404.*'] : '*';
+  // exclude 404 if export
+  var filterQuery = site.data.isExport ? [ '*', '!**/404.*'] : '*';
 
-    site.data.source_url_path = site.data.is_export ? '' :
-      'https://cdnjs.cloudflare.com/ajax/libs/packery/' +
-      site.data.packery_version + '/';
+  site.data.sourceUrlPath = site.data.isExport ? '' :
+    'https://cdnjs.cloudflare.com/ajax/libs/packery/' +
+    site.data.packeryVersion + '/';
 
-    var filter = gulpFilter( filterQuery );
+  gulp.task( 'content', [ 'partials', 'data', 'page-template' ], function() {
 
     var buildOptions = {
       layout: pageTemplate,
@@ -34,7 +43,7 @@ module.exports = function( site ) {
     };
 
     return gulp.src( contentSrc )
-      .pipe( filter )
+      .pipe( gulpFilter( filterQuery ) )
       .pipe( frontMatter({
         property: 'frontMatter',
         remove: true
