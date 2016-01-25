@@ -12,7 +12,7 @@
 .gh-button__title,
 .gh-button__stat {
   float: left;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 20px;
   padding: 5px 10px;
@@ -20,7 +20,7 @@
 }
 
 .gh-button__icon {
-  height: 20px;
+  height: 21px;
   fill: #333;
   display: inline-block;
   vertical-align: bottom;
