@@ -7,14 +7,9 @@ PD.modules['page-nav'] = function( elem ) {
   }
 
   var pageNav = elem;
-  var isAtTop = null;
+  var wasAtTop = null;
   // add initial class
   var style = getComputedStyle( pageNav );
-
-  // only add scroll event if fixed
-  if ( style.position !== 'fixed' ) {
-    return;
-  }
 
   var navY = pageNav.offsetHeight / 2 + parseInt( style.top, 10 );
   var installHeader = document.querySelector('#install');
@@ -29,19 +24,22 @@ PD.modules['page-nav'] = function( elem ) {
   var scrollTimeout;
 
   // debounce scroll
-  window.addEventListener( 'scroll', function() {
-    if ( scrollTimeout ) {
-      clearTimeout( scrollTimeout );
-    }
-    scrollTimeout = setTimeout( onDebounceScroll, 100 );
-  });
-
   function onDebounceScroll() {
-    var wasAtTop = isAtTop;
-    isAtTop = window.pageYOffset + navY < contentY;
+    var isAtTop = window.pageYOffset + navY < contentY;
     if ( ( isAtTop && wasAtTop === null ) || isAtTop != wasAtTop ) {
       pageNav.classList[ isAtTop ? 'add' : 'remove' ]('is-at-top');
     }
+    wasAtTop = isAtTop;
+  }
+
+  // only add scroll event if fixed
+  if ( style.position == 'fixed' ) {
+    window.addEventListener( 'scroll', function() {
+      if ( scrollTimeout ) {
+        clearTimeout( scrollTimeout );
+      }
+      scrollTimeout = setTimeout( onDebounceScroll, 100 );
+    });
   }
 
 };
