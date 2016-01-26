@@ -1,111 +1,29 @@
-/* ---- footer ---- */
+/* site-footer
+------------------------- */
 
-#footer {
+.site-footer {
   position: relative;
   padding: 2.0em 0;
-  background: hsla(0, 60%, 50%, 0.1);
+  background: #90C;
+  color: #FAF3F6;
+  z-index: 3; /* above page-nav */
 }
 
-/* ---- other-products ---- */
-
-.other-product > a {
-  position: relative; /* gonna abs */
-  display: block;
-  padding: 10px;
-  background: hsla(0, 60%, 50%, 0.1);
-  border-radius: 5px;
+.site-footer__copy {
+  font-size: 1.2rem;
 }
 
-.other-product > a:hover {
+.site-footer .primary-content {
+  max-width: 1100px;
 }
 
-.other-product > a:after {
-  content: '';
-  display: block;
-  clear: both;
+.site-footer a {
+  color: #EA3;
 }
-
-.other-product img {
-  float: left;
-  display: block;
-  width: 100%;
-  max-width: 140px;
-  margin-right: 1.0em;
-  border-radius: 5px;
-}
-
-.other-product h3 {
-  font-weight: bold;
-  font-size: 32px;
-  margin-bottom: 0.25em;
-  margin-top: 0px;
-  padding-top: 5px;
-}
-
-.other-product .description {
-  font-size: 15px;
-}
-
-/* ---- footer brand ---- */
-
-.footer__brand {
-
-  padding: 0 10px;
-}
-
-.footer__metafizzy-logo {
-  height: 50px;
-}
-
-.footer__metafizzy-wordmark {
-  width: 140px;
-  height: auto;
-  fill: #A80;
-}
-
-.metafizzy-logo__body {
-  fill: #A80;
-}
-
-.metafizzy-logo__stripe1 { fill: transparent; }
-.metafizzy-logo__stripe2 { fill: transparent; }
-.metafizzy-logo__stripe3 { fill: transparent; }
-.metafizzy-logo__stripe4 { fill: transparent; }
-
-a:hover .footer__metafizzy-wordmark {
-  fill: #90C;
-}
-
-a:hover .metafizzy-logo__body { fill: transparent; }
-
-a:hover .metafizzy-logo__stripe1 { fill: #C25; }
-a:hover .metafizzy-logo__stripe2 { fill: #E62; }
-a:hover .metafizzy-logo__stripe3 { fill: #EA0; }
-a:hover .metafizzy-logo__stripe4 { fill: #19F; }
 
 /* desktop */
 @media screen and ( min-width: 960px ) {
-  #footer {
+  .site-footer {
     margin-top: 40px;
   }
-
-  .footer__brand {
-    width: 180px;
-    position: absolute;
-    left: 0;
-    bottom: 3.0em;
-  }
-
-  .footer__metafizzy-logo {
-    height: 100px;
-    display: block;
-    margin: 0 auto 10px;
-  }
-
-  .footer__metafizzy-wordmark {
-    width: 140px;
-    display: block;
-    margin: 0 auto;
-  }
-
 }

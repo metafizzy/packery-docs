@@ -3,12 +3,15 @@
 
 .what-is-packery {
   background: #0C9;
-  padding: 20px 0;
 }
 
 .what-is-packery__title,
 .what-is-packery__description {
   color: white;
+}
+
+.main .what-is-packery__title {
+  border: none;
 }
 
 .what-is-packery__description {
