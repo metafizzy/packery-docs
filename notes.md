@@ -2,7 +2,7 @@
 
 move to modules
 
-move all tasks into tasks/
+<!-- move all tasks into tasks/ -->
 
 remove primary-content
 
@@ -15,3 +15,5 @@ Reorder Options
 Appendix -> Extras
 
 FAQ -> Extras
+
+remove `row` for `duo`

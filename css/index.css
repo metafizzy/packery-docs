@@ -8,13 +8,3 @@
 #page-nav.is-at-top a {
   color: white;
 }
-
-/* ---- desktop  ---- */
-
-@media screen and ( min-width: 960px ) {
-
-  .index-page #content > .primary-content:first-child {
-    padding: 0;
-  }
-
-}

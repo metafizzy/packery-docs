@@ -12,16 +12,6 @@
   clear: both;
 }
 
-/* ---- #content ---- */
-
-#content > .primary-content:nth-child(2n+1) {
-  background: hsla(0, 60%, 50%, 0.1);
-}
-
-#content li {
-  margin-bottom: 0.2em;
-}
-
 /* ---- parameters ---- */
 
 .params {

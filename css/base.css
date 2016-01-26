@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6,
 p,
 ol, ul,
 pre {
-  margin-top: 0;
+  margin-top: 0.8em;
   margin-bottom: 1.0em;
 }
 
@@ -65,19 +65,19 @@ h1, h2 {
 
 h1 {
   font-weight: bold;
-  font-size: 2.65em;
+  font-size: 2.65rem;
   margin-bottom: 0.2em;
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   margin-bottom: 0.5em;
 }
 
 h4 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
 /* ---- lists ---- */

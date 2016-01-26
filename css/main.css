@@ -1,0 +1,33 @@
+/* main
+------------------------- */
+
+.main h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 0.4em 0;
+}
+
+.main h2:target {
+  padding-left: 0.5em;
+  background: #C09;
+  color: white;
+  border-top-color: #C90;
+}
+
+.main li {
+  margin-bottom: 0.2em;
+}
+
+/* tablet-ish */
+@media screen and ( min-width: 800px ) {
+
+  .main .primary-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .main .primary-content > * {
+    max-width: 900px;
+  }
+
+}

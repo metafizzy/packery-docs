@@ -6,31 +6,15 @@
   padding-right: 10px;
 }
 
-#content .primary-content > * {
+.main .primary-content > * {
   max-width: 700px;
 }
 
-#content #notification,
-#content #hero-demos {
-  max-width: none;
+/* stuff that can go extra wide */
+.main .primary-content .row,
+.main #notification {
+  max-width: 1200px;
 }
-
-/* ---- #content ---- */
-
-#content h2,
-#content .horiz-rule {
-  font-size: 1.7em;
-  font-weight: 400;
-  padding: 0.4em 0;
-}
-
-#content h2:target {
-  padding-left: 0.5em;
-  background: #C09;
-  color: white;
-  border-top-color: #C90;
-}
-
 /* ---- row ---- */
 
 .row .cell {
@@ -52,22 +36,6 @@
 
 /* tablet-ish */
 @media screen and ( min-width: 800px ) {
-
-  #content .primary-content {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  #content .primary-content > * {
-    max-width: 900px;
-  }
-
-  /* stuff that can go extra wide */
-  #content .primary-content .row,
-  #content #notification,
-  #content #hero-demos {
-    max-width: 1200px;
-  }
 
   .row {
     margin-bottom: 0.8em;
