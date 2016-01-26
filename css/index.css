@@ -9,25 +9,6 @@
   color: white;
 }
 
-/* ---- what is packery ---- */
-
-#what {
-  background: #0C9;
-}
-
-#what,
-#what h2 {
-  color: white;
-}
-
-#what p {
-  font-size: 1.15rem;
-}
-
-#what a { color: #90C; }
-
-#what a:hover { color: #333; }
-
 /* ---- desktop  ---- */
 
 @media screen and ( min-width: 960px ) {

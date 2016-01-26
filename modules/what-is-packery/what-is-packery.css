@@ -1,0 +1,21 @@
+/* what-is-packery
+------------------------- */
+
+.what-is-packery {
+  background: #0C9;
+  padding: 20px 0;
+}
+
+.what-is-packery__title,
+.what-is-packery__description {
+  color: white;
+}
+
+.what-is-packery__description {
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.what-is-packery__description a { color: #90C; }
+
+.what-is-packery__description a:hover { color: #333; }

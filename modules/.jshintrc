@@ -2,8 +2,10 @@
   "browser": true,
   "undef": true,
   "unused": true,
+  "strict": true,
   "globals": {
     "PD": false,
-    "Packery": false
+    "Packery": false,
+    "Draggabilly": false
   }
 }
