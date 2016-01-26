@@ -1,4 +1,5 @@
-/* ---- site nav ---- */
+/* site-nav
+------------------------- */
 
 .site-nav {
   background: #C09;
@@ -22,7 +23,7 @@
 .site-nav__title {
   float: left;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   background: #C90;
   margin: 0;
 }
@@ -35,6 +36,7 @@
 
 .site-nav__title a:hover {
   background: #90C;
+  color: white;
 }
 
 .site-nav .primary-content {
@@ -55,7 +57,6 @@
 
 .site-nav__item {
   float: left;
-  font-size: 15px;
 }
 
 .site-nav__item a {
@@ -66,6 +67,7 @@
 
 .site-nav__item a:hover {
   background: #C90;
+  color: white;
 }
 
 /* selected */
@@ -95,11 +97,7 @@
   .site-nav__title {
     width: 200px;
     height: 60px;
-    font-size: 2.0em;
-  }
-
-  .site-nav__item {
-    font-size: 17px;
+    font-size: 2.0rem;
   }
 
 }

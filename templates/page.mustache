@@ -32,7 +32,6 @@
 
   {{> site-nav }}
 
-
   {{! display hero only on index page }}
   {{#if page.is_homepage}}
     {{> hero }}
@@ -45,8 +44,8 @@
         <h1>{{page.title}}</h1>
         {{/unless}}
 
-      {{! page nav }}
-      <ul id="page-nav"></ul>
+      {{! page-nav }}
+      <ul class="page-nav"></ul>
     </div>
 
 {{! all page content goes here }}

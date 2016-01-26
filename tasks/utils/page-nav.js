@@ -16,11 +16,12 @@ module.exports = function pageNav() {
       // set id slug
       $header.attr( 'id', slug );
       // add item to pageNav
-      pageNavHtml += '<li class="page-nav__item--' + header.name + '">' +
-        '<a href="#' + slug + '">' + title + '</a></li>\n';
+      pageNavHtml += '<li class="page-nav__item page-nav__item--' +
+        header.name + '">' + '<a href="#' + slug + '">' + title +
+        '</a></li>\n';
     });
     // add pageNavHtml to page
-    $('#page-nav').html( pageNavHtml );
+    $('.page-nav').html( pageNavHtml );
 
     file.contents = new Buffer( $.html() );
     this.push( file );
