@@ -6,7 +6,7 @@
   background: #90C;
   border: none;
   padding: 0.8em 1.0em;
-  color: white;
+  color: #F8F8F8;
   text-shadow: 0 -1px hsla(0, 0%, 0%, 0.3);
   cursor: pointer;
   border-radius: 7px;
@@ -14,7 +14,7 @@
 
 .button:hover {
   background: #B2E;
-  color: white;
+  color: #F8F8F8;
 }
 
 .button:active {

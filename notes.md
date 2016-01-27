@@ -17,3 +17,15 @@ Appendix -> Extras
 FAQ -> Extras
 
 remove `row` for `duo`
+
+
+## Fizzy docs modules
+
+buy button
+
+edit demo
+
+duo
+
+page-nav
+

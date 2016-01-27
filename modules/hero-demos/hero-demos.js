@@ -3,14 +3,16 @@ PD.modules['hero-demos'] = function( elem ) {
 
   var masonryPackery = new Packery( '.hero-demos__grid--masonry', {
     itemSelector: '.hero-demos__grid__item',
-    gutter: '.hero-demos__grid__masonry-gutter-sizer'
+    gutter: '.hero-demos__grid__masonry-gutter-sizer',
+    percentPosition: true
   });
 
   var dashPackery = new Packery( '.hero-demos__grid--dash', {
     itemSelector: '.hero-demos__grid__item',
     gutter: 8,
     columnWidth: '.hero-demos__grid__dash-grid-sizer',
-    rowHeight: 80
+    rowHeight: 80,
+    percentPosition: true
   });
 
   addDraggies( masonryPackery );

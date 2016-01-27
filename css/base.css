@@ -4,7 +4,7 @@ orange #C90
 green #0C9
 purple #90C
 magenta #C09
-
+light gray #F8F8F8
 */
 
 
@@ -26,7 +26,7 @@ html.export {
 
 body {
   color: #555;
-  background: #FAF3F5;
+  background: #F8F8F8;
 }
 
 /* margins */
@@ -42,14 +42,13 @@ pre {
 
 a,
 a code {
-  color: #A80;
+  color: #C09;
   text-decoration: none;
-  background: hsla(30, 90%, 50%, 0.03);
 }
 
 a:hover,
 a:hover code {
-  color: #90C;
+  color: #C90;
 }
 
 
@@ -60,7 +59,7 @@ h1, h2, h3, h4 {
 }
 
 h1, h2 {
-  color: #C09;
+/*  color: #C09;*/
 }
 
 h1 {

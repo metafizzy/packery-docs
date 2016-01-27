@@ -2,17 +2,26 @@
 ------------------------- */
 
 .main h2 {
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   font-weight: 400;
   padding: 0.4em 0;
   border-top: 2px solid;
 }
 
-.main h2:target {
+.main h3 {
+  border-top: 1px solid #BBB;
+  padding-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.main h2:target,
+.main h3:target {
   padding-left: 0.5em;
   background: #C09;
   color: white;
-  border-top-color: #C09;
+  border-color: #C09;
 }
 
 .main li {

@@ -3,7 +3,7 @@
 
 .hero {
   background: #C09;
-  color: #FAF3F5;
+  color: #F8F8F8;
   position: relative;
   overflow: hidden;
 }
@@ -41,7 +41,7 @@
   letter-spacing: -0.01em;
   margin: 0 0 10px;
   padding-top: 10px;
-  color: white;
+  color: #F8F8F8;
 }
 
 .hero__tagline {

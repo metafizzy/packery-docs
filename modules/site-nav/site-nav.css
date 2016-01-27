@@ -26,19 +26,18 @@
   float: left;
   text-align: center;
   font-size: 1.5rem;
-  background: #C90;
   margin: 0;
 }
 
 .site-nav__title a {
   padding: 0 0.8em;
   display: block;
-  color: white;
+  color: #F8F8F8;
 }
 
 .site-nav__title a:hover {
   background: #90C;
-  color: white;
+  color: #F8F8F8;
 }
 
 .site-nav .primary-content {
@@ -62,14 +61,14 @@
 }
 
 .site-nav__item a {
-  color: white;
+  color: #F8F8F8;
   display: block;
   padding: 0 1.0em;
 }
 
 .site-nav__item a:hover {
   background: #C90;
-  color: white;
+  color: #F8F8F8;
 }
 
 /* selected */

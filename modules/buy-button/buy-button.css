@@ -5,7 +5,7 @@
   display: block;
   margin-bottom: 10px;
   line-height: 1.3em;
-  border: 2px solid;
+  background: #EAEAEA;
   border-radius: 8px;
   border-color: #0C9;
   padding: 10px 100px 10px 10px;
@@ -21,7 +21,7 @@
 .buy-button__price {
   font-size: 1.6em;
   background: #0C9;
-  color: white;
+  color: #F8F8F8;
   position: absolute;
   right: 0;
   top: 0;
@@ -109,6 +109,7 @@
     line-height: 1.3;
     padding-top: 15px;
     padding-bottom: 10px;
+    border-radius: 0 0 8px 8px;
   }
 
   .buy-button-trio .buy-button__price__dollar {

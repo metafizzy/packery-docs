@@ -12,14 +12,8 @@ PD.modules['page-nav'] = function( elem ) {
   var style = getComputedStyle( pageNav );
 
   var navY = pageNav.offsetHeight / 2 + parseInt( style.top, 10 );
-  var installHeader = document.querySelector('#install');
-  var contentY;
-  function getContentY() {
-    contentY = installHeader.getBoundingClientRect().top + window.pageYOffset;
-  }
-  // measure again after packery init
-  setTimeout( getContentY, 200 );
-  setTimeout( onDebounceScroll, 210 );
+  var what = document.querySelector('.what-is-packery');
+  var contentY = what.getBoundingClientRect().top + window.pageYOffset;
 
   var scrollTimeout;
 
@@ -31,6 +25,8 @@ PD.modules['page-nav'] = function( elem ) {
     }
     wasAtTop = isAtTop;
   }
+
+  onDebounceScroll();
 
   // only add scroll event if fixed
   if ( style.position == 'fixed' ) {

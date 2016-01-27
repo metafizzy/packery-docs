@@ -12,7 +12,7 @@
 .site-footer-brand__metafizzy-wordmark {
   width: 140px;
   height: auto;
-  fill: #C09;
+  fill: #333;
 }
 
 .site-footer-brand .metafizzy-logo__body {
@@ -25,7 +25,7 @@
 .site-footer-brand .metafizzy-logo__stripe4 { fill: transparent; }
 
 .site-footer-brand a:hover .metafizzy-wordmark {
-  fill: white;
+  fill: #C25;
 }
 
 .site-footer-brand a:hover .metafizzy-logo__body { fill: transparent; }

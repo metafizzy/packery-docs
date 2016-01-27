@@ -5,13 +5,13 @@
   position: relative; /* gonna abs */
   display: block;
   padding: 0px;
-  background: #FAF3F6;
+  background: #F8F8F8;
   border-radius: 5px;
 }
 
 .site-footer .other-product__link:hover {
   background: #C09;
-  color: #FAF3F6;
+  color: #F8F8F8;
 }
 
 .other-product__link:after {
@@ -39,4 +39,5 @@
 
 .other-product__description {
   line-height: 1.2;
+}
 }
