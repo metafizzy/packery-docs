@@ -5,16 +5,13 @@
   position: relative; /* gonna abs */
   display: block;
   padding: 0px;
-  background: hsla(0, 0%, 0%, 0.5);
+  background: #FAF3F6;
   border-radius: 5px;
-  color: #FAF3F6;
 }
 
-.site-footer .other-product__link { color: #FAF3F6; }
-
-.other-product__link:hover {
-  background: #FAF3F6;
-  color: #90C;
+.site-footer .other-product__link:hover {
+  background: #C09;
+  color: #FAF3F6;
 }
 
 .other-product__link:after {

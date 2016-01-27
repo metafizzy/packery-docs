@@ -30,30 +30,32 @@
 </head>
 <body class="{{basename}}-page" data-page="{{basename}}">
 
-  {{> site-nav }}
+{{> site-nav }}
 
-  {{! display hero only on index page }}
-  {{#if page.is_homepage}}
-    {{> hero }}
-  {{/if}}
+{{! display hero only on index page }}
+{{#if page.is_homepage}}
+  {{> hero }}
+{{/if}}
 
-  <div id="content" class="main">
+<div id="content" class="main">
 
-    <div class="primary-content">
-      {{#unless page.is_homepage}}
-        <h1>{{page.title}}</h1>
-        {{/unless}}
+  <div class="primary-content">
+    {{#unless page.is_homepage}}
+      <h1>{{page.title}}</h1>
+      {{/unless}}
 
-      {{! page-nav }}
-      <ul class="page-nav" data-js="page-nav"></ul>
-    </div>
+    {{! page-nav }}
+    <ul class="page-nav" data-js="page-nav"></ul>
+  </div>
 
 {{! all page content goes here }}
 {{> body}}
 
-  </div>
+</div>
 
-  {{> site-footer }}
+{{> site-nav }}
+
+{{> site-footer }}
 
 <!-- Packery does NOT require jQuery.  -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

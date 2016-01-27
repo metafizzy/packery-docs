@@ -4,9 +4,9 @@
 .site-footer {
   position: relative;
   padding: 2.0em 0;
-  background: #90C;
+  background: #0C9;
   color: #FAF3F6;
-  z-index: 3; /* above page-nav */
+  z-index: 3;/* above page-nav */
 }
 
 .site-footer__copy {
@@ -18,12 +18,9 @@
 }
 
 .site-footer a {
-  color: #EA3;
+  color: #A07;
 }
 
-/* desktop */
-@media screen and ( min-width: 960px ) {
-  .site-footer {
-    margin-top: 40px;
-  }
+.site-footer a:hover {
+  color: #905;
 }
