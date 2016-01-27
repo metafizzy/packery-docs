@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width" />
   <meta name="description" content="The bin-packing layout library." />
 
-  <title>Packery{{#unless page.is_homepage}} &middot; {{page.title}}{{/unless}}</title>
+  <title>Packery{{#unless page.isHomepage}} &middot; {{page.title}}{{/unless}}</title>
 
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700,400italic' rel='stylesheet'>
 
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@metafizzyco" />
   <meta name="twitter:url" content="http://packery.metafizzy.co/{{basename}}.html" />
-  <meta name="twitter:title" content="Packery{{#unless page.is_homepage}} {{page.title}}{{/unless}}" />
+  <meta name="twitter:title" content="Packery{{#unless page.isHomepage}} {{page.title}}{{/unless}}" />
   <meta name="twitter:description" content="The bin-packing layout library. Packery makes your crazy and clever layout a real thing. Be clever. Get crazy." />
 
 </head>
@@ -33,7 +33,7 @@
 {{> site-nav }}
 
 {{! display hero only on index page }}
-{{#if page.is_homepage}}
+{{#if page.isHomepage}}
   {{> hero }}
   {{> what-is-packery }}
   {{> hero-demos }}
@@ -42,7 +42,7 @@
 <div id="content" class="main">
 
   <div class="primary-content">
-    {{#unless page.is_homepage}}
+    {{#unless page.isHomepage}}
       <h1>{{page.title}}</h1>
       {{/unless}}
 
