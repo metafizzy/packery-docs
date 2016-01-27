@@ -13,7 +13,7 @@ PS.pages = {};
 
 // -------------------------- page controller -------------------------- //
 
-docReady( function() {
+document.addEventListener( 'DOMContentLoaded', function() {
   // get name of page
   var pageAttr = document.body.getAttribute('data-page');
   // trigger controller if there

@@ -8,11 +8,11 @@
 
 var PS = window.PS;
 
-var transitionProp = getStyleProperty('transition');
+var docElem = document.documentElement;
+var transitionProp = typeof docElem.style.transition == 'string' ?
+  'transition' : 'WebkitTransition';
 var transitionEndEvent = {
   WebkitTransition: 'webkitTransitionEnd',
-  MozTransition: 'transitionend',
-  OTransition: 'otransitionend',
   transition: 'transitionend'
 }[ transitionProp ];
 

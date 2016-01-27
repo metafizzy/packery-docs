@@ -1,19 +1,15 @@
 {
   "name": "packery-docs",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "author": "Metafizzy",
   "dependencies": {
-    "classie": ">=1 <2",
-    "doc-ready": ">=1 <2",
-    "draggabilly": ">=1 <2",
-    "eventie": ">=1 <2",
-    "get-style-property": ">=1 <2",
-    "jquery": "~1",
+    "draggabilly": "2",
+    "jquery": "2",
     "jquery-ui-draggable": "http://gist.github.com/4985610.git",
-    "normalize.css": "~3",
-    "packery": "latest",
-    "matches-selector": "~1.0.3",
-    "fizzy-ui-utils": "~1.0.1",
-    "jquery-bridget": "~1.1.0"
+    "jquery-bridget": "2",
+    "normalize.css": "3",
+    "packery": "2.0.0-beta1",
+    "desandro-matches-selector": "2",
+    "fizzy-ui-utils": "2"
   }
 }

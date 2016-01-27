@@ -19,7 +19,8 @@ function setText( elem, value ) {
 
 // -------------------------- notify -------------------------- //
 
-var transitionProp = getStyleProperty('transition');
+var transitionProp = typeof docElem.style.transition == 'string' ?
+  'transition' : 'WebkitTransition';
 
 function timeStamp() {
   var now = new Date();
