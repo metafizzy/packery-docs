@@ -4,6 +4,7 @@
   "author": "Metafizzy",
   "dependencies": {
     "draggabilly": "2",
+    "imagesloaded": "4",
     "jquery": "2",
     "jquery-ui-draggable": "http://gist.github.com/4985610.git",
     "jquery-bridget": "2",

@@ -69,6 +69,7 @@
 }
 
 /* selected */
+.layout-page .site-nav__item--layout a,
 .options-page .site-nav__item--options a,
 .methods-page .site-nav__item--methods a,
 .events-page .site-nav__item--events a,

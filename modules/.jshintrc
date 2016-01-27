@@ -4,6 +4,7 @@
   "unused": true,
   "strict": true,
   "globals": {
+    "imagesLoaded": false,
     "PD": false,
     "Packery": false,
     "Draggabilly": false

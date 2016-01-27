@@ -11,6 +11,10 @@
   max-width: 900px;
 }
 
+.primary-content .duo.example {
+  max-width: none;
+}
+
 /* desktop */
 @media screen and ( min-width: 960px ) {
 

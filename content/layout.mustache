@@ -1,0 +1,128 @@
+---
+title: Layout
+---
+
+{{! --------------------------------------------------- }}
+
+<h2>Item sizing</h2>
+
+<p>All sizing and styling of items is handled by your own CSS.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` html
+    <div class="grid">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      ...
+    </div>
+    ```
+
+    ``` css
+    .grid-item {
+      float: left;
+      width: 60px;
+      height: 60px;
+      background: #e6e5e4;
+      border: 2px solid #b6b5b4;
+    }
+
+    .grid-item--width2 { width: 120px; }
+    .grid-item--height2 { height: 120px; }
+    ```
+  </div>
+  <div class="duo__cell examle__demo">
+    <div class="grid" data-packery>
+      {{> grid-items }}
+    </div>
+
+    {{> edit-demo default="QyrEgX" }}
+  </div>
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>Responsive layouts</h3>
+
+<p>Item sizes can be set with percentages for responsive layouts. Set <code>percentPosition: <span class="literal">true</span></code> so item positions are set with percentages to reduce adjustment transitions on window resize.</p>
+
+<p></p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` html
+    <div class="grid">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      ...
+    </div>
+    ```
+
+    ``` css
+    /* fluid 5 columns */
+    .grid-item { width: 20%; }
+    /* 2 columns */
+    .grid-item--width2 { width: 40%; }
+    ```
+
+    ``` js
+    $('.grid').packery({
+      percentPosition: true
+    })
+    ```
+  </div>
+  <div class="duo__cell examle__demo">
+    <div class="grid grid--fluid-5-col"
+      data-packery='{ "percentPosition": true }'>
+      {{> grid-items-fewer }}
+    </div>
+
+    {{> edit-demo default="xZjOXq" }}
+  </div>
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h2>imagesLoaded</h2>
+
+<p>Unloaded images can throw off Packery layouts and cause item elements to overlap. <a href="http://imagesloaded.desandro.com">imagesLoaded</a> resolves this issue.</p>
+
+<p>Initialize Packery, then trigger <a href="methods.html#layout"><code>layout</code></a> after each image loads.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    // init Packery
+    var $grid = $('.grid').packery({
+      // options...
+    });
+    // layout Packery after each image loads
+    $grid.imagesLoaded().progress( function() {
+      $grid.packery();
+    });
+    ```
+  </div>
+  <div class="duo__cell example__demo">
+    {{> imagesloaded-progress }}
+  </div>
+</div>
+
+<p>Or, initialize Packery after all images have been loaded.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    var $grid = $('.grid').imagesLoaded( function() {
+      // init Packery after all images have loaded
+      $grid.packery({
+        // options...
+      });
+    });
+    ```
+  </div>
+  <div class="duo__cell example__demo">
+    {{> imagesloaded-callback }}
+  </div>
+</div>

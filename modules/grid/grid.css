@@ -1,0 +1,73 @@
+/* grid
+------------------------- */
+
+.grid {
+  background: #EAEAEA;
+  position: relative;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- counting ---- */
+
+.grid--counting {
+  counter-reset: item;
+}
+
+.grid--counting .grid-item:before {
+  counter-increment: item;
+  content: counter(item);
+  display: block;
+  color: #555;
+  padding-top: 0.2em;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ---- horizontal ---- */
+
+/* horizontal examples need height */
+.grid--horizontal {
+  height: 334px;
+}
+
+/* ---- static banner ---- */
+
+.grid--has-banner {
+  position: relative;
+}
+
+.static-banner {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background: hsla(210, 100%, 50%, 0.8);
+  z-index: 1;
+  padding: 2px 20px;
+  color: white;
+  pointer-events: none;
+}
+
+/* ---- fixed-width ---- */
+
+.grid--fixed-width {
+  width: 304px;
+}
+
+/* ---- stamp ---- */
+
+.grid--has-stamp {
+  position: relative;
+}
+
+/* ---- fit-width ---- */
+
+/* centered */
+.grid--fit-width {
+  margin: 0 auto;
+}

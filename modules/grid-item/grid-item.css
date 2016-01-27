@@ -1,0 +1,131 @@
+/* grid-item
+------------------------- */
+
+.grid-item {
+  float: left;
+  width: 60px;
+  height: 60px;
+  background: #C09;
+  border: 2px solid hsla(0, 0%, 0%, 0.4);
+}
+
+.grid-item--width2 { width: 120px; }
+.grid-item--height2 { height: 120px; }
+
+.grid-item--width3 { width: 180px; }
+.grid-item--height3 { height: 180px; }
+
+.grid-item--gigante {
+  width: 180px;
+  height: 240px;
+}
+
+.grid--clickable .grid-item:hover {
+  border-color: #28F;
+  background: #8CF;
+  cursor: pointer;
+}
+
+/* ---- insert demo ---- */
+
+.grid-item .number {
+  line-height: 50px;
+  text-align: center;
+  color: #333;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+/* ---- fluid-5-col ---- */
+
+.grid--fluid-5-col .grid-item,
+.grid--fluid-5-col .grid-sizer { width: 20%; }
+
+.grid--fluid-5-col .grid-item--width2 { width: 40%; }
+
+/* ---- grid--masonry-gutter ---- */
+
+.grid--has-gutter .grid-item--width2 {
+  width: 110px;
+}
+
+/* ---- grid--masonry-gutter-bottom ---- */
+
+.grid--masonry-gutter-bottom .grid-item {
+  margin-bottom: 10px;
+}
+
+.grid--masonry-gutter-bottom .grid-item--height2 {
+  height: 110px;
+}
+
+/* ---- grid--packery-gutter ---- */
+
+.grid--packery-gutter .grid-item--width2 { width: 110px; }
+.grid--packery-gutter .grid-item--height2 { height: 110px; }
+
+/* ---- grid--fluid-gutter ---- */
+
+.grid--fluid-gutter .grid-item,
+.grid--fluid-gutter .grid-sizer {
+  width: 22%;
+}
+
+.grid--fluid-gutter .gutter-sizer {
+  width: 4%;
+}
+
+.grid--fluid-gutter .grid-item--width2 {
+  width: 48%;
+}
+
+/* ---- masonry-horizontal ---- */
+
+.grid--masonry-horizontal-gutter .grid-item--height2 {
+  height: 110px;
+}
+
+/* ----  ---- */
+
+.grid--masonry-horizontal-gutter-right .grid-item {
+  margin-right: 10px;
+}
+
+.grid--masonry-horizontal-gutter-right .grid-item--width2 {
+  width: 110px;
+}
+
+/* ---- cells-by-row-element-sizing ---- */
+
+.grid--cells-by-row-element-sizing .grid-item {
+  width: 13%;
+}
+
+.grid--cells-by-row-element-sizing .grid-item--width2 {
+  width: 23%;
+}
+
+.grid--cells-by-row-element-sizing .grid-sizer {
+  width: 25%;
+  height: 110px;
+}
+
+/* ---- cells-by-column-element-sizing ---- */
+
+.grid--cells-by-column-element-sizing .grid-item {
+  height: 13%;
+}
+
+.grid--cells-by-column-element-sizing .grid-item--width2 {
+  height: 23%;
+}
+
+.grid--cells-by-column-element-sizing .grid-sizer {
+  height: 25%;
+  width: 110px;
+}
+
+/* ---- fitrows-gutter ---- */
+
+.grid--fit-rows-gutter .grid-item--width2 { width: 110px; }
+.grid--fit-rows-gutter .grid-item--width3 { width: 170px; }
