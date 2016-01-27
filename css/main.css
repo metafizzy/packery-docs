@@ -1,6 +1,10 @@
 /* main
 ------------------------- */
 
+.main {
+  padding-bottom: 40px;
+}
+
 .main h2 {
   font-size: 2.0rem;
   font-weight: 400;

@@ -1,0 +1,48 @@
+/* in-use-gallery
+------------------------- */
+
+.primary-content .in-use-gallery {
+  max-width: none;
+}
+
+/* clearfix */
+.in-use-gallery:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.in-use-gallery__item {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 40px;
+}
+
+.in-use-gallery__item__link {
+  display: block;
+}
+
+.in-use-gallery__item__image {
+  display: block;
+  max-width: 100%;
+}
+
+.in-use-gallery__item__title {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+/* ---- desktop media query ---- */
+
+@media screen and ( min-width: 960px ) {
+
+  .in-use-gallery__item {
+    width: 23%;
+  }
+}
+ width: 23%;
+  }
+}
