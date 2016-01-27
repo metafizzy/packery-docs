@@ -74,21 +74,21 @@ isHomepage: true
 
 <h3>HTML</h3>
 
-<p>Packery works on a container element with a group of similar child items.</p>
-
-``` html
-<div id="container">
-  <div class="item">...</div>
-  <div class="item w2">...</div>
-  <div class="item">...</div>
-  ...
-</div>
-```
-
-<p>Include the Packery script in your site.</p>
+<p>Include the Packery <code>.js</code> file in your site.</p>
 
 ``` html
 <script src="/path/to/packery.pkgd.min.js"></script>
+```
+
+<p>Packery works on a container element with a group of similar child items.</p>
+
+``` html
+<div class="grid">
+  <div class="grid-item">...</div>
+  <div class="grid-item grid-item--width2">...</div>
+  <div class="grid-item">...</div>
+  ...
+</div>
 ```
 
 {{! --------------------------------------------------- }}
@@ -98,31 +98,45 @@ isHomepage: true
 <p>All sizing of items is handled by your CSS.</p>
 
 ``` css
-.item { width: 25%; }
-.item.w2 { width: 50%; }
+.grid-item { width: 25%; }
+.grid-item--width2 { width: 50%; }
 ```
 
-<h3>Initialize with JavaScript</h3>
+{{! --------------------------------------------------- }}
 
-<p>Initialize a Packery instance as a jQuery plugin:  <code>$('#container').packery()</code>.</p>
+<h3>Initialize with jQuery</h3>
+
+<p>You can use Packery as a jQuery plugin:
+  <code>$(<span class="string">'selector'</span>).packery()</code>.</p>
 
 ``` js
-var $container = $('#container');
-// init
-$container.packery({
-  itemSelector: '.item',
+$('.grid').packery({
+  // options
+  itemSelector: '.grid-item',
   gutter: 10
 });
 ```
 
-<p>Initialize a Packery instance with <code><span class="keyword">new</span> Packery( element, options )</code>. The <code>Packery</code> constructor accepts two arguments: the container element and an <a href="options.html">options</a> object.</p>
+{{! --------------------------------------------------- }}
+
+<h3>Initialize with Vanilla JavaScript</h3>
+
+<p>You can use Packery with vanilla JS:
+  <code><span class="keyword">new</span> <span class="packery_keyword">Packery</span>( elem, options )</code>.
+  The <code><span class="packery_keyword">Packery</span>()</code> constructor accepts two arguments: the container element and an options object.</p>
 
 ``` js
-var container = document.querySelector('#container');
-var pckry = new Packery( container, {
+var elem = document.querySelector('.grid');
+var pckry = new Packery( elem, {
   // options
-  itemSelector: '.item',
+  itemSelector: '.grid-item',
   gutter: 10
+});
+
+// element argument can be a selector string
+//   for an individual element
+var pckry = new Packery( '.grid', {
+  // options
 });
 ```
 
@@ -130,44 +144,17 @@ var pckry = new Packery( container, {
 
 <h3>Initialize in HTML</h3>
 
-<p>You can initialize Packery in HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. <a href="options.html">Options</a> can be set with a <code>data-packery-options</code> attribute.</p>
+<p>You can initialize Packery in HTML, without writing any JavaScript. Add <code>data-packery</code> attribute to the container element. <a href="options.html">Options</a> can be set in its value.</p>
 
 ``` html
-<div id="container" class="js-packery"
-  data-packery-options='{ "itemSelector": ".item", "gutter": 10 }'>
+<div class="grid" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'>
 ```
 
-<p><strong>Options set in HTML must be valid JSON.</strong> Keys need to be quoted, for example <code><span class="string">"itemSelector"</span>:</code>. Note that the attribute value uses single quotes <code>'</code>, but the JSON entities use double-quotes <code>"</code>.</p>
+<div class="call-out">
+  <p>Options set in HTML must be valid JSON. Keys need to be quoted, for example <code><span class="string">"itemSelector"</span>:</code>. Note the value of <code>data-packery</code> is set with single quotes <code>'</code>, but JSON entities use double-quotes <code>"</code>.</p>
+</div>
 
-<p>That&rsquo;s it! Now let&rsquo;s do some fun stuff with <a href="options.html">options</a> and <a href="methods.html">methods</a>.</p>
-
-
-
-<h2>Vanilla JavaScript</h2>
-
-<p>jQuery is <strong>not</strong> required to use Packery. Given its popularity, jQuery will be used for all example code in these docs. But you can still use Packery with vanilla JS.</p>
-
-<p>Initialize a Packery instance with <code><span class="keyword">new</span> Packery( element, options )</code>. The <code>Packery</code> constructor accepts two arguments: the container element and an <a href="options.html">options</a> object.</p>
-
-``` js
-var container = document.querySelector('#container');
-// init
-var pckry = new Packery( container, {
-  // options
-  itemSelector: '.item',
-  gutter: 10
-});
-```
-
-<p>The element can be a selector string for a single element.</p>
-
-``` js
-var pckry = new Packery( '#container', {
-  // options
-});
-```
-
-</div><div class="primary-content">
+{{! --------------------------------------------------- }}
 
 <h2>Packery in use</h2>
 
@@ -175,11 +162,9 @@ var pckry = new Packery( '#container', {
 
 {{> in-use-gallery }}
 
-</div><div class="primary-content">
+{{! --------------------------------------------------- }}
 
 <h2>Twitter updates from <a href="https://twitter.com/metafizzyco">@metafizzyco</a></h2>
 
 <p><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=packery+from%3Ametafizzyco" data-widget-id="502208269725605888">Packery tweets</a></p>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-</div>
