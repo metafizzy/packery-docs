@@ -3,11 +3,7 @@
 
 .hero-demos {
   background: #EAEAEA;
-}
-
-/* HACK */
-#content .hero-demos .primary-content > * {
-  max-width: 1200px;
+  padding-bottom: 40px;
 }
 
 .hero-demos__instruction {

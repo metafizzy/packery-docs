@@ -1,0 +1,22 @@
+/* primary-content
+------------------------- */
+
+.primary-content {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 1200px;
+}
+
+.primary-content > * {
+  max-width: 900px;
+}
+
+/* desktop */
+@media screen and ( min-width: 960px ) {
+
+  .primary-content {
+    padding-left: 200px;
+    padding-right: 20px;
+  }
+
+}

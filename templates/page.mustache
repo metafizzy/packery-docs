@@ -35,6 +35,8 @@
 {{! display hero only on index page }}
 {{#if page.is_homepage}}
   {{> hero }}
+  {{> what-is-packery }}
+  {{> hero-demos }}
 {{/if}}
 
 <div id="content" class="main">
@@ -46,10 +48,10 @@
 
     {{! page-nav }}
     <ul class="page-nav" data-js="page-nav"></ul>
-  </div>
 
 {{! all page content goes here }}
 {{> body}}
+  </div>
 
 </div>
 

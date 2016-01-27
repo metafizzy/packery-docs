@@ -28,14 +28,12 @@ gulp.task( 'page-template', function() {
 
 module.exports = function( site ) {
 
-  // exclude 404 if export
-  var filterQuery = site.data.isExport ? [ '*', '!**/404.*'] : '*';
-
-  site.data.sourceUrlPath = site.data.isExport ? '' :
-    'https://cdnjs.cloudflare.com/ajax/libs/packery/' +
-    site.data.packeryVersion + '/';
-
   gulp.task( 'content', [ 'partials', 'data', 'page-template' ], function() {
+    // exclude 404 if export
+    var filterQuery = site.data.isExport ? [ '*', '!**/404.*'] : '*';
+
+    site.data.sourceUrlPath = site.data.isExport ? '' :
+      'https://npmcdn.com/packery@' + site.data.packeryMinorVersion + '/dist/';
 
     var buildOptions = {
       layout: pageTemplate,

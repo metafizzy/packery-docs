@@ -3,10 +3,8 @@
 
 .what-is-packery {
   background: #EAEAEA;
-}
-
-.main .what-is-packery__title {
-  border: none;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .what-is-packery__description {

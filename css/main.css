@@ -6,6 +6,7 @@
   font-weight: 400;
   padding: 0.4em 0;
   border-top: 2px solid;
+  margin-top: 60px;
 }
 
 .main h3 {
@@ -24,26 +25,8 @@
   border-color: #C09;
 }
 
-.main li {
-  margin-bottom: 0.2em;
-}
-
 /* tablet-ish */
 @media screen and ( min-width: 800px ) {
 
-  .main .primary-content {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  /* primary content that houses page-nav */
-  .main > .primary-content:first-child {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .main .primary-content > * {
-    max-width: 900px;
-  }
 
 }

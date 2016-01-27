@@ -29,15 +29,6 @@ body {
   background: #F8F8F8;
 }
 
-/* margins */
-h1, h2, h3, h4, h5, h6,
-p,
-ol, ul,
-pre {
-  margin-top: 0.8em;
-  margin-bottom: 1.0em;
-}
-
 /* ---- links ---- */
 
 a,

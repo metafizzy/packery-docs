@@ -43,12 +43,11 @@
     margin: 0;
     width: 200px;
     padding: 20px;
-    font-size: 0.75rem;
   }
 
   .page-nav__item {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     margin-left: 0;
   }
 

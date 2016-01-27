@@ -2,13 +2,6 @@
 is_homepage: true
 ---
 
-{{> what-is-packery }}
-
-{{> hero-demos }}
-
-{{! --------------------------------------------------- }}
-<div class="primary-content">
-
 <h2>Install</h2>
 
 {{! --------------------------------------------------- }}
@@ -24,26 +17,24 @@ is_homepage: true
 
 <h3>CDN</h3>
 
-<p>Link directly to <a href="https://cdnjs.com/libraries/packery">Packery files on cdnjs</a>.</p>
+<p>Link directly to Packery files on <a href="https://npmcdn.com">npmcdn</a>.</p>
 
 
 ``` html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/packery/{{packery_version}}/packery.pkgd.js"></script>
+<script src="https://npmcdn.com/packery@{{packeryVersion}}/dist/packery.pkgd.js"></script>
 <!-- or -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/packery/{{packery_version}}/packery.pkgd.min.js"></script>
+<script src="https://npmcdn.com/packery@{{packeryVersion}}/dist/packery.pkgd.min.js"></script>
 ```
 
 {{! --------------------------------------------------- }}
 
 <h3>Package managers</h3>
 
-<p>Install with Bower: <code>bower install packery --save</code></p>
+<p>Install with <a href="http://bower.io">Bower</a>: <code>bower install packery --save</code></p>
 
 <p><a href="https://www.npmjs.com/package/packery">Install with npm</a>: <code>npm install packery</code></p>
 
-</div>
 {{! --------------------------------------------------- }}
-<div class="primary-content">
 
 <h2>License</h2>
 
@@ -75,9 +66,7 @@ is_homepage: true
 
 <p>If you are creating an open source application under a license compatible with the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL license v3</a>, you may use Packery under the terms of the GPLv3. <a href="license.html">Read more about Packery open source licensing</a>.</p>
 
-</div>
 {{! --------------------------------------------------- }}
-<div class="primary-content">
 
 <h2>Getting started</h2>
 
@@ -137,6 +126,8 @@ var pckry = new Packery( container, {
 });
 ```
 
+{{! --------------------------------------------------- }}
+
 <h3>Initialize in HTML</h3>
 
 <p>You can initialize Packery in HTML, without writing any JavaScript. Simply add <code>js-packery</code> to the class of the container element. <a href="options.html">Options</a> can be set with a <code>data-packery-options</code> attribute.</p>
@@ -150,7 +141,7 @@ var pckry = new Packery( container, {
 
 <p>That&rsquo;s it! Now let&rsquo;s do some fun stuff with <a href="options.html">options</a> and <a href="methods.html">methods</a>.</p>
 
-</div><div class="primary-content">
+
 
 <h2>Vanilla JavaScript</h2>
 
