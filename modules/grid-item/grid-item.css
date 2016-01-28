@@ -15,14 +15,14 @@
 .grid-item--width3 { width: 180px; }
 .grid-item--height3 { height: 180px; }
 
-.grid-item--gigante {
+.grid-item--large {
   width: 180px;
-  height: 240px;
+  height: 180px;
+  background: #0C9;
 }
 
 .grid--clickable .grid-item:hover {
-  border-color: #28F;
-  background: #8CF;
+  background: #C90;
   cursor: pointer;
 }
 

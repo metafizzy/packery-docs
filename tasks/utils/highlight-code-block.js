@@ -7,18 +7,13 @@ highlightjs.configure({
 
 var hljsJavascript = highlightjs.getLanguage('javascript');
 // highlight Packery
-hljsJavascript.keywords.flickity = 'Packery';
+hljsJavascript.keywords.packery = 'Packery';
 // highlight packery variables
-hljsJavascript.keywords.flickity_var = 'pckry';
+hljsJavascript.keywords.packery_var = 'pckry';
 
 hljsJavascript.contains.push({
   className: 'jquery_var',
-  begin: /\$gallery/
-});
-
-hljsJavascript.contains.push({
-  className: 'packery',
-  begin: /packery/
+  begin: /\$grid/
 });
 
 var reFirstLine = /.*\n/;

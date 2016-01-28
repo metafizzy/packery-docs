@@ -1,0 +1,514 @@
+---
+title: Methods
+---
+
+{{! ----------------------------------------------------------- }}
+
+<p>Methods are actions done by Packery instances.</p>
+
+<p>With jQuery, methods follow the jQuery UI pattern <code>.packery( <span class="string">'methodName'</span> <span class="comment">/* arguments */</span> )</code>.</p>
+
+``` js
+$grid.packery()
+  .append( elem )
+  .packery( 'appended', elem )
+  // layout
+  .packery();
+```
+
+<div class="call-out">
+  <p>jQuery chaining is broken by methods that return values: (i.e. 
+    <a href="#getitemelements"><code>getItemElements</code></a>,
+    <a href="#getitem"><code>getItem</code></a>,
+    <a href="#on"><code>on</code></a>, and
+    <a href="#off"><code>off</code></a>).
+  </p>
+</div>
+
+<p>Vanilla JavaScript methods look like <code>packery.methodName( <span class="comment">/* arguments */</span> )</code>. Unlike jQuery methods, they cannot be chained together.</p>
+
+``` js
+// vanilla JS
+var pckry = new Packery( '.grid', {...});
+gridElement.appendChild( elem );
+pckry.appended( elem );
+pckry.layout();
+```
+
+{{! ----------------------------------------------------------- }}
+
+<h2>Layout</h2>
+
+{{! ----------------------------------------------------------- }}
+
+<h3>layout / .packery()</h3>
+
+<p>Lays out all item elements. <code>layout</code> is useful when an item has changed size, and all items need to be laid out again.</p>
+
+``` js
+// jQuery
+$grid.packery()
+// vanilla JS
+pckry.layout()
+```
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    var $grid = $('.grid').packery({
+      itemSelector: 'grid-item'
+    });
+    // change size of item by toggling gigante class
+    $grid.on( 'click', '.grid-item', function() {
+      $(this).toggleClass('gigante');
+      // trigger layout after item size changes
+      $grid.packery('layout');
+    });
+    ```
+  </div>
+  {{> layout }}
+</div>
+
+{{! ----------------------------------------------------------- }}
+
+<h3>layoutItems</h3>
+
+<p>Lays out specified items.</p>
+
+``` js
+// jQuery
+$grid.packery( 'layoutItems', items, isStill )
+// vanilla JS
+pckry.layoutItems( items, isStill )
+```
+
+<p class="variable">
+  <code class="variable__code">items</code>
+  <span class="variable__type"><i>Array</i> of <i>Packery.Item</i>s</span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">isStill</code>
+  <span class="variable__type"><i>Boolean</i></span>
+  <span class="variable__description">Disables transitions</span>
+</p>
+
+{{! ----------------------------------------------------------- }}
+
+<h3>stamp</h3>
+
+<p>Stamps elements in the layout. Packery will lay out item elements <em>around</em> stamped elements.</p>
+
+``` js
+// jQuery
+$grid.packery( 'stamp', elements )
+// vanilla JS
+pckry.stamp( elements )
+```
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<p>Set <a href="options.html#itemselector"><code>itemSelector</code></a> so that stamps do not get used as layout items.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    var $grid = $('.grid').packery({
+      // specify itemSelector so stamps do get laid out
+      itemSelector: '.grid-item'
+    });
+    var $stamp = $grid.find('.stamp');
+    var isStamped = false;
+
+    $('.stamp-button').on( 'click', function() {
+      // stamp or unstamp element
+      if ( isStamped ) {
+        $grid.packery( 'unstamp', $stamp );
+      } else {
+        $grid.packery( 'stamp', $stamp );
+      }
+      // trigger layout
+      $grid.packery('layout');
+      // set flag
+      isStamped = !isStamped;
+    });
+    ```
+  </div>
+  {{> stamp-methods }}
+</div>
+
+{{! ----------------------------------------------------------- }}
+
+<h3>unstamp</h3>
+
+<p>Un-stamps elements in the layout, so that Packery will no longer layout item elements around them. <a href="#stamp">See demo above</a>.</p>
+
+``` js
+// jQuery
+$grid.packery( 'unstamp', elements )
+// vanilla JS
+pckry.unstamp( elements )
+```
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+{{! ----------------------------------------------------------- }}
+
+<h2>Adding &amp; removing items</h2>
+
+{{! ----------------------------------------------------------- }}
+
+<h3>appended</h3>
+
+<p>Adds and lays out newly appended item elements to the end of the layout.</p>
+
+``` js
+// jQuery
+$grid.packery( 'appended', elements )
+// vanilla JS
+pckry.appended( elements )
+```
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $('.append-button').on( 'click', function() {
+      // create new item elements
+      var $items = $('<div class="grid-item">...</div>');
+      // append items to grid
+      $grid.append( $items )
+        // add and lay out newly appended items
+        .packery( 'appended', $items );
+    });
+    ```
+  </div>
+  {{> appended }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>prepended</h3>
+
+<p>Adds and lays out newly prepended item elements at the beginning of layout.</p>
+
+``` js
+// jQuery
+pckry.prepended( elements )
+// vanilla JS
+$grid.packery( 'prepended', elements )
+```
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $('.prepend-button').on( 'click', function() {
+      // create new item elements
+      var $items = $('<div class="grid-item">...</div>');
+      // prepend items to grid
+      $grid.prepend( $items )
+        // add and lay out newly prepended items
+        .packery( 'prepended', $items );
+    });
+    ```
+  </div>
+  {{> prepended }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>addItems</h3>
+
+<p>Adds item elements to the Packery instance. <code>addItems</code> does not lay out items like <a href="#appended"><code>appended</code></a> or <a href="#prepended"><code>prepended</code></a>.</p>
+
+``` js
+// jQuery
+$grid.packery( 'addItems', elements )
+// vanilla JS
+pckry.addItems( elements )
+```
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+{{! --------------------------------------------------- }}
+
+<h3>remove</h3>
+
+<p>Removes elements from the Packery instance and DOM.</p>
+
+``` js
+// jQuery
+$grid.packery( 'remove', elements )
+// vanilla JS
+pckry.remove( elements )
+```
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $grid.on( 'click', '.grid-item', function( event ) {
+      // remove clicked element
+      $grid.packery( 'remove', event.currentTarget )
+        // layout remaining item elements
+        .packery('layout');
+    });
+    ```
+  </div>
+  {{> remove }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h2>Events</h2>
+
+{{! --------------------------------------------------- }}
+
+<h3>on</h3>
+
+<p>Adds a <a href="events.html">Packery event</a> listener.</p>
+
+``` js
+// vanilla JS
+pckry.on( eventName, listener )
+```
+
+<p class="variable">
+  <code class="variable__code">eventName</code>
+  <span class="variable__type"><i>String</i></span>
+  <span class="variable__description">Name of a <a href="events.html">Packery event</a></span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">listener</code>
+  <span class="variable__type"><i>Function</i></span>
+</p>
+
+{{! --------------------------------------------------- }}
+
+<h3>off</h3>
+
+<p>Removes a <a href="events.html">Packery event</a> listener.</p>
+
+``` js
+// vanilla JS
+pckry.off( eventName, listener )
+```
+
+<p class="variable">
+  <code class="variable__code">eventName</code>
+  <span class="variable__type"><i>String</i></span>
+  <span class="variable__description">Name of a <a href="events.html">Packery event</a></span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">listener</code>
+  <span class="variable__type"><i>Function</i></span>
+</p>
+
+{{! --------------------------------------------------- }}
+
+<h3>once</h3>
+
+<p>Adds a <a href="events.html">Packery event</a> listener to be triggered just once.</p>
+
+``` js
+// vanilla JS
+pckry.once( eventName, listener )
+```
+
+<p class="variable">
+  <code class="variable__code">eventName</code>
+  <span class="variable__type"><i>String</i></span>
+  <span class="variable__description">Name of a <a href="events.html">Packery event</a></span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">listener</code>
+  <span class="variable__type"><i>Function</i></span>
+</p>
+
+``` js
+pckry.once( 'layoutComplete', function() {
+  console.log('layout is complete, just once');
+});
+```
+
+{{! --------------------------------------------------- }}
+
+<h2>Utilities</h2>
+
+{{! --------------------------------------------------- }}
+
+<h3>reloadItems</h3>
+
+<p>Recollects all item elements.</p>
+
+<p>For frameworks like React and Angular, <code>reloadItems</code> may be useful to apply changes to the DOM to Packery.</p>
+
+``` js
+// jQuery
+$grid.packery('reloadItems')
+// vanilla JS
+pckry.reloadItems()
+```
+
+{{! --------------------------------------------------- }}
+
+<h3>destroy</h3>
+
+<p>Removes the Packery functionality completely. <code>destroy</code> will return the element back to its pre-initialized state.</p>
+
+``` js
+// jQuery
+$grid.packery('destroy')
+// vanilla JS
+pckry.destroy()
+```
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    var packeryOptions = {
+      itemSelector: '.grid-item',
+      columnWidth: 80
+    };
+    // initialize Packery
+    var $grid = $('.grid').packery( packeryOptions );
+    var isActive = true;
+
+    $('.toggle-button').on( 'click', function() {
+      if ( isActive ) {
+        $grid.packery('destroy'); // destroy
+      } else {
+        $grid.packery( packeryOptions ); // re-initialize
+      }
+      // set flag
+      isActive = !isActive;
+    });
+    ```
+  </div>
+  {{> destroy }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>getItemElements</h3>
+
+<p>Returns an array of item elements.</p>
+
+``` js
+// jQuery
+var elems = $grid.packery('getItemElements')
+// vanilla JS
+var elems = pckry.getItemElements()
+```
+
+<p class="variable">
+  <code class="variable__code">elems</code>
+  <span class="variable__type"><i>Array</i> of <i>Element</i>s</span>
+</p>
+
+{{! --------------------------------------------------- }}
+
+<h3>jQuery.fn.data('packery')</h3>
+
+<p>Get the Packery instance from a jQuery object. Packery instances are useful to access Packery properties.</p>
+
+``` js
+var pckry = $('.grid').data('packery')
+// access Packery properties
+console.log( pckry.filteredItems.length + ' filtered items'  )
+```
+
+{{! --------------------------------------------------- }}
+
+<h3>Packery.data</h3>
+
+<p>Get the Packery instance via its element. <code>Packery.data()</code> is useful for getting the Packery instance in JavaScript, after it has been initalized in HTML.</p>
+
+``` js
+var pckry = Packery.data( element )
+```
+
+<p class="variable">
+  <code class="variable__code">element</code>
+  <span class="variable__type"><i>Element</i> or Selector <i>String</i></span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">pckry</code>
+  <span class="variable__type"><i>Packery</i></span>
+</p>
+
+``` html
+<!-- init Packery in HTML -->
+<div class="grid" data-packery='{...}'>...</div>
+```
+
+``` js
+// jQuery
+// pass in the element, $element[0], not the jQuery object
+var pckry = Packery.data( $('.grid')[0] )
+
+// vanilla JS
+// using an element
+var grid = document.querySelector('.grid')
+var pckry = Packery.data( grid )
+// using a selector string
+var pckry = Packery.data('.grid')
+```
+
+{{! --------------------------------------------------- }}

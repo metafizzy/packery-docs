@@ -26,10 +26,8 @@ var jsSrc = [
   // jquery ui draggable
   'bower_components/jquery-ui-draggable/jquery-ui-draggable.js',
   // docs
-  'js/controller.js',
-  'js/pages/*.js',
-  // namespace
   'js/namespace.js',
+  'js/utils.js',
   // modules
   'modules/*/**/*.js',
   // init

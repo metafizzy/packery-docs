@@ -4,9 +4,10 @@
   "unused": true,
   "strict": true,
   "globals": {
+    "Draggabilly": false,
+    "filterBindEvent": false,
     "imagesLoaded": false,
-    "PD": false,
     "Packery": false,
-    "Draggabilly": false
+    "PD": false
   }
 }
