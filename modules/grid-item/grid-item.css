@@ -43,31 +43,24 @@
 
 .grid--fluid-5-col .grid-item--width2 { width: 40%; }
 
-/* ---- grid--masonry-gutter ---- */
+/* ---- grid-sizer--row-height ---- */
+
+.grid-sizer--row-height { height: 60px; }
+
+/* ---- grid--has-gutter ---- */
 
 .grid--has-gutter .grid-item--width2 {
-  width: 110px;
+  width: 130px;
 }
 
-/* ---- grid--masonry-gutter-bottom ---- */
-
-.grid--masonry-gutter-bottom .grid-item {
-  margin-bottom: 10px;
+.grid--has-gutter .grid-item--height2 {
+  height: 130px;
 }
-
-.grid--masonry-gutter-bottom .grid-item--height2 {
-  height: 110px;
-}
-
-/* ---- grid--packery-gutter ---- */
-
-.grid--packery-gutter .grid-item--width2 { width: 110px; }
-.grid--packery-gutter .grid-item--height2 { height: 110px; }
 
 /* ---- grid--fluid-gutter ---- */
 
-.grid--fluid-gutter .grid-item,
-.grid--fluid-gutter .grid-sizer {
+.grid--fluid-gutter .grid-sizer,
+.grid--fluid-gutter .grid-item {
   width: 22%;
 }
 

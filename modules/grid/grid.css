@@ -23,17 +23,16 @@
   counter-increment: item;
   content: counter(item);
   display: block;
-  color: #555;
+  color: #F8F8F8;
   padding-top: 0.2em;
   text-align: center;
-  font-size: 18px;
 }
 
 /* ---- horizontal ---- */
 
 /* horizontal examples need height */
 .grid--horizontal {
-  height: 334px;
+  height: 300px;
 }
 
 /* ---- static banner ---- */
@@ -46,7 +45,7 @@
   position: absolute;
   left: 10px;
   top: 10px;
-  background: hsla(210, 100%, 50%, 0.8);
+  background: #C90;
   z-index: 1;
   padding: 2px 20px;
   color: white;
@@ -56,7 +55,7 @@
 /* ---- fixed-width ---- */
 
 .grid--fixed-width {
-  width: 304px;
+  width: 300px;
 }
 
 /* ---- stamp ---- */
