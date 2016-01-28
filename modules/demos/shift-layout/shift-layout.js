@@ -1,4 +1,4 @@
-PD.modules.layout = function( elem ) {
+PD.modules['shift-layout'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');
@@ -7,7 +7,7 @@ PD.modules.layout = function( elem ) {
 
   filterBindEvent( grid, 'click', '.grid-item', function( event ) {
     event.target.classList.toggle('grid-item--large');
-    pckry.layout();
+    pckry.shiftLayout();
   });
 
 };

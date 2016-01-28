@@ -9,7 +9,7 @@ PD.modules.remove = function( elem ) {
     // remove clicked element
     pckry.remove( event.target );
     // layout remaining item elements
-    pckry.layout();
+    pckry.shiftLayout();
   });
 
 };

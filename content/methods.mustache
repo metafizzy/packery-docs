@@ -17,7 +17,7 @@ $grid.packery()
 ```
 
 <div class="call-out">
-  <p>jQuery chaining is broken by methods that return values: (i.e. 
+  <p>jQuery chaining is broken by methods that return values: (i.e.
     <a href="#getitemelements"><code>getItemElements</code></a>,
     <a href="#getitem"><code>getItem</code></a>,
     <a href="#on"><code>on</code></a>, and
@@ -56,11 +56,12 @@ pckry.layout()
   <div class="duo__cell example__code">
     ``` js
     var $grid = $('.grid').packery({
-      itemSelector: 'grid-item'
+      itemSelector: '.grid-item'
     });
-    // change size of item by toggling gigante class
-    $grid.on( 'click', '.grid-item', function() {
-      $(this).toggleClass('gigante');
+
+    $grid.on( 'click', '.grid-item', function( event ) {
+      // change size of item by toggling large class
+      $(  event.currentTarget  ).toggleClass('grid-item--large');
       // trigger layout after item size changes
       $grid.packery('layout');
     });
@@ -71,15 +72,48 @@ pckry.layout()
 
 {{! ----------------------------------------------------------- }}
 
+<h3>shiftLayout</h3>
+
+<p>Shifts all item positions, maintaining their horizontal position.</p>
+
+<p>After an item has changed, <code>shiftLayout</code> will move items up and down to best fit the change. This maintains more order compared to using <a href="#layout-packery"><code>layout/.packery()</code></a>, where item positions can be completely changed.</p>
+
+``` js
+// jQuery
+$grid.packery('shiftLayout')
+// vanilla JS
+pckry.shiftLayout()
+```
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    var $grid = $('.grid').packery({
+      itemSelector: '.grid-item'
+    });
+
+    $grid.on( 'click', '.grid-item', function( event ) {
+      // change size of item by toggling large class
+      $( event.currentTarget ).toggleClass('grid-item--large');
+      // trigger shiftLayout after item size changes
+      $grid.packery('shiftLayout');
+    });
+    ```
+  </div>
+  {{> shift-layout }}
+</div>
+
+{{! ----------------------------------------------------------- }}
+
 <h3>layoutItems</h3>
 
 <p>Lays out specified items.</p>
 
 ``` js
 // jQuery
-$grid.packery( 'layoutItems', items, isStill )
+$grid.packery( 'layoutItems', items, isInstant )
 // vanilla JS
-pckry.layoutItems( items, isStill )
+pckry.layoutItems( items, isInstant )
 ```
 
 <p class="variable">
@@ -88,10 +122,73 @@ pckry.layoutItems( items, isStill )
 </p>
 
 <p class="variable">
-  <code class="variable__code">isStill</code>
+  <code class="variable__code">isInstant</code>
   <span class="variable__type"><i>Boolean</i></span>
   <span class="variable__description">Disables transitions</span>
 </p>
+
+{{! ----------------------------------------------------------- }}
+
+<h3>fit</h3>
+
+<p>Fit an item element within the layout, and <a href="#shiftlayout">shiftLayouts</a> other item elements around it. <code>fit</code> is useful when expanding an element, and keeping it in its same position.</p>
+
+``` js
+// jQuery
+$container.packery( 'fit', element, x, y )
+// vanilla JS
+pckry.fit( element, x, y )
+```
+
+<p class="variable">
+  <code class="variable__code">element</code>
+  <span class="variable__type"><i>Element</i></span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">x</code>
+  <span class="variable__type"><i>Number</i></span>
+  <span class="variable__description">Horizontal position, optional</span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">y</code>
+  <span class="variable__type"><i>Number</i></span>
+  <span class="variable__description">Vertical position, optional</span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $grid.on( 'click', '.grid-item', function( event ) {
+      var $item = $( event.currentTarget );
+      // change size of item by toggling large class
+      $item.toggleClass('grid-item--large');
+      if ( $item.is('.grid-item--large') ) {
+        // fit large item
+        $grid.packery( 'fit', event.currentTarget );
+      } else {
+        // back to small, shiftLayout back
+        $grid.packery('shiftLayout');
+      }
+    });
+    ```
+  </div>
+  {{> fit }}
+</div>
+
+<p>You can fit an element in a specific position.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $grid.on( 'click', '.grid-item', function( event ) {
+      $grid.packery( 'fit', event.currentTarget, 120, 60 );
+    });
+    ```
+  </div>
+  {{> fit-position }}
+</div>
 
 {{! ----------------------------------------------------------- }}
 
@@ -128,7 +225,7 @@ pckry.stamp( elements )
     var $stamp = $grid.find('.stamp');
     var isStamped = false;
 
-    $('.stamp-button').on( 'click', function() {
+    $('.toggle-stamp-button').on( 'click', function() {
       // stamp or unstamp element
       if ( isStamped ) {
         $grid.packery( 'unstamp', $stamp );
@@ -302,89 +399,13 @@ pckry.remove( elements )
     $grid.on( 'click', '.grid-item', function( event ) {
       // remove clicked element
       $grid.packery( 'remove', event.currentTarget )
-        // layout remaining item elements
-        .packery('layout');
+        // shiftLayout remaining item elements
+        .packery('shiftLayout');
     });
     ```
   </div>
   {{> remove }}
 </div>
-
-{{! --------------------------------------------------- }}
-
-<h2>Events</h2>
-
-{{! --------------------------------------------------- }}
-
-<h3>on</h3>
-
-<p>Adds a <a href="events.html">Packery event</a> listener.</p>
-
-``` js
-// vanilla JS
-pckry.on( eventName, listener )
-```
-
-<p class="variable">
-  <code class="variable__code">eventName</code>
-  <span class="variable__type"><i>String</i></span>
-  <span class="variable__description">Name of a <a href="events.html">Packery event</a></span>
-</p>
-
-<p class="variable">
-  <code class="variable__code">listener</code>
-  <span class="variable__type"><i>Function</i></span>
-</p>
-
-{{! --------------------------------------------------- }}
-
-<h3>off</h3>
-
-<p>Removes a <a href="events.html">Packery event</a> listener.</p>
-
-``` js
-// vanilla JS
-pckry.off( eventName, listener )
-```
-
-<p class="variable">
-  <code class="variable__code">eventName</code>
-  <span class="variable__type"><i>String</i></span>
-  <span class="variable__description">Name of a <a href="events.html">Packery event</a></span>
-</p>
-
-<p class="variable">
-  <code class="variable__code">listener</code>
-  <span class="variable__type"><i>Function</i></span>
-</p>
-
-{{! --------------------------------------------------- }}
-
-<h3>once</h3>
-
-<p>Adds a <a href="events.html">Packery event</a> listener to be triggered just once.</p>
-
-``` js
-// vanilla JS
-pckry.once( eventName, listener )
-```
-
-<p class="variable">
-  <code class="variable__code">eventName</code>
-  <span class="variable__type"><i>String</i></span>
-  <span class="variable__description">Name of a <a href="events.html">Packery event</a></span>
-</p>
-
-<p class="variable">
-  <code class="variable__code">listener</code>
-  <span class="variable__type"><i>Function</i></span>
-</p>
-
-``` js
-pckry.once( 'layoutComplete', function() {
-  console.log('layout is complete, just once');
-});
-```
 
 {{! --------------------------------------------------- }}
 

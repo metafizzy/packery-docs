@@ -6,17 +6,20 @@ move to modules
 
 remove primary-content
 
-codepen link module
+<!-- codepen link module -->
 
-Reorder Methods
+<!-- Reorder Methods -->
 
-Reorder Options
+<!-- Reorder Options -->
 
 Appendix -> Extras
 
 FAQ -> Extras
 
 remove `row` for `duo`
+
+fit & shiftLayout codepen demos
+shiftLayout remove CodePen demo
 
 ---
 
