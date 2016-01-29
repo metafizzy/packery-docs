@@ -1,0 +1,151 @@
+---
+title: Draggable
+---
+
+{{! --------------------------------------------------- }}
+
+<p>Packery layouts can be draggable, perfect for draggable Masonry layouts and draggable dashboards.</p>
+
+{{> drag-hero-demos }}
+
+{{! --------------------------------------------------- }}
+
+<h2>Draggabilly</h2>
+
+<p><a href="http://draggabilly.desandro.com">Draggabilly</a> is a separate library that makes elements draggable. It&rsquo;s pretty great because it supports touch devices. After you initialize a new Draggabilly instance, bind its events to a Packery instance with <code>bindDraggabillyEvents</code>.</p>
+
+``` js
+// jQuery
+$grid.packery( 'bindDraggabillyEvents', draggie )
+// vanilla JS
+pckry.bindDraggabillyEvents( draggie )
+```
+
+<p class="variable">
+  <code class="variable__code">draggie</code>
+  <span class="variable__type"><i>Draggabilly</i></span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    // initialize Packery
+    var $grid = $('.grid').packery({
+      itemSelector: '.grid-item',
+      // columnWidth helps with drop positioning
+      columnWidth: 100
+    });
+
+    // make all grid-items draggable
+    $grid.find('.grid-item').each( function( i, gridItem ) {
+      var draggie = new Draggabilly( gridItem );
+      // bind drag events to Packery
+      $grid.packery( 'bindDraggabillyEvents', draggie );
+    });
+    ```
+    
+    ``` css
+    /* highlight drag & drop */
+
+    /* Draggabilly adds is-dragging */
+    .grid-item.is-dragging,
+    /* Packery adds class while transitioning to drop position */
+    .grid-item.is-positioning-post-drag {
+      background: #C90;
+      z-index: 2; /* keep dragged item on top */
+    }
+    ```
+  </div>
+  {{> bind-draggabilly-events }}
+</div>
+
+<p>Unbind Draggabilly events with <code>unbindDraggabillyEvents</code>.</p>
+
+{{! --------------------------------------------------- }}
+
+<h2>jQuery UI Draggable</h2>
+
+<p>Packery works with <a href="http://jqueryui.com/draggable/">jQuery UI Draggable</a>. Bind Draggable events to Packery with <a href="methods.html#binduidraggableevents"><code>bindUIDraggableEvents</code></a>.</p>
+
+``` js
+// jQuery
+$grid.packery( 'bindUIDraggableEvents', $items )
+```
+
+<p class="variable">
+  <code class="variable__code">$items</code>
+  <span class="variable__type"><i>jQuery</i></span>
+  <span class="variable__description">Draggable item elements</span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    // initialize Packery
+    var $grid = $('.grid').packery({
+      itemSelector: '.grid-item',
+      // columnWidth helps with drop positioning
+      columnWidth: 100
+    });
+
+    // make all items draggable
+    var $items = $grid.find('.grid-item').draggable();
+    // bind drag events to Packery
+    $grid.packery( 'bindUIDraggableEvents', $items );
+    ```
+
+    ``` css
+    /* highlight drag & drop */
+
+    /* jQuery UI Draggable adds ui-draggable-dragging */
+    .grid-item.ui-draggable-dragging,
+    /* Packery adds class while transitioning to drop position */
+    .grid-item.is-positioning-post-drag {
+      background: #C90;
+      z-index: 2; /* keep dragged item on top */
+    }
+    ```
+  </div>
+  {{> bind-ui-draggable-events }}
+</div>
+
+<p>Unbind jQuery UI Draggable events with <code>unbindUIDraggableEvents</code>.</p>
+
+{{! --------------------------------------------------- }}
+
+<h2>Dropping</h2>
+
+{{! --------------------------------------------------- }}
+
+<h3>Drop placeholder</h3>
+
+<p>Packery will position a placeholder element, <code>.packery-drop-placeholder</code>, where a dragged element will be positioned when dropped. Style the drop placeholder with your own CSS as its unstyled by default.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` css
+    .packery-drop-placeholder {
+      outline: 3px dashed #444;
+      outline-offset: -6px;
+      /* transition position changing */
+      -webkit-transition: -webkit-transform 0.2s;
+              transition: transform 0.2s;
+    }
+    ```
+  </div>
+  {{> bind-draggabilly-events }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>Grid drop positions</h3>
+
+<p>We recommend setting <a href="options.html#columnwidth"><code>columnWidth</code></a> (or <a href="options.html#rowheight"><code>rowHeight</code></a> for <a href="options.html#horizontal">horizontal layouts</a>) to help align dropped items to a grid . Without <code>columnWidth</code> set, dragged items can only be dropped in place of other items.</p>
+
+{{! --------------------------------------------------- }}
+
+<h3>dragItemPositioned</h3>
+
+<p>Use the <a href="events.html#dragitempositioned"><code>dragItemPositioned</code> event</a> to detect when Packery positions a dropped item.</p>
+
+{{! --------------------------------------------------- }}

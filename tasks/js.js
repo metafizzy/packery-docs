@@ -35,12 +35,19 @@ var jsSrc = [
 ];
 
 // concat & minify js
-gulp.task( 'js', function() {
+gulp.task( 'docs-js', function() {
   gulp.src( jsSrc )
     .pipe( uglify() )
     .pipe( concat('packery-docs.min.js') )
     .pipe( gulp.dest('build/js') );
 });
+
+gulp.task( 'copy-js', function() {
+  gulp.src('bower_components/jquery/dist/jquery.min.js')
+    .pipe( gulp.dest('build/js') );
+});
+
+gulp.task( 'js', [ 'docs-js', 'copy-js' ] );
 
 module.exports = function( site ) {
 
