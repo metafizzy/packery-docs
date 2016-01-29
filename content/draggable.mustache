@@ -43,7 +43,7 @@ pckry.bindDraggabillyEvents( draggie )
       $grid.packery( 'bindDraggabillyEvents', draggie );
     });
     ```
-    
+
     ``` css
     /* highlight drag & drop */
 
@@ -147,5 +147,30 @@ $grid.packery( 'bindUIDraggableEvents', $items )
 <h3>dragItemPositioned</h3>
 
 <p>Use the <a href="events.html#dragitempositioned"><code>dragItemPositioned</code> event</a> to detect when Packery positions a dropped item.</p>
+
+{{! --------------------------------------------------- }}
+
+<h3>Item order</h3>
+
+<p>After dropping an item, you can get item elements in order with <a href="methods.html#getitemelements"><code>getItemElements</code></a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    // show item order after layout
+    function orderItems() {
+      var itemElems = $grid.packery('getItemElements');
+      $( itemElems ).each( function( i, itemElem ) {
+        $( itemElem ).text( i + 1 );
+      });
+    }
+
+    $grid.on( 'layoutComplete', orderItems );
+    $grid.on( 'dragItemPositioned', orderItems );
+    ```
+  </div>
+
+  {{> order-after-drag }}
+</div>
 
 {{! --------------------------------------------------- }}

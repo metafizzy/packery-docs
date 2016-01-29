@@ -17,7 +17,7 @@
     {{/each}}
   {{else}}
     {{! in production, just include concat CSS }}
-    <link rel="stylesheet" href="{{#if page.is_404}}/{{/if}}css/packery-docs.css" media="screen" />
+    <link rel="stylesheet" href="{{#if page.is404}}/{{/if}}css/packery-docs.css" media="screen" />
   {{/if}}
 
   {{! Twitter Cards }}
@@ -70,7 +70,7 @@
   {{/each}}
 {{else}}
   {{! in production, just include concat/minified js }}
-  <script src="{{#if page.is_404}}/{{/if}}js/packery-docs.min.js"></script>
+  <script src="{{#if page.is404}}/{{/if}}js/packery-docs.min.js"></script>
 {{/if}}
 
 {{#unless isExport}}

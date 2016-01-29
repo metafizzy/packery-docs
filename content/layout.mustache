@@ -48,8 +48,6 @@ title: Layout
 
 <p>Item sizes can be set with percentages for responsive layouts. Set <code>percentPosition: <span class="literal">true</span></code> so item positions are set with percentages to reduce adjustment transitions on window resize.</p>
 
-<p></p>
-
 <div class="duo example">
   <div class="duo__cell example__code">
     ``` html
@@ -82,6 +80,15 @@ title: Layout
     {{> edit-demo default="xZjOXq" }}
   </div>
 </div>
+
+<p>A horizontal gap can appear if the Packery layout is triggering a scroll bar. Force the scrollbar to be visible in CSS to prevent this gap.</p>
+
+``` css
+// force vertical scrollbar, prevent Packery gap
+html {
+  overflow-y: scroll;
+}
+```
 
 {{! --------------------------------------------------- }}
 

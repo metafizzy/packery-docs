@@ -6,6 +6,7 @@
   "globals": {
     "Draggabilly": false,
     "filterBindEvent": false,
+    "getSize": false,
     "imagesLoaded": false,
     "Packery": false,
     "PD": false

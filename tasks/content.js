@@ -9,7 +9,6 @@ var highlightCodeBlock = require('./utils/highlight-code-block');
 var build = require('./utils/build');
 
 var contentSrc = [
-  'content/*.html',
   'content/*.mustache'
 ];
 

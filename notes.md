@@ -21,6 +21,7 @@ remove `row` for `duo`
 fit & shiftLayout codepen demos
 shiftLayout remove CodePen demo
 <!-- dragItemPositioned demo -->
+animate-item-size CodePens should use shiftLayout
 
 ---
 

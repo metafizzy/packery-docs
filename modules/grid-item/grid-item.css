@@ -101,6 +101,14 @@
           transition: transform 0.2s;
 }
 
+/* ----  ---- */
+
+.grid--order-after-drag .grid-item {
+  padding: 10px;
+  color: #F8F8F8;
+  font-size: 1.2rem;
+}
+
 /* ---- masonry-horizontal ---- */
 
 .grid--masonry-horizontal-gutter .grid-item--height2 {
