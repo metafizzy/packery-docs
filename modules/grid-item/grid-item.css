@@ -72,6 +72,34 @@
   width: 48%;
 }
 
+/* ---- grid--draggable ---- */
+
+.grid--draggable .grid-item {
+  width: 100px;
+  height: 100px;
+}
+
+.grid--draggable .grid-item--width2 { width: 200px; }
+.grid--draggable .grid-item--height2 { height: 200px; }
+
+.grid--draggable .grid-item:hover {
+  border-color: hsla(0, 0%, 100%, 0.5);
+  pointer: cursor;
+}
+
+.grid--draggable .grid-item.is-dragging,
+.grid--draggable .grid-item.is-positioning-post-drag {
+  background: #C90;
+  z-index: 2;
+}
+
+.grid--draggable .packery-drop-placeholder {
+  outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+  outline-offset: -6px;
+  -webkit-transition: -webkit-transform 0.2s;
+          transition: transform 0.2s;
+}
+
 /* ---- masonry-horizontal ---- */
 
 .grid--masonry-horizontal-gutter .grid-item--height2 {

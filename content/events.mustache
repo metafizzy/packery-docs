@@ -1,0 +1,200 @@
+---
+title: Events
+---
+
+{{> notification }}
+
+{{! --------------------------------------------------- }}
+<h2>Event binding</h2>
+
+{{! --------------------------------------------------- }}
+
+<h3>jQuery event binding</h3>
+
+<p>Bind events with jQuery with standard jQuery event methods <code>.on()</code>, <code>.off()</code>, and <code>.one()</code>.</p>
+
+``` js
+// jQuery
+var $grid = $('.grid').packery({...});
+
+function onLayout() {
+  console.log('layout done');
+}
+// bind event listener
+$grid.on( 'layoutComplete', onLayout );
+// un-bind event listener
+$grid.off( 'layoutComplete', onLayout );
+// bind event listener to be triggered just once. note ONE not ON
+$grid.one( 'layoutComplete', function() {
+  console.log('layout done, just this one time');
+});
+```
+
+<p>jQuery event listeners have an <code>event</code> argument, whereas vanilla JS listeners do not.</p>
+
+``` js
+// jQuery, has event argument
+$grid.on( 'layoutComplete', function( event, items ) {
+  console.log( items.length );
+});
+
+// vanilla JS, no event argument
+pckry.on( 'layoutComplete', function( items ) {
+  console.log( items.length );
+});
+```
+
+{{! --------------------------------------------------- }}
+
+<h3>Vanilla JS event binding</h3>
+
+<p>Bind events with vanilla JS with <code>.on()</code>, <code>.off()</code>, and <code>.once()</code> methods.</p>
+
+```js
+// vanilla JS
+var pckry = new Packery( '.grid', {...});
+
+function onLayout() {
+  console.log('layout done');
+}
+// bind event listener
+pckry.on( 'layoutComplete', onLayout );
+// un-bind event listener
+pckry.off( 'layoutComplete', onLayout );
+// bind event listener to be triggered just once
+pckry.once( 'layoutComplete', function() {
+  console.log('layout done, just this one time');
+});
+```
+
+{{! --------------------------------------------------- }}
+
+<h2>Packery events</h2>
+
+{{! --------------------------------------------------- }}
+
+<h3>layoutComplete</h3>
+
+<p>Triggered after a layout and all positioning transitions have completed.</p>
+
+``` js
+// jQuery
+$grid.on( 'layoutComplete', function( event, laidOutItems ) {...} )
+// vanilla JS
+msnry.on( 'layoutComplete', function( laidOutItems ) {...} )
+```
+
+<p class="variable">
+  <code class="variable__code">laidOutItems</code>
+  <span class="variable__type"><i>Array</i> of <i>Masonry.Item</i>s</span>
+  <span class="variable__description">Items that were laid out</span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $grid.on( 'layoutComplete',
+      function( event, laidOutItems ) {
+        console.log( 'Packery layout completed on ' +
+          laidOutItems.length + ' items' );
+      }
+    );
+    ```
+  </div>
+  {{> layout-complete }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>dragItemPositioned</h3>
+
+<p>Triggered after a dragging an item and positioning transition has ended.</p>
+
+``` js
+// jQuery
+$grid.on( 'dragItemPositioned', function( event, draggedItem ) {...} )
+// vanilla JS
+pckry.on( 'dragItemPositioned', function( draggedItem ) {...} )
+```
+
+<p class="variable">
+  <code class="variable__code">draggedItem</code>
+  <span class="variable__type"><i>Packery.Item</i></span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $grid.on( 'dragItemPositioned',
+      function( event, draggedItem ) {
+        console.log( 'Packery drag item positioned',
+          draggedItem.element );
+      }
+    );
+    ```
+  </div>
+  {{> drag-item-positioned }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>fitComplete</h3>
+
+<p>Triggered after an item element is <a href="methods.html#fit">fit</a>.</p>
+
+``` js
+// jQuery
+$grid.on( 'fitComplete', function( event, item ) {...} )
+// vanilla JS
+pckry.on( 'fitComplete', function( item ) {...} )
+```
+
+<p class="variable">
+  <code class="variable__code">item</code>
+  <span class="variable__type"><i>Packery.Item</i></span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $grid.on( 'fitComplete',
+      function( event, item ) {
+        console.log( 'Packery fit', item.element );
+      }
+    );
+    ```
+  </div>
+  {{> fit-complete }}
+</div>
+
+{{! --------------------------------------------------- }}
+
+<h3>removeComplete</h3>
+
+<p>Triggered after an item element has been removed.</p>
+
+``` js
+// jQuery
+$grid.on( 'removeComplete', function( event, removedItems ) {...} )
+// vanilla JS
+msnry.on( 'removeComplete', function( removedItems ) {...} )
+```
+
+<p class="variable">
+  <code class="variable__code">removedItems</code>
+  <span class="variable__type"><i>Array</i> of <i>Packery.Item</i>s</span>
+  <span class="variable__description">Items that were removed</span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+    ``` js
+    $grid.on( 'removeComplete',
+      function( event, removedItems ) {
+        notify( 'Removed ' + removedItems.length + ' items' );
+      }
+    );
+    ```
+  </div>
+  {{> remove-complete }}
+</div>
