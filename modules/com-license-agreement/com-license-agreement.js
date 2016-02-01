@@ -1,9 +1,5 @@
-PS.license = function() {
+PD.modules['com-license-agreement'] = function( elem ) {
   'use strict';
-
-  var utils = window.fizzyUIUtils;
-
-  var elem = document.querySelector('.commercial-license-agreement');
 
   var licenseData = {
     developer: {
@@ -32,7 +28,7 @@ PS.license = function() {
   cloneH2.style.borderTop = 'none';
   cloneH2.style.marginTop = 0;
   cloneH2.id = '';
-  utils.setText( h2, '' );
+  h2.textContent = '';
 
   buttonGroup.parentNode.insertBefore( cloneH2, buttonGroup.nextSibling );
 
@@ -42,7 +38,7 @@ PS.license = function() {
 
   var dataPropertyElems = elem.querySelectorAll('[data-license-property]');
 
-  for ( var i=0, len = dataPropertyElems.length; i < len; i++ ) {
+  for ( var i=0; i < dataPropertyElems.length; i++ ) {
     var dataPropertyElem = dataPropertyElems[i];
     var part = {
       property: dataPropertyElem.getAttribute('data-license-property'),
@@ -53,31 +49,27 @@ PS.license = function() {
 
   // ----- button ----- //
 
+  // click developer button
+  onButtonClick( buttonGroup.querySelector('.button--developer') );
+
+  filterBindEvent( buttonGroup, 'click', '.button', function( event ) {
+    onButtonClick( event.target );
+  });
+
   function onButtonClick( button ) {
     // change selected class
     var prevSelected = buttonGroup.querySelector('.is-selected');
     if ( prevSelected ) {
-      classie.remove( prevSelected, 'is-selected' );
+      prevSelected.classList.remove('is-selected');
     }
-    classie.add( button, 'is-selected' );
+    button.classList.add('is-selected');
     // get license data for developer, team, or organization
     var optionKey = button.getAttribute('data-license-option');
     var licenseOption = licenseData[ optionKey ];
     // set elements text accordingly
-    for ( var i=0, len = propertyParts.length; i < len; i++ ) {
-      var part = propertyParts[i];
-      utils.setText( part.element, licenseOption[ part.property ] );
-    }
+    propertyParts.forEach( function( part ) {
+      part.element.textContent = licenseOption[ part.property ];
+    });
   }
-
-  // click developer button
-  onButtonClick( buttonGroup.querySelector('.button--developer') );
-
-  eventie.bind( buttonGroup, 'click', function( event ) {
-    // only .button clicks
-    if ( matchesSelector( event.target, '.button' ) ) {
-      onButtonClick( event.target );
-    }
-  });
 
 };
