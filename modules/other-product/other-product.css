@@ -7,10 +7,11 @@
   padding: 0px;
   background: #F8F8F8;
   border-radius: 5px;
+  color: #C90;
 }
 
 .site-footer .other-product__link:hover {
-  background: #C09;
+  background: #C90;
   color: #F8F8F8;
 }
 

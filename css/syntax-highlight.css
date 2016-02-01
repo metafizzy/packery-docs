@@ -1,3 +1,6 @@
+/* syntax highlight
+------------------------- */
+
 code .string,
 code .tag .value { color: #0A2; }
 code .number, /* integer */
