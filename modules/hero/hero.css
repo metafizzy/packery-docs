@@ -50,6 +50,17 @@
   line-height: 1.2;
 }
 
+.hero__button-icon {
+  vertical-align: bottom;
+  width: 40px;
+  height: 40px;
+  margin-right: 6px;
+}
+
+.hero__button-icon path {
+  fill: #F8F8F8;
+}
+
 /* ---- desktop ---- */
 
 @media screen and ( min-width: 960px ) {
