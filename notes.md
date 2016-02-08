@@ -1,10 +1,10 @@
 <!-- Texta font -->
 
-move to modules
+<!-- move to modules -->
 
 <!-- move all tasks into tasks/ -->
 
-remove primary-content
+<!-- remove primary-content -->
 
 <!-- codepen link module -->
 
@@ -12,11 +12,19 @@ remove primary-content
 
 <!-- Reorder Options -->
 
-Appendix -> Extras
+<!-- remove `row` for `duo` -->
 
-FAQ -> Extras
+set up redirects
+  Appendix -> Extras
+  FAQ -> Extras
 
-remove `row` for `duo`
+<!-- license files -->
+
+upload packery v1
+
+Publish next version of Outlayer
+
+rename shiftResizeLayout
 
 fit & shiftLayout codepen demos
 shiftLayout remove CodePen demo
