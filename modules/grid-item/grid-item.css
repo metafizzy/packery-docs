@@ -19,6 +19,7 @@
   width: 180px;
   height: 180px;
   background: #0C9;
+  z-index: 2;
 }
 
 .grid--clickable .grid-item:hover {

@@ -9,7 +9,7 @@
     "jquery-ui-draggable": "http://gist.github.com/4985610.git",
     "jquery-bridget": "2",
     "normalize.css": "3",
-    "packery": "2.0.0-beta1",
+    "packery": "2",
     "desandro-matches-selector": "2",
     "fizzy-ui-utils": "2"
   }
