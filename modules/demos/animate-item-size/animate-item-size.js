@@ -6,8 +6,16 @@ PD.modules['animate-item-size'] = function( elem ) {
   var pckry = new Packery( grid );
 
   filterBindEvent( grid, 'click', '.animate-item-size-item__content', function( event ) {
-    event.target.parentNode.classList.toggle('is-expanded');
-    pckry.shiftLayout();
+    var itemElem = event.target.parentNode;
+    var isExpanded = itemElem.classList.contains('is-expanded');
+    itemElem.classList.toggle('is-expanded');
+    if ( isExpanded ) {
+      // if shrinking, shiftLayout
+      pckry.shiftLayout();
+    } else {
+      // if expanding, fit it
+      pckry.fit( itemElem );
+    }
   });
 
 };

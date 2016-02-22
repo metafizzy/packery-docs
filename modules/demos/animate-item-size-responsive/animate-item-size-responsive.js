@@ -25,6 +25,7 @@ PD.modules['animate-item-size-responsive'] = function( elem ) {
     setItemContentPixelSize( itemContent );
 
     var itemElem = itemContent.parentNode;
+    var isExpanded = itemElem.classList.contains('is-expanded');
     itemElem.classList.toggle('is-expanded');
 
     // force redraw
@@ -35,7 +36,13 @@ PD.modules['animate-item-size-responsive'] = function( elem ) {
     addTransitionListener( itemContent );
     setItemContentTransitionSize( itemContent, itemElem );
 
-    pckry.shiftLayout();
+    if ( isExpanded ) {
+      // if shrinking, shiftLayout
+      pckry.shiftLayout();
+    } else {
+      // if expanding, fit it
+      pckry.fit( itemElem );
+    }
   });
 
   function setItemContentPixelSize( itemContent ) {
