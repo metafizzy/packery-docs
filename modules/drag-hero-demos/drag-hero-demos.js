@@ -4,6 +4,7 @@ PD.modules['drag-hero-demos'] = function( elem ) {
   var masonryGrid = elem.querySelector('.drag-hero-demos__grid--masonry');
   var masonryPackery = new Packery( masonryGrid, {
     itemSelector: '.drag-hero-demos__item',
+    columnWidth: '.drag-hero-demos__grid__masonry-grid-sizer',
     gutter: '.drag-hero-demos__grid__masonry-gutter-sizer',
     percentPosition: true
   });

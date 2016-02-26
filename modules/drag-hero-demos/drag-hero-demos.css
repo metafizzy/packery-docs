@@ -45,8 +45,12 @@
 
 /* ---- masonry ---- */
 
-.drag-hero-demos__item--masonry {
+.drag-hero-demos__item,
+.drag-hero-demos__grid__masonry-grid-sizer {
   width: 32%;
+}
+
+.drag-hero-demos__item--masonry {
   height: 80px;
 }
 
