@@ -32,7 +32,7 @@ module.exports = function( site ) {
     var filterQuery = site.data.isExport ? [ '*', '!**/404.*'] : '*';
 
     site.data.sourceUrlPath = site.data.isExport ? '' :
-      'https://npmcdn.com/packery@' + site.data.packeryMinorVersion + '/dist/';
+      'https://unpkg.com/packery@' + site.data.packeryMinorVersion + '/dist/';
 
     var buildOptions = {
       layout: pageTemplate,
