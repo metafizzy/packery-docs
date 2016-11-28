@@ -1,4 +1,4 @@
-PD.modules['bind-draggabilly-events'] = function( elem ) {
+PackeryDocs['bind-draggabilly-events'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

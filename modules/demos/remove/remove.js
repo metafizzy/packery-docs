@@ -1,4 +1,4 @@
-PD.modules.remove = function( elem ) {
+PackeryDocs.remove = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

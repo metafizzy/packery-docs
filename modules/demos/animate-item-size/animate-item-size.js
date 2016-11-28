@@ -1,4 +1,4 @@
-PD.modules['animate-item-size'] = function( elem ) {
+PackeryDocs['animate-item-size'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

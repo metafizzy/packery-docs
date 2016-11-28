@@ -1,4 +1,4 @@
-PD.modules['stamp-methods'] = function( elem ) {
+PackeryDocs['stamp-methods'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

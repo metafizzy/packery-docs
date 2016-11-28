@@ -1,4 +1,4 @@
-PD.modules['bind-ui-draggable-events'] = function( elem ) {
+PackeryDocs['bind-ui-draggable-events'] = function( elem ) {
   'use strict';
 
   var $grid = $( elem.querySelector('.grid') ).packery({

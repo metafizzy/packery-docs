@@ -1,4 +1,4 @@
-PD.modules['animate-item-size-responsive'] = function( elem ) {
+PackeryDocs['animate-item-size-responsive'] = function( elem ) {
   'use strict';
 
   var docElem = document.documentElement;

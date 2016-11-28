@@ -1,4 +1,4 @@
-PD.modules.hero = function( elem ) {
+PackeryDocs.hero = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.hero__grid');

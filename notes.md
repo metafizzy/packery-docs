@@ -1,9 +1,4 @@
-## Fizzy docs modules
-
-buy button
-
-edit demo
-
-duo
-
-page-nav
+in-use -> inUse
+license-options -> licenses
+packeryVersion
+packeryMinorVersion

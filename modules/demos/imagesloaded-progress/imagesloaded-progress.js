@@ -2,7 +2,7 @@
  * imagesloaded-progress
  */
 
-PD.modules['imagesloaded-progress'] = function( elem ) {
+PackeryDocs['imagesloaded-progress'] = function( elem ) {
   'use strict';
 
   // init Isotope

@@ -5,12 +5,13 @@
   "dependencies": {
     "draggabilly": "2",
     "imagesloaded": "4",
-    "jquery": "2",
+    "jquery": "3",
     "jquery-ui-draggable": "http://gist.github.com/4985610.git",
     "jquery-bridget": "2",
-    "normalize.css": "3",
+    "normalize.css": "5",
     "packery": "2",
     "desandro-matches-selector": "2",
-    "fizzy-ui-utils": "2"
+    "fizzy-ui-utils": "2",
+    "fizzy-docs-modules": "metafizzy/fizzy-docs-modules"
   }
 }

@@ -1,4 +1,4 @@
-PD.modules['gh-button'] = function( elem ) {
+PackeryDocs['gh-button'] = function( elem ) {
 
   var user = 'metafizzy';
   var repo = 'packery';

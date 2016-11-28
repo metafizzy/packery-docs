@@ -25,6 +25,8 @@ var jsSrc = [
   'bower_components/imagesloaded/imagesloaded.js',
   // jquery ui draggable
   'bower_components/jquery-ui-draggable/jquery-ui-draggable.js',
+  // fizzy docs modules
+  'bower_components/fizzy-docs-modules/*/*.js',
   // docs
   'js/namespace.js',
   'js/utils.js',

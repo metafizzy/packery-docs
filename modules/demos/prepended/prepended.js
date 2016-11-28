@@ -1,4 +1,4 @@
-PD.modules.prepended = function( elem ) {
+PackeryDocs.prepended = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

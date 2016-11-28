@@ -1,4 +1,4 @@
-PD.modules.notification = function( elem ) {
+PackeryDocs.notification = function( elem ) {
   'use strict';
 
   var docElem = document.documentElement;

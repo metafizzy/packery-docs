@@ -1,4 +1,4 @@
-PD.modules['layout-complete'] = function( elem ) {
+PackeryDocs['layout-complete'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

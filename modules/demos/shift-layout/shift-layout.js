@@ -1,4 +1,4 @@
-PD.modules['shift-layout'] = function( elem ) {
+PackeryDocs['shift-layout'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

@@ -1,4 +1,4 @@
-PD.modules.destroy = function( elem ) {
+PackeryDocs.destroy = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

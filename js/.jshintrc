@@ -1,20 +1,7 @@
 {
   "browser": true,
-  "devel": true,
-  "strict": true,
   "undef": true,
   "unused": true,
   "globals": {
-    "classie": false,
-    "docReady": false,
-    "Draggabilly": false,
-    "eventie": false,
-    "getSize": false,
-    "getStyleProperty": false,
-    "Packery": false,
-    "matchesSelector": false,
-    "fizzyUIUtils": false,
-    "PS": true,
-    "PD": true
   }
 }

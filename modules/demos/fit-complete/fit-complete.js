@@ -1,4 +1,4 @@
-PD.modules['fit-complete'] = function( elem ) {
+PackeryDocs['fit-complete'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

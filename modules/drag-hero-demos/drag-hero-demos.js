@@ -1,4 +1,4 @@
-PD.modules['drag-hero-demos'] = function( elem ) {
+PackeryDocs['drag-hero-demos'] = function( elem ) {
   'use strict';
 
   var masonryGrid = elem.querySelector('.drag-hero-demos__grid--masonry');

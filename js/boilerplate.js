@@ -1,5 +1,9 @@
+/* globals matchesSelector */
+
 ( function( window ) {
-'use strict';
+
+// global namespace
+var PackeryDocs = window.PackeryDocs = {};
 
 // ----- filterBindEvent ----- //
 
@@ -14,7 +18,7 @@ window.filterBindEvent = function( elem, eventName, selector, listener ) {
 
 // ----- PD.getItemElement ----- //
 
-PD.getItemElement = function() {
+PackeryDocs.getItemElement = function() {
   var elem = document.createElement('div');
   var wRand = Math.random();
   var hRand = Math.random();

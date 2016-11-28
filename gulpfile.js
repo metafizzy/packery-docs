@@ -6,6 +6,8 @@ var gulp = require('gulp');
 var site = {
   // templating data
   data: {
+    productName: 'Packery',
+    majorVersion: 2,
     isDev: process.argv[2] == 'dev',
     isExport: process.argv[2] == 'export',
   },
@@ -23,8 +25,6 @@ require('./tasks/dist')( site );
 require('./tasks/hint')( site );
 require('./tasks/js')( site );
 require('./tasks/css')( site );
-require('./tasks/data')( site );
-require('./tasks/partials')( site );
 require('./tasks/content')( site );
 
 // ----- default ----- //

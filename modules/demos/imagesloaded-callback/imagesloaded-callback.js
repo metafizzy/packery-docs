@@ -2,7 +2,7 @@
  * imagesloaded-callback
  */
 
-PD.modules['imagesloaded-callback'] = function( elem ) {
+PackeryDocs['imagesloaded-callback'] = function( elem ) {
   'use strict';
 
   imagesLoaded( elem, function() {

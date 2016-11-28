@@ -1,4 +1,4 @@
-PD.modules.layout = function( elem ) {
+PackeryDocs.layout = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

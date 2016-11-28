@@ -1,4 +1,4 @@
-PD.modules['com-license-agreement'] = function( elem ) {
+PackeryDocs['com-license-agreement'] = function( elem ) {
   'use strict';
 
   var licenseData = {

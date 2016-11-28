@@ -1,4 +1,4 @@
-PD.modules['drag-item-positioned'] = function( elem ) {
+PackeryDocs['drag-item-positioned'] = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

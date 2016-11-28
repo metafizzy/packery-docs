@@ -1,4 +1,4 @@
-PD.modules.fit = function( elem ) {
+PackeryDocs.fit = function( elem ) {
   'use strict';
 
   var grid = elem.querySelector('.grid');

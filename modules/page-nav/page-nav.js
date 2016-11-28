@@ -1,4 +1,4 @@
-PD.modules['page-nav'] = function( elem ) {
+PackeryDocs['page-nav'] = function( elem ) {
   'use strict';
 
   // only do on index page
