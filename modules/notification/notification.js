@@ -7,7 +7,7 @@ PackeryDocs.notification = function( elem ) {
 
   var notifyTimeout;
 
-  PD.notify = function( message ) {
+  PackeryDocs.notify = function( message ) {
     elem.textContent = message + ' at ' + getTimestamp();
 
     elem.style[ transitionProp ] = 'none';

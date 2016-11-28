@@ -12,7 +12,7 @@ PackeryDocs['fit-complete'] = function( elem ) {
   });
 
   pckry.on( 'fitComplete', function() {
-    PD.notify('Packery fit complete');
+    PackeryDocs.notify('Packery fit complete');
   });
 
   elem.querySelector('.layout-button').addEventListener( 'click', function() {

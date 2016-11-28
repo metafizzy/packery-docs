@@ -1,0 +1,10 @@
+/* buy-button
+------------------------- */
+
+.buy-button {
+  background: #EAEAEA;
+}
+
+.buy-button__price { background: #0C9; }
+
+.buy-button:hover .buy-button__price { background: #C90; }

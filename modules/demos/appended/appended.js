@@ -10,9 +10,9 @@ PackeryDocs.appended = function( elem ) {
   appendButton.addEventListener( 'click', function() {
     // create new item elements
     var items = [
-      PD.getItemElement(),
-      PD.getItemElement(),
-      PD.getItemElement()
+      PackeryDocs.getItemElement(),
+      PackeryDocs.getItemElement(),
+      PackeryDocs.getItemElement()
     ];
     // append elements to container
     var fragment = document.createDocumentFragment();

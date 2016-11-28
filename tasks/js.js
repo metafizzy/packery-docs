@@ -28,8 +28,7 @@ var jsSrc = [
   // fizzy docs modules
   'bower_components/fizzy-docs-modules/*/*.js',
   // docs
-  'js/namespace.js',
-  'js/utils.js',
+  'js/boilerplate.js',
   // modules
   'modules/*/**/*.js',
   // init

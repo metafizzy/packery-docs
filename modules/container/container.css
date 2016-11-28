@@ -1,24 +1,24 @@
-/* primary-content
+/* container
 ------------------------- */
 
-.primary-content {
+.container {
   padding-left: 10px;
   padding-right: 10px;
   max-width: 1500px;
 }
 
-.primary-content > * {
+.container > * {
   max-width: 900px;
 }
 
-.primary-content .duo.example {
+.container .duo.example {
   max-width: none;
 }
 
 /* desktop */
 @media screen and ( min-width: 960px ) {
 
-  .primary-content {
+  .container {
     padding-left: 200px;
     padding-right: 20px;
   }

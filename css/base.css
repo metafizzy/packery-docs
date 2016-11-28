@@ -14,7 +14,6 @@ light gray #F8F8F8
 
 /* font-size on html for rem*/
 html {
-  font-family: Texta, sans-serif;
   font-size: 17px;
   line-height: 1.5;
 }
@@ -22,6 +21,10 @@ html {
 html.export {
   font-family: sans-serif;
   font-size: 15px;
+}
+
+body, input, button {
+  font-family: Texta, sans-serif;
 }
 
 body {

@@ -13,7 +13,7 @@ PackeryDocs['drag-item-positioned'] = function( elem ) {
   });
 
   pckry.on( 'dragItemPositioned', function( laidOutItems ) {
-    PD.notify('Packery drag positioned');
+    PackeryDocs.notify('Packery drag positioned');
   });
 
 };

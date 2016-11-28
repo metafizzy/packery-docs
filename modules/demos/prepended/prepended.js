@@ -10,9 +10,9 @@ PackeryDocs.prepended = function( elem ) {
   prependButton.addEventListener( 'click', function() {
     // create new item elements
     var items = [
-      PD.getItemElement(),
-      PD.getItemElement(),
-      PD.getItemElement()
+      PackeryDocs.getItemElement(),
+      PackeryDocs.getItemElement(),
+      PackeryDocs.getItemElement()
     ];
     // prepend elements to container
     var fragment = document.createDocumentFragment();

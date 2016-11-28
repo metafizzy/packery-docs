@@ -13,7 +13,7 @@ PackeryDocs['remove-complete'] = function( elem ) {
   });
 
   pckry.on( 'removeComplete', function() {
-    PD.notify('Packery removed item');
+    PackeryDocs.notify('Packery removed item');
   });
 
 };

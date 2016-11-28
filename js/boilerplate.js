@@ -16,7 +16,7 @@ window.filterBindEvent = function( elem, eventName, selector, listener ) {
   });
 };
 
-// ----- PD.getItemElement ----- //
+// ----- PackeryDocs.getItemElement ----- //
 
 PackeryDocs.getItemElement = function() {
   var elem = document.createElement('div');

@@ -6,7 +6,7 @@ PackeryDocs['layout-complete'] = function( elem ) {
   var pckry = new Packery( grid );
 
   pckry.on( 'layoutComplete', function( laidOutItems ) {
-    PD.notify( 'Packery layout complete on ' + laidOutItems.length + ' items' );
+    PackeryDocs.notify( 'Packery layout complete on ' + laidOutItems.length + ' items' );
   });
 
   filterBindEvent( grid, 'click', '.grid-item', function( event ) {
