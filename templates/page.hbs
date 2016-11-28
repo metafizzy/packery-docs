@@ -46,7 +46,7 @@
     <ul class="page-nav" data-js="page-nav"></ul>
 
 {{! all page content goes here }}
-{{> body}}
+{{#block "main"}}{{/block}}
   </div>
 
 </div>
@@ -57,7 +57,7 @@
 
 <!-- Packery does NOT require jQuery.
   jQuery is only used for jQuery UI Draggable -->
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
 {{#if isDev}}
@@ -71,15 +71,11 @@
 {{/if}}
 
 {{#unless isExport}}
-  <!-- Google Analytics -->
   <script>
-  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-58739927-4','auto');ga('send','pageview');
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-58739927-4','auto');ga('send','pageview')
   </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 {{/unless}}
 
 </body>
