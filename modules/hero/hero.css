@@ -57,9 +57,22 @@
   margin-right: 6px;
 }
 
-.hero__button-icon path {
-  fill: #F8F8F8;
+.button--hero-big {
+  display: block;
+  font-size: 1.2rem;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
+.button--hero-big:hover {
+  background-color: #C90;
+  color: white;
+}
+
+.hero__button-icon path { fill: #C09; }
+
+.button--hero-big:hover .hero__button-icon path { fill: white; }
 
 /* ---- desktop ---- */
 
