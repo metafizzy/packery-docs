@@ -2,8 +2,8 @@
 ------------------------- */
 
 .call-out {
-  border-top: 2px solid #C90;
-  border-bottom: 2px solid #C90;
+  border-top: 2px solid #EA0;
+  border-bottom: 2px solid #EA0;
   padding-left: 40px;
   position: relative;
   margin: 20px 0;
@@ -18,7 +18,7 @@
   position: absolute;
   left: 5px;
   top: 20px;
-  background: #C90;
+  background: #EA0;
   border-radius: 50%;
   text-align: center;
   color: white;
@@ -32,19 +32,19 @@
   border-top: none;
 }
 
-.call-out--chill { border-color: #0C9; }
-.call-out--chill:before { background: #0C9; }
+.call-out--chill { border-color: #6C6; }
+.call-out--chill:before { background: #6C6; }
 
 @media screen and (min-width: 768px) {
 
   .call-out {
-    border: 2px solid #C90;
+    border: 2px solid #EA0;
     padding: 10px 20px 10px 80px;
     position: relative;
     margin: 20px 0;
   }
 
-  .call-out--chill { border-color: #0C9; }
+  .call-out--chill { border-color: #6C6; }
 
   .call-out:before {
     width: 40px;

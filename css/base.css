@@ -1,9 +1,7 @@
 /* colors
-
-orange #C90
-green #0C9
-purple #90C
-magenta #C09
+purple #C09
+orange #EA0
+green #6C6
 light gray #F8F8F8
 */
 
@@ -42,7 +40,7 @@ a code {
 
 a:hover,
 a:hover code {
-  color: #C90;
+  color: #EA0;
 }
 
 

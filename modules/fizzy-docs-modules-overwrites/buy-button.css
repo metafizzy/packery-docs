@@ -5,6 +5,6 @@
   background: #EAEAEA;
 }
 
-.buy-button__price { background: #0C9; }
+.buy-button__price { background: #6C6; }
 
-.buy-button:hover .buy-button__price { background: #C90; }
+.buy-button:hover .buy-button__price { background: #EA0; }

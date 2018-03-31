@@ -18,12 +18,12 @@
 .grid-item--large {
   width: 180px;
   height: 180px;
-  background: #0C9;
+  background: #6C6;
   z-index: 2;
 }
 
 .grid--clickable .grid-item:hover {
-  background: #C90;
+  background: #EA0;
   cursor: pointer;
 }
 
@@ -91,7 +91,7 @@
 .grid--draggable .grid-item.is-dragging,
 .grid--draggable .grid-item.ui-draggable-dragging,
 .grid--draggable .grid-item.is-positioning-post-drag {
-  background: #C90;
+  background: #EA0;
   z-index: 2;
 }
 

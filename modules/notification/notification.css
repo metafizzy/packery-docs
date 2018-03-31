@@ -11,7 +11,7 @@
   color: #F8F8F8;
   opacity: 0;
   pointer-events: none;
-  background: #C90;
+  background: #EA0;
   z-index: 3; /* above packeries */
   -webkit-transition: opacity 0.4s;
           transition: opacity 0.4s;
