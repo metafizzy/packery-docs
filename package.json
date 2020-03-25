@@ -15,7 +15,8 @@
     "gulp-util": "^3.0.7",
     "handlebars-layouts": "^3.1.4",
     "highlight.js": "^8.5.0",
-    "through2": "^0.6.3"
+    "through2": "^0.6.3",
+    "transfob": "^1.0.0"
   },
   "repository": {
     "type": "git",
