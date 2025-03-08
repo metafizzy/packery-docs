@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 var getGlobPaths = require('./utils/get-glob-paths');
 
 var jsSrc = [
@@ -38,7 +37,6 @@ var jsSrc = [
 // concat & minify js
 gulp.task( 'docs-js', function() {
   gulp.src( jsSrc )
-    .pipe( uglify() )
     .pipe( concat('packery-docs.min.js') )
     .pipe( gulp.dest('build/js') );
 });

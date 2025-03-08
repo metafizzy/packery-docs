@@ -7,7 +7,7 @@ var site = {
   // templating data
   data: {
     productName: 'Packery',
-    majorVersion: 2,
+    majorVersion: 3,
     isDev: process.argv[2] == 'dev',
     isExport: process.argv[2] == 'export',
   },

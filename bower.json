@@ -1,6 +1,6 @@
 {
   "name": "packery-docs",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Metafizzy",
   "dependencies": {
     "draggabilly": "2",
@@ -9,7 +9,7 @@
     "jquery-ui-draggable": "https://gist.github.com/4985610.git",
     "jquery-bridget": "2",
     "normalize.css": "5",
-    "packery": "2",
+    "packery": "3",
     "desandro-matches-selector": "2",
     "fizzy-ui-utils": "2",
     "fizzy-docs-modules": "metafizzy/fizzy-docs-modules"

@@ -10,11 +10,11 @@ deploy:
 	netlify deploy --dir=build
 
 gulp:
-	gulp
+	npx gulp
 
 gulp-export:
 	rm -rf build/
-	gulp export
+	npx gulp export
 	make zip
 
 prod: gulp-export gulp deploy
